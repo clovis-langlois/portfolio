@@ -49,10 +49,10 @@ h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font
 
 /* Réseau isométrique discret, prolongé derrière les sections de l'accueil */
 main{isolation:isolate}
-main>.hero-network{position:absolute;z-index:0;right:-6vw;width:min(69vw,900px);height:720px;pointer-events:none;overflow:hidden;opacity:.6}
+main>.hero-network{position:absolute;z-index:0;left:-6vw;right:auto;width:min(69vw,900px);height:720px;pointer-events:none;overflow:hidden;opacity:.6}
 main>.network-layer-1{top:0}
-main>.network-layer-2{top:680px;right:-2vw;transform:scaleX(-1);opacity:.45}
-main>.network-layer-3{top:1360px;right:-7vw;opacity:.5}
+main>.network-layer-2{top:680px;left:-2vw;right:auto;transform:scaleX(-1);opacity:.45}
+main>.network-layer-3{top:1360px;left:-7vw;right:auto;opacity:.5}
 main>.container{position:relative;z-index:1}
 .hero{position:relative}
 .hero-network svg{display:block;width:100%;height:100%}
@@ -61,7 +61,7 @@ main>.container{position:relative;z-index:1}
 .hero-network .cube-top{fill:#72849c}.hero-network .cube-left{fill:#4b5d76}.hero-network .cube-right{fill:#34465e}
 .hero-network .network-data{fill:#9cbada;opacity:.52;filter:drop-shadow(0 0 3px #89a9d2)}
 .hero-inner{position:relative;z-index:1}
-@media(max-width:760px){main>.hero-network{right:-38vw;width:115vw;opacity:.38}main>.network-layer-2{right:-18vw}main>.network-layer-3{right:-40vw}}
+@media(max-width:760px){main>.hero-network{left:-38vw;right:auto;width:115vw;opacity:.38}main>.network-layer-2{left:-18vw;right:auto}main>.network-layer-3{left:-40vw;right:auto}}
 @media(prefers-reduced-motion:reduce){.hero-network .network-data{display:none}}
 </style>
 </head>
