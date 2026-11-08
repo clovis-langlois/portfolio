@@ -19,7 +19,7 @@ a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #89baff;o
 .nav{display:flex;align-items:center;gap:34px}.nav a{font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;position:relative}
 .nav a:hover{color:#52627d}.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#293146}
 .menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
-main{position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 32% at 82% 40%,rgba(55,72,97,.16),transparent 70%),var(--bg)}
+main{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 38% at 76% 24%,#202b39 0%,transparent 78%),linear-gradient(180deg,#171b23,#181e27 55%,#171b23)}
 .container{width:min(1160px,calc(100% - 48px));margin:auto}
 .hero{min-height:650px;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 0 128px}
 .hero-inner{max-width:860px}
@@ -47,19 +47,32 @@ h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font
 @media(max-width:760px){.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid #edf0f4}.nav a[aria-current=page]:after{display:none}.hero{min-height:610px;padding:90px 0 100px}.hero-study{font-size:13px}.section{padding:75px 0 100px}.section-grid,.expertise .section-grid{grid-template-columns:1fr;gap:45px}.photo-placeholder{max-width:440px;width:100%;margin:auto;aspect-ratio:4/3.8}.expertise .tower-visual{max-width:420px}.expertise .copy{order:0}.expertise .illustration{order:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
 
-/* Réseau organique discret : un seul dessin continu, derrière les sections */
-main{position:relative;isolation:isolate}
-main>.network-background{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.network-background svg{display:block;width:100%;height:100%}
-.network-background .network-edges{fill:none;stroke:#7890ae;stroke-width:1.05;opacity:.105;stroke-linecap:round}
-.network-background .network-nodes{opacity:.18}
-.network-background .cube-top{fill:#899cb5}
-.network-background .cube-left{fill:#60748f}
-.network-background .cube-right{fill:#40536e}
-.network-background .network-particles{fill:#badbfa;filter:drop-shadow(0 0 3px #83aee1)}
+/* Direction graphique issue du prototype : réseau asymétrique à droite et dégradé fondu */
+main{isolation:isolate}
+main>.network-background{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.network-background svg{width:100%;height:100%;display:block}
+.network-scene{opacity:.22;filter:drop-shadow(0 0 14px rgba(97,138,190,.08))}
+.network-edge{fill:none;stroke:#89a4c8;stroke-width:1;opacity:.52;vector-effect:non-scaling-stroke}
+.network-node{opacity:.72}
+.network-node .cube-top{fill:#b0bed0}
+.network-node .cube-left{fill:#7289a5}
+.network-node .cube-right{fill:#506b8a}
+.network-packet{fill:#b9d7ff;opacity:0;filter:drop-shadow(0 0 4px #a5c9fa)}
+.network-fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.88) 27%,rgba(23,27,35,.12) 72%,rgba(23,27,35,.28) 100%),linear-gradient(180deg,#171b23 0%,transparent 12%,transparent 88%,#171b23 100%)}
 main>.container{position:relative;z-index:1}
-@media(max-width:760px){.network-background .network-edges{opacity:.075}.network-background .network-nodes{opacity:.11}}
-@media(prefers-reduced-motion:reduce){.network-background .network-particles{display:none}}
+.hero{justify-content:flex-start;text-align:left}
+.hero-inner{max-width:650px}
+.social{justify-content:flex-start}
+#a-propos .copy{order:1}
+#a-propos .photo-placeholder{order:2}
+@media(max-width:760px){
+  .network-scene{opacity:.18}
+  .network-fade{background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.78) 60%,rgba(23,27,35,.4) 100%)}
+  .hero{justify-content:flex-start;text-align:left}
+  .hero-inner{max-width:100%}
+  .social{justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){.network-packet{display:none}}
 </style>
 </head>
 <body>
@@ -76,17 +89,85 @@ main>.container{position:relative;z-index:1}
 </header>
 <main>
 <div class="network-background" aria-hidden="true">
-<svg id="network-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-<g class="network-edges" id="network-edges"></g>
-<g class="network-nodes" id="network-nodes"></g>
-<g class="network-particles" id="network-particles"></g>
+<svg id="network-visual" viewBox="0 0 1440 2600" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg">
+<g id="network-scene" class="network-scene">
+<g id="network-routes"><path id="net-route-0" class="network-edge" d="M 940 160 L 1130 230"/>
+<path id="net-route-1" class="network-edge" d="M 1130 230 L 1300 120"/>
+<path id="net-route-2" class="network-edge" d="M 940 160 L 790 370"/>
+<path id="net-route-3" class="network-edge" d="M 940 160 L 1000 470"/>
+<path id="net-route-4" class="network-edge" d="M 1130 230 L 1000 470"/>
+<path id="net-route-5" class="network-edge" d="M 1130 230 L 1240 430"/>
+<path id="net-route-6" class="network-edge" d="M 1300 120 L 1240 430"/>
+<path id="net-route-7" class="network-edge" d="M 790 370 L 1000 470"/>
+<path id="net-route-8" class="network-edge" d="M 790 370 L 860 700"/>
+<path id="net-route-9" class="network-edge" d="M 1000 470 L 1240 430"/>
+<path id="net-route-10" class="network-edge" d="M 1000 470 L 860 700"/>
+<path id="net-route-11" class="network-edge" d="M 1000 470 L 1110 820"/>
+<path id="net-route-12" class="network-edge" d="M 1240 430 L 1410 600"/>
+<path id="net-route-13" class="network-edge" d="M 1240 430 L 1110 820"/>
+<path id="net-route-14" class="network-edge" d="M 1410 600 L 1320 920"/>
+<path id="net-route-15" class="network-edge" d="M 860 700 L 1110 820"/>
+<path id="net-route-16" class="network-edge" d="M 860 700 L 760 1040"/>
+<path id="net-route-17" class="network-edge" d="M 1110 820 L 1320 920"/>
+<path id="net-route-18" class="network-edge" d="M 1110 820 L 980 1190"/>
+<path id="net-route-19" class="network-edge" d="M 1110 820 L 1240 1150"/>
+<path id="net-route-20" class="network-edge" d="M 1320 920 L 1240 1150"/>
+<path id="net-route-21" class="network-edge" d="M 1320 920 L 1430 1330"/>
+<path id="net-route-22" class="network-edge" d="M 760 1040 L 980 1190"/>
+<path id="net-route-23" class="network-edge" d="M 760 1040 L 840 1490"/>
+<path id="net-route-24" class="network-edge" d="M 980 1190 L 1240 1150"/>
+<path id="net-route-25" class="network-edge" d="M 980 1190 L 840 1490"/>
+<path id="net-route-26" class="network-edge" d="M 980 1190 L 1080 1540"/>
+<path id="net-route-27" class="network-edge" d="M 1240 1150 L 1430 1330"/>
+<path id="net-route-28" class="network-edge" d="M 1240 1150 L 1080 1540"/>
+<path id="net-route-29" class="network-edge" d="M 1240 1150 L 1300 1660"/>
+<path id="net-route-30" class="network-edge" d="M 1430 1330 L 1300 1660"/>
+<path id="net-route-31" class="network-edge" d="M 840 1490 L 1080 1540"/>
+<path id="net-route-32" class="network-edge" d="M 840 1490 L 730 1850"/>
+<path id="net-route-33" class="network-edge" d="M 1080 1540 L 1300 1660"/>
+<path id="net-route-34" class="network-edge" d="M 1080 1540 L 970 2010"/>
+<path id="net-route-35" class="network-edge" d="M 1300 1660 L 1200 1930"/>
+<path id="net-route-36" class="network-edge" d="M 1300 1660 L 1390 2210"/>
+<path id="net-route-37" class="network-edge" d="M 730 1850 L 970 2010"/>
+<path id="net-route-38" class="network-edge" d="M 970 2010 L 1200 1930"/>
+<path id="net-route-39" class="network-edge" d="M 970 2010 L 930 2360"/>
+<path id="net-route-40" class="network-edge" d="M 1200 1930 L 1390 2210"/>
+<path id="net-route-41" class="network-edge" d="M 1200 1930 L 1180 2500"/>
+<path id="net-route-42" class="network-edge" d="M 1390 2210 L 1180 2500"/>
+<path id="net-route-43" class="network-edge" d="M 930 2360 L 1180 2500"/></g>
+<g id="network-cubes"><g class="network-node"><polygon class="cube-top" points="940,144 956,152 940,160 924,152"/><polygon class="cube-left" points="924,152 940,160 940,176 924,168"/><polygon class="cube-right" points="940,160 956,152 956,168 940,176"/></g>
+<g class="network-node"><polygon class="cube-top" points="1130,214 1146,222 1130,230 1114,222"/><polygon class="cube-left" points="1114,222 1130,230 1130,246 1114,238"/><polygon class="cube-right" points="1130,230 1146,222 1146,238 1130,246"/></g>
+<g class="network-node"><polygon class="cube-top" points="1300,104 1316,112 1300,120 1284,112"/><polygon class="cube-left" points="1284,112 1300,120 1300,136 1284,128"/><polygon class="cube-right" points="1300,120 1316,112 1316,128 1300,136"/></g>
+<g class="network-node"><polygon class="cube-top" points="790,354 806,362 790,370 774,362"/><polygon class="cube-left" points="774,362 790,370 790,386 774,378"/><polygon class="cube-right" points="790,370 806,362 806,378 790,386"/></g>
+<g class="network-node"><polygon class="cube-top" points="1000,454 1016,462 1000,470 984,462"/><polygon class="cube-left" points="984,462 1000,470 1000,486 984,478"/><polygon class="cube-right" points="1000,470 1016,462 1016,478 1000,486"/></g>
+<g class="network-node"><polygon class="cube-top" points="1240,414 1256,422 1240,430 1224,422"/><polygon class="cube-left" points="1224,422 1240,430 1240,446 1224,438"/><polygon class="cube-right" points="1240,430 1256,422 1256,438 1240,446"/></g>
+<g class="network-node"><polygon class="cube-top" points="1410,584 1426,592 1410,600 1394,592"/><polygon class="cube-left" points="1394,592 1410,600 1410,616 1394,608"/><polygon class="cube-right" points="1410,600 1426,592 1426,608 1410,616"/></g>
+<g class="network-node"><polygon class="cube-top" points="860,684 876,692 860,700 844,692"/><polygon class="cube-left" points="844,692 860,700 860,716 844,708"/><polygon class="cube-right" points="860,700 876,692 876,708 860,716"/></g>
+<g class="network-node"><polygon class="cube-top" points="1110,804 1126,812 1110,820 1094,812"/><polygon class="cube-left" points="1094,812 1110,820 1110,836 1094,828"/><polygon class="cube-right" points="1110,820 1126,812 1126,828 1110,836"/></g>
+<g class="network-node"><polygon class="cube-top" points="1320,904 1336,912 1320,920 1304,912"/><polygon class="cube-left" points="1304,912 1320,920 1320,936 1304,928"/><polygon class="cube-right" points="1320,920 1336,912 1336,928 1320,936"/></g>
+<g class="network-node"><polygon class="cube-top" points="760,1024 776,1032 760,1040 744,1032"/><polygon class="cube-left" points="744,1032 760,1040 760,1056 744,1048"/><polygon class="cube-right" points="760,1040 776,1032 776,1048 760,1056"/></g>
+<g class="network-node"><polygon class="cube-top" points="980,1174 996,1182 980,1190 964,1182"/><polygon class="cube-left" points="964,1182 980,1190 980,1206 964,1198"/><polygon class="cube-right" points="980,1190 996,1182 996,1198 980,1206"/></g>
+<g class="network-node"><polygon class="cube-top" points="1240,1134 1256,1142 1240,1150 1224,1142"/><polygon class="cube-left" points="1224,1142 1240,1150 1240,1166 1224,1158"/><polygon class="cube-right" points="1240,1150 1256,1142 1256,1158 1240,1166"/></g>
+<g class="network-node"><polygon class="cube-top" points="1430,1314 1446,1322 1430,1330 1414,1322"/><polygon class="cube-left" points="1414,1322 1430,1330 1430,1346 1414,1338"/><polygon class="cube-right" points="1430,1330 1446,1322 1446,1338 1430,1346"/></g>
+<g class="network-node"><polygon class="cube-top" points="840,1474 856,1482 840,1490 824,1482"/><polygon class="cube-left" points="824,1482 840,1490 840,1506 824,1498"/><polygon class="cube-right" points="840,1490 856,1482 856,1498 840,1506"/></g>
+<g class="network-node"><polygon class="cube-top" points="1080,1524 1096,1532 1080,1540 1064,1532"/><polygon class="cube-left" points="1064,1532 1080,1540 1080,1556 1064,1548"/><polygon class="cube-right" points="1080,1540 1096,1532 1096,1548 1080,1556"/></g>
+<g class="network-node"><polygon class="cube-top" points="1300,1644 1316,1652 1300,1660 1284,1652"/><polygon class="cube-left" points="1284,1652 1300,1660 1300,1676 1284,1668"/><polygon class="cube-right" points="1300,1660 1316,1652 1316,1668 1300,1676"/></g>
+<g class="network-node"><polygon class="cube-top" points="730,1834 746,1842 730,1850 714,1842"/><polygon class="cube-left" points="714,1842 730,1850 730,1866 714,1858"/><polygon class="cube-right" points="730,1850 746,1842 746,1858 730,1866"/></g>
+<g class="network-node"><polygon class="cube-top" points="970,1994 986,2002 970,2010 954,2002"/><polygon class="cube-left" points="954,2002 970,2010 970,2026 954,2018"/><polygon class="cube-right" points="970,2010 986,2002 986,2018 970,2026"/></g>
+<g class="network-node"><polygon class="cube-top" points="1200,1914 1216,1922 1200,1930 1184,1922"/><polygon class="cube-left" points="1184,1922 1200,1930 1200,1946 1184,1938"/><polygon class="cube-right" points="1200,1930 1216,1922 1216,1938 1200,1946"/></g>
+<g class="network-node"><polygon class="cube-top" points="1390,2194 1406,2202 1390,2210 1374,2202"/><polygon class="cube-left" points="1374,2202 1390,2210 1390,2226 1374,2218"/><polygon class="cube-right" points="1390,2210 1406,2202 1406,2218 1390,2226"/></g>
+<g class="network-node"><polygon class="cube-top" points="930,2344 946,2352 930,2360 914,2352"/><polygon class="cube-left" points="914,2352 930,2360 930,2376 914,2368"/><polygon class="cube-right" points="930,2360 946,2352 946,2368 930,2376"/></g>
+<g class="network-node"><polygon class="cube-top" points="1180,2484 1196,2492 1180,2500 1164,2492"/><polygon class="cube-left" points="1164,2492 1180,2500 1180,2516 1164,2508"/><polygon class="cube-right" points="1180,2500 1196,2492 1196,2508 1180,2516"/></g></g>
+<g id="network-packets"></g>
+</g>
 </svg>
+<div class="network-fade"></div>
 </div>
 <section class="hero container" aria-labelledby="hero-title">
 
 <div class="hero-inner">
 <p class="eyebrow">Portfolio professionnel</p>
-<h1 id="hero-title">Clovis Langlois</h1>
+<h1 id="hero-title">Clovis<br>Langlois</h1>
 <p class="hero-role">Technicien systèmes &amp; réseaux</p>
 <p class="hero-study">Étudiant en 3ᵉ année de Bachelor Administrateur Systèmes &amp; Réseaux</p>
 <a class="button" href="projet-portfolio.html">Découvrir mes projets</a>
@@ -134,94 +215,54 @@ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAtt
 </script>
 
 <script>
-/* Maillage asymétrique : positions déterministes, aucune grille répétée. */
+/* Flux de données synchronisés au scroll : descente = avant, montée = arrière.
+   Le SVG des cubes et lignes est statique, il reste visible même si JavaScript échoue. */
 (function(){
-'use strict';
-const svg=document.getElementById('network-visual');
-const edges=document.getElementById('network-edges');
-const nodes=document.getElementById('network-nodes');
-const dots=document.getElementById('network-particles');
-const main=document.querySelector('main');
-if(!svg||!edges||!nodes||!dots||!main)return;
-const NS='http://www.w3.org/2000/svg';
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-let segments=[],particles=[],distance=0,activity=0,lastScroll=window.scrollY,frame=0,resizeHandle;
-function add(tag,attrs,parent){const el=document.createElementNS(NS,tag);for(const [key,value] of Object.entries(attrs))el.setAttribute(key,value);parent.appendChild(el);return el}
-function random(seed){let t=seed+0x6D2B79F5;return function(){t+=0x6D2B79F5;let x=t;x=Math.imul(x^(x>>>15),x|1);x^=x+Math.imul(x^(x>>>7),x|61);return ((x^(x>>>14))>>>0)/4294967296}}
-function build(){
-const height=Math.max(1100,main.offsetHeight),width=1000;
-svg.setAttribute('viewBox',`0 0 ${width} ${height}`);
-svg.setAttribute('preserveAspectRatio','none');
-edges.replaceChildren();nodes.replaceChildren();dots.replaceChildren();segments=[];particles=[];
-const rnd=random(73291);
-const points=[];
-/* Points répartis de manière irrégulière, avec un couloir dégagé au centre du héros. */
-for(let y=-70;y<height+140;y+=115){
- const band=Math.floor((y+70)/115);
- const count=band%3===0?2:band%4===0?1:3;
- for(let j=0;j<count;j++){
-  const side=(j+band)%2===0?-1:1;
-  const x=side<0?65+rnd()*255:680+rnd()*265;
-  const py=y+(rnd()-.5)*105;
-  points.push({x,y:py,size:7+rnd()*8});
- }
-}
-/* Quelques connexions traversantes discrètes uniquement hors du centre du héros. */
-const used=new Set();
-for(let i=0;i<points.length;i++){
- const a=points[i];
- const nearby=points.map((b,j)=>({b,j,d:Math.hypot(a.x-b.x,a.y-b.y)}))
- .filter(o=>o.j!==i&&o.d<315&&o.d>70)
- .sort((u,v)=>u.d-v.d);
- let connections=0;
- for(const candidate of nearby){
-  if(connections>=2)break;
-  const b=candidate.b,key=[i,candidate.j].sort((u,v)=>u-v).join(':');
-  if(used.has(key))continue;
-  const midX=(a.x+b.x)/2,midY=(a.y+b.y)/2;
-  if(midY<590&&midX>340&&midX<660)continue;
-  if(a.x<400&&b.x>600&&midY<750)continue;
-  used.add(key);
-  add('path',{d:`M ${a.x.toFixed(1)} ${a.y.toFixed(1)} L ${b.x.toFixed(1)} ${b.y.toFixed(1)}`},edges);
-  segments.push({a,b,length:candidate.d});
-  connections++;
- }
-}
-for(const p of points){
- const {x,y,size:z}=p,g=add('g',{},nodes);
- add('polygon',{class:'cube-top',points:`${x},${y-z} ${x+z},${y-z*.45} ${x},${y+z*.1} ${x-z},${y-z*.45}`},g);
- add('polygon',{class:'cube-left',points:`${x-z},${y-z*.45} ${x},${y+z*.1} ${x},${y+z*1.3} ${x-z},${y+z*.75}`},g);
- add('polygon',{class:'cube-right',points:`${x},${y+z*.1} ${x+z},${y-z*.45} ${x+z},${y+z*.75} ${x},${y+z*1.3}`},g);
-}
-if(!reduce&&segments.length){
- const count=Math.min(25,segments.length);
- for(let i=0;i<count;i++){
-  const circle=add('circle',{r:i%5===0?2.1:1.5,opacity:0},dots);
-  particles.push({circle,segment:segments[(i*13+7)%segments.length],phase:rnd()});
- }
-}
-draw();
-}
-function draw(){
-frame=0;activity*=.79;
-for(const particle of particles){
- const {a,b,length}=particle.segment;
- /* La distance dépend du scroll absolu, donc l'inversion est naturelle. */
- const t=((distance/Math.max(110,length*2.5)+particle.phase)%1+1)%1;
- particle.circle.setAttribute('cx',(a.x+(b.x-a.x)*t).toFixed(1));
- particle.circle.setAttribute('cy',(a.y+(b.y-a.y)*t).toFixed(1));
- particle.circle.setAttribute('opacity',(Math.min(.75,activity)*.65).toFixed(3));
-}
-if(activity>.012)frame=requestAnimationFrame(draw);
-}
-function onScroll(){
- const current=window.scrollY,delta=current-lastScroll;lastScroll=current;
- if(Math.abs(delta)>.05){distance+=delta;activity=Math.min(1,activity+Math.abs(delta)/125)}
- if(!frame)frame=requestAnimationFrame(draw);
-}
-window.addEventListener('scroll',onScroll,{passive:true});
-window.addEventListener('resize',()=>{clearTimeout(resizeHandle);resizeHandle=setTimeout(build,200)},{passive:true});
-build();
+  'use strict';
+  const routes=Array.from(document.querySelectorAll('#network-routes path'));
+  const layer=document.getElementById('network-packets');
+  const scene=document.getElementById('network-scene');
+  const disabled=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(disabled||!routes.length||!layer||!scene)return;
+  const NS='http://www.w3.org/2000/svg';
+  const packets=[];
+  routes.forEach((route,i)=>{
+    if(i%3!==0)return;
+    const len=route.getTotalLength();
+    if(!len)return;
+    const circle=document.createElementNS(NS,'circle');
+    circle.setAttribute('class','network-packet');
+    circle.setAttribute('r',i%5===0?'3':'2.2');
+    layer.appendChild(circle);
+    packets.push({route,len,circle,phase:(i*.271)%1});
+  });
+  let previous=window.scrollY;
+  let energy=0;
+  let queued=false;
+  function render(){
+    queued=false;
+    energy*=.88;
+    const scroll=window.scrollY;
+    for(const p of packets){
+      /* La position dépend du scroll absolu : le mouvement s'inverse sans saut de sens. */
+      const phase=((scroll*.68/p.len+p.phase)%1+1)%1;
+      const point=p.route.getPointAtLength(phase*p.len);
+      p.circle.setAttribute('cx',point.x.toFixed(1));
+      p.circle.setAttribute('cy',point.y.toFixed(1));
+      const fade=Math.sin(Math.PI*phase);
+      p.circle.style.opacity=(energy*.9*fade).toFixed(3);
+    }
+    if(energy>.012)queue();
+  }
+  function queue(){if(!queued){queued=true;requestAnimationFrame(render)}}
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    const delta=y-previous;
+    previous=y;
+    if(Math.abs(delta)>.05)energy=Math.min(1,energy+Math.abs(delta)/85);
+    queue();
+  },{passive:true});
+  render();
 })();
 </script>
 </body>
