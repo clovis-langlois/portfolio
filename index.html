@@ -47,22 +47,19 @@ h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font
 @media(max-width:760px){.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid #edf0f4}.nav a[aria-current=page]:after{display:none}.hero{min-height:610px;padding:90px 0 100px}.hero-study{font-size:13px}.section{padding:75px 0 100px}.section-grid,.expertise .section-grid{grid-template-columns:1fr;gap:45px}.photo-placeholder{max-width:440px;width:100%;margin:auto;aspect-ratio:4/3.8}.expertise .tower-visual{max-width:420px}.expertise .copy{order:0}.expertise .illustration{order:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
 
-/* Réseau isométrique discret, prolongé derrière les sections de l'accueil */
-main{isolation:isolate}
-main>.hero-network{position:absolute;z-index:0;left:-6vw;right:auto;width:min(69vw,900px);height:720px;pointer-events:none;overflow:hidden;opacity:.6}
-main>.network-layer-1{top:0}
-main>.network-layer-2{top:680px;left:-2vw;right:auto;transform:scaleX(-1);opacity:.45}
-main>.network-layer-3{top:1360px;left:-7vw;right:auto;opacity:.5}
+/* Un seul réseau continu, centré sur toute la hauteur de l'accueil. */
+main{isolation:isolate;position:relative}
+main>.network-background{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.network-background svg{width:100%;height:100%;display:block}
+.network-background .network-edges{fill:none;stroke:#8ba2c0;stroke-width:1.15;opacity:.17}
+.network-background .network-nodes{opacity:.23}
+.network-background .cube-top{fill:#8da2bc}
+.network-background .cube-left{fill:#627893}
+.network-background .cube-right{fill:#40546f}
+.network-background .network-particles{fill:#bad9fa;filter:drop-shadow(0 0 3px #91b8e6)}
 main>.container{position:relative;z-index:1}
-.hero{position:relative}
-.hero-network svg{display:block;width:100%;height:100%}
-.hero-network .network-lines{opacity:.28}
-.hero-network .network-cubes{opacity:.36}
-.hero-network .cube-top{fill:#72849c}.hero-network .cube-left{fill:#4b5d76}.hero-network .cube-right{fill:#34465e}
-.hero-network .network-data{fill:#9cbada;opacity:.52;filter:drop-shadow(0 0 3px #89a9d2)}
-.hero-inner{position:relative;z-index:1}
-@media(max-width:760px){main>.hero-network{left:-38vw;right:auto;width:115vw;opacity:.38}main>.network-layer-2{left:-18vw;right:auto}main>.network-layer-3{left:-40vw;right:auto}}
-@media(prefers-reduced-motion:reduce){.hero-network .network-data{display:none}}
+@media(max-width:760px){.network-background .network-edges{opacity:.11}.network-background .network-nodes{opacity:.14}}
+@media(prefers-reduced-motion:reduce){.network-background .network-particles{display:none}}
 </style>
 </head>
 <body>
@@ -78,66 +75,13 @@ main>.container{position:relative;z-index:1}
 </div>
 </header>
 <main>
-<div class="hero-network network-layer-1" aria-hidden="true">
-<svg viewBox="0 0 650 690" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="network-edge-fade-1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#161a23" stop-opacity="1"/><stop offset=".35" stop-color="#161a23" stop-opacity=".12"/><stop offset="1" stop-color="#161a23" stop-opacity="0"/></linearGradient></defs>
-<g class="network-lines" fill="none" stroke="#7289a8" stroke-width="1.1">
-<path id="route-1-1" d="M100 -40 L210 160 L450 270 L610 15"/>
-<path id="route-1-2" d="M210 160 L275 490 L450 270 L565 655"/>
-<path id="route-1-3" d="M450 270 L670 225 M275 490 L490 600 L565 655"/>
-<path id="route-1-4" d="M70 395 L275 490 L150 710 M610 15 L670 225"/>
-<path id="route-1-5" d="M210 160 L365 -60 M450 270 L375 -50"/>
-</g>
-<g class="network-cubes">
-<g transform="translate(210 160)"><polygon points="0,-14 17,-5 0,5 -17,-5" class="cube-top"/><polygon points="-17,-5 0,5 0,24 -17,14" class="cube-left"/><polygon points="0,5 17,-5 17,14 0,24" class="cube-right"/></g>
-<g transform="translate(450 270)"><polygon points="0,-16 19,-6 0,5 -19,-6" class="cube-top"/><polygon points="-19,-6 0,5 0,27 -19,16" class="cube-left"/><polygon points="0,5 19,-6 19,16 0,27" class="cube-right"/></g>
-<g transform="translate(275 490)"><polygon points="0,-15 18,-5 0,5 -18,-5" class="cube-top"/><polygon points="-18,-5 0,5 0,25 -18,15" class="cube-left"/><polygon points="0,5 18,-5 18,15 0,25" class="cube-right"/></g>
-<g transform="translate(610 15)"><polygon points="0,-13 16,-4 0,5 -16,-4" class="cube-top"/><polygon points="-16,-4 0,5 0,23 -16,14" class="cube-left"/><polygon points="0,5 16,-4 16,14 0,23" class="cube-right"/></g>
-<g transform="translate(565 655)"><polygon points="0,-12 15,-4 0,4 -15,-4" class="cube-top"/><polygon points="-15,-4 0,4 0,21 -15,13" class="cube-left"/><polygon points="0,4 15,-4 15,13 0,21" class="cube-right"/></g>
-</g>
-<g class="network-data"><circle r="2.5"><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1"><mpath href="#route-1-1"/></animateMotion></circle><circle r="2.5"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#route-1-2"/></animateMotion></circle><circle r="2"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#route-1-4"/></animateMotion></circle></g>
-<rect x="0" y="0" width="650" height="690" fill="url(#network-edge-fade-1)"/>
-</svg></div>
-<div class="hero-network network-layer-2" aria-hidden="true">
-<svg viewBox="0 0 650 690" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="network-edge-fade-2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#161a23" stop-opacity="1"/><stop offset=".35" stop-color="#161a23" stop-opacity=".12"/><stop offset="1" stop-color="#161a23" stop-opacity="0"/></linearGradient></defs>
-<g class="network-lines" fill="none" stroke="#7289a8" stroke-width="1.1">
-<path id="route-2-1" d="M100 -40 L210 160 L450 270 L610 15"/>
-<path id="route-2-2" d="M210 160 L275 490 L450 270 L565 655"/>
-<path id="route-2-3" d="M450 270 L670 225 M275 490 L490 600 L565 655"/>
-<path id="route-2-4" d="M70 395 L275 490 L150 710 M610 15 L670 225"/>
-<path id="route-2-5" d="M210 160 L365 -60 M450 270 L375 -50"/>
-</g>
-<g class="network-cubes">
-<g transform="translate(210 160)"><polygon points="0,-14 17,-5 0,5 -17,-5" class="cube-top"/><polygon points="-17,-5 0,5 0,24 -17,14" class="cube-left"/><polygon points="0,5 17,-5 17,14 0,24" class="cube-right"/></g>
-<g transform="translate(450 270)"><polygon points="0,-16 19,-6 0,5 -19,-6" class="cube-top"/><polygon points="-19,-6 0,5 0,27 -19,16" class="cube-left"/><polygon points="0,5 19,-6 19,16 0,27" class="cube-right"/></g>
-<g transform="translate(275 490)"><polygon points="0,-15 18,-5 0,5 -18,-5" class="cube-top"/><polygon points="-18,-5 0,5 0,25 -18,15" class="cube-left"/><polygon points="0,5 18,-5 18,15 0,25" class="cube-right"/></g>
-<g transform="translate(610 15)"><polygon points="0,-13 16,-4 0,5 -16,-4" class="cube-top"/><polygon points="-16,-4 0,5 0,23 -16,14" class="cube-left"/><polygon points="0,5 16,-4 16,14 0,23" class="cube-right"/></g>
-<g transform="translate(565 655)"><polygon points="0,-12 15,-4 0,4 -15,-4" class="cube-top"/><polygon points="-15,-4 0,4 0,21 -15,13" class="cube-left"/><polygon points="0,4 15,-4 15,13 0,21" class="cube-right"/></g>
-</g>
-<g class="network-data"><circle r="2.5"><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1"><mpath href="#route-2-1"/></animateMotion></circle><circle r="2.5"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#route-2-2"/></animateMotion></circle><circle r="2"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#route-2-4"/></animateMotion></circle></g>
-<rect x="0" y="0" width="650" height="690" fill="url(#network-edge-fade-2)"/>
-</svg></div>
-<div class="hero-network network-layer-3" aria-hidden="true">
-<svg viewBox="0 0 650 690" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="network-edge-fade-3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#161a23" stop-opacity="1"/><stop offset=".35" stop-color="#161a23" stop-opacity=".12"/><stop offset="1" stop-color="#161a23" stop-opacity="0"/></linearGradient></defs>
-<g class="network-lines" fill="none" stroke="#7289a8" stroke-width="1.1">
-<path id="route-3-1" d="M100 -40 L210 160 L450 270 L610 15"/>
-<path id="route-3-2" d="M210 160 L275 490 L450 270 L565 655"/>
-<path id="route-3-3" d="M450 270 L670 225 M275 490 L490 600 L565 655"/>
-<path id="route-3-4" d="M70 395 L275 490 L150 710 M610 15 L670 225"/>
-<path id="route-3-5" d="M210 160 L365 -60 M450 270 L375 -50"/>
-</g>
-<g class="network-cubes">
-<g transform="translate(210 160)"><polygon points="0,-14 17,-5 0,5 -17,-5" class="cube-top"/><polygon points="-17,-5 0,5 0,24 -17,14" class="cube-left"/><polygon points="0,5 17,-5 17,14 0,24" class="cube-right"/></g>
-<g transform="translate(450 270)"><polygon points="0,-16 19,-6 0,5 -19,-6" class="cube-top"/><polygon points="-19,-6 0,5 0,27 -19,16" class="cube-left"/><polygon points="0,5 19,-6 19,16 0,27" class="cube-right"/></g>
-<g transform="translate(275 490)"><polygon points="0,-15 18,-5 0,5 -18,-5" class="cube-top"/><polygon points="-18,-5 0,5 0,25 -18,15" class="cube-left"/><polygon points="0,5 18,-5 18,15 0,25" class="cube-right"/></g>
-<g transform="translate(610 15)"><polygon points="0,-13 16,-4 0,5 -16,-4" class="cube-top"/><polygon points="-16,-4 0,5 0,23 -16,14" class="cube-left"/><polygon points="0,5 16,-4 16,14 0,23" class="cube-right"/></g>
-<g transform="translate(565 655)"><polygon points="0,-12 15,-4 0,4 -15,-4" class="cube-top"/><polygon points="-15,-4 0,4 0,21 -15,13" class="cube-left"/><polygon points="0,4 15,-4 15,13 0,21" class="cube-right"/></g>
-</g>
-<g class="network-data"><circle r="2.5"><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1"><mpath href="#route-3-1"/></animateMotion></circle><circle r="2.5"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#route-3-2"/></animateMotion></circle><circle r="2"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#route-3-4"/></animateMotion></circle></g>
-<rect x="0" y="0" width="650" height="690" fill="url(#network-edge-fade-3)"/>
-</svg></div>
+<div class="network-background" aria-hidden="true">
+<svg id="network-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+<g class="network-edges" id="network-edges"></g>
+<g class="network-nodes" id="network-nodes"></g>
+<g class="network-particles" id="network-particles"></g>
+</svg>
+</div>
 <section class="hero container" aria-labelledby="hero-title">
 
 <div class="hero-inner">
@@ -187,6 +131,92 @@ const menu=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.nav');
 menu.addEventListener('click',()=>{const opened=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!opened));nav.classList.toggle('open',!opened)});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');nav.classList.remove('open')}));
+</script>
+
+<script>
+/* Réseau construit en une seule fois : les segments partagent exactement les coordonnées des cubes. */
+(function(){
+'use strict';
+const svg=document.getElementById('network-visual');
+const edgeGroup=document.getElementById('network-edges');
+const cubeGroup=document.getElementById('network-nodes');
+const particleGroup=document.getElementById('network-particles');
+const main=document.querySelector('main');
+if(!svg||!edgeGroup||!cubeGroup||!particleGroup||!main)return;
+const NS='http://www.w3.org/2000/svg';
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let paths=[],particles=[],lastY=window.scrollY,motion=0,travel=0,direction=1,frame=0,resizeTimer;
+function element(tag,attributes,parent){
+ const item=document.createElementNS(NS,tag);
+ for(const key in attributes)item.setAttribute(key,attributes[key]);
+ parent.appendChild(item);
+ return item;
+}
+function cube(x,y,size){
+ const g=element('g',{},cubeGroup);
+ element('polygon',{class:'cube-top',points:`${x},${y-size} ${x+size},${y-size*.45} ${x},${y+size*.12} ${x-size},${y-size*.45}`},g);
+ element('polygon',{class:'cube-left',points:`${x-size},${y-size*.45} ${x},${y+size*.12} ${x},${y+size*1.35} ${x-size},${y+size*.78}`},g);
+ element('polygon',{class:'cube-right',points:`${x},${y+size*.12} ${x+size},${y-size*.45} ${x+size},${y+size*.78} ${x},${y+size*1.35}`},g);
+}
+function rebuild(){
+ const width=1000,height=Math.max(1000,main.offsetHeight);
+ svg.setAttribute('viewBox',`0 0 ${width} ${height}`);
+ edgeGroup.replaceChildren();cubeGroup.replaceChildren();particleGroup.replaceChildren();
+ paths=[];particles=[];
+ const rowStep=230,rows=Math.ceil(height/rowStep)+1;
+ const points=[];
+ for(let r=0;r<rows;r++){
+  const row=[];
+  for(let c=0;c<5;c++){
+   const x=170+c*165+(r%2)*45;
+   const y=r*rowStep+35+Math.sin(c*1.6+r*.7)*25;
+   row.push({x,y});
+  }
+  points.push(row);
+ }
+ function connect(a,b){
+  const path=element('path',{d:`M ${a.x} ${a.y} L ${b.x} ${b.y}`},edgeGroup);
+  paths.push({a,b,length:Math.hypot(b.x-a.x,b.y-a.y),path});
+ }
+ for(let r=0;r<rows;r++){
+  for(let c=0;c<5;c++){
+   const p=points[r][c];
+   if(c<4)connect(p,points[r][c+1]);
+   if(r<rows-1)connect(p,points[r+1][c]);
+   if(r<rows-1&&c<4&&(r+c)%2===0)connect(p,points[r+1][c+1]);
+   cube(p.x,p.y,11+(r*3+c*5)%5);
+  }
+ }
+ if(!reduced){
+  for(let i=0;i<38;i++){
+   const circle=element('circle',{r:i%5===0?2.5:1.8,opacity:0},particleGroup);
+   particles.push({circle,route:(i*19+7)%paths.length,offset:(i*.173)%1});
+  }
+ }
+}
+function render(){
+ frame=0;
+ motion*=.87;
+ for(const p of particles){
+  const edge=paths[p.route];
+  const phase=((travel*.0035+p.offset)%1+1)%1;
+  const t=direction>0?phase:1-phase;
+  const x=edge.a.x+(edge.b.x-edge.a.x)*t;
+  const y=edge.a.y+(edge.b.y-edge.a.y)*t;
+  p.circle.setAttribute('cx',x);
+  p.circle.setAttribute('cy',y);
+  p.circle.setAttribute('opacity',(Math.min(.85,motion)*.9).toFixed(3));
+ }
+ if(motion>.015)frame=requestAnimationFrame(render);
+}
+window.addEventListener('scroll',()=>{
+ const current=window.scrollY,delta=current-lastY;lastY=current;
+ if(Math.abs(delta)>.1){direction=delta>0?1:-1;travel+=Math.abs(delta);motion=Math.min(1,motion+Math.abs(delta)/115);}
+ if(!frame)frame=requestAnimationFrame(render);
+},{passive:true});
+window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{rebuild();render()},180)},{passive:true});
+rebuild();
+})();
 </script>
 </body>
 </html>
