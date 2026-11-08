@@ -10,12 +10,12 @@
 </style><style>
 /* Accueil v2 — fond réseau isométrique continu */
 body{background:#161a23}.site-main.home-rework{position:relative;background:#161a23;color:#f7f9fc;isolation:isolate;overflow:hidden}
-.network-canvas{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.network-canvas{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .network-canvas svg{width:100%;height:100%;display:block}
-.network-canvas .network-geometry{opacity:.16}
+.network-canvas .network-geometry{opacity:.28}
 .network-canvas .network-lines{stroke:#8fa9c9;stroke-width:1;fill:none}
 .network-canvas .network-top{fill:#c5d3e5}.network-canvas .network-left{fill:#7891ae}.network-canvas .network-right{fill:#536b86}
-.network-canvas .data-packet{fill:#a9d6ff;opacity:0;filter:drop-shadow(0 0 3px #8dbde8)}
+.network-canvas .data-packet{fill:#a9d6ff;filter:drop-shadow(0 0 3px #8dbde8)}
 .network-canvas .network-fade{fill:url(#network-fade)}
 .home-content{position:relative;z-index:1;max-width:1150px;margin:auto;padding:0 36px}
 .home-hero{min-height:750px;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding-top:115px}
@@ -33,7 +33,7 @@ body{background:#161a23}.site-main.home-rework{position:relative;background:#161
 .section-copy p:not(.section-index){font-size:18px;line-height:1.8;color:#c4ccd7;margin:0 0 22px}
 .section-link{display:inline-flex;gap:9px;color:#e2eaf5;text-decoration:none;border-bottom:1px solid #6c7e96;padding-bottom:8px;margin-top:12px}
 .home-end{min-height:250px;padding:50px 36px 100px;text-align:center;color:#b3bfd0;font-size:14px}
-@media(max-width:750px){.home-content{padding:0 24px}.home-hero{min-height:690px;padding-top:105px}.home-section{min-height:560px;padding:80px 0 100px}.section-copy p:not(.section-index){font-size:16px}.home-end{padding:40px 24px 90px}.network-canvas .network-geometry{opacity:.12}}
+@media(max-width:750px){.home-content{padding:0 24px}.home-hero{min-height:690px;padding-top:105px}.home-section{min-height:560px;padding:80px 0 100px}.section-copy p:not(.section-index){font-size:16px}.home-end{padding:40px 24px 90px}.network-canvas .network-geometry{opacity:.19}}
 @media(prefers-reduced-motion:reduce){.network-canvas .data-packet{display:none}.home-cta{transition:none}}
 </style></head><body><header class="site-header"><div class="header-inner"><button type="button" class="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" aria-label="Navigation principale"><a data-internal href="index.html" class="active" aria-current="page">Accueil</a><a data-internal href="situations-professionnelles-portfolio.html">Situations professionnelles</a><a data-internal href="projet-portfolio.html">Projet</a><a data-internal href="contact-portfolio.html">Contact</a></nav></div></header><main class="site-main scene home-rework" id="accueil">
 <div class="network-canvas" aria-hidden="true"><svg id="network-svg" preserveAspectRatio="xMidYMid slice" role="presentation"><defs><linearGradient id="network-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#161a23" stop-opacity=".45"/><stop offset=".35" stop-color="#161a23" stop-opacity=".05"/><stop offset="1" stop-color="#161a23" stop-opacity=".35"/></linearGradient></defs><g class="network-geometry" id="network-geometry"><g class="network-lines" id="network-lines"></g><g id="network-cubes"></g></g><g id="network-packets"></g><rect class="network-fade" width="100%" height="100%"/></svg></div>
@@ -86,7 +86,7 @@ for(let i=0;i<Math.min(22,segments.length);i++){const dot=node('circle',{r:i%4==
 }
 function tick(){raf=0;const scroll=window.scrollY,delta=scroll-lastScroll;lastScroll=scroll;if(Math.abs(delta)>.1){direction=Math.sign(delta);energy=Math.min(1,energy+Math.abs(delta)/140)}else energy*=.89;
 const main=document.querySelector('.home-rework'),rect=main.getBoundingClientRect(),top=-rect.top,viewH=window.innerHeight;
-for(const {dot,index,offset} of packetNodes){const seg=segments[index];const visible=seg.a.y>top-140&&seg.a.y<top+viewH+140;if(!visible||energy<.025||reduced){dot.setAttribute('opacity','0');continue}const t=((scroll*.003*direction+offset)%1+1)%1;const x=seg.a.x+(seg.b.x-seg.a.x)*t,y=seg.a.y+(seg.b.y-seg.a.y)*t;dot.setAttribute('cx',x);dot.setAttribute('cy',y);dot.setAttribute('opacity',(energy*.85).toFixed(3))}
+for(const {dot,index,offset} of packetNodes){const seg=segments[index];const visible=seg.a.y>top-140&&seg.a.y<top+viewH+140;if(!visible||energy<.025||reduced){dot.style.opacity='0';continue}const t=((scroll*.003*direction+offset)%1+1)%1;const x=seg.a.x+(seg.b.x-seg.a.x)*t,y=seg.a.y+(seg.b.y-seg.a.y)*t;dot.setAttribute('cx',x);dot.setAttribute('cy',y);dot.style.opacity=(energy*.85).toFixed(3)}
 if(energy>.025)raf=requestAnimationFrame(tick)}
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{build();tick()},180)},{passive:true});
 window.addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(tick)},{passive:true});
