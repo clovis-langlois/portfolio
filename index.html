@@ -81,7 +81,7 @@ const size=8+((r*7+c*11)%6),x=p.x,y=p.y;
 node('polygon',{points:[x+','+(y-size), (x+size)+','+(y-size*.45),x+','+y,(x-size)+','+(y-size*.45)].join(' '),class:'network-top'},cubes);
 node('polygon',{points:[(x-size)+','+(y-size*.45),x+','+y,x+','+(y+size),(x-size)+','+(y+size*.45)].join(' '),class:'network-left'},cubes);
 node('polygon',{points:[x+','+y,(x+size)+','+(y-size*.45),(x+size)+','+(y+size*.45),x+','+(y+size)].join(' '),class:'network-right'},cubes);
-}}
+}
 for(let i=0;i<Math.min(22,segments.length);i++){const dot=node('circle',{r:i%4===0?2.2:1.6,class:'data-packet'},packets);packetNodes.push({dot,index:(i*17+13)%segments.length,offset:(i*.137)%1})}
 }
 function tick(){raf=0;const scroll=window.scrollY,delta=scroll-lastScroll;lastScroll=scroll;if(Math.abs(delta)>.1){direction=Math.sign(delta);energy=Math.min(1,energy+Math.abs(delta)/140)}else energy*=.89;
