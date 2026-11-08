@@ -1,1 +1,241 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Situations professionnelles | Clovis Langlois</title><style>*{box-sizing:border-box}body{margin:0;background:#161a23;color:#fff;font-family:Arial,sans-serif}header{background:#fff;padding:25px;text-align:center}nav{display:flex;justify-content:center;gap:25px;flex-wrap:wrap}nav a{color:#161a23;text-decoration:none}main{min-height:75vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px}h1{font-size:clamp(32px,5vw,55px)}p{color:#b6c0ce;line-height:1.7}main a{color:#c3d7f4}</style></head><body><header><nav aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="situations-professionnelles-portfolio.html">Situations professionnelles</a><a href="projet-portfolio.html">Projet</a><a href="contact-portfolio.html">Contact</a></nav></header><main><h1>Situations professionnelles</h1><p>Cette page sera construite prochainement.</p><a href="index.html">Retour à l'accueil</a></main></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Présentation de Deletec et du parcours professionnel de Clovis Langlois, technicien systèmes et réseaux en alternance.">
+<title>Situations professionnelles | Clovis Langlois</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#161a23;--fg:#f5f7fb;--muted:#b6c0ce;--line:#364253;--accent:#a5bdd9;--nav:#fff;--nav-text:#151c28}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #89baff;outline-offset:5px}
+.site-header{background:var(--nav);color:var(--nav-text);height:84px;position:relative;z-index:20;border-bottom:1px solid #edf0f4}
+.header-inner{max-width:1200px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:center}
+.nav{display:flex;align-items:center;gap:34px}.nav a{font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;position:relative}
+.nav a:hover{color:#52627d}.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#293146}
+.menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
+main{position:relative;overflow:hidden;background:linear-gradient(180deg,#171b23,#181e27 55%,#171b23)}
+.container{width:min(1160px,calc(100% - 48px));margin:auto}
+.hero{min-height:650px;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 0 128px}
+.hero-inner{max-width:860px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-weight:600;margin:0 0 30px}
+h1{font-size:clamp(46px,6.1vw,76px);line-height:1.15;letter-spacing:-.045em;font-weight:600;margin:0 0 24px}
+.hero-role{font-size:clamp(18px,2.1vw,22px);font-weight:500;margin:0 0 13px}
+.hero-study{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 37px}
+.button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:#303b52;color:#fff;border:1px solid #47546a;border-radius:999px;padding:16px 29px;font-size:14px;font-weight:600;transition:background .2s,transform .2s}
+.button:hover{background:#43516d;transform:translateY(-2px)}
+.social{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:30px}
+.social a{display:inline-flex;align-items:center;gap:9px;color:#c9d4e3;font-size:13px;text-decoration:none}
+.social a:hover{color:#fff}.social svg{width:17px;height:17px;fill:currentColor}
+.section{padding:105px 0 130px}.section-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:clamp(50px,8vw,130px)}
+.section-label{font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;text-transform:uppercase;margin:0 0 24px}
+h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font-weight:600;margin:0 0 28px}
+.copy p:not(.section-label){font-size:16px;line-height:1.95;color:#c0cad7;margin:0 0 21px}
+.photo-placeholder{aspect-ratio:4/4.35;border-radius:16px;border:1px solid #3a4759;background:linear-gradient(145deg,#273244,#1c2533 68%,#202b3b);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.photo-placeholder:before{content:"";position:absolute;inset:20px;border:1px solid rgba(190,209,234,.13);border-radius:10px}
+.photo-placeholder-inner{text-align:center;padding:28px;position:relative}.photo-placeholder .monogram{font-size:clamp(70px,11vw,130px);font-weight:500;letter-spacing:-.11em;color:#9caec7;opacity:.5;line-height:1}
+.photo-placeholder span{display:block;color:#aebbd0;font-size:12px;letter-spacing:.05em;margin-top:18px}
+.expertise{padding-top:85px;padding-bottom:155px}.expertise .section-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.tower-visual{width:100%;max-width:510px;margin:auto;display:block;filter:drop-shadow(0 20px 45px rgba(0,0,0,.13))}
+/* Pied de page minimaliste — même anthracite que l'accueil, sans motif réseau */
+.footer{position:relative;background:linear-gradient(180deg,#171b23,#181e27);color:#f5f7fb;border-top:1px solid rgba(174,191,213,.11)}
+.footer-inner{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:48px 0 24px}
+.footer-main{display:flex;align-items:center;justify-content:space-between;gap:35px;padding-bottom:40px}
+.footer-contact h2{font-size:clamp(22px,2.4vw,29px);font-weight:600;letter-spacing:-.035em;line-height:1.25;margin:0 0 10px}
+.footer-email{font-size:14px;color:#aeb9c9;text-decoration:none;overflow-wrap:anywhere}
+.footer-email:hover{color:#fff}
+.footer-actions{display:flex;align-items:center;gap:12px}
+.footer-icon-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:#b8c6d7;text-decoration:none;border:1px solid rgba(160,178,204,.18);border-radius:50%;transition:color .2s,border-color .2s,background .2s,transform .2s}
+.footer-icon-link:hover{color:#fff;border-color:rgba(177,199,226,.5);background:rgba(149,177,212,.09);transform:translateY(-2px)}
+.footer-icon-link svg{height:19px;width:19px;display:block}
+.footer-bottom{border-top:1px solid rgba(174,191,213,.13);padding-top:22px;font-size:12px;color:#929eaf}
+@media(max-width:760px){.footer-inner{padding:42px 0 25px}.footer-main{align-items:flex-start;flex-direction:column;gap:26px;padding-bottom:30px}.footer-actions{gap:10px}.footer-bottom{line-height:1.6}}
+@media(prefers-reduced-motion:reduce){.footer-icon-link{transition:none}}
+@media(max-width:760px){.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid #edf0f4}.nav a[aria-current=page]:after{display:none}.hero{min-height:610px;padding:90px 0 100px}.hero-study{font-size:13px}.section{padding:75px 0 100px}.section-grid,.expertise .section-grid{grid-template-columns:1fr;gap:45px}.photo-placeholder{max-width:440px;width:100%;margin:auto;aspect-ratio:4/3.8}.expertise .tower-visual{max-width:420px}.expertise .copy{order:0}.expertise .illustration{order:1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+
+/* Direction graphique issue du prototype : réseau asymétrique à droite et dégradé fondu */
+main{isolation:isolate}
+main>.network-background{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.network-background svg{width:100%;height:100%;display:block}
+.network-scene{opacity:.22;filter:drop-shadow(0 0 14px rgba(97,138,190,.08))}
+.network-edge{fill:none;stroke:#89a4c8;stroke-width:1;opacity:.52;vector-effect:non-scaling-stroke}
+.network-node{opacity:.72}
+.network-node .cube-top{fill:#b0bed0}
+.network-node .cube-left{fill:#7289a5}
+.network-node .cube-right{fill:#506b8a}
+.network-packet{fill:#b9d7ff;opacity:0;filter:drop-shadow(0 0 4px #a5c9fa)}
+.network-fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.88) 27%,rgba(23,27,35,.12) 72%,rgba(23,27,35,.28) 100%),linear-gradient(180deg,#171b23 0%,transparent 12%,transparent 88%,#171b23 100%)}
+main>.container{position:relative;z-index:1}
+.hero{justify-content:center;text-align:center}
+.hero-inner{max-width:860px}
+.social{justify-content:center}
+#a-propos .copy{order:1}
+#a-propos .portrait-frame{order:2}
+@media(max-width:760px){
+  .network-scene{opacity:.18}
+  .network-fade{background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.78) 60%,rgba(23,27,35,.4) 100%)}
+  .hero{justify-content:center;text-align:center}
+  .hero-inner{max-width:100%}
+  .social{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){.network-packet{display:none}}
+/* Photographie carrée arrondie et visuel immobilier corporate */
+.portrait-frame{margin:0;width:100%;max-width:480px;aspect-ratio:1;overflow:hidden;border-radius:18px;background:#273244;border:1px solid rgba(179,196,217,.18);box-shadow:0 18px 55px rgba(0,0,0,.16)}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block}
+.office-photo{display:block;width:100%;max-width:480px;height:500px;object-fit:cover;object-position:center 50%;border-radius:18px;border:1px solid rgba(179,196,217,.16);box-shadow:0 18px 55px rgba(0,0,0,.16);margin:0}
+@media(max-width:760px){.portrait-frame{max-width:440px;margin:auto}.office-photo{max-width:400px;height:430px;margin:auto}}
+/* Halo bleu-gris diffus répété derrière les trois blocs, sans créer de séparation */
+.hero::before,#a-propos::before,#expertise::before{
+  content:"";
+  position:absolute;
+  inset:-12% -45vw;
+  pointer-events:none;
+  z-index:0;
+  background:radial-gradient(ellipse 45% 46% at 52% 50%,
+    rgba(50,69,95,.29) 0%,
+    rgba(38,53,74,.18) 37%,
+    rgba(28,39,55,.06) 61%,
+    transparent 77%);
+}
+.hero>.hero-inner,.section>.section-grid{position:relative;z-index:1}
+#a-propos,#expertise{position:relative}
+@media(max-width:760px){
+  .hero::before,#a-propos::before,#expertise::before{
+    inset:-8% -25vw;
+    background:radial-gradient(ellipse 60% 47% at 50% 50%,
+      rgba(50,69,95,.22) 0%,rgba(38,53,74,.12) 40%,transparent 78%);
+  }
+}
+
+/* Apparition progressive proche de l'ancien portfolio : fondu et légère remontée.
+   Activé uniquement avec JS afin de ne jamais masquer le contenu si le script échoue. */
+html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
+
+
+/* Présentation Deletec : même fond que l'accueil, accents de la marque. */
+main{min-height:75vh;background:linear-gradient(180deg,#171b23 0%,#1a2230 53%,#171b23 100%);overflow:hidden}
+.deletec-intro{position:relative;isolation:isolate;padding:clamp(80px,9vw,135px) 0 115px;min-height:750px;display:flex;align-items:center}
+.deletec-intro::before{content:"";position:absolute;inset:-15% -20%;background:radial-gradient(ellipse 49% 43% at 50% 44%,rgba(49,72,104,.31),transparent 78%);z-index:-1;pointer-events:none}
+.deletec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:clamp(55px,7vw,115px);align-items:center;position:relative;z-index:2}
+.deletec-copy{max-width:530px}
+.deletec-kicker{color:#9cb7d7;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0 0 26px}
+.deletec-copy h1{font-size:clamp(38px,4.5vw,58px);letter-spacing:-.047em;line-height:1.13;font-weight:600;margin:0 0 24px}
+.deletec-copy p{color:#c0cad7;font-size:16px;line-height:1.85;margin:0 0 22px}
+.deletec-metric{margin-top:38px;display:flex;align-items:flex-start;gap:14px}
+.deletec-metric strong{font-size:48px;color:#4d9afa;line-height:1;font-weight:600;letter-spacing:-.05em}
+.deletec-metric span{font-size:13px;line-height:1.6;color:#b5c4d7;max-width:155px}
+.deletec-visual{position:relative;aspect-ratio:1.15;display:flex;align-items:center;justify-content:center}
+.deletec-logo-card{position:relative;width:100%;aspect-ratio:1.18;background:#0844aa;border-radius:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 28px 75px rgba(0,0,0,.18);overflow:hidden}
+.deletec-wordmark{font-family:Montserrat,Arial,sans-serif;font-weight:700;letter-spacing:-.075em;font-size:clamp(54px,7vw,96px);color:white;line-height:1}
+.deletec-wordmark::before{content:"";display:inline-block;width:.13em;height:.13em;background:white;border-radius:50%;vertical-align:middle;margin-right:.04em}
+.deletec-logo-note{position:absolute;bottom:20px;right:23px;color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.08em}
+.deletec-square{position:absolute;display:block;width:72px;height:72px;pointer-events:none;z-index:3;transform:rotate(var(--square-rotation, -15deg));will-change:transform}
+.deletec-square.blue{background:#1c64b4;top:8%;left:3%}
+.deletec-square.yellow{background:#ffca22;bottom:3%;right:-3%;width:83px;height:83px}
+.deletec-square.cyan{background:#5bb9e7;top:9%;right:-4%;width:55px;height:55px}
+.deletec-next{position:relative;min-height:270px;padding:65px 0 85px;border-top:1px solid rgba(171,193,219,.1)}
+.deletec-next h2{font-size:clamp(28px,3vw,39px);margin:0 0 16px}
+.deletec-next p{font-size:15px;color:#b7c4d3;line-height:1.85;max-width:720px;margin:0}
+.deletec-next .hint{color:#8ca5c5;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+html.reveal-ready [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
+html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
+@media(max-width:800px){.deletec-intro{padding:80px 0 100px;min-height:auto}.deletec-grid{grid-template-columns:1fr;gap:55px}.deletec-visual{max-width:560px;width:88%;margin:auto}.deletec-square.blue{left:-3%}.deletec-square.yellow{right:-5%}}
+@media(max-width:480px){.deletec-copy h1{font-size:37px}.deletec-copy p{font-size:14px}.deletec-square{width:48px;height:48px}.deletec-square.yellow{width:55px;height:55px}.deletec-square.cyan{width:39px;height:39px}.deletec-wordmark{font-size:clamp(46px,11vw,75px)}}
+@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1;transform:none;transition:none}.deletec-square{will-change:auto}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+<nav class="nav" id="main-nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a>
+<a href="situations-professionnelles-portfolio.html" aria-current="page">Situations professionnelles</a>
+<a href="projet-portfolio.html">Projet</a>
+<a href="contact-portfolio.html">Contact</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="deletec-intro" aria-labelledby="deletec-title">
+<div class="container deletec-grid">
+<div class="deletec-copy" data-reveal>
+<p class="deletec-kicker">Mon entreprise d'alternance</p>
+<h1 id="deletec-title">Deletec, une entreprise à taille humaine.</h1>
+<p>Deletec est une entreprise spécialisée dans l’infogérance et l’accompagnement informatique des entreprises. Elle intervient sur la gestion, l’administration et la sécurisation des infrastructures informatiques de ses clients.</p>
+<div class="deletec-metric"><strong>25+</strong><span>Années d’expertise en informatique</span></div>
+</div>
+<div class="deletec-visual" data-reveal>
+<div class="deletec-logo-card" aria-label="Deletec"><span class="deletec-wordmark">Deletec</span></div>
+<span class="deletec-square blue" data-square data-speed="0.18" aria-hidden="true"></span>
+<span class="deletec-square yellow" data-square data-speed="0.26" aria-hidden="true"></span>
+<span class="deletec-square cyan" data-square data-speed="0.14" aria-hidden="true"></span>
+</div>
+</div>
+</section>
+<section class="deletec-next" aria-labelledby="deletec-services-title">
+<div class="container" data-reveal>
+<p class="hint">À suivre</p>
+<h2 id="deletec-services-title">Les expertises de Deletec</h2>
+<p>Nous intégrerons ici les plaquettes officielles de l'entreprise, puis nous présenterons mes missions chez Deletec et mes expériences précédentes.</p>
+</div>
+</section>
+</main>
+<footer class="footer" aria-label="Pied de page">
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-contact">
+        <h2>Restons en contact.</h2>
+        <a class="footer-email" href="mailto:clovislanglois1@gmail.com">clovislanglois1@gmail.com</a>
+      </div>
+      <div class="footer-actions" aria-label="Mes liens">
+        <a class="footer-icon-link" href="https://www.linkedin.com/in/clovis-langlois" target="_blank" rel="noopener noreferrer" aria-label="Consulter mon profil LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2ZM8 19H5V9h3Zm-1.5-11.4a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.1c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.7 1.4 3.7 4.4V19Z"/></svg>
+        </a>
+        <a class="footer-icon-link" href="mailto:clovislanglois1@gmail.com" aria-label="M'envoyer un e-mail" title="E-mail">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 21 19H3a1.5 1.5 0 0 1-1.5-1.5v-11A1.5 1.5 0 0 1 3 5Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m2 7 10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="footer-icon-link footer-contact-link" href="contact-portfolio.html" aria-label="Accéder à la page Contact" title="Contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clovis Langlois · Tous droits réservés</span>
+    </div>
+  </div>
+</footer>
+<script>
+const menu=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.nav');
+menu.addEventListener('click',()=>{const opened=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!opened));nav.classList.toggle('open',!opened)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');nav.classList.remove('open')}));
+(function(){
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(!reduced&&'IntersectionObserver' in window){
+  document.documentElement.classList.add('reveal-ready');
+  const observer=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}},{threshold:.08});
+  document.querySelectorAll('[data-reveal]').forEach(el=>observer.observe(el));
+ }
+ const squares=Array.from(document.querySelectorAll('[data-square]'));
+ if(reduced||!squares.length)return;
+ let scheduled=false;
+ function update(){
+  scheduled=false;
+  const y=window.scrollY;
+  squares.forEach((el,i)=>{const angle=-15-y*Number(el.dataset.speed);el.style.setProperty('--square-rotation',angle+'deg')});
+ }
+ window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update)}},{passive:true});
+ update();
+})();
+</script>
+</body>
+</html>
