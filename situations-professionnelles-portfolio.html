@@ -121,6 +121,14 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0
 
 
 /* Présentation Deletec : même fond que l'accueil, accents de la marque. */
+.deletec-stats{display:flex;align-items:center;gap:clamp(28px,4vw,64px);margin-top:38px;flex-wrap:wrap}
+.deletec-stats .deletec-metric{margin-top:0}
+.deletec-ranking{display:flex;flex-direction:column;gap:4px;min-width:170px}
+.deletec-ranking-value{display:flex;align-items:baseline;gap:8px;white-space:nowrap;color:#62b9e8;font-size:clamp(33px,3.4vw,46px);line-height:1.1;font-weight:600;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.deletec-ranking-prefix{font-size:.55em;letter-spacing:-.02em;color:#b2c9e4}
+.deletec-ranking-label{font-size:13px;color:#b5c4d7;line-height:1.6}
+@media(max-width:480px){.deletec-stats{gap:26px}.deletec-ranking{min-width:135px}.deletec-ranking-value{font-size:34px}}
+
 main{min-height:75vh;background:linear-gradient(180deg,#171b23 0%,#1a2230 53%,#171b23 100%);overflow:hidden}
 .deletec-intro{position:relative;isolation:isolate;padding:clamp(80px,9vw,135px) 0 115px;min-height:750px;display:flex;align-items:center}
 .deletec-intro::before{content:"";position:absolute;inset:-15% -20%;background:radial-gradient(ellipse 49% 43% at 50% 44%,rgba(49,72,104,.31),transparent 78%);z-index:-1;pointer-events:none}
@@ -171,7 +179,13 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 
 <h1 id="deletec-title">Deletec, une entreprise à taille humaine.</h1>
 <p>Deletec est une entreprise spécialisée dans l’infogérance et l’accompagnement informatique des entreprises. Elle intervient sur la gestion, l’administration et la sécurisation des infrastructures informatiques de ses clients.</p>
-<div class="deletec-metric"><strong>25+</strong><span>Années d’expertise en informatique</span></div>
+<div class="deletec-stats" aria-label="Chiffres clés de Deletec">
+  <div class="deletec-metric"><strong>25+</strong><span>Années d’expertise en informatique</span></div>
+  <div class="deletec-ranking">
+    <div class="deletec-ranking-value"><span class="deletec-ranking-prefix">Top</span> <span data-ranking-count aria-label="100">100</span></div>
+    <span class="deletec-ranking-label">des ESN françaises</span>
+  </div>
+</div>
 </div>
 <div class="deletec-visual" data-reveal>
 <div class="deletec-logo-card" aria-label="Deletec"><img class="deletec-official-logo" src="assets/deletec-logo-fidele.svg" alt="Logo officiel Deletec"></div>
@@ -224,6 +238,26 @@ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAtt
   document.documentElement.classList.add('reveal-ready');
   const observer=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}},{threshold:.08});
   document.querySelectorAll('[data-reveal]').forEach(el=>observer.observe(el));
+ }
+ const rank=document.querySelector('[data-ranking-count]');
+ if(rank){
+  const finish=()=>{rank.textContent='100';rank.setAttribute('aria-label','100')};
+  if(reduced||!('IntersectionObserver' in window)){finish()}
+  else {
+   const rankObserver=new IntersectionObserver(entries=>{
+    if(!entries.some(e=>e.isIntersecting))return;
+    rankObserver.disconnect();
+    const start=performance.now(),duration=5000;
+    const animate=now=>{
+     const progress=Math.min(1,(now-start)/duration);
+     const eased=1-Math.pow(1-progress,3);
+     rank.textContent=String(Math.round(1000-900*eased));
+     if(progress<1)requestAnimationFrame(animate);else finish();
+    };
+    requestAnimationFrame(animate);
+   },{threshold:.35});
+   rankObserver.observe(rank);
+  }
  }
  const squares=Array.from(document.querySelectorAll('[data-square]'));
  if(reduced||!squares.length)return;
