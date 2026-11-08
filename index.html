@@ -60,19 +60,24 @@ main>.network-background{position:absolute;inset:0;z-index:0;pointer-events:none
 .network-packet{fill:#b9d7ff;opacity:0;filter:drop-shadow(0 0 4px #a5c9fa)}
 .network-fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.88) 27%,rgba(23,27,35,.12) 72%,rgba(23,27,35,.28) 100%),linear-gradient(180deg,#171b23 0%,transparent 12%,transparent 88%,#171b23 100%)}
 main>.container{position:relative;z-index:1}
-.hero{justify-content:flex-start;text-align:left}
-.hero-inner{max-width:650px}
-.social{justify-content:flex-start}
+.hero{justify-content:center;text-align:center}
+.hero-inner{max-width:860px}
+.social{justify-content:center}
 #a-propos .copy{order:1}
-#a-propos .photo-placeholder{order:2}
+#a-propos .portrait-frame{order:2}
 @media(max-width:760px){
   .network-scene{opacity:.18}
   .network-fade{background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.78) 60%,rgba(23,27,35,.4) 100%)}
-  .hero{justify-content:flex-start;text-align:left}
+  .hero{justify-content:center;text-align:center}
   .hero-inner{max-width:100%}
-  .social{justify-content:flex-start}
+  .social{justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){.network-packet{display:none}}
+/* Photographie carrée arrondie et visuel immobilier corporate */
+.portrait-frame{margin:0;width:100%;max-width:480px;aspect-ratio:1;overflow:hidden;border-radius:18px;background:#273244;border:1px solid rgba(179,196,217,.18);box-shadow:0 18px 55px rgba(0,0,0,.16)}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block}
+.office-photo{display:block;width:100%;max-width:510px;aspect-ratio:4/4.8;object-fit:cover;object-position:center center;border-radius:18px;border:1px solid rgba(179,196,217,.16);box-shadow:0 18px 55px rgba(0,0,0,.16)}
+@media(max-width:760px){.portrait-frame{max-width:440px;margin:auto}.office-photo{max-width:440px;margin:auto}}
 </style>
 </head>
 <body>
@@ -167,7 +172,7 @@ main>.container{position:relative;z-index:1}
 
 <div class="hero-inner">
 <p class="eyebrow">Portfolio professionnel</p>
-<h1 id="hero-title">Clovis<br>Langlois</h1>
+<h1 id="hero-title">Clovis Langlois</h1>
 <p class="hero-role">Technicien systèmes &amp; réseaux</p>
 <p class="hero-study">Étudiant en 3ᵉ année de Bachelor Administrateur Systèmes &amp; Réseaux</p>
 <a class="button" href="projet-portfolio.html">Découvrir mes projets</a>
@@ -179,7 +184,7 @@ main>.container{position:relative;z-index:1}
 </section>
 <section class="section container" id="a-propos" aria-labelledby="about-title">
 <div class="section-grid">
-<div class="photo-placeholder" role="img" aria-label="Emplacement réservé à une future photographie professionnelle de Clovis Langlois"><div class="photo-placeholder-inner"><div class="monogram" aria-hidden="true">CL</div><span>Photographie à intégrer</span></div></div>
+<figure class="portrait-frame"><img src="https://assets.zyrosite.com/kDsAjPW6LAjAZlYh/deletec-202504-2923-ZvEQvhTtDzEPhjqb.jpg" alt="Portrait professionnel de Clovis Langlois" width="1200" height="1200" loading="lazy" decoding="async"></figure>
 <div class="copy">
 <h2 id="about-title">À propos</h2>
 <p>Actuellement étudiant en troisième année de Bachelor Administrateur Systèmes &amp; Réseaux et technicien systèmes et réseaux en alternance chez Deletec, je développe des compétences en administration systèmes, virtualisation, réseaux et cybersécurité.</p>
@@ -194,14 +199,7 @@ main>.container{position:relative;z-index:1}
 <p>Fort de mes expériences professionnelles réalisées au sein de grandes structures ainsi que de mes projets techniques, j’ai acquis des compétences solides en administration systèmes et réseaux, virtualisation et supervision d’infrastructures informatiques.</p>
 <p>Ces contextes m’ont permis d’intervenir sur des environnements variés et critiques, de comprendre le fonctionnement réel des systèmes d’information en entreprise et d’appliquer les bonnes pratiques en matière de sécurité, de disponibilité et de performance.</p>
 </div>
-<div class="illustration">
-<svg class="tower-visual" viewBox="0 0 520 470" role="img" aria-label="Illustration isométrique de trois tours de serveurs interconnectées">
-<defs><linearGradient id="front" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#465b75"/><stop offset="1" stop-color="#25374e"/></linearGradient><linearGradient id="side" x1="0" x2="1"><stop stop-color="#233247"/><stop offset="1" stop-color="#1b2738"/></linearGradient></defs>
-<g fill="none" stroke="#6f89a9" stroke-width="1.5" opacity=".5"><path d="M85 330 245 420 438 310 276 220Z"/><path d="M85 330 85 352 245 443 245 420M245 443 438 332 438 310"/><path d="M175 350 365 245M175 245 365 350"/></g>
-<g transform="translate(84 110)"><path d="M0 46 64 12 128 47 64 84Z" fill="#738aa7"/><path d="M0 46 64 84 64 278 0 241Z" fill="url(#front)"/><path d="M64 84 128 47 128 242 64 278Z" fill="url(#side)"/><path d="M13 84 52 106M13 114 52 136M13 144 52 166M13 174 52 196M13 204 52 226" stroke="#9db5d1" stroke-width="4" opacity=".65"/><g fill="#9fbedf"><circle cx="108" cy="91" r="3"/><circle cx="108" cy="119" r="3"/><circle cx="108" cy="147" r="3"/><circle cx="108" cy="175" r="3"/></g></g>
-<g transform="translate(250 50)"><path d="M0 48 63 13 126 48 63 84Z" fill="#8399b4"/><path d="M0 48 63 84 63 323 0 287Z" fill="url(#front)"/><path d="M63 84 126 48 126 287 63 323Z" fill="url(#side)"/><path d="M13 92 51 113M13 126 51 147M13 160 51 181M13 194 51 215M13 228 51 249M13 262 51 283" stroke="#a6c1dd" stroke-width="4" opacity=".7"/><g fill="#a6c8e9"><circle cx="107" cy="95" r="3"/><circle cx="107" cy="130" r="3"/><circle cx="107" cy="165" r="3"/><circle cx="107" cy="200" r="3"/><circle cx="107" cy="235" r="3"/></g></g>
-<g fill="#91b6dc" opacity=".75"><circle cx="245" cy="420" r="4"/><circle cx="438" cy="310" r="4"/><circle cx="85" cy="330" r="4"/></g>
-</svg>
+<div class="illustration"><img class="office-photo" src="https://assets.zyrosite.com/kDsAjPW6LAjAZlYh/donny-jiang-42gfagdiuc8-unsplash-ri7qaOp61FpdSCi3.jpg" alt="Immeubles de bureaux modernes photographiés en contre-plongée" width="1024" height="1271" loading="lazy" decoding="async"></div>
 </div>
 </div>
 </section>
