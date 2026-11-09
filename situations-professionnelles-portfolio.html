@@ -280,6 +280,37 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 @keyframes infra-red-blink{0%,24%,49%,100%{opacity:.13}25%,48%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.infra-led-green,.infra-led-red{animation:none;opacity:1}}
 
+
+/* Gestion de projets : trois mini-vues animées, cohérentes avec les autres missions. */
+.project-checkline{stroke-dasharray:100;stroke-dashoffset:100}
+.project-checkline-1{animation:project-line-one 8s linear infinite}
+.project-checkline-2{animation:project-line-two 8s linear infinite}
+.project-checkline-3{animation:project-line-three 8s linear infinite}
+.project-check{opacity:.05}
+.project-check-1{animation:project-check-one 8s linear infinite}
+.project-check-2{animation:project-check-two 8s linear infinite}
+.project-check-3{animation:project-check-three 8s linear infinite}
+@keyframes project-line-one{0%,3%{stroke-dashoffset:100}19%,88%{stroke-dashoffset:0}95%,100%{stroke-dashoffset:100}}
+@keyframes project-line-two{0%,25%{stroke-dashoffset:100}41%,88%{stroke-dashoffset:0}95%,100%{stroke-dashoffset:100}}
+@keyframes project-line-three{0%,47%{stroke-dashoffset:100}63%,88%{stroke-dashoffset:0}95%,100%{stroke-dashoffset:100}}
+@keyframes project-check-one{0%,17%{opacity:.06}20%,88%{opacity:1}95%,100%{opacity:.06}}
+@keyframes project-check-two{0%,39%{opacity:.06}42%,88%{opacity:1}95%,100%{opacity:.06}}
+@keyframes project-check-three{0%,61%{opacity:.06}64%,88%{opacity:1}95%,100%{opacity:.06}}
+.project-audit-lens{animation:project-audit-scan 4.4s ease-in-out infinite}
+@keyframes project-audit-scan{0%,100%{transform:translateX(-13px)}50%{transform:translateX(13px)}}
+.project-deploy-fill{transform-box:fill-box;transform-origin:left center;animation:project-deploy-progress 10s ease-in-out infinite}
+@keyframes project-deploy-progress{0%,8%,100%{transform:scaleX(.035)}72%,84%{transform:scaleX(1)}}
+.project-follow-line{stroke-dasharray:100;stroke-dashoffset:100;animation:project-follow-draw 5.5s ease-in-out infinite}
+.project-follow-point{animation:project-follow-pulse 5.5s ease-in-out infinite}
+@keyframes project-follow-draw{0%,10%,100%{stroke-dashoffset:100}75%,90%{stroke-dashoffset:0}}
+@keyframes project-follow-pulse{0%,68%,100%{opacity:.28}76%,90%{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ .project-checkline,.project-check,.project-audit-lens,.project-deploy-fill,.project-follow-line,.project-follow-point{animation:none}
+ .project-checkline,.project-follow-line{stroke-dashoffset:0}
+ .project-check,.project-follow-point{opacity:1}
+ .project-deploy-fill{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -522,13 +553,62 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
  <circle class="diagram-dot" r="2.8"><animateMotion path="M138 252V282H203V305V282H138V252" dur="8.6s" begin="-6.2s" calcMode="linear" repeatCount="indefinite"/></circle>
 </svg></div>
 </article>
-<article class="demo-row" aria-labelledby="mission-5" data-reveal><div class="demo-copy"><h3 id="mission-5">Gestion de projets</h3><p>Réalisation et suivi d’audits de parcs informatiques et d’inventaires matériels et logiciels. Préparation et coordination de déploiements. Organisation, planification et réalisation des interventions techniques auprès de nos clients. Analyse des besoins des utilisateurs et mise en œuvre de solutions techniques adaptées. Rédaction, création et amélioration des procédures techniques et documentations internes.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-project" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
- <g class="diagram-wires" stroke="#7398c2" stroke-width="1.5" fill="none"><path d="M108 180H372M108 180V246M240 180V246M372 180V246"/></g>
- <g class="diagram-panel"><rect x="157" y="52" width="166" height="94" rx="13"/><rect x="178" y="70" width="17" height="17" rx="3" stroke="#a0c6f2" fill="none"/><path d="M181 78l5 5 9-12M207 79h84M207 96h68M178 114h112" stroke="#a0c6f2" fill="none" stroke-width="2"/><text x="240" y="133" text-anchor="middle">PROJET</text></g>
- <g class="diagram-panel"><rect x="47" y="246" width="121" height="69" rx="12"/><text x="107" y="273" text-anchor="middle">AUDIT</text><path d="M76 292h62" stroke="#a0c6f2" stroke-width="2"/></g>
- <g class="diagram-panel"><rect x="179" y="246" width="122" height="69" rx="12"/><text x="240" y="273" text-anchor="middle">DÉPLOIEMENT</text><path d="M211 292h59" stroke="#a0c6f2" stroke-width="2"/></g>
- <g class="diagram-panel"><rect x="312" y="246" width="121" height="69" rx="12"/><text x="372" y="273" text-anchor="middle">SUIVI</text><path d="M340 292h63" stroke="#a0c6f2" stroke-width="2"/></g>
- <circle class="diagram-dot" r="3"><animateMotion dur="7s" path="M108 180H372V246" repeatCount="indefinite"/></circle>
+<article class="demo-row" aria-labelledby="mission-5" data-reveal><div class="demo-copy"><h3 id="mission-5">Gestion de projets</h3><p>Réalisation et suivi d’audits de parcs informatiques et d’inventaires matériels et logiciels. Préparation et coordination de déploiements. Organisation, planification et réalisation des interventions techniques auprès de nos clients. Analyse des besoins des utilisateurs et mise en œuvre de solutions techniques adaptées. Rédaction, création et amélioration des procédures techniques et documentations internes.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram project-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="project-glow"><stop stop-color="#527baf" stop-opacity=".16"/><stop offset="1" stop-color="#527baf" stop-opacity="0"/></radialGradient>
+ </defs>
+ <ellipse cx="240" cy="185" rx="204" ry="151" fill="url(#project-glow)"/>
+ <!-- Projet principal et trois branches connectées aux bords des cartes. -->
+ <g class="diagram-wires" fill="none" stroke="#789ec9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".72">
+  <path d="M240 146V190M108 190H372M108 190V246M240 190V246M372 190V246"/>
+ </g>
+ <g class="diagram-panel">
+  <rect x="157" y="52" width="166" height="94" rx="13"/>
+  <text x="240" y="135" text-anchor="middle">PROJET</text>
+  <!-- Checklist : apparition progressive des lignes et des coches. -->
+  <g fill="none" stroke="#88a9cd" stroke-width="1.25">
+   <rect x="179" y="67" width="14" height="14" rx="3"/>
+   <rect x="179" y="87" width="14" height="14" rx="3"/>
+   <rect x="179" y="107" width="14" height="14" rx="3"/>
+  </g>
+  <g fill="none" stroke="#9fc6f2" stroke-width="2" stroke-linecap="round">
+   <path class="project-checkline project-checkline-1" d="M204 74H293" pathLength="100"/>
+   <path class="project-checkline project-checkline-2" d="M204 94H275" pathLength="100"/>
+   <path class="project-checkline project-checkline-3" d="M204 114H285" pathLength="100"/>
+  </g>
+  <g fill="none" stroke="#b4daff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path class="project-check project-check-1" d="M182 74l3 3 5-6"/>
+   <path class="project-check project-check-2" d="M182 94l3 3 5-6"/>
+   <path class="project-check project-check-3" d="M182 114l3 3 5-6"/>
+  </g>
+ </g>
+ <g class="diagram-panel">
+  <rect x="47" y="246" width="121" height="69" rx="12"/>
+  <text x="107" y="273" text-anchor="middle">AUDIT</text>
+  <path d="M79 300H137" fill="none" stroke="#7294bd" stroke-opacity=".4" stroke-width="1.5"/>
+  <g class="project-audit-lens" fill="none" stroke="#a8cff9" stroke-width="2" stroke-linecap="round">
+   <circle cx="103" cy="293" r="8"/>
+   <path d="M109 299l9 9"/>
+  </g>
+ </g>
+ <g class="diagram-panel">
+  <rect x="179" y="246" width="122" height="69" rx="12"/>
+  <text x="240" y="273" text-anchor="middle">DÉPLOIEMENT</text>
+  <rect x="205" y="290" width="70" height="7" rx="3.5" fill="#34506b" stroke="#7ba1ca" stroke-opacity=".5" stroke-width=".8"/>
+  <rect class="project-deploy-fill" x="205" y="290" width="70" height="7" rx="3.5" fill="#9acbfc"/>
+ </g>
+ <g class="diagram-panel">
+  <rect x="312" y="246" width="121" height="69" rx="12"/>
+  <text x="372" y="273" text-anchor="middle">SUIVI</text>
+  <path d="M341 303H404" fill="none" stroke="#789bbd" stroke-opacity=".46" stroke-width="1.4"/>
+  <path d="M344 299l12 -8 12 5 14 -12 17 1" fill="none" stroke="#7696bb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="project-follow-line" d="M344 299l12 -8 12 5 14 -12 17 1" fill="none" stroke="#b0d8ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/>
+  <circle class="project-follow-point" cx="399" cy="285" r="3" fill="#b5dcff"/>
+ </g>
+ <!-- Chaque trajet revient exactement sur ses pas : aucun saut entre deux cycles. -->
+ <circle class="diagram-dot" r="3.1"><animateMotion path="M240 146V190H108V246V190H240V146" dur="8.4s" begin="-2.6s" calcMode="linear" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3.1"><animateMotion path="M240 146V190V246V190V146" dur="6.9s" begin="-4.1s" calcMode="linear" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3.1"><animateMotion path="M240 146V190H372V246V190H240V146" dur="9.1s" begin="-6s" calcMode="linear" repeatCount="indefinite"/></circle>
 </svg></div></article>
     </div>
   </div>
