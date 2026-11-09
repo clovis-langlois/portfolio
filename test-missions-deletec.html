@@ -258,19 +258,52 @@ html.demo-ready .demo-row.in-view{opacity:1;transform:none}
 <a href="contact-portfolio.html">Contact</a>
 </nav>
 </div>
-</header><main class="demo"><section class="demo-intro container"><a class="demo-back" href="situations-professionnelles-portfolio.html">← Retour aux situations professionnelles</a><p class="demo-overline">Maquette de présentation — page de test</p><h1>Mes missions chez Deletec</h1><p>Une alternance de textes et d’illustrations techniques animées, dans la continuité de l’identité graphique du portfolio.</p></section><section class="demo-rows container" aria-label="Domaines d'intervention"><article class="demo-row" aria-labelledby="mission-1" data-reveal><div class="demo-copy"><p class="demo-number">01 <span>/ Administration</span></p><h3 id="mission-1">Systèmes & Active Directory</h3><p>Gestion des comptes utilisateurs, groupes de sécurité, droits d’accès et habilitations au sein d’environnements Active Directory. Participation aux audits, diagnostic et résolution des incidents liés aux services d’annuaire et aux ressources informatiques.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-ad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
- <g class="diagram-wires" fill="none" stroke="#6e8aaa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
- <path d="M240 133V184 M102 217V184H378V217 M240 184V217"/>
- <path d="M102 265V287H240V265 M378 265V287H240V265" stroke-opacity=".4"/>
+</header><main class="demo"><section class="demo-intro container"><a class="demo-back" href="situations-professionnelles-portfolio.html">← Retour aux situations professionnelles</a><p class="demo-overline">Maquette de présentation — page de test</p><h1>Mes missions chez Deletec</h1><p>Une alternance de textes et d’illustrations techniques animées, dans la continuité de l’identité graphique du portfolio.</p></section><section class="demo-rows container" aria-label="Domaines d'intervention"><article class="demo-row" aria-labelledby="mission-1" data-reveal><div class="demo-copy"><p class="demo-number">01 <span>/ Administration</span></p><h3 id="mission-1">Systèmes & Active Directory</h3><p>Gestion des comptes utilisateurs, groupes de sécurité, droits d’accès et habilitations au sein d’environnements Active Directory. Participation aux audits, diagnostic et résolution des incidents liés aux services d’annuaire et aux ressources informatiques.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="fill-ad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#344e71"/><stop offset="1" stop-color="#1b2b41"/></linearGradient>
+  <radialGradient id="ad-glow"><stop stop-color="#558bcc" stop-opacity=".19"/><stop offset="1" stop-color="#558bcc" stop-opacity="0"/></radialGradient>
+ </defs>
+ <!-- Arborescence hiérarchique en pyramide : un nœud principal, deux branches puis quatre terminaux. -->
+ <ellipse cx="240" cy="139" rx="185" ry="135" fill="url(#ad-glow)"/>
+ <g class="diagram-wires" fill="none" stroke="#86a9d1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".78">
+  <path d="M240 81V96H170V111 M240 96H310V111"/>
+  <path d="M170 147V161H120V175 M170 161H215V175"/>
+  <path d="M310 147V161H265V175 M310 161H360V175"/>
  </g>
- <g class="diagram-glow"><circle cx="240" cy="104" r="61" fill="#4a89d4" opacity=".055"/></g>
- <rect x="182" y="71" width="116" height="65" rx="12" fill="url(#fill-ad)" stroke="#96b8df" stroke-opacity=".62"/>
- <circle cx="207" cy="91" r="5" fill="#91c0fc"/><text x="240" y="112" text-anchor="middle" class="diagram-title">AD</text>
- <g class="diagram-panel"><rect x="49" y="216" width="107" height="53" rx="9"/><circle cx="76" cy="234" r="7" fill="none" stroke="#a7c6ee" stroke-width="1.8"/><path d="M64 256c0-13 24-13 24 0" stroke="#a7c6ee" stroke-width="1.8" fill="none"/><text x="116" y="248" text-anchor="middle">USER</text></g>
- <g class="diagram-panel"><rect x="186" y="216" width="107" height="53" rx="9"/><circle cx="220" cy="239" r="7" fill="none" stroke="#a7c6ee" stroke-width="1.6"/><circle cx="232" cy="243" r="5" fill="none" stroke="#a7c6ee" stroke-width="1.3"/><text x="264" y="250" text-anchor="middle">OU</text></g>
- <g class="diagram-panel"><rect x="323" y="216" width="107" height="53" rx="9"/><path d="M347 242v-7a8 8 0 0116 0v7m-16 0h16v13h-16z" stroke="#a7c6ee" fill="none" stroke-width="1.8"/><text x="397" y="250" text-anchor="middle">ACCÈS</text></g>
- <circle class="diagram-dot" r="3.5"><animateMotion path="M240 136V184H102V216" dur="6s" repeatCount="indefinite"/></circle>
- <circle class="diagram-dot" r="3.5"><animateMotion path="M240 136V184H378V216" dur="7.5s" repeatCount="indefinite"/></circle>
+ <!-- La racine de l'annuaire -->
+ <rect x="217" y="37" width="46" height="44" rx="11" fill="url(#fill-ad)" stroke="#a3c9f3" stroke-opacity=".88" stroke-width="1.6"/>
+ <path d="M231 53h18M231 60h18M231 67h12" stroke="#c6e1ff" stroke-width="2" stroke-linecap="round"/>
+ <circle cx="255" cy="67" r="2.8" fill="#87b9f4"/>
+ <!-- Deux nœuds intermédiaires -->
+ <g fill="url(#fill-ad)" stroke="#8eafd5" stroke-width="1.5">
+  <rect x="147" y="111" width="46" height="36" rx="9"/><rect x="287" y="111" width="46" height="36" rx="9"/>
+ </g>
+ <g fill="#b7d6fa">
+  <circle cx="170" cy="126" r="4.7"/><path d="M159 141c1-11 21-11 22 0Z" opacity=".75"/>
+  <circle cx="310" cy="126" r="4.7"/><path d="M299 141c1-11 21-11 22 0Z" opacity=".75"/>
+ </g>
+ <!-- Quatre objets enfants : le dessin forme une pyramide lisible. -->
+ <g fill="#23354e" stroke="#7fa3cb" stroke-width="1.4">
+  <rect x="105" y="175" width="30" height="30" rx="7"/><rect x="200" y="175" width="30" height="30" rx="7"/>
+  <rect x="250" y="175" width="30" height="30" rx="7"/><rect x="345" y="175" width="30" height="30" rx="7"/>
+ </g>
+ <g fill="none" stroke="#add2ff" stroke-width="1.5" stroke-linecap="round">
+  <circle cx="120" cy="187" r="3"/><path d="M112 198c0-8 16-8 16 0"/>
+  <rect x="208" y="183" width="14" height="12" rx="2"/><path d="M211 187h8m-8 4h5"/>
+  <rect x="258" y="183" width="14" height="12" rx="2"/><path d="M261 187h8m-8 4h5"/>
+  <circle cx="360" cy="187" r="3"/><path d="M352 198c0-8 16-8 16 0"/>
+ </g>
+ <!-- Les trois fonctions AD au bas du symbole -->
+ <g class="diagram-wires" stroke="#7196be" stroke-width="1.3" stroke-opacity=".45" fill="none" stroke-linecap="round">
+  <path d="M120 205V227H102V250 M215 205V226H240V250 M265 205V226H240 M360 205V227H378V250"/>
+ </g>
+ <g class="diagram-panel"><rect x="49" y="250" width="107" height="55" rx="9"/><circle cx="76" cy="269" r="7" fill="none" stroke="#a7c6ee" stroke-width="1.8"/><path d="M64 291c0-13 24-13 24 0" stroke="#a7c6ee" stroke-width="1.8" fill="none"/><text x="116" y="282" text-anchor="middle">USER</text></g>
+ <g class="diagram-panel"><rect x="186" y="250" width="107" height="55" rx="9"/><circle cx="220" cy="274" r="7" fill="none" stroke="#a7c6ee" stroke-width="1.6"/><circle cx="232" cy="278" r="5" fill="none" stroke="#a7c6ee" stroke-width="1.3"/><text x="264" y="284" text-anchor="middle">OU</text></g>
+ <g class="diagram-panel"><rect x="323" y="250" width="107" height="55" rx="9"/><path d="M347 278v-7a8 8 0 0116 0v7m-16 0h16v13h-16z" stroke="#a7c6ee" fill="none" stroke-width="1.8"/><text x="397" y="284" text-anchor="middle">ACCÈS</text></g>
+ <!-- Petits paquets lumineux se déplaçant dans l'arborescence. -->
+ <circle class="diagram-dot" r="3"><animateMotion path="M240 81V96H170V111V147V161H120V175" dur="6s" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3"><animateMotion path="M240 81V96H310V111V147V161H360V175" dur="7.5s" begin="1s" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="2.6"><animateMotion path="M240 81V96H170V111V147V161H215V175" dur="7s" begin="2.3s" repeatCount="indefinite"/></circle>
 </svg></div></article>
 <article class="demo-row" aria-labelledby="mission-2" data-reveal><div class="demo-copy"><p class="demo-number">02 <span>/ Cloud & Modern Workplace</span></p><h3 id="mission-2">Microsoft 365, Entra ID & Intune</h3><p>Administration des environnements Microsoft 365 multi-tenant : gestion des utilisateurs, licences et groupes, administration d’Exchange Online, SharePoint Online, OneDrive et Teams. Déploiement, configuration et gestion des postes de travail avec Microsoft Intune, ainsi que participation à l’application des politiques de sécurité.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-m365" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
  <g fill="none" stroke="#7597bd" stroke-width="1.4" opacity=".63">
