@@ -1,0 +1,338 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Maquette des missions chez Deletec, avec illustrations techniques animées et alternance des colonnes."><title>Test — Mes missions chez Deletec | Clovis Langlois</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#161a23;--fg:#f5f7fb;--muted:#b6c0ce;--line:#364253;--accent:#a5bdd9;--nav:#fff;--nav-text:#151c28}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #89baff;outline-offset:5px}
+.site-header{background:var(--nav);color:var(--nav-text);height:84px;position:relative;z-index:20;border-bottom:1px solid #edf0f4}
+.header-inner{max-width:1200px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:center}
+.nav{display:flex;align-items:center;gap:34px}.nav a{font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;position:relative}
+.nav a:hover{color:#52627d}.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#293146}
+.menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
+main{position:relative;overflow:hidden;background:linear-gradient(180deg,#171b23,#181e27 55%,#171b23)}
+.container{width:min(1160px,calc(100% - 48px));margin:auto}
+.hero{min-height:650px;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 0 128px}
+.hero-inner{max-width:860px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-weight:600;margin:0 0 30px}
+h1{font-size:clamp(46px,6.1vw,76px);line-height:1.15;letter-spacing:-.045em;font-weight:600;margin:0 0 24px}
+.hero-role{font-size:clamp(18px,2.1vw,22px);font-weight:500;margin:0 0 13px}
+.hero-study{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 37px}
+.button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:#303b52;color:#fff;border:1px solid #47546a;border-radius:999px;padding:16px 29px;font-size:14px;font-weight:600;transition:background .2s,transform .2s}
+.button:hover{background:#43516d;transform:translateY(-2px)}
+.social{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:30px}
+.social a{display:inline-flex;align-items:center;gap:9px;color:#c9d4e3;font-size:13px;text-decoration:none}
+.social a:hover{color:#fff}.social svg{width:17px;height:17px;fill:currentColor}
+.section{padding:105px 0 130px}.section-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:clamp(50px,8vw,130px)}
+.section-label{font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;text-transform:uppercase;margin:0 0 24px}
+h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font-weight:600;margin:0 0 28px}
+.copy p:not(.section-label){font-size:16px;line-height:1.95;color:#c0cad7;margin:0 0 21px}
+.photo-placeholder{aspect-ratio:4/4.35;border-radius:16px;border:1px solid #3a4759;background:linear-gradient(145deg,#273244,#1c2533 68%,#202b3b);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.photo-placeholder:before{content:"";position:absolute;inset:20px;border:1px solid rgba(190,209,234,.13);border-radius:10px}
+.photo-placeholder-inner{text-align:center;padding:28px;position:relative}.photo-placeholder .monogram{font-size:clamp(70px,11vw,130px);font-weight:500;letter-spacing:-.11em;color:#9caec7;opacity:.5;line-height:1}
+.photo-placeholder span{display:block;color:#aebbd0;font-size:12px;letter-spacing:.05em;margin-top:18px}
+.expertise{padding-top:85px;padding-bottom:155px}.expertise .section-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.tower-visual{width:100%;max-width:510px;margin:auto;display:block;filter:drop-shadow(0 20px 45px rgba(0,0,0,.13))}
+/* Pied de page minimaliste — même anthracite que l'accueil, sans motif réseau */
+.footer{position:relative;background:linear-gradient(180deg,#171b23,#181e27);color:#f5f7fb;border-top:1px solid rgba(174,191,213,.11)}
+.footer-inner{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:48px 0 24px}
+.footer-main{display:flex;align-items:center;justify-content:space-between;gap:35px;padding-bottom:40px}
+.footer-contact h2{font-size:clamp(22px,2.4vw,29px);font-weight:600;letter-spacing:-.035em;line-height:1.25;margin:0 0 10px}
+.footer-email{font-size:14px;color:#aeb9c9;text-decoration:none;overflow-wrap:anywhere}
+.footer-email:hover{color:#fff}
+.footer-actions{display:flex;align-items:center;gap:12px}
+.footer-icon-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:#b8c6d7;text-decoration:none;border:1px solid rgba(160,178,204,.18);border-radius:50%;transition:color .2s,border-color .2s,background .2s,transform .2s}
+.footer-icon-link:hover{color:#fff;border-color:rgba(177,199,226,.5);background:rgba(149,177,212,.09);transform:translateY(-2px)}
+.footer-icon-link svg{height:19px;width:19px;display:block}
+.footer-bottom{border-top:1px solid rgba(174,191,213,.13);padding-top:22px;font-size:12px;color:#929eaf}
+@media(max-width:760px){.footer-inner{padding:42px 0 25px}.footer-main{align-items:flex-start;flex-direction:column;gap:26px;padding-bottom:30px}.footer-actions{gap:10px}.footer-bottom{line-height:1.6}}
+@media(prefers-reduced-motion:reduce){.footer-icon-link{transition:none}}
+@media(max-width:760px){.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid #edf0f4}.nav a[aria-current=page]:after{display:none}.hero{min-height:610px;padding:90px 0 100px}.hero-study{font-size:13px}.section{padding:75px 0 100px}.section-grid,.expertise .section-grid{grid-template-columns:1fr;gap:45px}.photo-placeholder{max-width:440px;width:100%;margin:auto;aspect-ratio:4/3.8}.expertise .tower-visual{max-width:420px}.expertise .copy{order:0}.expertise .illustration{order:1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+
+/* Direction graphique issue du prototype : réseau asymétrique à droite et dégradé fondu */
+main{isolation:isolate}
+main>.network-background{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.network-background svg{width:100%;height:100%;display:block}
+.network-scene{opacity:.22;filter:drop-shadow(0 0 14px rgba(97,138,190,.08))}
+.network-edge{fill:none;stroke:#89a4c8;stroke-width:1;opacity:.52;vector-effect:non-scaling-stroke}
+.network-node{opacity:.72}
+.network-node .cube-top{fill:#b0bed0}
+.network-node .cube-left{fill:#7289a5}
+.network-node .cube-right{fill:#506b8a}
+.network-packet{fill:#b9d7ff;opacity:0;filter:drop-shadow(0 0 4px #a5c9fa)}
+.network-fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.88) 27%,rgba(23,27,35,.12) 72%,rgba(23,27,35,.28) 100%),linear-gradient(180deg,#171b23 0%,transparent 12%,transparent 88%,#171b23 100%)}
+main>.container{position:relative;z-index:1}
+.hero{justify-content:center;text-align:center}
+.hero-inner{max-width:860px}
+.social{justify-content:center}
+#a-propos .copy{order:1}
+#a-propos .portrait-frame{order:2}
+@media(max-width:760px){
+  .network-scene{opacity:.18}
+  .network-fade{background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.78) 60%,rgba(23,27,35,.4) 100%)}
+  .hero{justify-content:center;text-align:center}
+  .hero-inner{max-width:100%}
+  .social{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){.network-packet{display:none}}
+/* Photographie carrée arrondie et visuel immobilier corporate */
+.portrait-frame{margin:0;width:100%;max-width:480px;aspect-ratio:1;overflow:hidden;border-radius:18px;background:#273244;border:1px solid rgba(179,196,217,.18);box-shadow:0 18px 55px rgba(0,0,0,.16)}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block}
+.office-photo{display:block;width:100%;max-width:480px;height:500px;object-fit:cover;object-position:center 50%;border-radius:18px;border:1px solid rgba(179,196,217,.16);box-shadow:0 18px 55px rgba(0,0,0,.16);margin:0}
+@media(max-width:760px){.portrait-frame{max-width:440px;margin:auto}.office-photo{max-width:400px;height:430px;margin:auto}}
+/* Halo bleu-gris diffus répété derrière les trois blocs, sans créer de séparation */
+.hero::before,#a-propos::before,#expertise::before{
+  content:"";
+  position:absolute;
+  inset:-12% -45vw;
+  pointer-events:none;
+  z-index:0;
+  background:radial-gradient(ellipse 45% 46% at 52% 50%,
+    rgba(50,69,95,.29) 0%,
+    rgba(38,53,74,.18) 37%,
+    rgba(28,39,55,.06) 61%,
+    transparent 77%);
+}
+.hero>.hero-inner,.section>.section-grid{position:relative;z-index:1}
+#a-propos,#expertise{position:relative}
+@media(max-width:760px){
+  .hero::before,#a-propos::before,#expertise::before{
+    inset:-8% -25vw;
+    background:radial-gradient(ellipse 60% 47% at 50% 50%,
+      rgba(50,69,95,.22) 0%,rgba(38,53,74,.12) 40%,transparent 78%);
+  }
+}
+
+/* Apparition progressive proche de l'ancien portfolio : fondu et légère remontée.
+   Activé uniquement avec JS afin de ne jamais masquer le contenu si le script échoue. */
+
+/* Reprise du langage graphique de la plaquette officielle Deletec, page 3. */
+.deletec-next{padding:100px 0 125px;min-height:0;background:transparent}
+.deletec-brochure{background:linear-gradient(135deg,#1c2636 0%,#171c27 72%,#192232 100%);color:#e9eff8;border-radius:4px;padding:clamp(32px,5vw,72px);position:relative;overflow:hidden;box-shadow:0 24px 65px rgba(0,0,0,.15)}
+.deletec-brochure:before{content:"";position:absolute;width:54px;height:54px;background:#ffca22;right:7%;top:30px;transform:rotate(-12deg)}
+.deletec-brochure:after{content:"";position:absolute;width:24px;height:24px;background:#2167ac;right:5%;bottom:25px;transform:rotate(15deg)}
+.deletec-services-heading{max-width:690px;margin-bottom:48px;position:relative;z-index:1}
+.deletec-next .services-kicker{color:#83b7ee;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin:0 0 13px}
+.deletec-next h2{color:#f3f6fc;font-weight:700;font-size:clamp(33px,4.3vw,52px);line-height:1.12;letter-spacing:-.04em;margin:0 0 20px}
+.deletec-next .services-intro{max-width:650px;font-size:15px;color:#b9c7d9;line-height:1.8}
+.deletec-services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(34px,6vw,90px);row-gap:42px;position:relative;z-index:1}
+.deletec-service{--service:#2768b2;position:relative;background:transparent;border:0;border-radius:0;box-shadow:none;min-height:0;padding:0;overflow:visible}
+.deletec-service:before,.deletec-service:after{display:none}
+.deletec-service--cyber{--service:#125b90}.deletec-service--managed{--service:#ffca22}.deletec-service--assist{--service:#62b8e7}
+.deletec-service-number{display:none}
+.deletec-service h3{position:relative;display:block;background:var(--service);color:#fff;font-size:clamp(16px,1.65vw,19px);line-height:1.35;font-weight:700;letter-spacing:-.02em;margin:0 0 20px;padding:9px 20px 10px 12px}
+.deletec-service--managed h3{color:#182435}
+.deletec-service p{font-size:15px;font-weight:700;line-height:1.55;color:#e5edf8;margin:0 0 18px}
+.deletec-service ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;color:#b9c9dc;font-size:14px;line-height:1.5}
+.deletec-service li::marker{content:""}
+@media(max-width:760px){.deletec-next{padding:70px 0 95px}.deletec-brochure{padding:35px 26px}.deletec-services-grid{grid-template-columns:1fr;row-gap:38px}.deletec-services-heading{margin-bottom:36px}.deletec-service h3{font-size:17px}.deletec-brochure:before{width:27px;height:27px;top:13px;right:12px}}
+@media(prefers-reduced-motion:reduce){.deletec-brochure{scroll-behavior:auto}}
+
+
+/* Typographie et bandeaux reproduits à partir des quatre visuels fournis. */
+.deletec-brochure{font-family:Arial,Helvetica,sans-serif}
+.deletec-services-grid{column-gap:clamp(34px,5vw,76px);row-gap:48px}
+.deletec-service h3{font-family:Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:-.035em;font-size:clamp(17px,1.85vw,22px);padding:10px 30px 11px 15px;line-height:1.15;background:linear-gradient(to right,var(--service) 0%,var(--service) calc(100% - 18px),#0751ac calc(100% - 18px));border-radius:0}
+.deletec-service--managed h3{color:#fff}
+.deletec-service--consult{--service:#d9d9d9}
+.deletec-service--consult h3{color:#0751ac}
+.deletec-service--cyber{--service:#063b64}
+.deletec-service--managed{--service:#ffca18}
+.deletec-service--assist{--service:#5fb7e6}
+.deletec-service p{font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;letter-spacing:-.02em;line-height:1.33;margin-bottom:17px;color:#a9d0fa}
+.deletec-service ul{font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.4;letter-spacing:-.015em;gap:3px;color:#c6d8ec}
+@media(max-width:760px){.deletec-service h3{font-size:18px}}
+/* Section intégrée directement au fond, sans cadre ni décoration. */
+.deletec-next{padding:90px 0 115px;background:transparent}
+.deletec-next .container{background:transparent;border:0;box-shadow:none}
+.deletec-services-grid{padding:0}
+
+/* Éclairage doux identique à la présentation Deletec, sans cadre ni carrés. */
+.deletec-next{position:relative;isolation:isolate;overflow:hidden}
+.deletec-next::before{content:"";position:absolute;inset:-12% -15%;background:radial-gradient(ellipse 49% 43% at 50% 44%,rgba(49,72,104,.31),transparent 78%);z-index:-1;pointer-events:none}
+.deletec-next>.container{position:relative;z-index:1}
+html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
+
+
+/* Présentation Deletec : même fond que l'accueil, accents de la marque. */
+.deletec-stats{display:flex;align-items:center;gap:clamp(28px,4vw,64px);margin-top:38px;flex-wrap:wrap}
+.deletec-stats .deletec-metric{margin-top:0}
+.deletec-ranking{display:flex;flex-direction:column;gap:4px;min-width:170px}
+.deletec-ranking-value{display:flex;align-items:baseline;gap:8px;white-space:nowrap;color:#62b9e8;font-size:clamp(33px,3.4vw,46px);line-height:1.1;font-weight:600;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.deletec-ranking-prefix{font-size:.55em;letter-spacing:-.02em;color:#b2c9e4}
+.deletec-ranking-label{font-size:13px;color:#b5c4d7;line-height:1.6}
+@media(max-width:480px){.deletec-stats{gap:26px}.deletec-ranking{min-width:135px}.deletec-ranking-value{font-size:34px}}
+
+main{min-height:75vh;background:linear-gradient(180deg,#171b23 0%,#1a2230 53%,#171b23 100%);overflow:hidden}
+.deletec-intro{position:relative;isolation:isolate;padding:clamp(80px,9vw,135px) 0 115px;min-height:750px;display:flex;align-items:center}
+.deletec-intro::before{content:"";position:absolute;inset:-15% -20%;background:radial-gradient(ellipse 49% 43% at 50% 44%,rgba(49,72,104,.31),transparent 78%);z-index:-1;pointer-events:none}
+.deletec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:clamp(55px,7vw,115px);align-items:center;position:relative;z-index:2}
+.deletec-copy{max-width:530px}
+.deletec-kicker{color:#9cb7d7;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0 0 26px}
+.deletec-copy h1{font-size:clamp(38px,4.5vw,58px);letter-spacing:-.047em;line-height:1.13;font-weight:600;margin:0 0 24px}
+.deletec-copy p{color:#c0cad7;font-size:16px;line-height:1.85;margin:0 0 22px}
+.deletec-metric{margin-top:38px;display:flex;align-items:flex-start;gap:14px}
+.deletec-metric strong{font-size:48px;color:#4d9afa;line-height:1;font-weight:600;letter-spacing:-.05em}
+.deletec-metric span{font-size:13px;line-height:1.6;color:#b5c4d7;max-width:155px}
+.deletec-visual{position:relative;aspect-ratio:1.15;display:flex;align-items:center;justify-content:center}
+.deletec-logo-card{position:relative;width:100%;aspect-ratio:1.18;background:#0844aa;border-radius:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 28px 75px rgba(0,0,0,.18);overflow:hidden}
+.deletec-wordmark{font-family:Montserrat,Arial,sans-serif;font-weight:700;letter-spacing:-.075em;font-size:clamp(54px,7vw,96px);color:white;line-height:1}
+.deletec-wordmark::before{content:"";display:inline-block;width:.13em;height:.13em;background:white;border-radius:50%;vertical-align:middle;margin-right:.04em}
+.deletec-official-logo{width:100%;height:100%;object-fit:cover;display:block;border-radius:19px}.deletec-logo-note{position:absolute;bottom:20px;right:23px;color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.08em}
+.deletec-square{position:absolute;display:block;width:72px;height:72px;pointer-events:none;z-index:3;transform:rotate(var(--square-rotation, -15deg));will-change:transform}
+.deletec-square.blue{background:#1c64b4;top:-17%;left:-18%}
+.deletec-square.yellow{background:#ffca22;bottom:-18%;right:-18%;width:83px;height:83px}
+.deletec-square.cyan{background:#5bb9e7;top:-13%;right:-10%;width:55px;height:55px}
+.deletec-next{position:relative;min-height:270px;padding:65px 0 85px;border-top:0}
+.deletec-next h2{font-size:clamp(28px,3vw,39px);margin:0 0 16px}
+.deletec-next p{font-size:15px;color:#b7c4d3;line-height:1.85;max-width:720px;margin:0}
+.deletec-next .hint{color:#8ca5c5;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+html.reveal-ready [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
+html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
+@media(max-width:800px){.deletec-intro{padding:80px 0 100px;min-height:auto}.deletec-grid{grid-template-columns:1fr;gap:55px}.deletec-visual{max-width:560px;width:88%;margin:auto}.deletec-square.blue{left:-12%}.deletec-square.yellow{right:-12%}}
+@media(max-width:480px){.deletec-copy h1{font-size:37px}.deletec-copy p{font-size:14px}.deletec-square{width:48px;height:48px}.deletec-square.yellow{width:55px;height:55px}.deletec-square.cyan{width:39px;height:39px}.deletec-wordmark{font-size:clamp(46px,11vw,75px)}}
+@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1;transform:none;transition:none}.deletec-square{will-change:auto}}
+
+/* Missions personnelles : continuité du fond, retour discret à l'identité du portfolio */
+.missions{position:relative;padding:110px 0 135px;isolation:isolate}
+.missions::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 65% 46% at 54% 32%,rgba(56,79,111,.22),transparent 75%)}
+.missions-inner{max-width:1060px}
+.missions-eyebrow{font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#9dbbe3;margin:0 0 18px}
+.missions h2{font-size:clamp(36px,4.4vw,54px);letter-spacing:-.045em;margin:0 0 25px}
+.missions-lead{max-width:850px;margin-bottom:70px}
+.missions-lead p{font-size:15px;line-height:1.95;color:#c0cad7;margin:0 0 19px}
+.mission-item{display:grid;grid-template-columns:80px minmax(0,1fr);gap:clamp(22px,4vw,55px);padding:37px 0 42px;border-top:1px solid rgba(172,193,218,.17)}
+.mission-index{font-size:13px;font-weight:600;letter-spacing:.13em;color:#8eaed9;padding-top:8px}
+.mission-category{font-size:11px;letter-spacing:.13em;font-weight:600;color:#9dbbe3;text-transform:uppercase;margin:0 0 12px}
+.mission-item h3{font-size:clamp(21px,2.3vw,29px);font-weight:600;letter-spacing:-.03em;line-height:1.35;margin:0 0 14px;color:#f5f7fb}
+.mission-item p:last-child{font-size:15px;line-height:1.9;color:#b9c5d4;margin:0;max-width:820px}
+@media(max-width:760px){.missions{padding:75px 0 90px}.missions-lead{margin-bottom:45px}.mission-item{grid-template-columns:45px minmax(0,1fr);gap:15px;padding:30px 0}.mission-item p:last-child,.missions-lead p{font-size:14px}}
+
+
+
+/* Maquette isolée pour comparer l'alternance texte et illustrations SVG. */
+.demo{background:linear-gradient(180deg,#171b23 0%,#1a2230 43%,#171b23 100%);overflow:hidden;position:relative;isolation:isolate}
+.demo::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse 43% 11% at 70% 10%,rgba(64,87,123,.18),transparent 80%),radial-gradient(ellipse 44% 15% at 25% 56%,rgba(64,87,123,.15),transparent 78%),radial-gradient(ellipse 44% 12% at 69% 87%,rgba(64,87,123,.16),transparent 78%)}
+.demo-intro{padding:90px 0 35px;text-align:center}
+.demo-overline{margin:0 0 18px;text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:600;color:#92b7e3}
+.demo-intro h1{margin:0 0 20px;font-size:clamp(36px,5vw,58px);letter-spacing:-.047em}
+.demo-intro p:last-child{max-width:740px;margin:0 auto;color:#afbed0;line-height:1.8;font-size:15px}
+.demo-back{display:inline-flex;gap:7px;margin-bottom:38px;text-decoration:none;color:#a9c3e3;font-size:13px}
+.demo-back:hover{color:white}
+.demo-rows{padding:35px 0 110px}
+.demo-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(35px,6vw,100px);min-height:405px;padding:64px 0;position:relative}
+.demo-row+.demo-row{border-top:1px solid rgba(157,179,207,.08)}
+.demo-copy{max-width:565px}
+.demo-number{display:flex;gap:12px;align-items:center;color:#9fc2ed;font-size:12px;letter-spacing:.075em;font-weight:600;text-transform:uppercase;margin:0 0 18px}
+.demo-number span{color:#7f99b8;letter-spacing:.11em;font-size:11px}
+.demo-copy h3{font-size:clamp(27px,3vw,39px);line-height:1.23;letter-spacing:-.044em;font-weight:600;margin:0 0 23px}
+.demo-copy>p:last-child{font-size:15px;line-height:1.9;color:#b9c7d8;margin:0}
+.demo-row:nth-child(even) .demo-art{order:-1}
+.demo-art{position:relative;width:100%;max-width:530px;height:auto;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;min-width:0;justify-self:center;isolation:isolate}
+.demo-art-halo{position:absolute;z-index:-1;inset:7%;background:radial-gradient(ellipse at center,rgba(63,91,132,.26) 0%,rgba(41,62,89,.11) 38%,transparent 69%);filter:blur(8px)}
+.demo-diagram{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 16px 30px rgba(3,9,19,.1))}
+.demo-diagram text{font:600 11px Montserrat,Arial,sans-serif;letter-spacing:.025em;fill:#bbd5f4}
+.demo-diagram .diagram-title{font-size:23px;font-weight:700;fill:#e6f1ff;letter-spacing:-.025em}
+.demo-diagram .diagram-panel>rect:first-child{fill:#1e2b40;stroke:#6f8aaf;stroke-opacity:.63;stroke-width:1.4}
+.demo-diagram .diagram-panel rect:not(:first-child){fill:#2b405c;stroke:#7798bf;stroke-opacity:.5}
+.demo-diagram .diagram-dot{fill:#c3e3ff;filter:drop-shadow(0 0 5px #9fc8f4)}
+.diagram-racks .diagram-panel>rect:first-child{fill:#1f2e43}
+.diagram-pulse{transform-origin:240px 177px;animation:diagram-pulse 4.8s ease-in-out infinite}
+.rack-lights{animation:led-pulse 2.3s ease-in-out infinite}
+@keyframes diagram-pulse{0%,100%{opacity:.13;transform:scale(.97)}50%{opacity:.48;transform:scale(1.07)}}
+@keyframes led-pulse{0%,100%{opacity:.35}50%{opacity:1}}
+html.demo-ready .demo-row{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+html.demo-ready .demo-row.in-view{opacity:1;transform:none}
+@media(max-width:850px){.demo-intro{padding:65px 0 15px}.demo-row{grid-template-columns:1fr;gap:10px;min-height:0;padding:52px 0}.demo-row:nth-child(even) .demo-art{order:0}.demo-art{max-width:500px}.demo-copy{max-width:100%}}
+@media(max-width:520px){.demo-row{padding:40px 0}.demo-copy>p:last-child{font-size:14px}.demo-art{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:reduce){.diagram-pulse,.rack-lights{animation:none}html.demo-ready .demo-row{opacity:1;transform:none;transition:none}.diagram-dot{display:none}}
+</style></head><body><header class="site-header">
+<div class="header-inner">
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+<nav class="nav" id="main-nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a>
+<a href="situations-professionnelles-portfolio.html" aria-current="page">Situations professionnelles</a>
+<a href="projet-portfolio.html">Projet</a>
+<a href="contact-portfolio.html">Contact</a>
+</nav>
+</div>
+</header><main class="demo"><section class="demo-intro container"><a class="demo-back" href="situations-professionnelles-portfolio.html">← Retour aux situations professionnelles</a><p class="demo-overline">Maquette de présentation — page de test</p><h1>Mes missions chez Deletec</h1><p>Une alternance de textes et d’illustrations techniques animées, dans la continuité de l’identité graphique du portfolio.</p></section><section class="demo-rows container" aria-label="Domaines d'intervention"><article class="demo-row" aria-labelledby="mission-1" data-reveal><div class="demo-copy"><p class="demo-number">01 <span>/ Administration</span></p><h3 id="mission-1">Systèmes & Active Directory</h3><p>Gestion des comptes utilisateurs, groupes de sécurité, droits d’accès et habilitations au sein d’environnements Active Directory. Participation aux audits, diagnostic et résolution des incidents liés aux services d’annuaire et aux ressources informatiques.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-ad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g class="diagram-wires" fill="none" stroke="#6e8aaa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M240 133V184 M102 217V184H378V217 M240 184V217"/>
+ <path d="M102 265V287H240V265 M378 265V287H240V265" stroke-opacity=".4"/>
+ </g>
+ <g class="diagram-glow"><circle cx="240" cy="104" r="61" fill="#4a89d4" opacity=".055"/></g>
+ <rect x="182" y="71" width="116" height="65" rx="12" fill="url(#fill-ad)" stroke="#96b8df" stroke-opacity=".62"/>
+ <circle cx="207" cy="91" r="5" fill="#91c0fc"/><text x="240" y="112" text-anchor="middle" class="diagram-title">AD</text>
+ <g class="diagram-panel"><rect x="49" y="216" width="107" height="53" rx="9"/><circle cx="76" cy="234" r="7" fill="none" stroke="#a7c6ee" stroke-width="1.8"/><path d="M64 256c0-13 24-13 24 0" stroke="#a7c6ee" stroke-width="1.8" fill="none"/><text x="116" y="248" text-anchor="middle">USER</text></g>
+ <g class="diagram-panel"><rect x="186" y="216" width="107" height="53" rx="9"/><circle cx="220" cy="239" r="7" fill="none" stroke="#a7c6ee" stroke-width="1.6"/><circle cx="232" cy="243" r="5" fill="none" stroke="#a7c6ee" stroke-width="1.3"/><text x="264" y="250" text-anchor="middle">OU</text></g>
+ <g class="diagram-panel"><rect x="323" y="216" width="107" height="53" rx="9"/><path d="M347 242v-7a8 8 0 0116 0v7m-16 0h16v13h-16z" stroke="#a7c6ee" fill="none" stroke-width="1.8"/><text x="397" y="250" text-anchor="middle">ACCÈS</text></g>
+ <circle class="diagram-dot" r="3.5"><animateMotion path="M240 136V184H102V216" dur="6s" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3.5"><animateMotion path="M240 136V184H378V216" dur="7.5s" repeatCount="indefinite"/></circle>
+</svg></div></article>
+<article class="demo-row" aria-labelledby="mission-2" data-reveal><div class="demo-copy"><p class="demo-number">02 <span>/ Cloud & Modern Workplace</span></p><h3 id="mission-2">Microsoft 365, Entra ID & Intune</h3><p>Administration des environnements Microsoft 365 multi-tenant : gestion des utilisateurs, licences et groupes, administration d’Exchange Online, SharePoint Online, OneDrive et Teams. Déploiement, configuration et gestion des postes de travail avec Microsoft Intune, ainsi que participation à l’application des politiques de sécurité.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-m365" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g fill="none" stroke="#7597bd" stroke-width="1.4" opacity=".63">
+ <path d="M240 181L115 95 M240 181L367 91 M240 181L110 275 M240 181L365 276"/>
+ </g>
+ <path d="M192 219c-20 0-33-13-33-29 0-18 14-32 33-33 6-24 23-41 48-41 24 0 41 15 48 35 23-1 42 15 42 34 0 19-15 34-36 34H192Z" fill="url(#fill-m365)" stroke="#92badf" stroke-width="1.9"/>
+ <text x="240" y="186" class="diagram-title" text-anchor="middle">M365</text>
+ <g class="diagram-panel"><rect x="53" y="59" width="122" height="65" rx="11"/><rect x="68" y="77" width="30" height="24" rx="4" fill="none" stroke="#a7c6ee" stroke-width="1.4"/><path d="M68 78l15 12 15-12" fill="none" stroke="#a7c6ee" stroke-width="1.4"/><text x="130" y="96">EXO</text></g>
+ <g class="diagram-panel"><rect x="308" y="55" width="119" height="65" rx="11"/><rect x="322" y="74" width="29" height="27" rx="5" fill="none" stroke="#a7c6ee" stroke-width="1.4"/><path d="M327 81h18m-18 6h18m-18 6h12" fill="none" stroke="#a7c6ee"/><text x="393" y="95" text-anchor="middle">SP</text></g>
+ <g class="diagram-panel"><rect x="48" y="245" width="125" height="62" rx="11"/><circle cx="76" cy="272" r="12" stroke="#a7c6ee" fill="none"/><text x="124" y="282" text-anchor="middle">TEAMS</text></g>
+ <g class="diagram-panel"><rect x="304" y="246" width="131" height="62" rx="11"/><rect x="323" y="260" width="25" height="30" rx="4" fill="none" stroke="#a7c6ee" stroke-width="1.5"/><circle cx="336" cy="284" r="2" fill="#a7c6ee"/><text x="395" y="280" text-anchor="middle">INTUNE</text></g>
+ <circle class="diagram-dot" r="3"><animateMotion dur="5.5s" path="M240 181L367 91" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3"><animateMotion dur="6.5s" path="M240 181L110 275" repeatCount="indefinite"/></circle>
+</svg></div></article>
+<article class="demo-row" aria-labelledby="mission-3" data-reveal><div class="demo-copy"><p class="demo-number">03 <span>/ Support & exploitation</span></p><h3 id="mission-3">Support technique & accompagnement utilisateurs</h3><p>Prise en charge des incidents et demandes techniques sur des environnements clients variés : systèmes, réseaux, VPN, Microsoft 365, bureautique et applications métiers. Diagnostic, résolution, suivi des tickets et accompagnement des utilisateurs, dans le respect des engagements de service (SLA).</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-support" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g class="diagram-wires" fill="none" stroke="#7897bb" stroke-width="1.4" opacity=".6"><path d="M161 164H93V81M313 164H398V98M242 246V303"/></g>
+ <g class="diagram-glow"><circle cx="239" cy="177" r="92" stroke="#85bbf3" stroke-opacity=".16" stroke-width="1.5" fill="none"/><circle cx="239" cy="177" r="113" stroke="#85bbf3" stroke-opacity=".07" fill="none"/></g>
+ <g fill="none" stroke="#a3c8f0" stroke-width="7" stroke-linecap="round"><path d="M167 202v-34a72 72 0 01144 0v34"/><path d="M167 200c-17 0-24-11-24-29 0-16 10-27 24-27M311 200c16 0 24-11 24-29 0-17-10-27-24-27"/></g>
+ <g class="diagram-panel"><rect x="195" y="180" width="88" height="52" rx="12"/><path d="M213 204l13 12 26-25" stroke="#a9d1fc" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+ <g class="diagram-panel"><rect x="51" y="48" width="135" height="65" rx="12"/><text x="118" y="76" text-anchor="middle">INCIDENT</text><text x="118" y="97" text-anchor="middle" fill="#9fc5f2">RÉSOLU</text></g>
+ <g class="diagram-panel"><rect x="330" y="67" width="112" height="62" rx="12"/><text x="386" y="96" text-anchor="middle">SLA</text><path d="M361 108H412" stroke="#82b9f7" stroke-width="2"/></g>
+ <g class="diagram-panel"><rect x="192" y="284" width="98" height="49" rx="10"/><text x="241" y="313" text-anchor="middle">SUPPORT</text></g>
+ <circle class="diagram-pulse" cx="240" cy="178" r="125" stroke="#9ec9fa" fill="none" stroke-width="1.1"/>
+</svg></div></article>
+<article class="demo-row" aria-labelledby="mission-4" data-reveal><div class="demo-copy"><p class="demo-number">04 <span>/ Infrastructures</span></p><h3 id="mission-4">Interventions sur site & infrastructures</h3><p>Déploiement et renouvellement de postes et d’équipements informatiques, maintenance des infrastructures systèmes et réseaux, décommissionnement de serveurs et brassage réseau. Réalisation d’inventaires, d’audits de parcs informatiques et participation aux actions d’amélioration de la sécurité.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-racks" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g class="diagram-wires" stroke="#809cb8" stroke-width="1.5" fill="none"><path d="M150 233V280H330V234 M242 234V302 M150 280H330"/></g>
+ <g class="diagram-racks">
+ <g class="diagram-panel"><rect x="72" y="74" width="121" height="166" rx="12"/><rect x="87" y="92" width="91" height="33" rx="5"/><rect x="87" y="135" width="91" height="33" rx="5"/><rect x="87" y="178" width="91" height="33" rx="5"/></g>
+ <g class="diagram-panel"><rect x="222" y="45" width="125" height="194" rx="12"/><rect x="236" y="65" width="97" height="36" rx="5"/><rect x="236" y="112" width="97" height="36" rx="5"/><rect x="236" y="159" width="97" height="36" rx="5"/></g>
+ </g>
+ <g class="rack-lights" fill="#9bc9fd"><circle cx="97" cy="108" r="3.3"/><circle cx="97" cy="151" r="3.3"/><circle cx="97" cy="194" r="3.3"/><circle cx="247" cy="83" r="3.3"/><circle cx="247" cy="130" r="3.3"/><circle cx="247" cy="177" r="3.3"/></g>
+ <g class="diagram-panel"><rect x="288" y="269" width="124" height="54" rx="11"/><text x="350" y="302" text-anchor="middle">RÉSEAU</text></g>
+ <circle class="diagram-dot" r="3.5"><animateMotion dur="5s" path="M150 240V280H330V269" repeatCount="indefinite"/></circle>
+</svg></div></article>
+<article class="demo-row" aria-labelledby="mission-5" data-reveal><div class="demo-copy"><p class="demo-number">05 <span>/ Projets & documentation</span></p><h3 id="mission-5">Coordination technique & gestion de projets</h3><p>Analyse des besoins, préparation et coordination des déploiements et interventions techniques. Suivi des opérations auprès des clients, réalisation de comptes rendus et création, rédaction et amélioration de procédures et documentations techniques internes.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-project" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g class="diagram-wires" stroke="#7398c2" stroke-width="1.5" fill="none"><path d="M108 180H372M108 180V246M240 180V246M372 180V246"/></g>
+ <g class="diagram-panel"><rect x="157" y="52" width="166" height="94" rx="13"/><rect x="178" y="70" width="17" height="17" rx="3" stroke="#a0c6f2" fill="none"/><path d="M181 78l5 5 9-12M207 79h84M207 96h68M178 114h112" stroke="#a0c6f2" fill="none" stroke-width="2"/><text x="240" y="133" text-anchor="middle">PROJET</text></g>
+ <g class="diagram-panel"><rect x="47" y="246" width="121" height="69" rx="12"/><text x="107" y="273" text-anchor="middle">AUDIT</text><path d="M76 292h62" stroke="#a0c6f2" stroke-width="2"/></g>
+ <g class="diagram-panel"><rect x="179" y="246" width="122" height="69" rx="12"/><text x="240" y="273" text-anchor="middle">DÉPLOIEMENT</text><path d="M211 292h59" stroke="#a0c6f2" stroke-width="2"/></g>
+ <g class="diagram-panel"><rect x="312" y="246" width="121" height="69" rx="12"/><text x="372" y="273" text-anchor="middle">SUIVI</text><path d="M340 292h63" stroke="#a0c6f2" stroke-width="2"/></g>
+ <circle class="diagram-dot" r="3"><animateMotion dur="7s" path="M108 180H372V246" repeatCount="indefinite"/></circle>
+</svg></div></article></section></main><footer class="footer" aria-label="Pied de page">
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-contact">
+        <h2>Restons en contact.</h2>
+        <a class="footer-email" href="mailto:clovislanglois1@gmail.com">clovislanglois1@gmail.com</a>
+      </div>
+      <div class="footer-actions" aria-label="Mes liens">
+        <a class="footer-icon-link" href="https://www.linkedin.com/in/clovis-langlois" target="_blank" rel="noopener noreferrer" aria-label="Consulter mon profil LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2ZM8 19H5V9h3Zm-1.5-11.4a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.1c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.7 1.4 3.7 4.4V19Z"/></svg>
+        </a>
+        <a class="footer-icon-link" href="mailto:clovislanglois1@gmail.com" aria-label="M'envoyer un e-mail" title="E-mail">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 21 19H3a1.5 1.5 0 0 1-1.5-1.5v-11A1.5 1.5 0 0 1 3 5Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m2 7 10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="footer-icon-link footer-contact-link" href="contact-portfolio.html" aria-label="Accéder à la page Contact" title="Contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clovis Langlois · Tous droits réservés</span>
+    </div>
+  </div>
+</footer><script>(function(){const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');if(menu&&nav){menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');nav.classList.remove('open')}))}if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){document.documentElement.classList.add('demo-ready');const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}},{threshold:.12,rootMargin:'0px 0px -35px 0px'});document.querySelectorAll('.demo-row').forEach(row=>observer.observe(row))}})();</script></body></html>
