@@ -266,6 +266,15 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 @media(max-width:520px){.demo-row{padding:40px 0}.demo-copy>p:last-child{font-size:14px}.demo-art{aspect-ratio:4/3}}
 @media(prefers-reduced-motion:reduce){.diagram-pulse,.rack-lights{animation:none}.diagram-dot{display:none}}
 
+
+/* Matériel réseau : LEDs de fonctionnement et alertes sans modifier le style des autres illustrations. */
+.demo-row:nth-child(4) .demo-art{aspect-ratio:480 / 390}
+.infra-diagram .infra-unit{fill:#2d415a;stroke:#7593b9;stroke-opacity:.62;stroke-width:1.1}
+.infra-led-green{fill:#72dcb2;filter:drop-shadow(0 0 2px rgba(112,226,175,.55))}
+.infra-led-red{fill:#f08089;filter:drop-shadow(0 0 3px rgba(240,111,128,.5));animation:infra-alert 3.3s ease-in-out infinite}
+@keyframes infra-alert{0%,100%{opacity:.7}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.infra-led-red{animation:none}}
+
 </style>
 </head>
 <body>
@@ -442,16 +451,72 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
  </g>
  <circle class="diagram-pulse" cx="240" cy="178" r="125" stroke="#9ec9fa" fill="none" stroke-width="1.1"/>
 </svg></div></article>
-<article class="demo-row" aria-labelledby="mission-4" data-reveal><div class="demo-copy"><h3 id="mission-4">Interventions sur site & infrastructures</h3><p>Déploiement et renouvellement de postes et d’équipements informatiques, maintenance des infrastructures systèmes et réseaux, décommissionnement de serveurs et brassage réseau. Réalisation d’inventaires, d’audits de parcs informatiques et participation aux actions d’amélioration de la sécurité.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-racks" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
- <g class="diagram-wires" stroke="#809cb8" stroke-width="1.5" fill="none"><path d="M150 233V280H330V234 M242 234V302 M150 280H330"/></g>
- <g class="diagram-racks">
- <g class="diagram-panel"><rect x="72" y="74" width="121" height="166" rx="12"/><rect x="87" y="92" width="91" height="33" rx="5"/><rect x="87" y="135" width="91" height="33" rx="5"/><rect x="87" y="178" width="91" height="33" rx="5"/></g>
- <g class="diagram-panel"><rect x="222" y="45" width="125" height="194" rx="12"/><rect x="236" y="65" width="97" height="36" rx="5"/><rect x="236" y="112" width="97" height="36" rx="5"/><rect x="236" y="159" width="97" height="36" rx="5"/></g>
+<article class="demo-row" aria-labelledby="mission-4" data-reveal>
+<div class="demo-copy"><h3 id="mission-4">Interventions sur site</h3><p>Réalisation d’audits de sécurité et participation à l’amélioration de la sécurité des environnements de nos clients. Déploiement, configuration et renouvellement de postes de travail et d’équipements informatiques. Interventions sur les infrastructures systèmes et réseaux : maintenance, décommissionnement de serveurs et brassage réseau. Réalisation d’inventaires et d’audits de parcs informatiques. Coordination et suivi des interventions techniques et des projets de nos clients. Rédaction de comptes rendus d’interventions client.</p></div>
+
+<div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div>
+<svg class="demo-diagram infra-diagram" viewBox="0 0 480 390" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="infra-soft-halo"><stop stop-color="#527baf" stop-opacity=".17"/><stop offset="1" stop-color="#527baf" stop-opacity="0"/></radialGradient>
+ </defs>
+ <ellipse cx="240" cy="187" rx="220" ry="180" fill="url(#infra-soft-halo)"/>
+ <!-- Connections branchées sur les équipements, sans trajet à travers les baies. -->
+ <g class="infra-cables" fill="none" stroke="#8cadd3" stroke-width="1.6" stroke-opacity=".75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M138 252V282H203V305"/>
+  <path d="M336 252V291H283V305"/>
  </g>
- <g class="rack-lights" fill="#9bc9fd"><circle cx="97" cy="108" r="3.3"/><circle cx="97" cy="151" r="3.3"/><circle cx="97" cy="194" r="3.3"/><circle cx="247" cy="83" r="3.3"/><circle cx="247" cy="130" r="3.3"/><circle cx="247" cy="177" r="3.3"/></g>
- <g class="diagram-panel"><rect x="288" y="269" width="124" height="54" rx="11"/><text x="350" y="302" text-anchor="middle">RÉSEAU</text></g>
- <circle class="diagram-dot" r="3.5"><animateMotion dur="5s" path="M150 240V280H330V269" repeatCount="indefinite"/></circle>
-</svg></div></article>
+ <!-- Deux baies de serveurs physiques, chacune avec des voyants verts et un voyant rouge. -->
+ <g class="infra-server diagram-panel" transform="translate(79 60)">
+  <rect x="0" y="0" width="118" height="192" rx="12"/>
+  <rect class="infra-unit" x="13" y="19" width="92" height="35" rx="5"/>
+  <rect class="infra-unit" x="13" y="63" width="92" height="35" rx="5"/>
+  <rect class="infra-unit" x="13" y="107" width="92" height="35" rx="5"/>
+  <rect class="infra-unit" x="13" y="151" width="92" height="27" rx="5"/>
+  <g stroke="#7d9fc8" stroke-width="1.2" stroke-linecap="round" opacity=".65">
+    <path d="M35 30h51M35 39h36M35 74h51M35 83h36M35 118h51M35 127h36M35 161h51"/>
+  </g>
+  <circle class="infra-led-green" cx="24" cy="37" r="3.7"/>
+  <circle class="infra-led-green" cx="24" cy="81" r="3.7"/>
+  <circle class="infra-led-red" cx="24" cy="125" r="3.8"/>
+  <circle class="infra-led-green" cx="24" cy="165" r="3.7"/>
+  <circle cx="94" cy="11" r="2" fill="#86a7cd" opacity=".55"/>
+ </g>
+ <g class="infra-server diagram-panel" transform="translate(277 60)">
+  <rect x="0" y="0" width="118" height="192" rx="12"/>
+  <rect class="infra-unit" x="13" y="19" width="92" height="35" rx="5"/>
+  <rect class="infra-unit" x="13" y="63" width="92" height="35" rx="5"/>
+  <rect class="infra-unit" x="13" y="107" width="92" height="35" rx="5"/>
+  <rect class="infra-unit" x="13" y="151" width="92" height="27" rx="5"/>
+  <g stroke="#7d9fc8" stroke-width="1.2" stroke-linecap="round" opacity=".65">
+    <path d="M35 30h51M35 39h36M35 74h51M35 83h36M35 118h51M35 127h36M35 161h51"/>
+  </g>
+  <circle class="infra-led-green" cx="24" cy="37" r="3.7"/>
+  <circle class="infra-led-green" cx="24" cy="81" r="3.7"/>
+  <circle class="infra-led-red" cx="24" cy="125" r="3.8"/>
+  <circle class="infra-led-green" cx="24" cy="165" r="3.7"/>
+  <circle cx="94" cy="11" r="2" fill="#86a7cd" opacity=".55"/>
+ </g>
+ <!-- Switch Ethernet : une rangée de huit ports et les témoins d'activité. -->
+ <g class="diagram-panel infra-switch">
+  <rect x="165" y="305" width="150" height="64" rx="11"/>
+  <rect x="188" y="318" width="10" height="8" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
+  <rect x="202" y="318" width="10" height="8" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
+  <rect x="216" y="318" width="10" height="8" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
+  <rect x="230" y="318" width="10" height="8" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
+  <rect x="244" y="318" width="10" height="8" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
+  <rect x="258" y="318" width="10" height="8" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
+  <rect x="272" y="318" width="10" height="8" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
+  <rect x="286" y="318" width="10" height="8" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
+  <circle class="infra-led-green" cx="183" cy="341" r="3.1"/>
+  <circle class="infra-led-green" cx="198" cy="341" r="3.1"/>
+  <text x="257" y="349" text-anchor="middle">SWITCH</text>
+ </g>
+ <!-- Trois flux en aller-retour, toujours sur les câbles, sans téléportation visuelle. -->
+ <circle class="diagram-dot" r="3.3"><animateMotion path="M138 252V282H203V305V282H138V252" dur="6.8s" begin="-1.8s" calcMode="linear" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3.3"><animateMotion path="M336 252V291H283V305V291H336V252" dur="7.4s" begin="-3.7s" calcMode="linear" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="2.8"><animateMotion path="M138 252V282H203V305V282H138V252" dur="8.6s" begin="-6.2s" calcMode="linear" repeatCount="indefinite"/></circle>
+</svg></div>
+</article>
 <article class="demo-row" aria-labelledby="mission-5" data-reveal><div class="demo-copy"><h3 id="mission-5">Coordination technique & gestion de projets</h3><p>Analyse des besoins, préparation et coordination des déploiements et interventions techniques. Suivi des opérations auprès des clients, réalisation de comptes rendus et création, rédaction et amélioration de procédures et documentations techniques internes.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-project" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
  <g class="diagram-wires" stroke="#7398c2" stroke-width="1.5" fill="none"><path d="M108 180H372M108 180V246M240 180V246M372 180V246"/></g>
  <g class="diagram-panel"><rect x="157" y="52" width="166" height="94" rx="13"/><rect x="178" y="70" width="17" height="17" rx="3" stroke="#a0c6f2" fill="none"/><path d="M181 78l5 5 9-12M207 79h84M207 96h68M178 114h112" stroke="#a0c6f2" fill="none" stroke-width="2"/><text x="240" y="133" text-anchor="middle">PROJET</text></g>
