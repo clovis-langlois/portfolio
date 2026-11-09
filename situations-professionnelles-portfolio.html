@@ -138,6 +138,20 @@ main>.container{position:relative;z-index:1}
 @media(max-width:760px){.deletec-next{padding:70px 0 95px}.deletec-brochure{padding:35px 26px}.deletec-services-grid{grid-template-columns:1fr;row-gap:38px}.deletec-services-heading{margin-bottom:36px}.deletec-service h3{font-size:17px}.deletec-brochure:before{width:27px;height:27px;top:13px;right:12px}}
 @media(prefers-reduced-motion:reduce){.deletec-brochure{scroll-behavior:auto}}
 
+
+/* Typographie et bandeaux reproduits à partir des quatre visuels fournis. */
+.deletec-brochure{font-family:Arial,Helvetica,sans-serif}
+.deletec-services-grid{column-gap:clamp(34px,5vw,76px);row-gap:48px}
+.deletec-service h3{font-family:Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:-.035em;font-size:clamp(17px,1.85vw,22px);padding:10px 30px 11px 15px;line-height:1.15;background:linear-gradient(to right,var(--service) 0%,var(--service) calc(100% - 18px),#0751ac calc(100% - 18px));border-radius:0}
+.deletec-service--managed h3{color:#fff}
+.deletec-service--consult{--service:#d9d9d9}
+.deletec-service--consult h3{color:#0751ac}
+.deletec-service--cyber{--service:#063b64}
+.deletec-service--managed{--service:#ffca18}
+.deletec-service--assist{--service:#5fb7e6}
+.deletec-service p{font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;letter-spacing:-.02em;line-height:1.33;margin-bottom:17px;color:#a9d0fa}
+.deletec-service ul{font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.4;letter-spacing:-.015em;gap:3px;color:#c6d8ec}
+@media(max-width:760px){.deletec-service h3{font-size:18px}}
 html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
 html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 @media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
@@ -226,7 +240,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 <p class="services-intro">L’IA est un levier transversal intégré à chacune de nos expertises pour optimiser la performance et la sécurité des systèmes d’information.</p>
 </div>
 <div class="deletec-services-grid">
-<article class="deletec-service" data-reveal>
+<article class="deletec-service deletec-service--consult" data-reveal>
 <span class="deletec-service-number">01 / CONSEIL</span>
 <h3>Consulting Services</h3>
 <p>Nos experts vous accompagnent dans la structuration et l’optimisation de votre SI pour en faire un levier de performance.</p>
