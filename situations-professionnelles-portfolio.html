@@ -115,6 +115,25 @@ main>.container{position:relative;z-index:1}
 
 /* Apparition progressive proche de l'ancien portfolio : fondu et légère remontée.
    Activé uniquement avec JS afin de ne jamais masquer le contenu si le script échoue. */
+
+/* Les quatre pôles d'expertise, adaptés de la plaquette officielle Deletec. */
+.deletec-next{padding:105px 0 135px;min-height:0;background:linear-gradient(180deg,rgba(28,40,57,.14),rgba(23,27,35,0));}
+.deletec-services-heading{max-width:790px;margin-bottom:48px}
+.deletec-next .services-kicker{color:#8cb6e5;font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;margin:0 0 18px}
+.deletec-next .services-intro{max-width:720px;font-size:15px;color:#bac8d9;line-height:1.85}
+.deletec-services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.deletec-service{--service:#2768b2;position:relative;overflow:hidden;border:1px solid rgba(160,187,221,.17);border-radius:17px;background:linear-gradient(135deg,rgba(39,54,77,.68),rgba(25,32,44,.83));padding:34px 35px 36px;min-height:335px;box-shadow:0 12px 35px rgba(0,0,0,.08)}
+.deletec-service:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--service)}
+.deletec-service:after{content:"";position:absolute;width:95px;height:95px;right:-44px;top:-43px;transform:rotate(24deg);border:1px solid var(--service);opacity:.33;pointer-events:none}
+.deletec-service--cyber{--service:#17659b}.deletec-service--managed{--service:#ffca22}.deletec-service--assist{--service:#62b8e7}
+.deletec-service-number{display:block;font-size:11px;color:#a4b8d0;letter-spacing:.15em;margin-bottom:25px}
+.deletec-service h3{font-size:clamp(20px,2vw,25px);line-height:1.35;letter-spacing:-.025em;margin:0 0 16px;font-weight:600}
+.deletec-service p{font-size:14px;color:#c4cfdd;line-height:1.85;margin:0 0 19px}
+.deletec-service ul{margin:0;padding-left:18px;display:grid;gap:9px;color:#aebed0;font-size:13px;line-height:1.55}
+.deletec-service li::marker{color:var(--service)}
+.deletec-service--managed li::marker{color:#ffca22}
+@media(max-width:760px){.deletec-next{padding:80px 0 95px}.deletec-services-grid{grid-template-columns:1fr}.deletec-service{min-height:0;padding:29px 26px 32px}.deletec-services-heading{margin-bottom:32px}}
+
 html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
 html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 @media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
@@ -196,10 +215,38 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 </div>
 </section>
 <section class="deletec-next" aria-labelledby="deletec-services-title">
-<div class="container" data-reveal>
-<p class="hint">À suivre</p>
-<h2 id="deletec-services-title">Les expertises de Deletec</h2>
-<p>Nous intégrerons ici les plaquettes officielles de l'entreprise, puis nous présenterons mes missions chez Deletec et mes expériences précédentes.</p>
+<div class="container">
+<div class="deletec-services-heading" data-reveal>
+<p class="services-kicker">Les expertises de Deletec</p>
+<h2 id="deletec-services-title">Quatre pôles d’expertise au service des entreprises.</h2>
+<p class="services-intro">De la stratégie informatique à l’exploitation quotidienne, Deletec accompagne les organisations dans la performance, la sécurité et l’évolution de leurs systèmes d’information.</p>
+</div>
+<div class="deletec-services-grid">
+<article class="deletec-service" data-reveal>
+<span class="deletec-service-number">01 / CONSEIL</span>
+<h3>Consulting Services</h3>
+<p>Nos experts vous accompagnent dans la structuration et l’optimisation de votre SI pour en faire un levier de performance.</p>
+<ul><li>Audit IT &amp; organisationnel</li><li>Conseil stratégique</li><li>Gouvernance et pilotage SI</li><li>Conformité réglementaire</li></ul>
+</article>
+<article class="deletec-service deletec-service--cyber" data-reveal>
+<span class="deletec-service-number">02 / SÉCURITÉ &amp; CLOUD</span>
+<h3>Cybersécurité et Cloud Services</h3>
+<p>Nous sécurisons vos infrastructures et garantissons la souveraineté de vos données grâce à des solutions adaptées à vos besoins.</p>
+<ul><li>Audit cybersécurité</li><li>Sécurité des systèmes d’information</li><li>Plan de reprise et de continuité d’activité (PRA/PCA)</li><li>Hébergement sécurisé en France</li><li>Sauvegarde externalisée et M365</li><li>Protection contre les cybermenaces</li></ul>
+</article>
+<article class="deletec-service deletec-service--managed" data-reveal>
+<span class="deletec-service-number">03 / EXPLOITATION</span>
+<h3>Infogérance</h3>
+<p>Nous gérons et optimisons votre infrastructure IT pour garantir performance et sécurité.</p>
+<ul><li>Supervision et maintenance 24/7</li><li>Gestion et optimisation des systèmes et réseaux</li><li>Support utilisateur &amp; Service Desk</li><li>Externalisation de la DSI</li></ul>
+</article>
+<article class="deletec-service deletec-service--assist" data-reveal>
+<span class="deletec-service-number">04 / EXPERTISE</span>
+<h3>Assistance technique</h3>
+<p>Nos spécialistes renforcent vos équipes et vos projets stratégiques : le bon talent au bon moment !</p>
+<ul><li>Cloud, datacenter et infrastructures</li><li>Cybersécurité</li><li>Data et IA</li><li>Finance Consulting</li></ul>
+</article>
+</div>
 </div>
 </section>
 </main>
