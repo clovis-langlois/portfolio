@@ -157,15 +157,15 @@ main>.container{position:relative;z-index:1}
 .deletec-next .container{background:transparent;border:0;box-shadow:none}
 .deletec-services-grid{padding:0}
 
-/* Carrés Deletec décoratifs autour des pôles, en retrait du texte. */
-.deletec-next{isolation:isolate;overflow:hidden}
+/* Carrés décoratifs visibles, dans les espaces entre les blocs. */
+.deletec-next{position:relative;isolation:isolate;overflow:hidden}
 .deletec-next>.container{position:relative;z-index:1}
 .deletec-services-squares{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.deletec-services-squares .deletec-square{width:42px;height:42px;opacity:.72}
-.deletec-services-squares .blue{top:8%;left:4%;background:#1c64b4;width:48px;height:48px}
-.deletec-services-squares .cyan{top:43%;right:3%;background:#5bb9e7;width:34px;height:34px}
-.deletec-services-squares .yellow{top:auto;bottom:9%;left:5%;right:auto;background:#ffca22;width:43px;height:43px}
-@media(max-width:760px){.deletec-services-squares .blue{left:1%;top:3%;width:27px;height:27px}.deletec-services-squares .cyan{right:1%;top:49%;width:23px;height:23px}.deletec-services-squares .yellow{left:2%;bottom:3%;width:26px;height:26px}}
+.deletec-services-squares .deletec-square{position:absolute;display:block;opacity:.95;box-shadow:0 8px 25px rgba(0,0,0,.12)}
+.deletec-services-squares .blue{top:7%;left:7%;width:40px;height:40px;background:#1c64b4}
+.deletec-services-squares .cyan{top:48%;right:6%;left:auto;width:34px;height:34px;background:#5bb9e7}
+.deletec-services-squares .yellow{top:auto;bottom:5%;left:8%;right:auto;width:40px;height:40px;background:#ffca22}
+@media(max-width:760px){.deletec-services-squares .blue{left:2%;top:3%;width:27px;height:27px}.deletec-services-squares .cyan{right:2%;top:50%;width:24px;height:24px}.deletec-services-squares .yellow{left:2%;bottom:2%;width:27px;height:27px}}
 html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
 html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 @media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
