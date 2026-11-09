@@ -245,6 +245,14 @@ main{background:linear-gradient(180deg,#171c26 0%,#1b2330 47%,#171b23 100%)}
 .path-jump{display:flex;gap:14px;flex-wrap:wrap}
 .path-jump a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(161,187,217,.26);border-radius:999px;padding:12px 20px;color:#e1eaf6;font-size:13px;font-weight:600;transition:background .2s,border-color .2s}
 .path-jump a:hover{background:rgba(141,180,223,.09);border-color:#9fbde1}
+.path-story{position:relative;padding:20px 0 92px}
+.path-story-inner{border-top:1px solid rgba(157,179,207,.15);padding-top:78px}
+.path-story h2{font-size:clamp(32px,4.2vw,49px);letter-spacing:-.045em;line-height:1.2;max-width:850px;margin:0 0 34px}
+.path-story-copy{max-width:860px}
+.path-story-copy p{font-size:16px;line-height:2;color:#c0ccdc;margin:0 0 24px}
+.path-story-copy p:last-child{margin-bottom:0}
+.path-story-copy strong{color:#f0f5ff;font-weight:600}
+@media(max-width:700px){.path-story{padding:0 0 70px}.path-story-inner{padding-top:55px}.path-story-copy p{font-size:15px;line-height:1.9}}
 .path-section{padding:58px 0 108px;position:relative}
 .path-section+.path-section .container{border-top:1px solid rgba(157,179,207,.10);padding-top:110px}
 .path-section-head{margin-bottom:57px;max-width:800px}
@@ -313,11 +321,24 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
   <div class="container" data-reveal>
    <p class="path-overline">Expériences &amp; formations</p>
    <h1 id="path-title">Mon parcours</h1>
-   <p class="path-lead">De mes premières expériences à ma spécialisation dans les systèmes et réseaux, découvrez les étapes qui ont construit mon parcours et les compétences que je développe au quotidien.</p>
+   <p class="path-lead">D’une curiosité d’enfant pour l’informatique à mon évolution chez Deletec, découvrez les choix, les rencontres et les expériences qui ont façonné mon parcours.</p>
    <nav class="path-jump" aria-label="Explorer mon parcours">
     <a href="#experiences">Expériences professionnelles <span aria-hidden="true">↗</span></a>
     <a href="#formations">Formations &amp; diplômes <span aria-hidden="true">↗</span></a>
    </nav>
+  </div>
+ </section>
+ <section class="path-story" aria-labelledby="story-title">
+  <div class="container path-story-inner" data-reveal>
+   <p class="path-section-label">Mon histoire</p>
+   <h2 id="story-title">D’une passion d’enfant à un projet professionnel</h2>
+   <div class="path-story-copy">
+    <p>Depuis mon plus jeune âge, j’ai toujours aimé comprendre comment fonctionnent les choses qui m’entourent, de la mécanique à l’informatique. Dès l’enfance, je passais déjà du temps sur un ordinateur, sans imaginer que cette curiosité deviendrait un jour mon métier.</p>
+    <p>À la fin du collège, j’ai dû choisir entre deux domaines qui me passionnaient : la mécanique automobile et l’informatique. J’ai choisi cette dernière en intégrant le lycée professionnel La Tournelle, à La Garenne-Colombes, pour préparer un bac professionnel Systèmes numériques. Pendant trois ans, j’y ai découvert les fondamentaux des réseaux et des systèmes, tout en multipliant les stages dans des entreprises très différentes. Ces expériences m’ont progressivement fait comprendre le rôle essentiel de l’informatique dans le fonctionnement d’une organisation.</p>
+    <p>Mon passage chez Deletec, lors de mes derniers stages, a marqué un tournant. L’entreprise m’a proposé de poursuivre en alternance pour préparer un BTS SIO, option SISR. J’ai accepté sans hésiter. Je n’avais pourtant jamais imaginé poursuivre des études supérieures : cette opportunité m’a ouvert de nouvelles perspectives et m’a permis d’apprendre chaque jour, aussi bien en formation que sur le terrain.</p>
+    <p>Au fil de ces deux années, j’ai gagné en autonomie et en responsabilités, jusqu’à participer à mes premiers audits et projets. Après l’obtention de mon BTS en juillet 2026, j’ai souhaité continuer à progresser. Deletec a partagé cette volonté et notre collaboration se poursuit aujourd’hui dans le cadre de mon Bachelor Administrateur Systèmes &amp; Réseaux.</p>
+    <p>Aujourd’hui, je prends en charge des missions de plus en plus variées, avec la même motivation qu’à mes débuts : <strong>apprendre, comprendre et évoluer.</strong> Mon ambition est de continuer à développer mes compétences pour devenir administrateur systèmes et réseaux.</p>
+   </div>
   </div>
  </section>
  <section class="path-section" id="experiences" aria-labelledby="experiences-title">
