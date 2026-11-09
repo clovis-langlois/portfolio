@@ -271,15 +271,12 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 /* Matériel réseau : LEDs de fonctionnement et alertes sans modifier le style des autres illustrations. */
 .demo-row:nth-child(4) .demo-art{aspect-ratio:480 / 390}
 .infra-diagram .infra-unit{fill:#2d415a;stroke:#7593b9;stroke-opacity:.62;stroke-width:1.1}
-.infra-led-green{fill:#72dcb2;filter:drop-shadow(0 0 2px rgba(112,226,175,.35));animation:infra-green-blink 4.2s ease-in-out infinite}
-.infra-led-red{fill:#f08089;filter:drop-shadow(0 0 2px rgba(240,111,128,.3));animation:infra-red-blink 6s ease-in-out infinite}
-.infra-server .infra-led-green:nth-of-type(2){animation-delay:-1.4s}
-.infra-server .infra-led-green:nth-of-type(4){animation-delay:-2.8s}
-.infra-server:nth-of-type(2) .infra-led-red{animation-delay:-3s}
-.infra-switch .infra-led-green:nth-of-type(2){animation-delay:-2.1s}
-@keyframes infra-green-blink{0%,35%,100%{opacity:.95}65%{opacity:.5}}
-@keyframes infra-red-blink{0%,32%,100%{opacity:.9}66%{opacity:.38}}
-@media(prefers-reduced-motion:reduce){.infra-led-green,.infra-led-red{animation:none;opacity:.9}}
+/* Voyants : un bref clignotement environ toutes les cinq secondes, désynchronisé par équipement. */
+.infra-led-green,.infra-led-red{animation:infra-led-flash var(--led-cycle,5s) steps(1,end) var(--led-offset,0s) infinite}
+.infra-led-green{fill:#72dcb2;filter:drop-shadow(0 0 2px rgba(112,226,175,.35))}
+.infra-led-red{fill:#f08089;filter:drop-shadow(0 0 2px rgba(240,111,128,.3))}
+@keyframes infra-led-flash{0%,47%,57%,100%{opacity:1}48%,56%{opacity:.12}}
+@media(prefers-reduced-motion:reduce){.infra-led-green,.infra-led-red{animation:none;opacity:1}}
 
 
 /* Gestion de projets : trois mini-vues animées, cohérentes avec les autres missions. */
@@ -512,10 +509,10 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
   <g stroke="#7d9fc8" stroke-width="1.2" stroke-linecap="round" opacity=".65">
     <path d="M35 30h51M35 39h36M35 74h51M35 83h36M35 118h51M35 127h36M35 161h51"/>
   </g>
-  <circle class="infra-led-green" cx="24" cy="37" r="3.7"/>
-  <circle class="infra-led-green" cx="24" cy="81" r="3.7"/>
-  <circle class="infra-led-red" cx="24" cy="125" r="3.8"/>
-  <circle class="infra-led-green" cx="24" cy="165" r="3.7"/>
+  <circle style="--led-cycle:5.1s;--led-offset:-1.7s" class="infra-led-green" cx="24" cy="37" r="3.7"/>
+  <circle style="--led-cycle:4.8s;--led-offset:-3.9s" class="infra-led-green" cx="24" cy="81" r="3.7"/>
+  <circle style="--led-cycle:5.4s;--led-offset:-0.6s" class="infra-led-red" cx="24" cy="125" r="3.8"/>
+  <circle style="--led-cycle:5.2s;--led-offset:-4.4s" class="infra-led-green" cx="24" cy="165" r="3.7"/>
   <circle cx="94" cy="11" r="2" fill="#86a7cd" opacity=".55"/>
  </g>
  <g class="infra-server diagram-panel" transform="translate(277 60)">
@@ -527,10 +524,10 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
   <g stroke="#7d9fc8" stroke-width="1.2" stroke-linecap="round" opacity=".65">
     <path d="M35 30h51M35 39h36M35 74h51M35 83h36M35 118h51M35 127h36M35 161h51"/>
   </g>
-  <circle class="infra-led-green" cx="24" cy="37" r="3.7"/>
-  <circle class="infra-led-green" cx="24" cy="81" r="3.7"/>
-  <circle class="infra-led-red" cx="24" cy="125" r="3.8"/>
-  <circle class="infra-led-green" cx="24" cy="165" r="3.7"/>
+  <circle style="--led-cycle:4.9s;--led-offset:-2.8s" class="infra-led-green" cx="24" cy="37" r="3.7"/>
+  <circle style="--led-cycle:5.5s;--led-offset:-1.1s" class="infra-led-green" cx="24" cy="81" r="3.7"/>
+  <circle style="--led-cycle:4.7s;--led-offset:-3.3s" class="infra-led-red" cx="24" cy="125" r="3.8"/>
+  <circle style="--led-cycle:5.3s;--led-offset:-0.3s" class="infra-led-green" cx="24" cy="165" r="3.7"/>
   <circle cx="94" cy="11" r="2" fill="#86a7cd" opacity=".55"/>
  </g>
  <!-- Switch Ethernet : une rangée de huit ports et les témoins d'activité. -->
@@ -544,8 +541,8 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
   <rect x="258" y="329" width="10" height="11" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
   <rect x="272" y="329" width="10" height="11" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
   <rect x="286" y="329" width="10" height="11" rx="1.2" fill="#101d2b" stroke="#7593ba" stroke-width=".9"/>
-  <circle class="infra-led-green" cx="183" cy="351" r="3.1"/>
-  <circle class="infra-led-green" cx="198" cy="351" r="3.1"/>
+  <circle style="--led-cycle:5s;--led-offset:-2.1s" class="infra-led-green" cx="183" cy="351" r="3.1"/>
+  <circle style="--led-cycle:5.6s;--led-offset:-4.8s" class="infra-led-green" cx="198" cy="351" r="3.1"/>
   
  </g>
  <!-- Trois flux en aller-retour, toujours sur les câbles, sans téléportation visuelle. -->
