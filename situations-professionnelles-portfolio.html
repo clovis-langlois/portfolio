@@ -157,24 +157,10 @@ main>.container{position:relative;z-index:1}
 .deletec-next .container{background:transparent;border:0;box-shadow:none}
 .deletec-services-grid{padding:0}
 
-/* Carrés décoratifs visibles, dans les espaces entre les blocs. */
+/* Éclairage doux identique à la présentation Deletec, sans cadre ni carrés. */
 .deletec-next{position:relative;isolation:isolate;overflow:hidden}
+.deletec-next::before{content:"";position:absolute;inset:-12% -15%;background:radial-gradient(ellipse 49% 43% at 50% 44%,rgba(49,72,104,.31),transparent 78%);z-index:-1;pointer-events:none}
 .deletec-next>.container{position:relative;z-index:1}
-.deletec-services-squares{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.deletec-services-squares .deletec-square{position:absolute;display:block;opacity:.95;box-shadow:0 8px 25px rgba(0,0,0,.12)}
-.deletec-services-squares .blue{top:7%;left:7%;width:40px;height:40px;background:#1c64b4}
-.deletec-services-squares .cyan{top:48%;right:6%;left:auto;width:34px;height:34px;background:#5bb9e7}
-.deletec-services-squares .yellow{top:auto;bottom:5%;left:8%;right:auto;width:40px;height:40px;background:#ffca22}
-@media(max-width:760px){.deletec-services-squares .blue{left:2%;top:3%;width:27px;height:27px}.deletec-services-squares .cyan{right:2%;top:50%;width:24px;height:24px}.deletec-services-squares .yellow{left:2%;bottom:2%;width:27px;height:27px}}
-
-/* Carrés des services: dans le conteneur, devant le fond et hors du texte. */
-.deletec-next > .container{position:relative;isolation:isolate}
-.deletec-next .container > .deletec-services-squares{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:visible}
-.deletec-next .container > .deletec-services-squares .deletec-square{position:absolute;display:block;opacity:1;visibility:visible;z-index:2;transform:rotate(var(--square-rotation,-15deg));box-shadow:none}
-.deletec-next .container > .deletec-services-squares .deletec-square.blue{top:12px;right:8px;left:auto;bottom:auto;width:43px;height:43px;background:#2167ac}
-.deletec-next .container > .deletec-services-squares .deletec-square.cyan{top:52%;right:-18px;left:auto;bottom:auto;width:35px;height:35px;background:#62b8e7}
-.deletec-next .container > .deletec-services-squares .deletec-square.yellow{top:auto;bottom:0;left:-18px;right:auto;width:42px;height:42px;background:#ffca22}
-@media(max-width:760px){.deletec-next .container > .deletec-services-squares .deletec-square.blue{width:25px;height:25px;right:8px;top:8px}.deletec-next .container > .deletec-services-squares .deletec-square.cyan{width:22px;height:22px;right:0}.deletec-next .container > .deletec-services-squares .deletec-square.yellow{width:24px;height:24px;left:0}}
 html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
 html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 @media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
@@ -257,7 +243,6 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 </section>
 <section class="deletec-next" aria-labelledby="deletec-services-title">
 <div class="container">
-<div class="deletec-services-squares" aria-hidden="true"><span class="deletec-square blue" data-square data-speed="0.18"></span><span class="deletec-square cyan" data-square data-speed="0.14"></span><span class="deletec-square yellow" data-square data-speed="0.26"></span></div>
 <div class="deletec-services-heading" data-reveal>
 <p class="services-kicker">Les expertises de Deletec</p>
 <h2 id="deletec-services-title">Nos pôles d’expertise</h2>
