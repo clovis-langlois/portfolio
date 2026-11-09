@@ -208,6 +208,32 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 
 
 
+
+/* Expériences : blocs éditoriaux en deux colonnes inspirés de l'ancien portfolio. */
+.experience-showcase{display:flex;flex-direction:column;gap:116px}
+.experience-row{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:clamp(48px,7vw,112px);align-items:center}
+.experience-copy h3{font-size:clamp(36px,4.3vw,55px);font-weight:600;letter-spacing:-.045em;line-height:1.12;margin:0 0 7px}
+.experience-date{font-size:13px!important;font-weight:600;color:#d5e4f8!important;margin:0 0 10px!important}
+.experience-role{font-size:13px!important;color:#92b4df!important;font-weight:600;margin:0 0 29px!important}
+.experience-copy>p:not(.experience-date):not(.experience-role){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
+.experience-copy .path-more{margin-top:5px}
+.experience-visual{width:100%;aspect-ratio:1.22;min-height:300px;display:flex;align-items:center;justify-content:center;border-radius:18px;overflow:hidden;border:1px solid rgba(164,188,216,.13);position:relative;isolation:isolate}
+.experience-visual:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.045),transparent 60%)}
+.experience-visual--deletec{background:#0745a9}
+.experience-visual--deletec img{width:88%;height:75%;object-fit:contain}
+.experience-visual--synatek{background:#1d1d1d}
+.experience-visual--synatek:before{content:"";position:absolute;left:0;right:0;top:40%;height:20%;background:#ff6416}
+.experience-visual--spie{background:#f2f4f8}
+.experience-visual--vinci{background:#f5f6f9}
+.experience-visual--boss{background:#f4f5f7}
+.experience-wordmark{position:relative;z-index:1;font-size:clamp(38px,5vw,74px);font-weight:700;letter-spacing:-.055em;line-height:1.05;text-align:center}
+.experience-visual--synatek .experience-wordmark{color:#181818;letter-spacing:-.065em}
+.experience-visual--spie .experience-wordmark{color:#1d316c;letter-spacing:.1em;font-weight:500}
+.experience-visual--vinci .experience-wordmark{color:#1d386f;letter-spacing:.07em}
+.experience-visual--vinci small{display:block;font-size:.25em;letter-spacing:.12em;margin-top:9px}
+.experience-visual--boss .experience-wordmark{color:#0b0b0b;letter-spacing:.04em}
+@media(max-width:850px){.experience-row{gap:35px}.experience-showcase{gap:95px}.experience-visual{min-height:240px}}
+@media(max-width:700px){.experience-row{grid-template-columns:1fr;gap:28px}.experience-showcase{gap:85px}.experience-visual{min-height:240px;aspect-ratio:1.5}.experience-copy h3{font-size:39px}.experience-copy>p:not(.experience-date):not(.experience-role){font-size:14px}}
 /* Mon parcours — identité visuelle cohérente avec le portfolio. */
 main{background:linear-gradient(180deg,#171c26 0%,#1b2330 47%,#171b23 100%)}
 .path-hero{position:relative;padding:120px 0 100px;overflow:hidden}
@@ -301,74 +327,80 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
     <h2 id="experiences-title">Mon expérience professionnelle</h2>
     <p>Des missions techniques en entreprise aux interventions auprès des utilisateurs, chaque expérience contribue à mon évolution vers l'administration des systèmes et réseaux.</p>
    </div>
-   <div class="path-timeline">
-    <article class="path-entry" data-reveal>
-     <div class="path-period">Sept. 2024 — aujourd’hui</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">DELETEC · Alternance · Paris · Hybride</p>
-      <h3>Technicien systèmes &amp; réseaux</h3>
-      <p>Administration Active Directory, Microsoft 365, Entra ID et Intune dans des environnements multi-tenant. Support technique, résolution d’incidents, interventions sur site, audits, inventaires et coordination de projets informatiques.</p>
-      <div class="path-tags"><span>Active Directory</span><span>Microsoft 365</span><span>Support IT</span><span>Infrastructures</span></div>
-      <p style="margin-top:23px"><a class="path-more" href="situations-professionnelles-portfolio.html">Découvrir mes missions chez Deletec <span aria-hidden="true">↗</span></a></p>
-     </div>
-    </article>
-    <article class="path-entry" data-reveal>
-     <div class="path-period">Nov. — déc. 2023</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">DELETEC · Stage · Paris · Sur site</p>
-      <h3>Stagiaire — Logistique et préparation informatique</h3>
-      <ul class="path-duties"><li>Installation et configuration physique d’équipements réseau Fortinet.</li><li>Installation de cartes PCI dans des ordinateurs clients.</li><li>Installation personnalisée de Windows.</li><li>Configuration de téléphones IP.</li></ul>
-      <div class="path-tags"><span>Fortinet</span><span>Windows</span><span>Téléphonie IP</span></div>
-      
-     </div>
-    </article>
-    <article class="path-entry" data-reveal>
-     <div class="path-period">Mai 2023</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">SYNATEK · Stage · Paris · Sur site</p>
-      <h3>Stagiaire — Réparation informatique</h3>
-      <ul class="path-duties"><li>Installation du système d’exploitation Windows.</li><li>Diagnostic d’ordinateurs fixes et portables.</li><li>Tests et vérification de disques durs.</li></ul>
-      <div class="path-tags"><span>Diagnostic matériel</span><span>Windows</span><span>Maintenance</span></div>
-      
-     </div>
-    </article>
-    <article class="path-entry" data-reveal>
-     <div class="path-period">Janv. 2023</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">SPIE ICS · Stage · Malakoff · Hybride</p>
-      <h3>Stagiaire — Service Cloud</h3>
-      <ul class="path-duties"><li>Participation à l’installation physique d’un nouveau datacenter.</li><li>Vérification, remise à zéro et inventaire de routeurs Cisco.</li></ul>
-      <div class="path-tags"><span>Datacenter</span><span>Cisco</span><span>Réseaux</span></div>
-      
-     </div>
-    </article>
-    <article class="path-entry" data-reveal>
-     <div class="path-period">Mai 2022</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">VINCI Facilities · Stage · Osny · Sur site</p>
-      <h3>Stagiaire — Service Data</h3>
-      <ul class="path-duties"><li>Découverte du langage VBA (Visual Basic for Applications).</li></ul>
-      <div class="path-tags"><span>VBA</span><span>Data</span></div>
-      
-     </div>
-    </article>
-    <article class="path-entry" data-reveal>
-     <div class="path-period">Janv. 2022</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">HUGO BOSS · Stage · Paris · Sur site</p>
-      <h3>Stagiaire — Service informatique</h3>
-      <ul class="path-duties"><li>Participation à un projet de configuration d’équipements réseau : routeurs et pare-feu.</li><li>Aide à la configuration d’appareils Apple pour les collaborateurs du siège et les utilisateurs en boutique.</li></ul>
-      <div class="path-tags"><span>Réseaux</span><span>Pare-feu</span><span>Apple</span></div>
-      
-     </div>
-    </article>
-   </div>
+<div class="experience-showcase">
+<article class="experience-row" data-reveal>
+ <div class="experience-copy">
+  <h3>Deletec</h3>
+  <p class="experience-date">Septembre 2024 — aujourd’hui</p>
+  <p class="experience-role">Technicien systèmes &amp; réseaux · Alternance</p>
+  <p>Depuis septembre 2024, je poursuis mon parcours chez Deletec en alternance, en intervenant auprès de clients aux environnements informatiques variés.</p>
+  <p>Mes missions couvrent l’administration Active Directory et Microsoft 365, la gestion des postes et des identités, le support technique, les audits ainsi que les interventions sur les infrastructures systèmes et réseaux.</p>
+  <p>Cette expérience me permet de consolider mes compétences techniques, de développer mon autonomie et de participer à des projets informatiques concrets.</p>
+  <a class="path-more" href="situations-professionnelles-portfolio.html">Découvrir mes missions chez Deletec <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="experience-visual experience-visual--deletec"><img src="assets/deletec-logo-fidele.svg" alt="Logo Deletec" loading="lazy"></div>
+</article>
+<article class="experience-row" data-reveal>
+ <div class="experience-copy">
+  <h3>Deletec</h3>
+  <p class="experience-date">Novembre — décembre 2023</p>
+  <p class="experience-role">Stage · Logistique et préparation informatique</p>
+  <p>Lors de mon premier stage chez Deletec, j’ai intégré le service logistique et préparation informatique, chargé de préparer et de configurer les équipements destinés aux clients.</p>
+  <p>J’ai participé à l’installation physique d’équipements réseau Fortinet, à l’intégration de cartes PCI dans les ordinateurs clients, à l’installation personnalisée de Windows ainsi qu’à la configuration de téléphones IP.</p>
+  <p>Cette première immersion en entreprise de services informatiques m’a permis de découvrir les exigences de la préparation technique et de confirmer mon intérêt pour les systèmes et réseaux.</p>
+  
+ </div>
+ <div class="experience-visual experience-visual--deletec"><img src="assets/deletec-logo-fidele.svg" alt="Logo Deletec" loading="lazy"></div>
+</article>
+<article class="experience-row" data-reveal>
+ <div class="experience-copy">
+  <h3>Synatek</h3>
+  <p class="experience-date">Mai 2023</p>
+  <p class="experience-role">Stage · Réparation informatique</p>
+  <p>Lors de ce stage au sein du service de réparation de Synatek, j’ai découvert les activités de diagnostic et de maintenance du matériel informatique.</p>
+  <p>J’ai réalisé des installations de Windows, le diagnostic d’ordinateurs fixes et portables, ainsi que des tests et vérifications de disques durs.</p>
+  <p>Cette expérience m’a permis de mieux comprendre les composants matériels et d’acquérir une approche méthodique de la recherche de pannes.</p>
+  
+ </div>
+ <div class="experience-visual experience-visual--synatek" role="img" aria-label="Synatek"><span class="experience-wordmark">SYNATEK</span></div>
+</article>
+<article class="experience-row" data-reveal>
+ <div class="experience-copy">
+  <h3>SPIE ICS</h3>
+  <p class="experience-date">Janvier 2023</p>
+  <p class="experience-role">Stage · Service Cloud</p>
+  <p>Au sein du service Cloud de SPIE ICS, j’ai découvert le fonctionnement des infrastructures informatiques professionnelles et les activités associées aux équipements réseau.</p>
+  <p>J’ai participé à l’installation physique d’un nouveau datacenter, ainsi qu’à la vérification, à la remise à zéro et à l’inventaire de routeurs Cisco.</p>
+  <p>Ce stage m’a sensibilisé à l’organisation des infrastructures critiques et m’a permis d’approfondir ma connaissance des équipements réseau.</p>
+  
+ </div>
+ <div class="experience-visual experience-visual--spie" role="img" aria-label="SPIE ICS"><span class="experience-wordmark">SPIE</span></div>
+</article>
+<article class="experience-row" data-reveal>
+ <div class="experience-copy">
+  <h3>VINCI Facilities</h3>
+  <p class="experience-date">Mai 2022</p>
+  <p class="experience-role">Stage · Service Data</p>
+  <p>Lors de ce stage au sein du service Data de VINCI Facilities, j’ai découvert les usages de l’informatique dans la gestion des activités d’une entreprise.</p>
+  <p>J’ai notamment été initié au langage VBA (Visual Basic for Applications).</p>
+  <p>Cette expérience m’a permis de découvrir une première approche de la programmation et de mieux comprendre les possibilités d’automatisation offertes par les outils bureautiques.</p>
+  
+ </div>
+ <div class="experience-visual experience-visual--vinci" role="img" aria-label="VINCI Facilities"><span class="experience-wordmark">VINCI <small>FACILITIES</small></span></div>
+</article>
+<article class="experience-row" data-reveal>
+ <div class="experience-copy">
+  <h3>HUGO BOSS</h3>
+  <p class="experience-date">Janvier 2022</p>
+  <p class="experience-role">Stage · Service informatique</p>
+  <p>Lors de mon stage au sein du service informatique de HUGO BOSS, j’ai découvert l’accompagnement technique des collaborateurs et les besoins informatiques d’une organisation répartie sur plusieurs sites.</p>
+  <p>J’ai apporté mon aide à un projet de configuration d’équipements réseau, notamment des routeurs et des pare-feu, ainsi qu’à la configuration d’appareils Apple destinés aux collaborateurs du siège et aux utilisateurs en boutique.</p>
+  <p>Cette expérience m’a fait découvrir les enjeux du support informatique et de la préparation d’équipements dans un environnement professionnel.</p>
+  
+ </div>
+ <div class="experience-visual experience-visual--boss" role="img" aria-label="HUGO BOSS"><span class="experience-wordmark">HUGO BOSS</span></div>
+</article>
+</div>
   </div>
  </section>
  <section class="path-section" id="formations" aria-labelledby="formations-title">
