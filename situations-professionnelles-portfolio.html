@@ -234,6 +234,8 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 .demo-art-halo{position:absolute;z-index:-1;inset:7%;background:radial-gradient(ellipse at center,rgba(63,91,132,.26) 0%,rgba(41,62,89,.11) 38%,transparent 69%);filter:blur(8px)}
 .demo-diagram{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 16px 30px rgba(3,9,19,.1))}
 .demo-diagram text{font:600 11px Montserrat,Arial,sans-serif;letter-spacing:.025em;fill:#bbd5f4}
+.demo-diagram text.m365-service-label{font-size:10.2px;letter-spacing:-.015em}
+.demo-diagram text.m365-service-label--long{font-size:9.1px;letter-spacing:-.032em}
 .demo-diagram .diagram-title{font-size:23px;font-weight:700;fill:#e6f1ff;letter-spacing:-.025em}
 .demo-diagram .diagram-panel>rect:first-child{fill:#1e2b40;stroke:#6f8aaf;stroke-opacity:.63;stroke-width:1.4}
 .demo-diagram .diagram-panel rect:not(:first-child){fill:#2b405c;stroke:#7798bf;stroke-opacity:.5}
@@ -365,26 +367,26 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
  <g class="diagram-panel">
   <rect x="53" y="59" width="122" height="65" rx="11"/>
   <image href="assets/microsoft-exchange.svg" x="67" y="75" width="33" height="33" preserveAspectRatio="xMidYMid meet"/>
-  <text x="135" y="96" text-anchor="middle" font-size="10.2">EXCHANGE</text>
+  <text x="135" y="96" text-anchor="middle" class="m365-service-label">EXCHANGE</text>
  </g>
  <g class="diagram-panel">
   <rect x="300" y="55" width="145" height="65" rx="11"/>
   <image href="assets/microsoft-sharepoint.svg" x="314" y="72" width="34" height="34" preserveAspectRatio="xMidYMid meet"/>
-  <text x="391" y="96" text-anchor="middle" font-size="9.6">SHAREPOINT</text>
+  <text x="391" y="96" text-anchor="middle" class="m365-service-label m365-service-label--long">SHAREPOINT</text>
  </g>
  <g class="diagram-panel">
   <rect x="48" y="245" width="125" height="62" rx="11"/>
   <image href="assets/microsoft-entra-id.svg" x="62" y="261" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
-  <text x="133" y="282" text-anchor="middle" font-size="10.5">ENTRA ID</text>
+  <text x="133" y="282" text-anchor="middle" class="m365-service-label">ENTRA ID</text>
  </g>
  <g class="diagram-panel">
   <rect x="304" y="246" width="131" height="62" rx="11"/>
   <image href="assets/microsoft-intune.svg" x="320" y="261" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
-  <text x="395" y="280" text-anchor="middle" font-size="10.5">INTUNE</text>
+  <text x="395" y="280" text-anchor="middle" class="m365-service-label">INTUNE</text>
  </g>
  <!-- Quatre points lumineux : un par service, aller-retour en continu sur leur propre câble. -->
  <circle class="diagram-dot" r="3"><animateMotion path="M175 124L196 155L175 124" dur="4.8s" begin="-1.2s" calcMode="linear" repeatCount="indefinite"/></circle>
- <circle class="diagram-dot" r="3"><animateMotion path="M351 120L292 152L308 120" dur="5.6s" begin="-2.4s" calcMode="linear" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3"><animateMotion path="M351 120L292 152L351 120" dur="5.6s" begin="-2.4s" calcMode="linear" repeatCount="indefinite"/></circle>
  <circle class="diagram-dot" r="3"><animateMotion path="M194 219L157 245L194 219" dur="6.3s" begin="-3.5s" calcMode="linear" repeatCount="indefinite"/></circle>
  <circle class="diagram-dot" r="3"><animateMotion path="M291 219L328 246L291 219" dur="5.2s" begin="-1.7s" calcMode="linear" repeatCount="indefinite"/></circle>
 </svg></div></article>
