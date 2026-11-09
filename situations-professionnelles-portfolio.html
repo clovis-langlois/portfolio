@@ -240,6 +240,24 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 .demo-diagram .diagram-panel rect:not(:first-child){fill:#2b405c;stroke:#7798bf;stroke-opacity:.5}
 .demo-diagram .diagram-dot{fill:#c3e3ff;filter:drop-shadow(0 0 5px #9fc8f4)}
 .diagram-racks .diagram-panel>rect:first-child{fill:#1f2e43}
+
+/* Support : ticket qui passe de « En cours » à « Résolu » puis recommence. */
+.support-ticket-open{opacity:1;animation:support-ticket-open 10s steps(1,end) infinite}
+.support-ticket-closed{opacity:0;animation:support-ticket-closed 10s steps(1,end) infinite}
+@keyframes support-ticket-open{0%,49.9%{opacity:1}50%,100%{opacity:0}}
+@keyframes support-ticket-closed{0%,49.9%{opacity:0}50%,100%{opacity:1}}
+/* Trois points de saisie décalés, comme un échange avec un utilisateur. */
+.support-chat-dots circle{opacity:.28;animation:support-typing 1.8s ease-in-out infinite}
+.support-chat-dots circle:nth-child(2){animation-delay:.3s}
+.support-chat-dots circle:nth-child(3){animation-delay:.6s}
+@keyframes support-typing{0%,58%,100%{opacity:.28}23%{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ .support-ticket-open,.support-ticket-closed,.support-chat-dots circle{animation:none}
+ .support-ticket-open{opacity:0}
+ .support-ticket-closed{opacity:1}
+ .support-chat-dots circle{opacity:.8}
+}
+
 .diagram-pulse{transform-origin:240px 177px;animation:diagram-pulse 4.8s ease-in-out infinite}
 .rack-lights{animation:led-pulse 2.3s ease-in-out infinite}
 @keyframes diagram-pulse{0%,100%{opacity:.13;transform:scale(.97)}50%{opacity:.48;transform:scale(1.07)}}
@@ -379,22 +397,43 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
   <text x="133" y="282" text-anchor="middle" class="m365-service-label">ENTRA ID</text>
  </g>
  <g class="diagram-panel">
-  <rect x="304" y="245" width="131" height="62" rx="11"/>
-  <image href="assets/microsoft-intune.svg" x="320" y="260" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
-  <text x="395" y="282" text-anchor="middle" class="m365-service-label">INTUNE</text>
- </g>
- <!-- Quatre points lumineux : un par service, aller-retour en continu sur leur propre câble. -->
- <circle class="diagram-dot" r="3"><animateMotion path="M175 124L196 155L175 124" dur="4.8s" begin="-1.2s" calcMode="linear" repeatCount="indefinite"/></circle>
- <circle class="diagram-dot" r="3"><animateMotion path="M351 124L292 152L351 124" dur="5.6s" begin="-2.4s" calcMode="linear" repeatCount="indefinite"/></circle>
- <circle class="diagram-dot" r="3"><animateMotion path="M194 219L157 245L194 219" dur="6.3s" begin="-3.5s" calcMode="linear" repeatCount="indefinite"/></circle>
- <circle class="diagram-dot" r="3"><animateMotion path="M291 219L328 245L291 219" dur="5.2s" begin="-1.7s" calcMode="linear" repeatCount="indefinite"/></circle>
-</svg></div></article>
-<article class="demo-row" aria-labelledby="mission-3" data-reveal><div class="demo-copy"><h3 id="mission-3">Support technique</h3><p>Traitement des tickets d'incidents, diagnostic et résolution de problématiques liées aux systèmes, aux réseaux, Microsoft 365, VPN, bureautique et aux applications métiers, sur des environnements clients variés. Accompagnement des utilisateurs jusqu'à la résolution complète des demandes, dans le respect des engagements de service (SLA).</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-support" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
- <g class="diagram-wires" fill="none" stroke="#7897bb" stroke-width="1.4" opacity=".6"><path d="M161 164H93V81M313 164H398V98M242 246V303"/></g>
+  <rect x="304" y="245" width="131" height="<article class="demo-row" aria-labelledby="mission-3" data-reveal><div class="demo-copy"><h3 id="mission-3">Support technique</h3><p>Traitement des tickets d'incidents, diagnostic et résolution de problématiques liées aux systèmes, aux réseaux, Microsoft 365, VPN, bureautique et aux applications métiers, sur des environnements clients variés. Accompagnement des utilisateurs jusqu'à la résolution complète des demandes, dans le respect des engagements de service (SLA).</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-support" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g class="diagram-wires" fill="none" stroke="#7897bb" stroke-width="1.4" opacity=".6"><path d="M161 164H93V113M313 164H398V129M242 246V278"/></g>
  <g class="diagram-glow"><circle cx="239" cy="177" r="92" stroke="#85bbf3" stroke-opacity=".16" stroke-width="1.5" fill="none"/><circle cx="239" cy="177" r="113" stroke="#85bbf3" stroke-opacity=".07" fill="none"/></g>
  <g fill="none" stroke="#a3c8f0" stroke-width="7" stroke-linecap="round"><path d="M167 202v-34a72 72 0 01144 0v34"/><path d="M167 200c-17 0-24-11-24-29 0-16 10-27 24-27M311 200c16 0 24-11 24-29 0-17-10-27-24-27"/></g>
  <g class="diagram-panel"><rect x="195" y="180" width="88" height="52" rx="12"/><path d="M213 204l13 12 26-25" stroke="#a9d1fc" stroke-width="3" fill="none" stroke-linecap="round"/></g>
- <g class="diagram-panel"><rect x="51" y="48" width="135" height="65" rx="12"/><text x="118" y="76" text-anchor="middle">INCIDENT</text><text x="118" y="97" text-anchor="middle" fill="#9fc5f2">RÉSOLU</text></g>
+ <g class="diagram-panel support-ticket">
+  <rect x="51" y="48" width="135" height="65" rx="12"/>
+  <text x="118" y="76" text-anchor="middle">INCIDENT</text>
+  <!-- Étapes alternées : incident en cours puis résolu. -->
+  <g class="support-ticket-open">
+    <circle cx="76" cy="93" r="7" fill="none" stroke="#a1bfe3" stroke-width="1.4"/>
+    <path d="M76 89v4l3 2" fill="none" stroke="#b9d4f3" stroke-width="1.4" stroke-linecap="round"/>
+    <text x="129" y="97" text-anchor="middle">EN COURS</text>
+  </g>
+  <g class="support-ticket-closed">
+    <circle cx="76" cy="93" r="8" fill="#214668" stroke="#97caff" stroke-width="1.3"/>
+    <path d="M72 93l3 3 5-6" fill="none" stroke="#d3ebff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="129" y="97" text-anchor="middle">RÉSOLU</text>
+  </g>
+ </g>
+ <g class="diagram-panel"><rect x="330" y="67" width="112" height="62" rx="12"/><text x="386" y="96" text-anchor="middle">SLA</text><!-- Jauge SLA : remplissage et vidage sur un cycle de 10 secondes. -->
+ <line x1="361" y1="108" x2="412" y2="108" stroke="#82b9f7" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+ <line x1="361" y1="108" x2="361" y2="108" stroke="#a7d4ff" stroke-width="2.7" stroke-linecap="round">
+  <animate attributeName="x2" values="361;412;361" keyTimes="0;0.5;1" dur="10s" calcMode="linear" repeatCount="indefinite"/>
+ </line></g>
+ <g class="diagram-panel support-chat">
+  <rect x="192" y="278" width="98" height="63" rx="10"/>
+  <text x="241" y="301" text-anchor="middle">SUPPORT</text>
+  <!-- Trois pulsations décalées suggérant une conversation active. -->
+  <g class="support-chat-dots" fill="#acd7ff">
+    <circle cx="225" cy="319" r="3.3"/>
+    <circle cx="241" cy="319" r="3.3"/>
+    <circle cx="257" cy="319" r="3.3"/>
+  </g>
+ </g>
+ <circle class="diagram-pulse" cx="240" cy="178" r="125" stroke="#9ec9fa" fill="none" stroke-width="1.1"/>
+</svg></div></article>="135" height="65" rx="12"/><text x="118" y="76" text-anchor="middle">INCIDENT</text><text x="118" y="97" text-anchor="middle" fill="#9fc5f2">RÉSOLU</text></g>
  <g class="diagram-panel"><rect x="330" y="67" width="112" height="62" rx="12"/><text x="386" y="96" text-anchor="middle">SLA</text><!-- Jauge SLA : remplissage et vidage sur un cycle de 10 secondes. -->
  <line x1="361" y1="108" x2="412" y2="108" stroke="#82b9f7" stroke-width="2" stroke-linecap="round" opacity=".25"/>
  <line x1="361" y1="108" x2="361" y2="108" stroke="#a7d4ff" stroke-width="2.7" stroke-linecap="round">
