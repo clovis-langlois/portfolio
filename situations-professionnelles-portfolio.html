@@ -220,6 +220,35 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 .mission-item p:last-child{font-size:15px;line-height:1.9;color:#b9c5d4;margin:0;max-width:820px}
 @media(max-width:760px){.missions{padding:75px 0 90px}.missions-lead{margin-bottom:45px}.mission-item{grid-template-columns:45px minmax(0,1fr);gap:15px;padding:30px 0}.mission-item p:last-child,.missions-lead p{font-size:14px}}
 
+
+/* Mise en page alternée et illustrations techniques validées sur la maquette. */
+.missions-inner{max-width:1160px}
+.missions .demo-rows{padding:0}
+.demo-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(35px,6vw,100px);min-height:405px;padding:64px 0;position:relative}
+.demo-row+.demo-row{border-top:1px solid rgba(157,179,207,.08)}
+.demo-copy{max-width:565px}
+.demo-number{display:flex;gap:12px;align-items:center;color:#9fc2ed;font-size:12px;letter-spacing:.075em;font-weight:600;text-transform:uppercase;margin:0 0 18px}
+.demo-number span{color:#7f99b8;letter-spacing:.11em;font-size:11px}
+.demo-copy h3{font-size:clamp(27px,3vw,39px);line-height:1.23;letter-spacing:-.044em;font-weight:600;margin:0 0 23px}
+.demo-copy>p:last-child{font-size:15px;line-height:1.9;color:#b9c7d8;margin:0}
+.demo-row:nth-child(even) .demo-art{order:-1}
+.demo-art{position:relative;width:100%;max-width:530px;height:auto;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;min-width:0;justify-self:center;isolation:isolate}
+.demo-art-halo{position:absolute;z-index:-1;inset:7%;background:radial-gradient(ellipse at center,rgba(63,91,132,.26) 0%,rgba(41,62,89,.11) 38%,transparent 69%);filter:blur(8px)}
+.demo-diagram{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 16px 30px rgba(3,9,19,.1))}
+.demo-diagram text{font:600 11px Montserrat,Arial,sans-serif;letter-spacing:.025em;fill:#bbd5f4}
+.demo-diagram .diagram-title{font-size:23px;font-weight:700;fill:#e6f1ff;letter-spacing:-.025em}
+.demo-diagram .diagram-panel>rect:first-child{fill:#1e2b40;stroke:#6f8aaf;stroke-opacity:.63;stroke-width:1.4}
+.demo-diagram .diagram-panel rect:not(:first-child){fill:#2b405c;stroke:#7798bf;stroke-opacity:.5}
+.demo-diagram .diagram-dot{fill:#c3e3ff;filter:drop-shadow(0 0 5px #9fc8f4)}
+.diagram-racks .diagram-panel>rect:first-child{fill:#1f2e43}
+.diagram-pulse{transform-origin:240px 177px;animation:diagram-pulse 4.8s ease-in-out infinite}
+.rack-lights{animation:led-pulse 2.3s ease-in-out infinite}
+@keyframes diagram-pulse{0%,100%{opacity:.13;transform:scale(.97)}50%{opacity:.48;transform:scale(1.07)}}
+@keyframes led-pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@media(max-width:850px){.demo-intro{padding:65px 0 15px}.demo-row{grid-template-columns:1fr;gap:10px;min-height:0;padding:52px 0}.demo-row:nth-child(even) .demo-art{order:0}.demo-art{max-width:500px}.demo-copy{max-width:100%}}
+@media(max-width:520px){.demo-row{padding:40px 0}.demo-copy>p:last-child{font-size:14px}.demo-art{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:reduce){.diagram-pulse,.rack-lights{animation:none}.diagram-dot{display:none}}
+
 </style>
 </head>
 <body>
@@ -280,12 +309,95 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
       <p>Mes missions couvrent aussi bien l’administration des systèmes et des services Microsoft que le support technique, les interventions sur site et la participation aux projets informatiques de nos clients.</p>
       <p>Au-delà des aspects techniques, j’accorde une importance particulière à la qualité de service, à la relation client et à la recherche de solutions fiables et durables. Chaque intervention représente une occasion de développer mes compétences, de relever de nouveaux défis et de contribuer à la continuité des activités des organisations que nous accompagnons.</p>
     </div>
-    <div class="missions-list">
-      <article class="mission-item" data-reveal><span class="mission-index">01</span><div><p class="mission-category">Administration</p><h3>Systèmes &amp; Active Directory</h3><p>Gestion des comptes utilisateurs, groupes de sécurité, droits d’accès et habilitations au sein d’environnements Active Directory. Participation aux audits, diagnostic et résolution des incidents liés aux services d’annuaire et aux ressources informatiques.</p></div></article>
-      <article class="mission-item" data-reveal><span class="mission-index">02</span><div><p class="mission-category">Cloud &amp; Modern Workplace</p><h3>Microsoft 365, Entra ID &amp; Intune</h3><p>Administration des environnements Microsoft 365 multi-tenant : gestion des utilisateurs, licences et groupes, administration d’Exchange Online, SharePoint Online, OneDrive et Teams. Déploiement, configuration et gestion des postes de travail avec Microsoft Intune, ainsi que participation à l’application des politiques de sécurité.</p></div></article>
-      <article class="mission-item" data-reveal><span class="mission-index">03</span><div><p class="mission-category">Support &amp; exploitation</p><h3>Support technique &amp; accompagnement utilisateurs</h3><p>Prise en charge des incidents et demandes techniques sur des environnements clients variés : systèmes, réseaux, VPN, Microsoft 365, bureautique et applications métiers. Diagnostic, résolution, suivi des tickets et accompagnement des utilisateurs, dans le respect des engagements de service (SLA).</p></div></article>
-      <article class="mission-item" data-reveal><span class="mission-index">04</span><div><p class="mission-category">Infrastructures</p><h3>Interventions sur site &amp; infrastructures</h3><p>Déploiement et renouvellement de postes et d’équipements informatiques, maintenance des infrastructures systèmes et réseaux, décommissionnement de serveurs et brassage réseau. Réalisation d’inventaires, d’audits de parcs informatiques et participation aux actions d’amélioration de la sécurité.</p></div></article>
-      <article class="mission-item" data-reveal><span class="mission-index">05</span><div><p class="mission-category">Projets &amp; documentation</p><h3>Coordination technique &amp; gestion de projets</h3><p>Analyse des besoins, préparation et coordination des déploiements et interventions techniques. Suivi des opérations auprès des clients, réalisation de comptes rendus et création, rédaction et amélioration de procédures et documentations techniques internes.</p></div></article>
+    <div class="demo-rows" aria-label="Domaines d’intervention">
+<article class="demo-row" aria-labelledby="mission-1" data-reveal><div class="demo-copy"><p class="demo-number">01 <span>/ Administration</span></p><h3 id="mission-1">Systèmes & Active Directory</h3><p>Gestion des comptes utilisateurs, groupes de sécurité, droits d’accès et habilitations au sein d’environnements Active Directory. Participation aux audits, diagnostic et résolution des incidents liés aux services d’annuaire et aux ressources informatiques.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="fill-ad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#344e71"/><stop offset="1" stop-color="#1b2b41"/></linearGradient>
+  <radialGradient id="ad-glow"><stop stop-color="#558bcc" stop-opacity=".19"/><stop offset="1" stop-color="#558bcc" stop-opacity="0"/></radialGradient>
+ </defs>
+ <!-- Arborescence hiérarchique en pyramide : un nœud principal, deux branches puis quatre terminaux. -->
+ <ellipse cx="240" cy="139" rx="185" ry="135" fill="url(#ad-glow)"/>
+ <g class="diagram-wires" fill="none" stroke="#86a9d1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".78">
+  <path d="M240 81V96H170V111 M240 96H310V111"/>
+  <path d="M170 147V161H120V175 M170 161H215V175"/>
+  <path d="M310 147V161H265V175 M310 161H360V175"/>
+ </g>
+ <!-- La racine de l'annuaire -->
+ <rect x="217" y="37" width="46" height="44" rx="11" fill="url(#fill-ad)" stroke="#a3c9f3" stroke-opacity=".88" stroke-width="1.6"/>
+ <path d="M231 53h18M231 60h18M231 67h12" stroke="#c6e1ff" stroke-width="2" stroke-linecap="round"/>
+ <circle cx="255" cy="67" r="2.8" fill="#87b9f4"/>
+ <!-- Deux nœuds intermédiaires -->
+ <g fill="url(#fill-ad)" stroke="#8eafd5" stroke-width="1.5">
+  <rect x="147" y="111" width="46" height="36" rx="9"/><rect x="287" y="111" width="46" height="36" rx="9"/>
+ </g>
+ <g fill="#b7d6fa">
+  <circle cx="170" cy="126" r="4.7"/><path d="M159 141c1-11 21-11 22 0Z" opacity=".75"/>
+  <circle cx="310" cy="126" r="4.7"/><path d="M299 141c1-11 21-11 22 0Z" opacity=".75"/>
+ </g>
+ <!-- Quatre objets enfants : le dessin forme une pyramide lisible. -->
+ <g fill="#23354e" stroke="#7fa3cb" stroke-width="1.4">
+  <rect x="105" y="175" width="30" height="30" rx="7"/><rect x="200" y="175" width="30" height="30" rx="7"/>
+  <rect x="250" y="175" width="30" height="30" rx="7"/><rect x="345" y="175" width="30" height="30" rx="7"/>
+ </g>
+ <g fill="none" stroke="#add2ff" stroke-width="1.5" stroke-linecap="round">
+  <circle cx="120" cy="187" r="3"/><path d="M112 198c0-8 16-8 16 0"/>
+  <rect x="208" y="183" width="14" height="12" rx="2"/><path d="M211 187h8m-8 4h5"/>
+  <rect x="258" y="183" width="14" height="12" rx="2"/><path d="M261 187h8m-8 4h5"/>
+  <circle cx="360" cy="187" r="3"/><path d="M352 198c0-8 16-8 16 0"/>
+ </g>
+ <!-- Les trois fonctions AD au bas du symbole -->
+ <g class="diagram-wires" stroke="#7196be" stroke-width="1.3" stroke-opacity=".45" fill="none" stroke-linecap="round">
+  <path d="M120 205V227H102V250 M215 205V226H240V250 M265 205V226H240 M360 205V227H378V250"/>
+ </g>
+ <g class="diagram-panel"><rect x="49" y="250" width="107" height="55" rx="9"/><circle cx="76" cy="269" r="7" fill="none" stroke="#a7c6ee" stroke-width="1.8"/><path d="M64 291c0-13 24-13 24 0" stroke="#a7c6ee" stroke-width="1.8" fill="none"/><text x="116" y="282" text-anchor="middle">USER</text></g>
+ <g class="diagram-panel"><rect x="186" y="250" width="107" height="55" rx="9"/><circle cx="220" cy="274" r="7" fill="none" stroke="#a7c6ee" stroke-width="1.6"/><circle cx="232" cy="278" r="5" fill="none" stroke="#a7c6ee" stroke-width="1.3"/><text x="264" y="284" text-anchor="middle">OU</text></g>
+ <g class="diagram-panel"><rect x="323" y="250" width="107" height="55" rx="9"/><path d="M347 278v-7a8 8 0 0116 0v7m-16 0h16v13h-16z" stroke="#a7c6ee" fill="none" stroke-width="1.8"/><text x="397" y="284" text-anchor="middle">ACCÈS</text></g>
+ <!-- Petits paquets lumineux se déplaçant dans l'arborescence. -->
+ <circle class="diagram-dot" r="3"><animateMotion path="M240 81V96H170V111V147V161H120V175" dur="6s" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3"><animateMotion path="M240 81V96H310V111V147V161H360V175" dur="7.5s" begin="1s" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="2.6"><animateMotion path="M240 81V96H170V111V147V161H215V175" dur="7s" begin="2.3s" repeatCount="indefinite"/></circle>
+</svg></div></article>
+<article class="demo-row" aria-labelledby="mission-2" data-reveal><div class="demo-copy"><p class="demo-number">02 <span>/ Cloud & Modern Workplace</span></p><h3 id="mission-2">Microsoft 365, Entra ID & Intune</h3><p>Administration des environnements Microsoft 365 multi-tenant : gestion des utilisateurs, licences et groupes, administration d’Exchange Online, SharePoint Online, OneDrive et Teams. Déploiement, configuration et gestion des postes de travail avec Microsoft Intune, ainsi que participation à l’application des politiques de sécurité.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-m365" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g fill="none" stroke="#7597bd" stroke-width="1.4" opacity=".63">
+ <path d="M240 181L115 95 M240 181L367 91 M240 181L110 275 M240 181L365 276"/>
+ </g>
+ <path d="M192 219c-20 0-33-13-33-29 0-18 14-32 33-33 6-24 23-41 48-41 24 0 41 15 48 35 23-1 42 15 42 34 0 19-15 34-36 34H192Z" fill="url(#fill-m365)" stroke="#92badf" stroke-width="1.9"/>
+ <text x="240" y="186" class="diagram-title" text-anchor="middle">M365</text>
+ <g class="diagram-panel"><rect x="53" y="59" width="122" height="65" rx="11"/><rect x="68" y="77" width="30" height="24" rx="4" fill="none" stroke="#a7c6ee" stroke-width="1.4"/><path d="M68 78l15 12 15-12" fill="none" stroke="#a7c6ee" stroke-width="1.4"/><text x="130" y="96">EXO</text></g>
+ <g class="diagram-panel"><rect x="308" y="55" width="119" height="65" rx="11"/><rect x="322" y="74" width="29" height="27" rx="5" fill="none" stroke="#a7c6ee" stroke-width="1.4"/><path d="M327 81h18m-18 6h18m-18 6h12" fill="none" stroke="#a7c6ee"/><text x="393" y="95" text-anchor="middle">SP</text></g>
+ <g class="diagram-panel"><rect x="48" y="245" width="125" height="62" rx="11"/><circle cx="76" cy="272" r="12" stroke="#a7c6ee" fill="none"/><text x="124" y="282" text-anchor="middle">TEAMS</text></g>
+ <g class="diagram-panel"><rect x="304" y="246" width="131" height="62" rx="11"/><rect x="323" y="260" width="25" height="30" rx="4" fill="none" stroke="#a7c6ee" stroke-width="1.5"/><circle cx="336" cy="284" r="2" fill="#a7c6ee"/><text x="395" y="280" text-anchor="middle">INTUNE</text></g>
+ <circle class="diagram-dot" r="3"><animateMotion dur="5.5s" path="M240 181L367 91" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3"><animateMotion dur="6.5s" path="M240 181L110 275" repeatCount="indefinite"/></circle>
+</svg></div></article>
+<article class="demo-row" aria-labelledby="mission-3" data-reveal><div class="demo-copy"><p class="demo-number">03 <span>/ Support & exploitation</span></p><h3 id="mission-3">Support technique & accompagnement utilisateurs</h3><p>Prise en charge des incidents et demandes techniques sur des environnements clients variés : systèmes, réseaux, VPN, Microsoft 365, bureautique et applications métiers. Diagnostic, résolution, suivi des tickets et accompagnement des utilisateurs, dans le respect des engagements de service (SLA).</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-support" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g class="diagram-wires" fill="none" stroke="#7897bb" stroke-width="1.4" opacity=".6"><path d="M161 164H93V81M313 164H398V98M242 246V303"/></g>
+ <g class="diagram-glow"><circle cx="239" cy="177" r="92" stroke="#85bbf3" stroke-opacity=".16" stroke-width="1.5" fill="none"/><circle cx="239" cy="177" r="113" stroke="#85bbf3" stroke-opacity=".07" fill="none"/></g>
+ <g fill="none" stroke="#a3c8f0" stroke-width="7" stroke-linecap="round"><path d="M167 202v-34a72 72 0 01144 0v34"/><path d="M167 200c-17 0-24-11-24-29 0-16 10-27 24-27M311 200c16 0 24-11 24-29 0-17-10-27-24-27"/></g>
+ <g class="diagram-panel"><rect x="195" y="180" width="88" height="52" rx="12"/><path d="M213 204l13 12 26-25" stroke="#a9d1fc" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+ <g class="diagram-panel"><rect x="51" y="48" width="135" height="65" rx="12"/><text x="118" y="76" text-anchor="middle">INCIDENT</text><text x="118" y="97" text-anchor="middle" fill="#9fc5f2">RÉSOLU</text></g>
+ <g class="diagram-panel"><rect x="330" y="67" width="112" height="62" rx="12"/><text x="386" y="96" text-anchor="middle">SLA</text><path d="M361 108H412" stroke="#82b9f7" stroke-width="2"/></g>
+ <g class="diagram-panel"><rect x="192" y="284" width="98" height="49" rx="10"/><text x="241" y="313" text-anchor="middle">SUPPORT</text></g>
+ <circle class="diagram-pulse" cx="240" cy="178" r="125" stroke="#9ec9fa" fill="none" stroke-width="1.1"/>
+</svg></div></article>
+<article class="demo-row" aria-labelledby="mission-4" data-reveal><div class="demo-copy"><p class="demo-number">04 <span>/ Infrastructures</span></p><h3 id="mission-4">Interventions sur site & infrastructures</h3><p>Déploiement et renouvellement de postes et d’équipements informatiques, maintenance des infrastructures systèmes et réseaux, décommissionnement de serveurs et brassage réseau. Réalisation d’inventaires, d’audits de parcs informatiques et participation aux actions d’amélioration de la sécurité.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-racks" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g class="diagram-wires" stroke="#809cb8" stroke-width="1.5" fill="none"><path d="M150 233V280H330V234 M242 234V302 M150 280H330"/></g>
+ <g class="diagram-racks">
+ <g class="diagram-panel"><rect x="72" y="74" width="121" height="166" rx="12"/><rect x="87" y="92" width="91" height="33" rx="5"/><rect x="87" y="135" width="91" height="33" rx="5"/><rect x="87" y="178" width="91" height="33" rx="5"/></g>
+ <g class="diagram-panel"><rect x="222" y="45" width="125" height="194" rx="12"/><rect x="236" y="65" width="97" height="36" rx="5"/><rect x="236" y="112" width="97" height="36" rx="5"/><rect x="236" y="159" width="97" height="36" rx="5"/></g>
+ </g>
+ <g class="rack-lights" fill="#9bc9fd"><circle cx="97" cy="108" r="3.3"/><circle cx="97" cy="151" r="3.3"/><circle cx="97" cy="194" r="3.3"/><circle cx="247" cy="83" r="3.3"/><circle cx="247" cy="130" r="3.3"/><circle cx="247" cy="177" r="3.3"/></g>
+ <g class="diagram-panel"><rect x="288" y="269" width="124" height="54" rx="11"/><text x="350" y="302" text-anchor="middle">RÉSEAU</text></g>
+ <circle class="diagram-dot" r="3.5"><animateMotion dur="5s" path="M150 240V280H330V269" repeatCount="indefinite"/></circle>
+</svg></div></article>
+<article class="demo-row" aria-labelledby="mission-5" data-reveal><div class="demo-copy"><p class="demo-number">05 <span>/ Projets & documentation</span></p><h3 id="mission-5">Coordination technique & gestion de projets</h3><p>Analyse des besoins, préparation et coordination des déploiements et interventions techniques. Suivi des opérations auprès des clients, réalisation de comptes rendus et création, rédaction et amélioration de procédures et documentations techniques internes.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-project" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
+ <g class="diagram-wires" stroke="#7398c2" stroke-width="1.5" fill="none"><path d="M108 180H372M108 180V246M240 180V246M372 180V246"/></g>
+ <g class="diagram-panel"><rect x="157" y="52" width="166" height="94" rx="13"/><rect x="178" y="70" width="17" height="17" rx="3" stroke="#a0c6f2" fill="none"/><path d="M181 78l5 5 9-12M207 79h84M207 96h68M178 114h112" stroke="#a0c6f2" fill="none" stroke-width="2"/><text x="240" y="133" text-anchor="middle">PROJET</text></g>
+ <g class="diagram-panel"><rect x="47" y="246" width="121" height="69" rx="12"/><text x="107" y="273" text-anchor="middle">AUDIT</text><path d="M76 292h62" stroke="#a0c6f2" stroke-width="2"/></g>
+ <g class="diagram-panel"><rect x="179" y="246" width="122" height="69" rx="12"/><text x="240" y="273" text-anchor="middle">DÉPLOIEMENT</text><path d="M211 292h59" stroke="#a0c6f2" stroke-width="2"/></g>
+ <g class="diagram-panel"><rect x="312" y="246" width="121" height="69" rx="12"/><text x="372" y="273" text-anchor="middle">SUIVI</text><path d="M340 292h63" stroke="#a0c6f2" stroke-width="2"/></g>
+ <circle class="diagram-dot" r="3"><animateMotion dur="7s" path="M108 180H372V246" repeatCount="indefinite"/></circle>
+</svg></div></article>
     </div>
   </div>
 </section>
