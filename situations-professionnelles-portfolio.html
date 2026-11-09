@@ -234,8 +234,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 .demo-art-halo{position:absolute;z-index:-1;inset:7%;background:radial-gradient(ellipse at center,rgba(63,91,132,.26) 0%,rgba(41,62,89,.11) 38%,transparent 69%);filter:blur(8px)}
 .demo-diagram{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 16px 30px rgba(3,9,19,.1))}
 .demo-diagram text{font:600 11px Montserrat,Arial,sans-serif;letter-spacing:.025em;fill:#bbd5f4}
-.demo-diagram text.m365-service-label{font-size:10.2px;letter-spacing:-.015em}
-.demo-diagram text.m365-service-label--long{font-size:9.1px;letter-spacing:-.032em}
+.demo-diagram text.m365-service-label{font-size:10.2px;letter-spacing:-.015em;font-weight:600}
 .demo-diagram .diagram-title{font-size:23px;font-weight:700;fill:#e6f1ff;letter-spacing:-.025em}
 .demo-diagram .diagram-panel>rect:first-child{fill:#1e2b40;stroke:#6f8aaf;stroke-opacity:.63;stroke-width:1.4}
 .demo-diagram .diagram-panel rect:not(:first-child){fill:#2b405c;stroke:#7798bf;stroke-opacity:.5}
@@ -360,7 +359,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 <article class="demo-row" aria-labelledby="mission-2" data-reveal><div class="demo-copy"><h3 id="mission-2">Microsoft 365, Entra ID & Intune</h3><p>Administration des utilisateurs, attribution des licences, gestion des groupes, déploiement et configuration de postes de travail, gestion des appareils, politiques de sécurité et administration des services Microsoft (Exchange Online, SharePoint Online, OneDrive et Teams) sur des environnements multi-tenant.</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-m365" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
  <!-- Les connexions s'arrêtent aux contours du nuage et des cartes. -->
  <g fill="none" stroke="#8cacd0" stroke-width="1.5" stroke-linecap="round" opacity=".68">
-  <path d="M175 124L196 155 M351 120L292 152 M194 219L157 245 M291 219L328 246"/>
+  <path d="M175 124L196 155 M351 124L292 152 M194 219L157 245 M291 219L328 245"/>
  </g>
  <path d="M192 219c-20 0-33-13-33-29 0-18 14-32 33-33 6-24 23-41 48-41 24 0 41 15 48 35 23-1 42 15 42 34 0 19-15 34-36 34H192Z" fill="url(#fill-m365)" stroke="#92badf" stroke-width="1.9"/>
  <text x="240" y="186" class="diagram-title" text-anchor="middle">M365</text>
@@ -370,9 +369,9 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
   <text x="135" y="96" text-anchor="middle" class="m365-service-label">EXCHANGE</text>
  </g>
  <g class="diagram-panel">
-  <rect x="300" y="55" width="145" height="65" rx="11"/>
-  <image href="assets/microsoft-sharepoint.svg" x="314" y="72" width="34" height="34" preserveAspectRatio="xMidYMid meet"/>
-  <text x="391" y="96" text-anchor="middle" class="m365-service-label m365-service-label--long">SHAREPOINT</text>
+  <rect x="300" y="59" width="145" height="65" rx="11"/>
+  <image href="assets/microsoft-sharepoint.svg" x="314" y="76" width="34" height="34" preserveAspectRatio="xMidYMid meet"/>
+  <text x="391" y="96" text-anchor="middle" class="m365-service-label">SHAREPOINT</text>
  </g>
  <g class="diagram-panel">
   <rect x="48" y="245" width="125" height="62" rx="11"/>
@@ -380,15 +379,15 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
   <text x="133" y="282" text-anchor="middle" class="m365-service-label">ENTRA ID</text>
  </g>
  <g class="diagram-panel">
-  <rect x="304" y="246" width="131" height="62" rx="11"/>
-  <image href="assets/microsoft-intune.svg" x="320" y="261" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
-  <text x="395" y="280" text-anchor="middle" class="m365-service-label">INTUNE</text>
+  <rect x="304" y="245" width="131" height="62" rx="11"/>
+  <image href="assets/microsoft-intune.svg" x="320" y="260" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
+  <text x="395" y="282" text-anchor="middle" class="m365-service-label">INTUNE</text>
  </g>
  <!-- Quatre points lumineux : un par service, aller-retour en continu sur leur propre câble. -->
  <circle class="diagram-dot" r="3"><animateMotion path="M175 124L196 155L175 124" dur="4.8s" begin="-1.2s" calcMode="linear" repeatCount="indefinite"/></circle>
- <circle class="diagram-dot" r="3"><animateMotion path="M351 120L292 152L351 120" dur="5.6s" begin="-2.4s" calcMode="linear" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3"><animateMotion path="M351 124L292 152L351 120" dur="5.6s" begin="-2.4s" calcMode="linear" repeatCount="indefinite"/></circle>
  <circle class="diagram-dot" r="3"><animateMotion path="M194 219L157 245L194 219" dur="6.3s" begin="-3.5s" calcMode="linear" repeatCount="indefinite"/></circle>
- <circle class="diagram-dot" r="3"><animateMotion path="M291 219L328 246L291 219" dur="5.2s" begin="-1.7s" calcMode="linear" repeatCount="indefinite"/></circle>
+ <circle class="diagram-dot" r="3"><animateMotion path="M291 219L328 245L291 219" dur="5.2s" begin="-1.7s" calcMode="linear" repeatCount="indefinite"/></circle>
 </svg></div></article>
 <article class="demo-row" aria-labelledby="mission-3" data-reveal><div class="demo-copy"><h3 id="mission-3">Support technique & accompagnement utilisateurs</h3><p>Prise en charge des incidents et demandes techniques sur des environnements clients variés : systèmes, réseaux, VPN, Microsoft 365, bureautique et applications métiers. Diagnostic, résolution, suivi des tickets et accompagnement des utilisateurs, dans le respect des engagements de service (SLA).</p></div><div class="demo-art" aria-hidden="true"><div class="demo-art-halo"></div><svg class="demo-diagram" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill-support" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354d70"/><stop offset="1" stop-color="#1c2a40"/></linearGradient></defs>
  <g class="diagram-wires" fill="none" stroke="#7897bb" stroke-width="1.4" opacity=".6"><path d="M161 164H93V81M313 164H398V98M242 246V303"/></g>
