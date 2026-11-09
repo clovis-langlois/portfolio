@@ -204,6 +204,22 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 @media(max-width:800px){.deletec-intro{padding:80px 0 100px;min-height:auto}.deletec-grid{grid-template-columns:1fr;gap:55px}.deletec-visual{max-width:560px;width:88%;margin:auto}.deletec-square.blue{left:-12%}.deletec-square.yellow{right:-12%}}
 @media(max-width:480px){.deletec-copy h1{font-size:37px}.deletec-copy p{font-size:14px}.deletec-square{width:48px;height:48px}.deletec-square.yellow{width:55px;height:55px}.deletec-square.cyan{width:39px;height:39px}.deletec-wordmark{font-size:clamp(46px,11vw,75px)}}
 @media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1;transform:none;transition:none}.deletec-square{will-change:auto}}
+
+/* Missions personnelles : continuité du fond, retour discret à l'identité du portfolio */
+.missions{position:relative;padding:110px 0 135px;isolation:isolate}
+.missions::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 65% 46% at 54% 32%,rgba(56,79,111,.22),transparent 75%)}
+.missions-inner{max-width:1060px}
+.missions-eyebrow{font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#9dbbe3;margin:0 0 18px}
+.missions h2{font-size:clamp(36px,4.4vw,54px);letter-spacing:-.045em;margin:0 0 25px}
+.missions-lead{max-width:850px;margin-bottom:70px}
+.missions-lead p{font-size:15px;line-height:1.95;color:#c0cad7;margin:0 0 19px}
+.mission-item{display:grid;grid-template-columns:80px minmax(0,1fr);gap:clamp(22px,4vw,55px);padding:37px 0 42px;border-top:1px solid rgba(172,193,218,.17)}
+.mission-index{font-size:13px;font-weight:600;letter-spacing:.13em;color:#8eaed9;padding-top:8px}
+.mission-category{font-size:11px;letter-spacing:.13em;font-weight:600;color:#9dbbe3;text-transform:uppercase;margin:0 0 12px}
+.mission-item h3{font-size:clamp(21px,2.3vw,29px);font-weight:600;letter-spacing:-.03em;line-height:1.35;margin:0 0 14px;color:#f5f7fb}
+.mission-item p:last-child{font-size:15px;line-height:1.9;color:#b9c5d4;margin:0;max-width:820px}
+@media(max-width:760px){.missions{padding:75px 0 90px}.missions-lead{margin-bottom:45px}.mission-item{grid-template-columns:45px minmax(0,1fr);gap:15px;padding:30px 0}.mission-item p:last-child,.missions-lead p{font-size:14px}}
+
 </style>
 </head>
 <body>
@@ -254,6 +270,25 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 <article class="deletec-service deletec-service--assist" data-reveal><span class="deletec-service-number">04 / EXPERTISE</span><h3>Assistance technique</h3><p>Nos spécialistes renforcent vos équipes et vos projets stratégiques : le bon talent au bon moment !</p><ul><li>Cloud, datacenter et infrastructures</li><li>Cybersécurité</li><li>Data et IA</li><li>Finance Consulting</li></ul></article>
 </div></div></section>
 
+
+<section class="missions" aria-labelledby="missions-title">
+  <div class="container missions-inner">
+    <div class="missions-lead" data-reveal>
+      <p class="missions-eyebrow">Mon expérience professionnelle</p>
+      <h2 id="missions-title">Mes missions chez Deletec</h2>
+      <p>En tant que technicien systèmes et réseaux en alternance chez Deletec, j’interviens auprès d’entreprises de secteurs variés pour assurer le bon fonctionnement de leurs environnements informatiques, accompagner leurs utilisateurs et participer à l’évolution de leurs infrastructures.</p>
+      <p>Mes missions couvrent aussi bien l’administration des systèmes et des services Microsoft que le support technique, les interventions sur site et la participation aux projets informatiques de nos clients.</p>
+      <p>Au-delà des aspects techniques, j’accorde une importance particulière à la qualité de service, à la relation client et à la recherche de solutions fiables et durables. Chaque intervention représente une occasion de développer mes compétences, de relever de nouveaux défis et de contribuer à la continuité des activités des organisations que nous accompagnons.</p>
+    </div>
+    <div class="missions-list">
+      <article class="mission-item" data-reveal><span class="mission-index">01</span><div><p class="mission-category">Administration</p><h3>Systèmes &amp; Active Directory</h3><p>Gestion des comptes utilisateurs, groupes de sécurité, droits d’accès et habilitations au sein d’environnements Active Directory. Participation aux audits, diagnostic et résolution des incidents liés aux services d’annuaire et aux ressources informatiques.</p></div></article>
+      <article class="mission-item" data-reveal><span class="mission-index">02</span><div><p class="mission-category">Cloud &amp; Modern Workplace</p><h3>Microsoft 365, Entra ID &amp; Intune</h3><p>Administration des environnements Microsoft 365 multi-tenant : gestion des utilisateurs, licences et groupes, administration d’Exchange Online, SharePoint Online, OneDrive et Teams. Déploiement, configuration et gestion des postes de travail avec Microsoft Intune, ainsi que participation à l’application des politiques de sécurité.</p></div></article>
+      <article class="mission-item" data-reveal><span class="mission-index">03</span><div><p class="mission-category">Support &amp; exploitation</p><h3>Support technique &amp; accompagnement utilisateurs</h3><p>Prise en charge des incidents et demandes techniques sur des environnements clients variés : systèmes, réseaux, VPN, Microsoft 365, bureautique et applications métiers. Diagnostic, résolution, suivi des tickets et accompagnement des utilisateurs, dans le respect des engagements de service (SLA).</p></div></article>
+      <article class="mission-item" data-reveal><span class="mission-index">04</span><div><p class="mission-category">Infrastructures</p><h3>Interventions sur site &amp; infrastructures</h3><p>Déploiement et renouvellement de postes et d’équipements informatiques, maintenance des infrastructures systèmes et réseaux, décommissionnement de serveurs et brassage réseau. Réalisation d’inventaires, d’audits de parcs informatiques et participation aux actions d’amélioration de la sécurité.</p></div></article>
+      <article class="mission-item" data-reveal><span class="mission-index">05</span><div><p class="mission-category">Projets &amp; documentation</p><h3>Coordination technique &amp; gestion de projets</h3><p>Analyse des besoins, préparation et coordination des déploiements et interventions techniques. Suivi des opérations auprès des clients, réalisation de comptes rendus et création, rédaction et amélioration de procédures et documentations techniques internes.</p></div></article>
+    </div>
+  </div>
+</section>
 
 </main>
 <footer class="footer" aria-label="Pied de page">
