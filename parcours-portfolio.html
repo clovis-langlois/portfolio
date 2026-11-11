@@ -234,6 +234,14 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 .experience-visual--boss .experience-wordmark{color:#0b0b0b;letter-spacing:.04em}
 @media(max-width:850px){.experience-row{gap:35px}.experience-showcase{gap:95px}.experience-visual{min-height:240px}}
 @media(max-width:700px){.experience-row{grid-template-columns:1fr;gap:28px}.experience-showcase{gap:85px}.experience-visual{min-height:240px;aspect-ratio:1.5}.experience-copy h3{font-size:39px}.experience-copy>p:not(.experience-date):not(.experience-role){font-size:14px}}
+.experience-row--deletec{align-items:start}
+.experience-row--deletec .experience-visual{position:sticky;top:110px}
+.deletec-period{margin-top:26px}
+.deletec-period+.deletec-period{border-top:1px solid rgba(157,179,207,.19);margin-top:48px;padding-top:32px}
+.deletec-period h4{font-size:18px;letter-spacing:-.02em;margin:0 0 12px;color:#f1f5fc;font-weight:600}
+.deletec-period>p:not(.experience-date):not(.experience-role){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
+.deletec-period .path-more{margin-top:5px}
+@media(max-width:700px){.experience-row--deletec .experience-visual{position:static}.deletec-period>p:not(.experience-date):not(.experience-role){font-size:14px}}
 /* Mon parcours — identité visuelle cohérente avec le portfolio. */
 main{background:linear-gradient(180deg,#171c26 0%,#1b2330 47%,#171b23 100%)}
 .path-hero{position:relative;padding:120px 0 100px;overflow:hidden}
@@ -332,28 +340,25 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
     <h2 id="experiences-title">Mon expérience professionnelle</h2>
    </div>
 <div class="experience-showcase">
-<article class="experience-row" data-reveal>
+<article class="experience-row experience-row--deletec" data-reveal>
  <div class="experience-copy">
   <h3>Deletec</h3>
-  <p class="experience-date">Septembre 2024 — aujourd’hui</p>
-  <p class="experience-role">Technicien systèmes &amp; réseaux · Alternance</p>
-  <p>Depuis septembre 2024, je poursuis mon parcours chez Deletec en alternance. Après avoir découvert l’entreprise lors d’un premier stage en 2023, j’ai eu l’opportunité de la rejoindre à nouveau pour préparer mon BTS SIO, option SISR.</p>
-  <p>Au fil des mois, j’ai progressivement gagné en autonomie et en responsabilités, en passant de la découverte du fonctionnement d’une entreprise de services informatiques à la prise en charge de situations concrètes auprès de ses clients.</p>
-  <p>Après l’obtention de mon BTS en 2026, j’ai choisi de poursuivre cette progression avec un Bachelor Administrateur Systèmes & Réseaux, toujours en alternance chez Deletec. Cette continuité me permet de consolider mes acquis et d’évoluer vers mon objectif : l’administration des infrastructures informatiques.</p>
-  
-  <a class="path-more" href="situations-professionnelles-portfolio.html">Découvrir mes missions chez Deletec <span aria-hidden="true">↗</span></a>
- </div>
- <div class="experience-visual experience-visual--deletec"><img src="assets/deletec-logo-fidele.svg" alt="Logo Deletec" loading="lazy"></div>
-</article>
-<article class="experience-row" data-reveal>
- <div class="experience-copy">
-  <h3>Deletec</h3>
-  <p class="experience-date">Novembre — décembre 2023</p>
-  <p class="experience-role">Stage · Logistique et préparation informatique</p>
-  <p>En novembre 2023, alors que je suivais mon bac professionnel Systèmes numériques, j’ai effectué un stage de deux mois chez Deletec, au sein du service logistique et préparation informatique.</p>
-  <p>J’y ai découvert le fonctionnement d’une entreprise de services informatiques, le travail en équipe et les différentes étapes de préparation des équipements destinés aux clients.</p>
-  <p>Cette expérience a marqué un tournant dans mon parcours : elle a confirmé mon intérêt pour les systèmes et réseaux et a ouvert la voie à mon retour chez Deletec, quelques mois plus tard, dans le cadre de mon BTS en alternance.</p>
-  
+  <div class="deletec-period">
+   <h4>Alternance actuelle</h4>
+   <p class="experience-date">Septembre 2024 — aujourd’hui</p>
+   <p class="experience-role">Technicien systèmes &amp; réseaux · Alternance</p>
+   <p>Depuis septembre 2024, je poursuis mon parcours chez Deletec en alternance. Après avoir découvert l’entreprise lors d’un premier stage en 2023, j’ai eu l’opportunité de la rejoindre à nouveau pour préparer mon BTS SIO, option SISR.</p>
+   <p>Au fil des mois, j’ai progressivement gagné en autonomie et en responsabilités, en passant de la découverte du fonctionnement d’une entreprise de services informatiques à la prise en charge de situations concrètes auprès de ses clients.</p>
+   <p>Après l’obtention de mon BTS en 2026, j’ai choisi de poursuivre cette progression avec un Bachelor Administrateur Systèmes &amp; Réseaux, toujours en alternance chez Deletec. Cette continuité me permet de consolider mes acquis et d’évoluer vers mon objectif : l’administration des infrastructures informatiques.</p>
+   <a class="path-more" href="situations-professionnelles-portfolio.html">Découvrir mes missions chez Deletec <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="deletec-period">
+   <h4>Mon premier stage</h4>
+   <p class="experience-date">2023</p>
+   <p>Lors de mon premier stage chez Deletec, intégré au service logistique et préparation informatique, j’ai participé à la mise en place et à la configuration d’équipements destinés aux clients.</p>
+   <p>Mes missions comprenaient l’installation physique d’équipements réseau Fortinet, l’intégration de cartes PCI dans les postes clients, l’installation personnalisée de systèmes Windows ainsi que la configuration de téléphones IP.</p>
+   <p>Cette immersion de deux mois m’a permis de découvrir les exigences techniques et organisationnelles d’une entreprise de services informatiques. À l’issue de cette expérience, mes responsables m’ont proposé de poursuivre mon parcours en BTS SIO en alternance au sein de l’entreprise.</p>
+  </div>
  </div>
  <div class="experience-visual experience-visual--deletec"><img src="assets/deletec-logo-fidele.svg" alt="Logo Deletec" loading="lazy"></div>
 </article>
