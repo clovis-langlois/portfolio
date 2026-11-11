@@ -242,6 +242,7 @@ main{background:linear-gradient(180deg,#171c26 0%,#1b2330 47%,#171b23 100%)}
 .path-overline{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#a6c1e4;margin:0 0 23px}
 .path-hero h1{max-width:900px;margin:0 0 28px;font-size:clamp(48px,6vw,76px);letter-spacing:-.05em;line-height:1.1}
 .path-hero p.path-lead{max-width:760px;color:#bdc9d9;font-size:16px;line-height:1.95;margin:0 0 36px}
+.path-introduction{max-width:880px;margin:0 0 38px}.path-introduction p{color:#bdc9d9;font-size:15px;line-height:1.95;margin:0 0 22px}.path-introduction p:last-child{margin-bottom:0}
 .path-jump{display:flex;gap:14px;flex-wrap:wrap}
 .path-jump a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(161,187,217,.26);border-radius:999px;padding:12px 20px;color:#e1eaf6;font-size:13px;font-weight:600;transition:background .2s,border-color .2s}
 .path-jump a:hover{background:rgba(141,180,223,.09);border-color:#9fbde1}
@@ -311,9 +312,14 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 <main id="contenu">
  <section class="path-hero" aria-labelledby="path-title">
   <div class="container" data-reveal>
-   <p class="path-overline">Expériences &amp; formations</p>
+   
    <h1 id="path-title">Mon parcours</h1>
-   <p class="path-lead">D’une curiosité d’enfant pour l’informatique à mon évolution chez Deletec, découvrez les choix, les rencontres et les expériences qui ont façonné mon parcours.</p>
+   <div class="path-introduction">
+    <p>Passionné par l'informatique et les nouvelles technologies depuis mon plus jeune âge, j'ai toujours été curieux de comprendre le fonctionnement des technologies qui nous entourent. C'est donc naturellement que j'ai choisi de construire mon avenir professionnel dans le domaine des systèmes et réseaux.</p>
+    <p>Du baccalauréat professionnel Systèmes numériques au Bachelor Administrateur Systèmes &amp; Réseaux, j'ai eu l'opportunité de développer mes connaissances et mes compétences à travers plusieurs expériences au sein de grandes structures. Ces expériences, particulièrement enrichissantes, m'ont permis d'acquérir une vision concrète du fonctionnement des systèmes d'information en entreprise et ont conforté mon choix d'orientation.</p>
+    <p>Aujourd'hui, je poursuis mon évolution professionnelle chez Deletec, une entreprise que j'ai découverte lors de mes stages et qui m'a ensuite offert l'opportunité de poursuivre mes études en alternance. Au fil des années, j'y ai progressivement gagné en autonomie, développé mes compétences techniques et pris de nouvelles responsabilités, tout en conservant cette même curiosité et cette volonté constante d'apprendre et de progresser.</p>
+    <p>Ces expériences m'ont également permis de développer un véritable sens des responsabilités et une exigence particulière quant à la qualité de mon travail. Une exigence que je m'attache aujourd'hui à mettre au service de nos clients, à travers une approche rigoureuse, une écoute attentive de leurs besoins et la recherche de solutions fiables et durables.</p>
+   </div>
    <nav class="path-jump" aria-label="Explorer mon parcours">
     <a href="#experiences">Expériences professionnelles <span aria-hidden="true">↗</span></a>
     <a href="#formations">Formations &amp; diplômes <span aria-hidden="true">↗</span></a>
