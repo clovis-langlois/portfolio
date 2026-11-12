@@ -10,17 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
-:root{--bg:#161a23;--fg:#f5f7fb;--muted:#b6c0ce;--line:#364253;--accent:#a5bdd9;--nav:#fff;--nav-text:#151c28}
+:root{--bg:#171c26;--fg:#f5f7fb;--muted:#b6c0ce;--line:#364253;--accent:#a5bdd9;--nav:#fff;--nav-text:#151c28}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#171c26;color:var(--fg);font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #89baff;outline-offset:5px}
 .site-header{background:var(--nav);color:var(--nav-text);height:84px;position:relative;z-index:20;border-bottom:1px solid #edf0f4}
 .header-inner{max-width:1200px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:center}
 .nav{display:flex;align-items:center;gap:34px}.nav a{font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;position:relative}
 .nav a:hover{color:#52627d}.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#293146}
 .menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
-main{position:relative;overflow:hidden;background:#171c26}
+main{position:relative;overflow:hidden;background:var(--bg)}
 .container{width:min(1160px,calc(100% - 48px));margin:auto}
 .hero{min-height:650px;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 0 128px}
 .hero-inner{max-width:860px}
@@ -44,7 +44,7 @@ h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font
 .expertise{padding-top:85px;padding-bottom:155px}.expertise .section-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
 .tower-visual{width:100%;max-width:510px;margin:auto;display:block;filter:drop-shadow(0 20px 45px rgba(0,0,0,.13))}
 /* Pied de page minimaliste — même anthracite que l'accueil, sans motif réseau */
-.footer{position:relative;background:#171c26;color:#f5f7fb;border-top:1px solid rgba(174,191,213,.11)}
+.footer{position:relative;background:var(--bg);color:#f5f7fb;border-top:1px solid rgba(174,191,213,.11)}
 .footer-inner{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:48px 0 24px}
 .footer-main{display:flex;align-items:center;justify-content:space-between;gap:35px;padding-bottom:40px}
 .footer-contact h2{font-size:clamp(22px,2.4vw,29px);font-weight:600;letter-spacing:-.035em;line-height:1.25;margin:0 0 10px}
@@ -153,7 +153,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0
 .deletec-ranking-label{font-size:13px;color:#b5c4d7;line-height:1.6}
 @media(max-width:480px){.deletec-stats{gap:26px}.deletec-ranking{min-width:135px}.deletec-ranking-value{font-size:34px}}
 
-main{min-height:75vh;background:#171c26;overflow:hidden}
+main{min-height:75vh;background:var(--bg);overflow:hidden}
 .deletec-intro{position:relative;isolation:isolate;padding:clamp(80px,9vw,135px) 0 115px;min-height:750px;display:flex;align-items:center}
 
 .deletec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:clamp(55px,7vw,115px);align-items:center;position:relative;z-index:2}
@@ -227,9 +227,9 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 /* Mon parcours — identité visuelle cohérente avec le portfolio. */
 /* Fond uniforme sur toutes les sections : aucune transition de teinte ni halo. */
 /* Les sections de cette page conservent toutes la même couleur de fond, sans dégradé ni surcouche. */
-main#contenu,main#contenu > .path-hero,main#contenu > .path-section,main#contenu > .path-bottom{background-color:#171c26;background-image:none}
+main#contenu,main#contenu > .path-hero,main#contenu > .path-section,main#contenu > .path-bottom{background-color:var(--bg);background-image:none}
 main#contenu::before,main#contenu::after,.path-hero::before,.path-hero::after,#experiences::before,#experiences::after{content:none;display:none}
-.path-hero,.path-section,.path-bottom{background:#171c26}
+.path-hero,.path-section,.path-bottom{background:var(--bg)}
 
 .path-hero{position:relative;padding:120px 0 100px;overflow:hidden}
 .path-hero:before{content:none}
