@@ -241,7 +241,9 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 .deletec-period h4{font-size:18px;letter-spacing:-.02em;margin:0 0 12px;color:#f1f5fc;font-weight:600}
 .deletec-period>p:not(.experience-date):not(.experience-role){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
 .deletec-period .path-more{margin-top:5px}
-.deletec-stage{grid-column:1;grid-row:2;border-top:1px solid rgba(157,179,207,.19);margin-top:0;padding-top:32px}
+.deletec-stage{grid-column:1;grid-row:2;position:relative;border-top:0;margin-top:0;padding-top:56px}
+.deletec-stage::before{content:"";position:absolute;top:0;left:18px;width:1px;height:35px;background:linear-gradient(to bottom,rgba(150,186,232,.08),rgba(150,186,232,.5))}
+.deletec-stage::after{content:"";position:absolute;top:30px;left:14px;width:9px;height:9px;border-right:1px solid rgba(150,186,232,.55);border-bottom:1px solid rgba(150,186,232,.55);transform:rotate(45deg)}
 .deletec-stage h3{font-size:clamp(36px,4.3vw,55px);font-weight:600;letter-spacing:-.045em;line-height:1.12;margin:0 0 7px}
 .deletec-stage>p:not(.experience-date):not(.experience-role){max-width:560px}
 @media(max-width:700px){.experience-row--deletec{grid-template-columns:1fr;gap:28px}.experience-row--deletec .experience-copy{grid-column:1;grid-row:1}.experience-row--deletec .experience-visual{grid-column:1;grid-row:2;top:0;min-height:240px;aspect-ratio:1.5}.deletec-stage{grid-column:1;grid-row:3}.deletec-period>p:not(.experience-date):not(.experience-role){font-size:14px}}
