@@ -180,6 +180,13 @@ main{padding:85px 0 70px}
   .education-details>p:not(.education-status){font-size:14px}
 }
 @media(max-width:520px){#formations h2{font-size:43px}}
+
+/* Progression discrète de la frise au défilement. */
+.education-timeline::after{content:"";position:absolute;left:170px;top:17px;width:3px;height:var(--education-progress,0px);max-height:calc(100% - 107px);border-radius:3px;background:linear-gradient(180deg,rgba(132,181,243,.45),#9bc8ff);box-shadow:0 0 9px rgba(130,184,255,.28);pointer-events:none;transition:height .16s ease-out}
+.education-node::before{transition:background-color .6s ease,box-shadow .6s ease,border-color .6s ease}
+.education-entry.is-reached .education-node::before{background:#c0dcff;border-color:#304763;box-shadow:0 0 0 5px rgba(134,173,222,.13),0 0 16px rgba(138,191,255,.48)}
+@media(max-width:700px){.education-timeline::after{left:5px;top:17px;max-height:calc(100% - 113px)}}
+@media(prefers-reduced-motion:reduce){.education-timeline::after,.education-node::before{transition:none}.education-timeline::after{box-shadow:none}.education-entry.is-reached .education-node::before{box-shadow:0 0 0 4px rgba(134,173,222,.08)}}
 </style>
 </head>
 <body>
@@ -362,6 +369,30 @@ const menu=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.nav');
 menu.addEventListener('click',()=>{const opened=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!opened));nav.classList.toggle('open',!opened)});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');nav.classList.remove('open')}));
+
+// La progression suit la lecture de la frise, sans animation permanente.
+const educationTimeline=document.querySelector('.education-timeline');
+if(educationTimeline){
+  const entries=[...educationTimeline.querySelectorAll('.education-entry')];
+  let ticking=false;
+  function updateEducationProgress(){
+    ticking=false;
+    const rect=educationTimeline.getBoundingClientRect();
+    const trigger=Math.min(window.innerHeight*.68,window.innerHeight-80);
+    const trackStart=17;
+    const trackEnd=Math.max(trackStart,rect.height-(window.innerWidth<=700?96:90));
+    const progress=Math.max(0,Math.min(trackEnd-trackStart,trigger-rect.top-trackStart));
+    educationTimeline.style.setProperty('--education-progress',progress+'px');
+    for(const entry of entries){
+      const dot=entry.querySelector('.education-node');
+      if(dot)entry.classList.toggle('is-reached',dot.getBoundingClientRect().top+15<=trigger);
+    }
+  }
+  function scheduleEducationProgress(){if(!ticking){ticking=true;requestAnimationFrame(updateEducationProgress)}}
+  window.addEventListener('scroll',scheduleEducationProgress,{passive:true});
+  window.addEventListener('resize',scheduleEducationProgress);
+  updateEducationProgress();
+}
 </script>
 </body>
 </html>
