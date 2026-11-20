@@ -49,6 +49,36 @@ main{padding:85px 0 70px}
 }
 @media(max-width:520px){.path-hero h1{font-size:43px}.path-introduction p{font-size:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.footer-icon-link{transition:none}}
+
+/* Expérience Deletec — styles autonomes, sans fond propre aux sections. */
+.path-hero{padding-bottom:98px;background:transparent}
+.path-section{background:transparent;padding:0 0 45px}
+.path-section h2{font-size:clamp(32px,4vw,47px);font-weight:600;line-height:1.22;letter-spacing:-.04em;margin:0 0 68px}
+.experience-showcase{display:block}
+.experience-row--deletec{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);column-gap:clamp(40px,6vw,90px);row-gap:48px;align-items:start}
+.experience-row--deletec .experience-copy{grid-column:1;grid-row:1}
+.experience-copy h3,.deletec-stage h3{font-size:clamp(36px,4.3vw,55px);font-weight:600;letter-spacing:-.045em;line-height:1.12;margin:0 0 7px}
+.deletec-period{margin-top:26px}
+.deletec-period h4{font-size:18px;letter-spacing:-.02em;margin:0 0 12px;color:#f1f5fc;font-weight:600}
+.experience-date{font-size:13px;font-weight:600;color:#d5e4f8;margin:0 0 10px}
+.experience-role{font-size:13px;color:#92b4df;font-weight:600;margin:0 0 29px}
+.deletec-period>p:not(.experience-date):not(.experience-role){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
+.path-more{display:inline-flex;align-items:center;gap:8px;color:#a9cef9;text-decoration:none;font-size:13px;font-weight:600;border-bottom:1px solid rgba(169,206,249,.3);padding-bottom:4px;margin-top:5px}
+.path-more:hover{color:#fff;border-color:#fff}
+.experience-row--deletec .experience-visual{grid-column:2;grid-row:1;align-self:center;width:100%;aspect-ratio:1.22;min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:18px;border:1px solid rgba(164,188,216,.13);background:#0745a9}
+.experience-visual--deletec img{width:88%;height:75%;object-fit:contain}
+.deletec-stage{grid-column:1;grid-row:2;position:relative;margin-top:0;padding-top:56px}
+.deletec-stage::before{content:"";position:absolute;top:9px;left:18px;width:1px;height:32px;background:linear-gradient(to bottom,rgba(150,186,232,.65),rgba(150,186,232,.16))}
+.deletec-stage::after{content:"";position:absolute;top:9px;left:13px;width:11px;height:11px;border-top:1px solid rgba(150,186,232,.65);border-left:1px solid rgba(150,186,232,.65);transform:rotate(45deg)}
+@media(max-width:700px){
+.path-hero{padding-bottom:72px}
+.path-section h2{margin-bottom:45px}
+.experience-row--deletec{grid-template-columns:1fr;row-gap:28px}
+.experience-row--deletec .experience-copy{grid-column:1;grid-row:1}
+.experience-row--deletec .experience-visual{grid-column:1;grid-row:2;min-height:240px;aspect-ratio:1.5}
+.deletec-stage{grid-column:1;grid-row:3}
+.deletec-period>p:not(.experience-date):not(.experience-role){font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -75,6 +105,38 @@ main{padding:85px 0 70px}
     <p>Ces expériences m'ont également permis de développer un véritable sens des responsabilités et une exigence particulière quant à la qualité de mon travail. Une exigence que je m'attache aujourd'hui à mettre au service de nos clients, à travers une approche rigoureuse, une écoute attentive de leurs besoins et la recherche de solutions fiables et durables.</p>
    
       </div>
+</div>
+</section>
+<section class="path-section" id="experiences" aria-labelledby="experiences-title">
+  <div class="container">
+   <div class="path-section-head" data-reveal>
+    <h2 id="experiences-title">Mon expérience professionnelle</h2>
+   </div>
+<div class="experience-showcase">
+<article class="experience-row experience-row--deletec" data-reveal>
+ <div class="experience-copy">
+  <h3>Deletec</h3>
+  <div class="deletec-period">
+   <h4>Alternance actuelle</h4>
+   <p class="experience-date">Septembre 2024 — aujourd’hui</p>
+   <p class="experience-role">Technicien systèmes &amp; réseaux · Alternance</p>
+   <p>Depuis septembre 2024, je poursuis mon parcours chez Deletec en alternance. Après avoir découvert l’entreprise lors d’un premier stage en 2023, j’ai eu l’opportunité de la rejoindre à nouveau pour préparer mon BTS SIO, option SISR.</p>
+   <p>Au fil des mois, j’ai progressivement gagné en autonomie et en responsabilités, en passant de la découverte du fonctionnement d’une entreprise de services informatiques à la prise en charge de situations concrètes auprès de ses clients.</p>
+   <p>Après l’obtention de mon BTS en 2026, j’ai choisi de poursuivre cette progression avec un Bachelor Administrateur Systèmes &amp; Réseaux, toujours en alternance chez Deletec. Cette continuité me permet de consolider mes acquis et d’évoluer vers mon objectif : l’administration des infrastructures informatiques.</p>
+   <a class="path-more" href="situations-professionnelles-portfolio.html">Découvrir mes missions chez Deletec <span aria-hidden="true">↗</span></a>
+  </div>
+
+ </div>
+ <div class="experience-visual experience-visual--deletec"><img src="assets/deletec-logo-fidele.svg" alt="Logo Deletec" loading="lazy"></div>
+  <div class="deletec-period deletec-stage">
+   <h3>Deletec</h3>
+   <p class="experience-date">2023 - 2024</p>
+   <p>Lors de mon premier stage chez Deletec, intégré au service logistique et préparation informatique, j’ai participé à la mise en place et à la configuration d’équipements destinés aux clients.</p>
+   <p>Mes missions comprenaient l’installation physique d’équipements réseau Fortinet, l’intégration de cartes PCI dans les postes clients, l’installation personnalisée de systèmes Windows ainsi que la configuration de téléphones IP.</p>
+   <p>Cette immersion de deux mois m’a permis de découvrir les exigences techniques et organisationnelles d’une entreprise de services informatiques. À l’issue de cette expérience, mes responsables m’ont proposé de poursuivre mon parcours en BTS SIO en alternance au sein de l’entreprise.</p>
+  </div>
+</article>
+</div>
 </div>
 </section>
 </main>
