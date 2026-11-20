@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dossier technique - Clovis Langlois</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#161b24}
+#pdf-viewer{display:block;width:100%;height:100vh;height:100dvh;border:0;background:#161b24}
+#message{display:none;color:#eaf0fa;font:16px/1.6 system-ui,sans-serif;padding:32px}
+</style>
+</head>
+<body>
+<iframe id="pdf-viewer" title="Consultation du dossier technique au format PDF" loading="eager" referrerpolicy="no-referrer"></iframe>
+<div id="message" role="alert">Dossier technique introuvable.</div>
+<script>
+(function(){
+  const documents={
+    "infrastructure":{
+      title:"Infrastructure virtualisée sécurisée - Langéo Education",
+      url:"https://assets.zyrosite.com/kDsAjPW6LAjAZlYh/projet-langa-c-o-education-UWEqbAn0rlhG6OTt.pdf"
+    },
+    "haute-disponibilite":{
+      title:"Cluster Proxmox, haute disponibilité et sauvegardes - Langéo Education",
+      url:"https://assets.zyrosite.com/kDsAjPW6LAjAZlYh/projet-haute-disponibilita-c-sauvegarde-o7WweDvAqcZzUuVI.pdf"
+    }
+  };
+  const key=new URLSearchParams(location.search).get("projet");
+  const documentInfo=documents[key];
+  if(!documentInfo){
+    document.getElementById("pdf-viewer").remove();
+    document.getElementById("message").style.display="block";
+    return;
+  }
+  document.title=documentInfo.title+" | Dossier technique";
+  document.getElementById("pdf-viewer").src="https://docs.google.com/gview?embedded=1&url="+encodeURIComponent(documentInfo.url);
+})();
+</script>
+</body>
+</html>
