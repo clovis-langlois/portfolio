@@ -66,7 +66,7 @@ main{padding:85px 0 70px}
 .path-more{display:inline-flex;align-items:center;gap:8px;color:#a9cef9;text-decoration:none;font-size:13px;font-weight:600;border-bottom:1px solid rgba(169,206,249,.3);padding-bottom:4px;margin-top:5px}
 .path-more:hover{color:#fff;border-color:#fff}
 .experience-row--deletec .experience-visual{grid-column:2;grid-row:1;align-self:center;width:100%;aspect-ratio:1.22;min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:18px;border:1px solid rgba(164,188,216,.13);background:#0745a9}
-.experience-visual--deletec img{width:88%;height:75%;object-fit:contain}
+
 .deletec-stage{grid-column:1;grid-row:2;position:relative;margin-top:0;padding-top:56px}
 .deletec-stage::before{content:"";position:absolute;top:9px;left:18px;width:1px;height:32px;background:linear-gradient(to bottom,rgba(150,186,232,.65),rgba(150,186,232,.16))}
 .deletec-stage::after{content:"";position:absolute;top:9px;left:13px;width:11px;height:11px;border-top:1px solid rgba(150,186,232,.65);border-left:1px solid rgba(150,186,232,.65);transform:rotate(45deg)}
@@ -86,16 +86,16 @@ main{padding:85px 0 70px}
 .experience-row--synatek .experience-date{margin:0 0 22px}
 .experience-row--synatek .experience-copy>p:not(.experience-date){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
 .experience-row--synatek .experience-visual{width:100%;aspect-ratio:1.22;min-height:300px;background:#1d1d1d;border:1px solid rgba(164,188,216,.13);border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.experience-row--synatek .experience-visual img{display:block;width:95%;height:auto;object-fit:contain}
+
 @media(max-width:700px){.experience-row--synatek{grid-template-columns:1fr;gap:28px;margin-top:85px}.experience-row--synatek .experience-copy>p:not(.experience-date){font-size:14px}.experience-row--synatek .experience-visual{min-height:240px;aspect-ratio:1.5}}
 
 /* SPIE : même disposition que Synatek, visuel clair pour le logo bleu et rouge. */
 .experience-row--spie .experience-visual{background:#f4f5f7}
-.experience-row--spie .experience-visual img{width:88%;max-height:80%;object-fit:contain}
+
 
 /* VINCI Facilities : même présentation que les expériences précédentes. */
 .experience-row--vinci .experience-visual{background:#fff}
-.experience-row--vinci .experience-visual img{width:94%;max-height:80%;object-fit:contain}
+
 
 /* Séparateurs sobres entre entreprises ; Deletec (stage et alternance) reste un seul bloc. */
 .experience-showcase > .experience-row + .experience-row{position:relative}
@@ -115,7 +115,7 @@ main{padding:85px 0 70px}
 
 /* HUGO BOSS — dernière expérience, présentation identique aux précédentes. */
 .experience-row--boss .experience-visual{background:#fff}
-.experience-row--boss .experience-visual img{display:block;width:94%;max-height:80%;object-fit:contain}
+
 
 /* Logos des expériences : 5 cadres parfaitement identiques, sans étirement.
    Les nouvelles images carrées sont cadrées au centre du même rectangle. */
@@ -135,6 +135,7 @@ main{padding:85px 0 70px}
   display:block;
   width:100%;
   height:100%;
+  max-height:none;
   object-fit:cover;
   object-position:center;
 }
