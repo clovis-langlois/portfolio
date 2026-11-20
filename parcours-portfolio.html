@@ -149,6 +149,35 @@ main{padding:85px 0 70px}
 @media(max-width:700px){
   .experience-showcase .experience-visual{aspect-ratio:1.5;min-height:0}
 }
+
+/* Diplômes — frise verticale sobre, sans fond de section. */
+.education-section{background:transparent;padding:100px 0 110px}
+.education-section>.container{border-top:1px solid rgba(157,179,207,.14);padding-top:96px}
+.education-section h2{margin:0 0 72px}
+.education-timeline{position:relative;max-width:1080px}
+.education-timeline::before{content:"";position:absolute;left:171px;top:17px;bottom:90px;width:1px;background:rgba(157,179,207,.22)}
+.education-entry{display:grid;grid-template-columns:150px 44px minmax(0,1fr);position:relative;padding:0 0 75px}
+.education-entry:last-child{padding-bottom:0}
+.education-period{padding-top:7px;font-size:13px;font-weight:600;color:#a8bfdd;line-height:1.7}
+.education-node{padding-top:10px;display:flex;justify-content:center}
+.education-node::before{content:"";display:block;position:relative;z-index:1;width:11px;height:11px;background:#9cc4f1;border:3px solid #26354a;border-radius:50%;box-shadow:0 0 0 4px rgba(134,173,222,.08)}
+.education-details{padding:0 0 0 30px}
+.education-status{font-size:12px!important;font-weight:600;color:#9fbce1!important;margin:0 0 11px!important}
+.education-details h3{font-size:clamp(24px,2.55vw,32px);font-weight:600;line-height:1.35;letter-spacing:-.035em;margin:0 0 17px}
+.education-details>p:not(.education-status){font-size:15px;line-height:1.9;color:#c0cad8;max-width:740px;margin:0}
+@media(max-width:700px){
+  .education-section{padding:55px 0 85px}
+  .education-section>.container{padding-top:70px}
+  .education-section h2{margin-bottom:54px}
+  .education-timeline::before{left:6px;top:17px;bottom:96px}
+  .education-entry{grid-template-columns:20px minmax(0,1fr);padding-bottom:62px}
+  .education-node{grid-column:1;grid-row:1;padding-top:10px;justify-content:flex-start}
+  .education-period{grid-column:2;grid-row:1;padding:0 0 9px 12px}
+  .education-details{grid-column:2;grid-row:2;padding:0 0 0 12px}
+  .education-details h3{font-size:24px}
+  .education-details>p:not(.education-status){font-size:14px}
+}
+@media(max-width:520px){#formations h2{font-size:43px}}
 </style>
 </head>
 <body>
@@ -259,6 +288,40 @@ main{padding:85px 0 70px}
 </article>
 </div>
 </div>
+</section>
+<section class="path-section education-section" id="formations" aria-labelledby="formations-title">
+  <div class="container">
+    <h2 id="formations-title">Mes formations &amp; diplômes</h2>
+    <div class="education-timeline">
+      <article class="education-entry">
+        <div class="education-period">2026 - 2027</div>
+        <div class="education-node" aria-hidden="true"></div>
+        <div class="education-details">
+          <p class="education-status">En cours · Alternance chez Deletec</p>
+          <h3>Bachelor Administrateur Systèmes &amp; Réseaux</h3>
+          <p>Après l'obtention de mon BTS SIO, j'ai choisi de poursuivre mes études afin d'approfondir mes compétences en administration des systèmes, des réseaux et des infrastructures informatiques, tout en continuant mon évolution professionnelle chez Deletec.</p>
+        </div>
+      </article>
+      <article class="education-entry">
+        <div class="education-period">2024 - 2026</div>
+        <div class="education-node" aria-hidden="true"></div>
+        <div class="education-details">
+          <p class="education-status">Diplôme obtenu · Alternance chez Deletec</p>
+          <h3>BTS SIO — Option SISR</h3>
+          <p>Services Informatiques aux Organisations, option Solutions d'Infrastructure, Systèmes et Réseaux. Ces deux années m'ont permis de consolider mes acquis techniques grâce à la complémentarité entre les enseignements et les missions réalisées en entreprise.</p>
+        </div>
+      </article>
+      <article class="education-entry">
+        <div class="education-period">2021 - 2024</div>
+        <div class="education-node" aria-hidden="true"></div>
+        <div class="education-details">
+          <p class="education-status">Diplôme obtenu · Lycée professionnel La Tournelle</p>
+          <h3>Bac professionnel Systèmes numériques — Option RISC</h3>
+          <p>Au lycée La Tournelle, à La Garenne-Colombes, j'ai découvert les fondamentaux des systèmes numériques, des réseaux informatiques et des équipements communicants. Mes stages en entreprise m'ont permis de mettre en pratique ces premiers apprentissages et de confirmer mon orientation.</p>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 </main>
 <footer class="footer" aria-label="Pied de page">
