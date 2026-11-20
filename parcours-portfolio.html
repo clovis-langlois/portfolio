@@ -276,6 +276,22 @@ main>section{position:relative;z-index:1}
   }
 }
 
+/* Lien discret vers le projet Langéo Education, assorti aux liens du parcours. */
+.path-inline-project-link{
+  display:inline-flex;
+  align-items:baseline;
+  gap:5px;
+  color:#a9cef9;
+  font:inherit;
+  font-weight:600;
+  text-decoration:none;
+  border-bottom:1px solid rgba(169,206,249,.4);
+  transition:color .2s ease,border-color .2s ease;
+}
+.path-inline-project-link:hover{color:#fff;border-color:#fff}
+.path-inline-project-link span{font-size:.85em}
+@media(prefers-reduced-motion:reduce){.path-inline-project-link{transition:none}}
+
 /* Harmoniser l'espacement des deux séparations de sections. */
 #experiences>.container{border-top:1px solid rgba(157,179,207,.14);padding-top:96px}
 .path-hero{padding-bottom:140px}
@@ -418,7 +434,7 @@ main>section{position:relative;z-index:1}
           <p>En tant que diplômé du BTS Services Informatiques aux Organisations (SISR), j'ai fait le choix, au cours de ces deux années de formation, de me spécialiser dans la virtualisation et l'administration des infrastructures systèmes et réseaux.</p>
           <p>J'ai conçu et déployé plusieurs infrastructures virtualisées, tout en mettant en œuvre des architectures réseau intégrant la segmentation par VLAN, le routage et la sécurisation des communications.</p>
           <p>J'ai également déployé et administré différents services d'infrastructure tels qu'Active Directory, LDAP, SSO (Keycloak), DNS, DHCP, ainsi que des solutions de supervision, de gestion de parc informatique et de conteneurisation.</p>
-          <p>Cette spécialisation m'a permis de concevoir le projet Langéo Education, présenté lors de l'épreuve technique du BTS, pour lequel j'ai obtenu une note supérieure à 17/20, renforçant ainsi ma maîtrise des environnements virtualisés et des réseaux d'entreprise.</p>
+          <p>Cette spécialisation m'a permis de concevoir le projet <a class="path-inline-project-link" href="projet-portfolio.html#infrastructure-securisee" aria-label="Découvrir le projet Langéo Education">Langéo Education <span aria-hidden="true">↗</span></a>, présenté lors de l'épreuve technique du BTS, pour lequel j'ai obtenu une note supérieure à 17/20, renforçant ainsi ma maîtrise des environnements virtualisés et des réseaux d'entreprise.</p>
         </div>
       </article>
       <article class="education-entry">
