@@ -203,6 +203,8 @@ async function renderSheet(sheet){
   }finally{
     if(generation===sheet.generation)sheet.renderTask=null;
     sheet.loading=false;
+    // Relancer le rendu si un changement de zoom a annulé la tâche en cours.
+    if(ready&&generation!==sheet.generation)scheduleVisibleUpdate();
   }
 }
 function updateVisiblePages(){
@@ -241,7 +243,7 @@ function applyScale(newScale){
   scale=clamp(newScale,.4,3.4);
   for(const sheet of sheets){clearSheet(sheet);setSheetSize(sheet)}
   updateToolbar();
-  goToPage(anchorPage,'instant');
+  goToPage(anchorPage,'auto');
   scheduleVisibleUpdate();
 }
 
