@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* MON PARCOURS — styles autonomes, sans effets des autres pages */
+
 
 :root{--bg:#161a23;--fg:#f5f7fb;--muted:#b6c0ce;--line:#364253;--accent:#a5bdd9;--nav:#fff;--nav-text:#151c28}
 *{box-sizing:border-box}
@@ -22,27 +24,9 @@ a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #89baff;o
 .menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
 main{position:relative;overflow:hidden;background:var(--bg)}
 .container{width:min(1160px,calc(100% - 48px));margin:auto}
-.hero{min-height:650px;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 0 128px}
-.hero-inner{max-width:860px}
-.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-weight:600;margin:0 0 30px}
+
 h1{font-size:clamp(46px,6.1vw,76px);line-height:1.15;letter-spacing:-.045em;font-weight:600;margin:0 0 24px}
-.hero-role{font-size:clamp(18px,2.1vw,22px);font-weight:500;margin:0 0 13px}
-.hero-study{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 37px}
-.button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:#303b52;color:#fff;border:1px solid #47546a;border-radius:999px;padding:16px 29px;font-size:14px;font-weight:600;transition:background .2s,transform .2s}
-.button:hover{background:#43516d;transform:translateY(-2px)}
-.social{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:30px}
-.social a{display:inline-flex;align-items:center;gap:9px;color:#c9d4e3;font-size:13px;text-decoration:none}
-.social a:hover{color:#fff}.social svg{width:17px;height:17px;fill:currentColor}
-.section{padding:105px 0 130px}.section-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:clamp(50px,8vw,130px)}
-.section-label{font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;text-transform:uppercase;margin:0 0 24px}
 h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font-weight:600;margin:0 0 28px}
-.copy p:not(.section-label){font-size:16px;line-height:1.95;color:#c0cad7;margin:0 0 21px}
-.photo-placeholder{aspect-ratio:4/4.35;border-radius:16px;border:1px solid #3a4759;background:linear-gradient(145deg,#273244,#1c2533 68%,#202b3b);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.photo-placeholder:before{content:"";position:absolute;inset:20px;border:1px solid rgba(190,209,234,.13);border-radius:10px}
-.photo-placeholder-inner{text-align:center;padding:28px;position:relative}.photo-placeholder .monogram{font-size:clamp(70px,11vw,130px);font-weight:500;letter-spacing:-.11em;color:#9caec7;opacity:.5;line-height:1}
-.photo-placeholder span{display:block;color:#aebbd0;font-size:12px;letter-spacing:.05em;margin-top:18px}
-.expertise{padding-top:85px;padding-bottom:155px}.expertise .section-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
-.tower-visual{width:100%;max-width:510px;margin:auto;display:block;filter:drop-shadow(0 20px 45px rgba(0,0,0,.13))}
 /* Pied de page minimaliste — même anthracite que l'accueil, sans motif réseau */
 .footer{position:relative;background:var(--bg);color:#f5f7fb;border-top:1px solid rgba(174,191,213,.11)}
 .footer-inner{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:48px 0 24px}
@@ -59,131 +43,6 @@ h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font
 @media(prefers-reduced-motion:reduce){.footer-icon-link{transition:none}}
 @media(max-width:760px){.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid #edf0f4}.nav a[aria-current=page]:after{display:none}.hero{min-height:610px;padding:90px 0 100px}.hero-study{font-size:13px}.section{padding:75px 0 100px}.section-grid,.expertise .section-grid{grid-template-columns:1fr;gap:45px}.photo-placeholder{max-width:440px;width:100%;margin:auto;aspect-ratio:4/3.8}.expertise .tower-visual{max-width:420px}.expertise .copy{order:0}.expertise .illustration{order:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
-
-/* Direction graphique issue du prototype : réseau asymétrique à droite et dégradé fondu */
-main{isolation:isolate}
-main>.network-background{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.network-background svg{width:100%;height:100%;display:block}
-.network-scene{opacity:.22;filter:drop-shadow(0 0 14px rgba(97,138,190,.08))}
-.network-edge{fill:none;stroke:#89a4c8;stroke-width:1;opacity:.52;vector-effect:non-scaling-stroke}
-.network-node{opacity:.72}
-.network-node .cube-top{fill:#b0bed0}
-.network-node .cube-left{fill:#7289a5}
-.network-node .cube-right{fill:#506b8a}
-.network-packet{fill:#b9d7ff;opacity:0;filter:drop-shadow(0 0 4px #a5c9fa)}
-.network-fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.88) 27%,rgba(23,27,35,.12) 72%,rgba(23,27,35,.28) 100%),linear-gradient(180deg,#171b23 0%,transparent 12%,transparent 88%,#171b23 100%)}
-main>.container{position:relative;z-index:1}
-.hero{justify-content:center;text-align:center}
-.hero-inner{max-width:860px}
-.social{justify-content:center}
-#a-propos .copy{order:1}
-#a-propos .portrait-frame{order:2}
-@media(max-width:760px){
-  .network-scene{opacity:.18}
-  .network-fade{background:linear-gradient(90deg,#171b23 0%,rgba(23,27,35,.78) 60%,rgba(23,27,35,.4) 100%)}
-  .hero{justify-content:center;text-align:center}
-  .hero-inner{max-width:100%}
-  .social{justify-content:center}
-}
-@media(prefers-reduced-motion:reduce){.network-packet{display:none}}
-/* Photographie carrée arrondie et visuel immobilier corporate */
-.portrait-frame{margin:0;width:100%;max-width:480px;aspect-ratio:1;overflow:hidden;border-radius:18px;background:#273244;border:1px solid rgba(179,196,217,.18);box-shadow:0 18px 55px rgba(0,0,0,.16)}
-.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block}
-.office-photo{display:block;width:100%;max-width:480px;height:500px;object-fit:cover;object-position:center 50%;border-radius:18px;border:1px solid rgba(179,196,217,.16);box-shadow:0 18px 55px rgba(0,0,0,.16);margin:0}
-@media(max-width:760px){.portrait-frame{max-width:440px;margin:auto}.office-photo{max-width:400px;height:430px;margin:auto}}
-/* Apparition progressive proche de l'ancien portfolio : fondu et légère remontée.
-   Activé uniquement avec JS afin de ne jamais masquer le contenu si le script échoue. */
-
-/* Reprise du langage graphique de la plaquette officielle Deletec, page 3. */
-.deletec-next{padding:100px 0 125px;min-height:0;background:transparent}
-.deletec-brochure{background:linear-gradient(135deg,#1c2636 0%,#171c27 72%,#192232 100%);color:#e9eff8;border-radius:4px;padding:clamp(32px,5vw,72px);position:relative;overflow:hidden;box-shadow:0 24px 65px rgba(0,0,0,.15)}
-.deletec-brochure:before{content:"";position:absolute;width:54px;height:54px;background:#ffca22;right:7%;top:30px;transform:rotate(-12deg)}
-.deletec-brochure:after{content:"";position:absolute;width:24px;height:24px;background:#2167ac;right:5%;bottom:25px;transform:rotate(15deg)}
-.deletec-services-heading{max-width:690px;margin-bottom:48px;position:relative;z-index:1}
-.deletec-next .services-kicker{color:#83b7ee;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin:0 0 13px}
-.deletec-next h2{color:#f3f6fc;font-weight:700;font-size:clamp(33px,4.3vw,52px);line-height:1.12;letter-spacing:-.04em;margin:0 0 20px}
-.deletec-next .services-intro{max-width:650px;font-size:15px;color:#b9c7d9;line-height:1.8}
-.deletec-services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(34px,6vw,90px);row-gap:42px;position:relative;z-index:1}
-.deletec-service{--service:#2768b2;position:relative;background:transparent;border:0;border-radius:0;box-shadow:none;min-height:0;padding:0;overflow:visible}
-.deletec-service:before,.deletec-service:after{display:none}
-.deletec-service--cyber{--service:#125b90}.deletec-service--managed{--service:#ffca22}.deletec-service--assist{--service:#62b8e7}
-.deletec-service-number{display:none}
-.deletec-service h3{position:relative;display:block;background:var(--service);color:#fff;font-size:clamp(16px,1.65vw,19px);line-height:1.35;font-weight:700;letter-spacing:-.02em;margin:0 0 20px;padding:9px 20px 10px 12px}
-.deletec-service--managed h3{color:#182435}
-.deletec-service p{font-size:15px;font-weight:700;line-height:1.55;color:#e5edf8;margin:0 0 18px}
-.deletec-service ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;color:#b9c9dc;font-size:14px;line-height:1.5}
-.deletec-service li::marker{content:""}
-@media(max-width:760px){.deletec-next{padding:70px 0 95px}.deletec-brochure{padding:35px 26px}.deletec-services-grid{grid-template-columns:1fr;row-gap:38px}.deletec-services-heading{margin-bottom:36px}.deletec-service h3{font-size:17px}.deletec-brochure:before{width:27px;height:27px;top:13px;right:12px}}
-@media(prefers-reduced-motion:reduce){.deletec-brochure{scroll-behavior:auto}}
-
-
-/* Typographie et bandeaux reproduits à partir des quatre visuels fournis. */
-.deletec-brochure{font-family:Arial,Helvetica,sans-serif}
-.deletec-services-grid{column-gap:clamp(34px,5vw,76px);row-gap:48px}
-.deletec-service h3{font-family:Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:-.035em;font-size:clamp(17px,1.85vw,22px);padding:10px 30px 11px 15px;line-height:1.15;background:linear-gradient(to right,var(--service) 0%,var(--service) calc(100% - 18px),#0751ac calc(100% - 18px));border-radius:0}
-.deletec-service--managed h3{color:#fff}
-.deletec-service--consult{--service:#d9d9d9}
-.deletec-service--consult h3{color:#0751ac}
-.deletec-service--cyber{--service:#063b64}
-.deletec-service--managed{--service:#ffca18}
-.deletec-service--assist{--service:#5fb7e6}
-.deletec-service p{font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;letter-spacing:-.02em;line-height:1.33;margin-bottom:17px;color:#a9d0fa}
-.deletec-service ul{font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.4;letter-spacing:-.015em;gap:3px;color:#c6d8ec}
-@media(max-width:760px){.deletec-service h3{font-size:18px}}
-/* Section intégrée directement au fond, sans cadre ni décoration. */
-.deletec-next{padding:90px 0 115px;background:transparent}
-.deletec-next .container{background:transparent;border:0;box-shadow:none}
-.deletec-services-grid{padding:0}
-
-/* Présentation sobre, sans halo lumineux. */
-.deletec-next{position:relative;isolation:isolate;overflow:hidden}
-
-.deletec-next>.container{position:relative;z-index:1}
-html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
-html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
-@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
-
-
-/* Présentation Deletec : même fond que l'accueil, accents de la marque. */
-.deletec-stats{display:flex;align-items:center;gap:clamp(28px,4vw,64px);margin-top:38px;flex-wrap:wrap}
-.deletec-stats .deletec-metric{margin-top:0}
-.deletec-ranking{display:flex;flex-direction:column;gap:4px;min-width:170px}
-.deletec-ranking-value{display:flex;align-items:baseline;gap:8px;white-space:nowrap;color:#62b9e8;font-size:clamp(33px,3.4vw,46px);line-height:1.1;font-weight:600;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
-.deletec-ranking-prefix{font-size:.55em;letter-spacing:-.02em;color:#b2c9e4}
-.deletec-ranking-label{font-size:13px;color:#b5c4d7;line-height:1.6}
-@media(max-width:480px){.deletec-stats{gap:26px}.deletec-ranking{min-width:135px}.deletec-ranking-value{font-size:34px}}
-
-main{min-height:75vh;background:var(--bg);overflow:hidden}
-.deletec-intro{position:relative;isolation:isolate;padding:clamp(80px,9vw,135px) 0 115px;min-height:750px;display:flex;align-items:center}
-
-.deletec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:clamp(55px,7vw,115px);align-items:center;position:relative;z-index:2}
-.deletec-copy{max-width:530px}
-.deletec-kicker{color:#9cb7d7;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0 0 26px}
-.deletec-copy h1{font-size:clamp(38px,4.5vw,58px);letter-spacing:-.047em;line-height:1.13;font-weight:600;margin:0 0 24px}
-.deletec-copy p{color:#c0cad7;font-size:16px;line-height:1.85;margin:0 0 22px}
-.deletec-metric{margin-top:38px;display:flex;align-items:flex-start;gap:14px}
-.deletec-metric strong{font-size:48px;color:#4d9afa;line-height:1;font-weight:600;letter-spacing:-.05em}
-.deletec-metric span{font-size:13px;line-height:1.6;color:#b5c4d7;max-width:155px}
-.deletec-visual{position:relative;aspect-ratio:1.15;display:flex;align-items:center;justify-content:center}
-.deletec-logo-card{position:relative;width:100%;aspect-ratio:1.18;background:#0844aa;border-radius:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 28px 75px rgba(0,0,0,.18);overflow:hidden}
-.deletec-wordmark{font-family:Montserrat,Arial,sans-serif;font-weight:700;letter-spacing:-.075em;font-size:clamp(54px,7vw,96px);color:white;line-height:1}
-.deletec-wordmark::before{content:"";display:inline-block;width:.13em;height:.13em;background:white;border-radius:50%;vertical-align:middle;margin-right:.04em}
-.deletec-official-logo{width:100%;height:100%;object-fit:cover;display:block;border-radius:19px}.deletec-logo-note{position:absolute;bottom:20px;right:23px;color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.08em}
-.deletec-square{position:absolute;display:block;width:72px;height:72px;pointer-events:none;z-index:3;transform:rotate(var(--square-rotation, -15deg));will-change:transform}
-.deletec-square.blue{background:#1c64b4;top:-17%;left:-18%}
-.deletec-square.yellow{background:#ffca22;bottom:-18%;right:-18%;width:83px;height:83px}
-.deletec-square.cyan{background:#5bb9e7;top:-13%;right:-10%;width:55px;height:55px}
-.deletec-next{position:relative;min-height:270px;padding:65px 0 85px;border-top:0}
-.deletec-next h2{font-size:clamp(28px,3vw,39px);margin:0 0 16px}
-.deletec-next p{font-size:15px;color:#b7c4d3;line-height:1.85;max-width:720px;margin:0}
-.deletec-next .hint{color:#8ca5c5;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
-html.reveal-ready [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
-html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
-@media(max-width:800px){.deletec-intro{padding:80px 0 100px;min-height:auto}.deletec-grid{grid-template-columns:1fr;gap:55px}.deletec-visual{max-width:560px;width:88%;margin:auto}.deletec-square.blue{left:-12%}.deletec-square.yellow{right:-12%}}
-@media(max-width:480px){.deletec-copy h1{font-size:37px}.deletec-copy p{font-size:14px}.deletec-square{width:48px;height:48px}.deletec-square.yellow{width:55px;height:55px}.deletec-square.cyan{width:39px;height:39px}.deletec-wordmark{font-size:clamp(46px,11vw,75px)}}
-@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1;transform:none;transition:none}.deletec-square{will-change:auto}}
-
-
 
 
 /* Expériences : blocs éditoriaux en deux colonnes inspirés de l'ancien portfolio. */
@@ -227,9 +86,9 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 /* Mon parcours — identité visuelle cohérente avec le portfolio. */
 /* Fond uniforme sur toutes les sections : aucune transition de teinte ni halo. */
 /* Les sections de cette page conservent toutes la même couleur de fond, sans dégradé ni surcouche. */
-main#contenu,main#contenu > .path-hero,main#contenu > .path-section,main#contenu > .path-bottom{background-color:var(--bg);background-image:none}
+main#contenu{background:var(--bg);background-image:none}
 main#contenu::before,main#contenu::after,.path-hero::before,.path-hero::after,#experiences::before,#experiences::after{content:none;display:none}
-.path-hero,.path-section,.path-bottom{background:var(--bg)}
+.path-hero,.path-section,.path-bottom{background:transparent}
 
 .path-hero{position:relative;padding:120px 0 100px;overflow:hidden}
 .path-hero:before{content:none}
