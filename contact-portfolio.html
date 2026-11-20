@@ -1,2 +1,141 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | Clovis Langlois</title><style>*{box-sizing:border-box}body{margin:0;background:#161a23;color:#fff;font-family:Arial,sans-serif}header{background:#fff;padding:25px;text-align:center}nav{display:flex;justify-content:center;gap:25px;flex-wrap:wrap}nav a{color:#161a23;text-decoration:none}main{min-height:75vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px}h1{font-size:clamp(32px,5vw,55px)}p{color:#b6c0ce;line-height:1.7}main a{color:#c3d7f4}</style></head><body><header><nav aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="situations-professionnelles-portfolio.html">Situations professionnelles</a><a href="parcours-portfolio.html">Parcours</a>
-<a href="projet-portfolio.html">Projet</a><a href="contact-portfolio.html">Contact</a></nav></header><main><h1>Contact</h1><p>Cette page sera construite prochainement.</p><a href="index.html">Retour à l'accueil</a></main></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Contactez Clovis Langlois, technicien systèmes et réseaux, par e-mail ou LinkedIn.">
+<title>Contact | Clovis Langlois</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#171b23;--fg:#f5f7fb;--muted:#bbc9da;--accent:#a9cef9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #89baff;outline-offset:5px}
+.site-header{background:#fff;color:#151c28;height:84px;position:relative;z-index:20;border-bottom:1px solid #edf0f4}
+.header-inner{max-width:1200px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:center}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;position:relative}
+.nav a:hover{color:#52627d}
+.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#293146}
+.menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
+main{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(180deg,#171b23 0%,#1a2230 52%,#171b23 100%);min-height:75vh}
+main::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 46% 37% at 76% 17%,rgba(56,82,117,.26),transparent 80%),radial-gradient(ellipse 52% 32% at 20% 60%,rgba(53,77,110,.20),transparent 78%),radial-gradient(ellipse 45% 32% at 77% 94%,rgba(56,82,117,.18),transparent 80%)}
+.container{width:min(1160px,calc(100% - 48px));margin:auto}
+.contact-hero{padding:125px 0 78px;max-width:830px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.19em;font-weight:600;color:#9cb7d7;margin:0 0 25px}
+h1{font-size:clamp(43px,5.3vw,69px);line-height:1.13;letter-spacing:-.048em;font-weight:600;margin:0 0 30px}
+.contact-lead{max-width:730px;font-size:16px;line-height:1.95;color:#c0cad7;margin:0}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:0 0 110px}
+.contact-card{min-height:260px;display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;padding:36px 38px;border:1px solid rgba(164,188,216,.18);border-radius:18px;background:linear-gradient(145deg,rgba(35,48,67,.72),rgba(26,35,49,.5));transition:transform .28s ease,border-color .28s ease,background .28s ease,box-shadow .28s ease}
+.contact-card:hover{transform:translateY(-5px);border-color:rgba(169,206,249,.43);background:linear-gradient(145deg,rgba(41,59,83,.85),rgba(27,38,54,.65));box-shadow:0 20px 55px rgba(0,0,0,.12)}
+.contact-card svg{width:27px;height:27px;color:#a9cef9;flex:none}
+.contact-card h2{font-size:25px;letter-spacing:-.035em;font-weight:600;margin:22px 0 13px}
+.contact-card p{font-size:14px;line-height:1.8;color:#bbc9da;margin:0 0 25px;max-width:420px}
+.contact-action{display:inline-flex;align-items:center;gap:9px;margin-top:auto;font-size:13px;font-weight:600;color:#a9cef9;border-bottom:1px solid rgba(169,206,249,.32);padding-bottom:5px}
+.contact-action span{font-size:17px}
+.contact-about{border-top:1px solid rgba(157,179,207,.14);padding:95px 0 125px;max-width:1160px}
+.contact-about h2{font-size:clamp(30px,3.7vw,45px);line-height:1.25;letter-spacing:-.04em;font-weight:600;margin:0 0 22px}
+.contact-about p:not(.eyebrow){max-width:760px;font-size:15px;line-height:1.95;color:#bbc9da;margin:0 0 27px}
+.path-link{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:#a9cef9;font-size:13px;font-weight:600;border-bottom:1px solid rgba(169,206,249,.3);padding-bottom:5px}
+.path-link:hover{color:#fff;border-color:#fff}
+.footer{position:relative;background:linear-gradient(180deg,#171b23,#181e27);color:#f5f7fb;border-top:1px solid rgba(174,191,213,.11)}
+.footer-inner{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:48px 0 24px}
+.footer-main{display:flex;align-items:center;justify-content:space-between;gap:35px;padding-bottom:40px}
+.footer-contact h2{font-size:clamp(22px,2.4vw,29px);font-weight:600;letter-spacing:-.035em;line-height:1.25;margin:0 0 10px}
+.footer-email{font-size:14px;color:#aeb9c9;text-decoration:none;overflow-wrap:anywhere}.footer-email:hover{color:#fff}
+.footer-actions{display:flex;align-items:center;gap:12px}
+.footer-icon-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:#b8c6d7;text-decoration:none;border:1px solid rgba(160,178,204,.18);border-radius:50%;transition:color .2s,border-color .2s,background .2s,transform .2s}
+.footer-icon-link:hover{color:#fff;border-color:rgba(177,199,226,.5);background:rgba(149,177,212,.09);transform:translateY(-2px)}
+.footer-icon-link svg{height:19px;width:19px;display:block}
+.footer-bottom{border-top:1px solid rgba(174,191,213,.13);padding-top:22px;font-size:12px;color:#929eaf}
+@media(max-width:760px){
+.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}
+.nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}
+.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid #edf0f4}.nav a[aria-current=page]:after{display:none}
+.contact-hero{padding:85px 0 55px}.contact-lead{font-size:14px}.contact-grid{grid-template-columns:1fr;gap:18px;margin-bottom:75px}
+.contact-card{min-height:225px;padding:28px}.contact-about{padding:70px 0 90px}.contact-about p:not(.eyebrow){font-size:14px}
+.footer-inner{padding:42px 0 25px}.footer-main{align-items:flex-start;flex-direction:column;gap:26px;padding-bottom:30px}.footer-actions{gap:10px}.footer-bottom{line-height:1.6}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.contact-card,.footer-icon-link{transition:none}.contact-card:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+<nav class="nav" id="main-nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a>
+<a href="situations-professionnelles-portfolio.html">Situations professionnelles</a>
+<a href="parcours-portfolio.html">Parcours</a>
+<a href="projet-portfolio.html">Projet</a>
+<a href="contact-portfolio.html" aria-current="page">Contact</a>
+</nav>
+</div>
+</header>
+<main id="contenu">
+  <div class="container">
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <p class="eyebrow">Contact</p>
+      <h1 id="contact-title">Échangeons autour de vos projets.</h1>
+      <p class="contact-lead">Une question, une opportunité professionnelle ou simplement envie d'échanger autour des systèmes, réseaux et infrastructures informatiques ? N'hésitez pas à me contacter.</p>
+    </section>
+    <section class="contact-grid" aria-label="Mes moyens de contact">
+      <a class="contact-card" href="mailto:clovislanglois1@gmail.com" aria-label="Envoyer un e-mail à Clovis Langlois">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>
+        <h2>Par e-mail</h2>
+        <p>Pour toute prise de contact, question ou demande professionnelle.</p>
+        <span class="contact-action">Envoyer un e-mail <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/clovis-langlois" target="_blank" rel="noopener noreferrer" aria-label="Consulter le profil LinkedIn de Clovis Langlois (nouvel onglet)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2ZM8 19H5V9h3Zm-1.5-11.4a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.1c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.7 1.4 3.7 4.4V19Z"/></svg>
+        <h2>LinkedIn</h2>
+        <p>Pour découvrir mon parcours et échanger autour de nos expériences professionnelles.</p>
+        <span class="contact-action">Voir mon profil <span aria-hidden="true">↗</span></span>
+      </a>
+    </section>
+    <section class="contact-about" aria-labelledby="contact-about-title">
+      <p class="eyebrow">Mon univers professionnel</p>
+      <h2 id="contact-about-title">Systèmes. Réseaux. Infrastructures.</h2>
+      <p>Technicien systèmes et réseaux en alternance chez Deletec, je poursuis ma formation en administration des infrastructures informatiques. Curieux et passionné par les technologies, j'aime découvrir de nouveaux environnements et relever des défis techniques.</p>
+      <a class="path-link" href="parcours-portfolio.html">Découvrir mon parcours <span aria-hidden="true">↗</span></a>
+    </section>
+  </div>
+</main>
+<footer class="footer" aria-label="Pied de page">
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-contact">
+        <h2>Restons en contact.</h2>
+        <a class="footer-email" href="mailto:clovislanglois1@gmail.com">clovislanglois1@gmail.com</a>
+      </div>
+      <div class="footer-actions" aria-label="Mes liens">
+        <a class="footer-icon-link" href="https://www.linkedin.com/in/clovis-langlois" target="_blank" rel="noopener noreferrer" aria-label="Consulter mon profil LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2ZM8 19H5V9h3Zm-1.5-11.4a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.1c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.7 1.4 3.7 4.4V19Z"/></svg>
+        </a>
+        <a class="footer-icon-link" href="mailto:clovislanglois1@gmail.com" aria-label="M'envoyer un e-mail" title="E-mail">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 21 19H3a1.5 1.5 0 0 1-1.5-1.5v-11A1.5 1.5 0 0 1 3 5Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m2 7 10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="footer-icon-link footer-contact-link" href="contact-portfolio.html" aria-label="Accéder à la page Contact" title="Contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clovis Langlois · Tous droits réservés</span>
+    </div>
+  </div>
+</footer>
+<script>
+const menuToggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('#main-nav');
+menuToggle.addEventListener('click',()=>{
+ const open=nav.classList.toggle('open');
+ menuToggle.setAttribute('aria-expanded',String(open));
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false')}));
+</script>
+</body>
+</html>
