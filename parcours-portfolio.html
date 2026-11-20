@@ -116,6 +116,31 @@ main{padding:85px 0 70px}
 /* HUGO BOSS — dernière expérience, présentation identique aux précédentes. */
 .experience-row--boss .experience-visual{background:#fff}
 .experience-row--boss .experience-visual img{display:block;width:94%;max-height:80%;object-fit:contain}
+
+/* Logos des expériences : 5 cadres parfaitement identiques, sans étirement.
+   Les nouvelles images carrées sont cadrées au centre du même rectangle. */
+.experience-showcase .experience-visual{
+  position:relative;
+  width:100%;
+  aspect-ratio:1.22;
+  min-height:0;
+  display:block;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid rgba(164,188,216,.13);
+}
+.experience-showcase .experience-visual img{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+@media(max-width:700px){
+  .experience-showcase .experience-visual{aspect-ratio:1.5;min-height:0}
+}
 </style>
 </head>
 <body>
@@ -164,7 +189,7 @@ main{padding:85px 0 70px}
   </div>
 
  </div>
- <div class="experience-visual experience-visual--deletec"><img src="assets/deletec-logo-fidele.svg" alt="Logo Deletec" loading="lazy"></div>
+ <div class="experience-visual experience-visual--deletec"><img src="assets/deletec-logo-2026.webp" alt="Logo Deletec" loading="lazy"></div>
   <div class="deletec-period deletec-stage">
    <h3>Deletec</h3>
    <p class="experience-date">2023 - 2024</p>
@@ -182,7 +207,7 @@ main{padding:85px 0 70px}
     <p>Cette expérience m’a permis d’être au plus proche du matériel physique et des composants électroniques, en développant une compréhension concrète du fonctionnement interne des équipements. Elle a été particulièrement enrichissante, car elle m’a apporté des bases techniques solides et une approche méthodique du diagnostic matériel.</p>
   </div>
   <div class="experience-visual experience-visual--synatek">
-    <img src="assets/synatek-logo.webp" alt="Logo Synatek" loading="lazy">
+    <img src="assets/synatek-logo-2026.webp" alt="Logo Synatek" loading="lazy">
   </div>
 </article>
 <article class="experience-row experience-row--synatek experience-row--spie">
@@ -195,7 +220,7 @@ main{padding:85px 0 70px}
     <p>Cette expérience m’a permis de découvrir les standards d’un grand groupe international, de mieux comprendre les environnements Cloud professionnels et de renforcer mes compétences en architecture réseau et manipulation d’équipements Cisco.</p>
   </div>
   <div class="experience-visual experience-visual--spie">
-    <img src="assets/spie-logo.png" alt="Logo SPIE" loading="lazy">
+    <img src="assets/spie-logo-2026.webp" alt="Logo SPIE" loading="lazy">
   </div>
 </article>
 <article class="experience-row experience-row--synatek experience-row--vinci">
@@ -208,7 +233,7 @@ main{padding:85px 0 70px}
     <p>Cette expérience m’a permis de faire mes premiers pas en programmation, de comprendre la logique algorithmique et de contribuer à l’optimisation de processus internes grâce à l’automatisation. Elle a marqué une première immersion concrète dans le développement et l’amélioration d’outils métiers.</p>
   </div>
   <div class="experience-visual experience-visual--vinci">
-    <img src="assets/vinci-facilities-logo.webp" alt="Logo VINCI Facilities" loading="lazy">
+    <img src="assets/vinci-logo-2026.webp" alt="Logo VINCI Facilities" loading="lazy">
   </div>
 </article>
 <article class="experience-row experience-row--synatek experience-row--boss">
@@ -221,7 +246,7 @@ main{padding:85px 0 70px}
     <p>Cette expérience m’a permis de découvrir les enjeux IT d’un groupe international, notamment la gestion d’équipements réseau sécurisés et le déploiement de matériel à grande échelle dans un environnement multi-sites.</p>
   </div>
   <div class="experience-visual experience-visual--boss">
-    <img src="assets/hugo-boss-logo.webp" alt="Logo HUGO BOSS" loading="lazy">
+    <img src="assets/hugo-boss-logo-2026.webp" alt="Logo HUGO BOSS" loading="lazy">
   </div>
 </article>
 </div>
