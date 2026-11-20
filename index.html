@@ -119,6 +119,9 @@ main>.container{position:relative;z-index:1}
 html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
 html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 @media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
+
+.social .email-modal-trigger{display:inline-flex;align-items:center;gap:9px;color:#c9d4e3;font:inherit;font-size:13px;background:none;border:0;padding:0;cursor:pointer}.social .email-modal-trigger:hover{color:#fff}.social .email-modal-trigger svg{width:17px;height:17px;fill:currentColor}
+.email-modal[hidden]{display:none}.email-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px}.email-modal-backdrop{position:absolute;inset:0;background:rgba(7,12,22,.68);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.email-modal-panel{position:relative;width:min(100%,440px);padding:36px 32px;border-radius:20px;border:1px solid rgba(174,198,228,.24);background:linear-gradient(145deg,#263348,#171f2c);box-shadow:0 24px 90px rgba(0,0,0,.48);color:#f5f7fb;text-align:center}.email-modal-panel h2{font-size:26px;margin:12px 0 10px}.email-modal-panel p{font-size:14px;color:#bfcbdc;line-height:1.7;margin:0 0 25px}.email-modal-close{position:absolute;right:14px;top:12px;border:0;background:transparent;color:#c5d1e1;font-size:27px;cursor:pointer;padding:5px 10px}.email-modal-close:hover{color:#fff}.email-modal-address{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;background:rgba(8,15,25,.5);border:1px solid rgba(169,206,249,.2);border-radius:12px;padding:13px 14px;font-size:14px;overflow-wrap:anywhere}.email-modal-copy{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9px;border:1px solid rgba(169,206,249,.3);background:rgba(169,206,249,.1);color:#a9cef9;cursor:pointer}.email-modal-copy:hover{background:rgba(169,206,249,.22)}.email-modal-copy svg{width:20px;height:20px}.email-modal-status{display:block;min-height:20px;margin-top:12px;font-size:12px;color:#a9cef9}body.email-modal-open{overflow:hidden}
 </style>
 </head>
 <body>
@@ -219,7 +222,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0
 <a class="button" data-reveal style="--reveal-delay: 260ms" href="/projets/">Découvrir mes projets</a>
 <div class="social" data-reveal style="--reveal-delay: 330ms">
 <a href="https://www.linkedin.com/in/clovis-langlois" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55A1.55 1.55 0 002 3.55v16.9A1.55 1.55 0 003.55 22h16.9A1.55 1.55 0 0022 20.45V3.55A1.55 1.55 0 0020.45 2zM8 19H5V9h3zm-1.5-11.4a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM19 19h-3v-5.1c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.7 1.4 3.7 4.4z"/></svg>LinkedIn</a>
-<a href="mailto:clovislanglois1@gmail.com" aria-label="Envoyer un e-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18a2 2 0 012 2v12a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2zm0 3v.3l9 6.5 9-6.5V7l-9 6.3z"/></svg>E-mail</a>
+<button type="button" class="email-modal-trigger" aria-haspopup="dialog" aria-controls="email-modal" aria-label="Afficher mon adresse e-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18a2 2 0 012 2v12a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2zm0 3v.3l9 6.5 9-6.5V7l-9 6.3z"/></svg>E-mail</button>
 </div>
 </div>
 </section>
@@ -345,6 +348,21 @@ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAtt
   },{threshold:0.08,rootMargin:'0px 0px -35px 0px'});
   items.forEach(item=>observer.observe(item));
 })();
+</script>
+
+<div class="email-modal" id="email-modal" hidden>
+  <div class="email-modal-backdrop" data-email-close></div>
+  <section class="email-modal-panel" role="dialog" aria-modal="true" aria-labelledby="email-modal-title" aria-describedby="email-modal-description">
+    <button type="button" class="email-modal-close" data-email-close aria-label="Fermer">×</button>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a9cef9" stroke-width="1.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>
+    <h2 id="email-modal-title">Me contacter</h2>
+    <p id="email-modal-description">Voici mon adresse e-mail professionnelle de contact.</p>
+    <div class="email-modal-address"><span id="email-modal-value">clovislanglois1@gmail.com</span><button type="button" class="email-modal-copy" aria-label="Copier l'adresse e-mail" title="Copier l'adresse e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+    <span class="email-modal-status" role="status" aria-live="polite"></span>
+  </section>
+</div>
+<script>
+(()=>{const trigger=document.querySelector('.email-modal-trigger'),modal=document.querySelector('#email-modal'),close=modal.querySelector('.email-modal-close'),copy=modal.querySelector('.email-modal-copy'),status=modal.querySelector('.email-modal-status');let previous=null;function hide(){modal.hidden=true;document.body.classList.remove('email-modal-open');(previous||trigger).focus()}trigger.addEventListener('click',()=>{previous=document.activeElement;modal.hidden=false;document.body.classList.add('email-modal-open');status.textContent='';close.focus()});modal.querySelectorAll('[data-email-close]').forEach(el=>el.addEventListener('click',hide));document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape'){e.preventDefault();hide()}if(e.key==='Tab'){const focusables=[close,copy];const i=focusables.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();copy.focus()}else if(!e.shiftKey&&i===focusables.length-1){e.preventDefault();close.focus()}}});copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('clovislanglois1@gmail.com');status.textContent='Adresse copiée !'}catch{const range=document.createRange();range.selectNodeContents(document.querySelector('#email-modal-value'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);status.textContent='Sélectionne l’adresse pour la copier.'}})})();
 </script>
 </body>
 </html>
