@@ -97,6 +97,22 @@ main{padding:85px 0 70px}
 .experience-row--vinci .experience-visual{background:#fff}
 .experience-row--vinci .experience-visual img{width:94%;max-height:80%;object-fit:contain}
 
+/* Séparateurs sobres entre entreprises ; Deletec (stage et alternance) reste un seul bloc. */
+.experience-showcase > .experience-row + .experience-row{position:relative}
+.experience-showcase > .experience-row + .experience-row::before{
+  content:"";
+  position:absolute;
+  top:-55px;
+  left:0;
+  right:0;
+  height:1px;
+  background:rgba(157,179,207,.14);
+  pointer-events:none;
+}
+@media(max-width:700px){
+  .experience-showcase > .experience-row + .experience-row::before{top:-43px}
+}
+
 /* HUGO BOSS — dernière expérience, présentation identique aux précédentes. */
 .experience-row--boss .experience-visual{background:#fff}
 .experience-row--boss .experience-visual img{display:block;width:94%;max-height:80%;object-fit:contain}
