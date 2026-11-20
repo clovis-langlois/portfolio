@@ -137,19 +137,27 @@ main{padding:12px 0 70px}
   border-radius:18px;
   border:1px solid rgba(164,188,216,.13);
 }
-/* Même halo bleu-gris diffus que sous les schémas de la page Situations
-   professionnelles. Limité aux visuels, sans dégradé de fond de page. */
+/* Éclairage bleu-gris diffus autour des logos, repris des illustrations
+   de Situations professionnelles. Le fond reste continu, sans encadré. */
 .experience-showcase .experience-visual::before{
   content:"";
   position:absolute;
   z-index:-1;
-  inset:-22% -23%;
+  inset:-43% -48%;
   pointer-events:none;
+  border-radius:50%;
   background:radial-gradient(ellipse at center,
-    rgba(63,91,132,.26) 0%,
-    rgba(41,62,89,.11) 38%,
-    transparent 69%);
-  filter:blur(8px);
+    rgba(67,101,148,.34) 0%,
+    rgba(49,72,104,.27) 30%,
+    rgba(41,62,89,.13) 53%,
+    transparent 76%);
+  filter:blur(18px);
+}
+@media(max-width:700px){
+  .experience-showcase .experience-visual::before{
+    inset:-35% -30%;
+    filter:blur(14px);
+  }
 }
 .experience-showcase .experience-visual img{
   position:absolute;
