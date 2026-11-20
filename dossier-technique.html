@@ -47,6 +47,17 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .status-content .retry{display:none;margin:25px auto 0;background:transparent;border:1px solid #788fae;color:#e8f1ff;border-radius:999px;padding:12px 20px;font-weight:600;font-size:12px}
 .status.is-error .retry{display:inline-flex}
 .status.is-error .status-content h1{color:#f5f7fb}
+/* Présentation : une page complète à la fois, centrée sur l'écran. */
+.presentation{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;background:#11151d;z-index:50;display:flex;flex-direction:column;align-items:stretch;overflow:hidden}
+.presentation[hidden]{display:none}
+.presentation-stage{flex:1;min-height:0;min-width:0;display:flex;align-items:center;justify-content:center;padding:24px 24px 8px;overflow:hidden}
+.presentation-stage canvas{display:block;max-width:100%;max-height:100%;background:#fff;box-shadow:0 4px 30px rgba(0,0,0,.42)}
+.presentation-controls{flex:none;min-height:70px;display:flex;align-items:center;justify-content:center;gap:15px;padding:9px 16px 16px}
+.presentation-counter{font-size:13px;color:#c1cad8;min-width:84px;text-align:center;font-variant-numeric:tabular-nums}
+.presentation-exit{margin-left:25px;white-space:nowrap;font-size:12px;font-weight:600;gap:9px}
+.presentation[hidden],.presentation-stage:empty{background:#11151d}
+@media(max-width:580px){.presentation-stage{padding:12px 12px 5px}.presentation-controls{gap:9px}.presentation-exit{margin-left:7px}}
+
 @media(max-width:920px){
 .toolbar{gap:12px}
 .toolbar-title{gap:12px}
@@ -82,7 +93,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
       <button class="control control--icon" id="zoom-out" type="button" aria-label="Réduire le zoom" disabled>−</button>
       <span class="zoom-level" id="zoom-label" aria-label="Niveau de zoom">—</span>
       <button class="control control--icon" id="zoom-in" type="button" aria-label="Augmenter le zoom" disabled>+</button>
-      <button class="control control--fit" id="fit" type="button" title="Adapter à la largeur de l'écran" disabled>Ajuster</button>
+      <button class="control control--fit" id="fit" type="button" title="Afficher une page entière en mode présentation" disabled>Présenter</button>
     </div>
   </div>
 </header>
@@ -96,6 +107,15 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
     </div>
   </div>
 </main>
+<section class="presentation" id="presentation" role="dialog" aria-modal="true" aria-label="Présentation du document PDF" hidden>
+  <div class="presentation-stage" id="presentation-stage" aria-label="Page présentée"></div>
+  <div class="presentation-controls" aria-label="Navigation de la présentation">
+    <button class="control control--icon" id="presentation-previous" type="button" aria-label="Page précédente">‹</button>
+    <span class="presentation-counter" id="presentation-counter" aria-live="polite">1 / —</span>
+    <button class="control control--icon" id="presentation-next" type="button" aria-label="Page suivante">›</button>
+    <button class="control presentation-exit" id="presentation-close" type="button" title="Quitter la présentation (Échap)">Quitter <span aria-hidden="true">×</span></button>
+  </div>
+</section>
 <script type="module">
 import * as pdfjsLib from './assets/vendor/pdf.mjs';
 
@@ -119,6 +139,12 @@ const zoomIn=document.getElementById('zoom-in');
 const zoomOut=document.getElementById('zoom-out');
 const zoomLabel=document.getElementById('zoom-label');
 const fitButton=document.getElementById('fit');
+const presentation=document.getElementById('presentation');
+const presentationStage=document.getElementById('presentation-stage');
+const presentationPrevious=document.getElementById('presentation-previous');
+const presentationNext=document.getElementById('presentation-next');
+const presentationCounter=document.getElementById('presentation-counter');
+const presentationClose=document.getElementById('presentation-close');
 const controls=[previous,next,pageInput,zoomIn,zoomOut,fitButton];
 let pdf=null;
 let sheets=[];
@@ -129,6 +155,11 @@ let scale=1;
 let ready=false;
 let scrollingUpdate=false;
 let lastViewerWidth=0;
+let presenting=false;
+let presentationPage=1;
+let presentationGeneration=0;
+let presentationRenderTask=null;
+let presentationLastFocus=null;
 
 function errorState(message){
   statusTitle.textContent='Impossible d’afficher ce dossier';
@@ -247,6 +278,89 @@ function applyScale(newScale){
   scheduleVisibleUpdate();
 }
 
+
+/* Le mode Présenter utilise un canvas indépendant du défilement standard. */
+async function renderPresentationPage(){
+  if(!presenting||!ready)return;
+  const generation=++presentationGeneration;
+  if(presentationRenderTask){
+    try{presentationRenderTask.cancel()}catch(e){}
+    presentationRenderTask=null;
+  }
+  presentationStage.replaceChildren();
+  try{
+    const page=await pdf.getPage(presentationPage);
+    if(generation!==presentationGeneration||!presenting)return;
+    const original=page.getViewport({scale:1});
+    const maxWidth=Math.max(160,presentationStage.clientWidth-48);
+    const maxHeight=Math.max(160,presentationStage.clientHeight-30);
+    const presentationScale=Math.min(maxWidth/original.width,maxHeight/original.height);
+    const pageViewport=page.getViewport({scale:presentationScale});
+    const ratio=clamp(window.devicePixelRatio||1,1,2);
+    const canvas=document.createElement('canvas');
+    const ctx=canvas.getContext('2d',{alpha:false});
+    if(!ctx)throw new Error('Affichage canvas indisponible');
+    canvas.width=Math.round(pageViewport.width*ratio);
+    canvas.height=Math.round(pageViewport.height*ratio);
+    canvas.style.width=pageViewport.width+'px';
+    canvas.style.height=pageViewport.height+'px';
+    const task=page.render({
+      canvasContext:ctx,
+      viewport:pageViewport,
+      transform:ratio!==1?[ratio,0,0,ratio,0,0]:undefined
+    });
+    presentationRenderTask=task;
+    await task.promise;
+    if(generation!==presentationGeneration||!presenting)return;
+    presentationStage.replaceChildren(canvas);
+  }catch(err){
+    if(err?.name!=='RenderingCancelledException'&&generation===presentationGeneration&&presenting){
+      console.error('Erreur du mode présentation :',err);
+      const message=document.createElement('p');
+      message.textContent='Cette page ne peut pas être affichée.';
+      presentationStage.replaceChildren(message);
+    }
+  }finally{
+    if(generation===presentationGeneration)presentationRenderTask=null;
+  }
+}
+function showPresentationPage(number){
+  if(!presenting||!ready)return;
+  presentationPage=clamp(Math.round(number),1,pdf.numPages);
+  presentationCounter.textContent=presentationPage+' / '+pdf.numPages;
+  presentationPrevious.disabled=presentationPage<=1;
+  presentationNext.disabled=presentationPage>=pdf.numPages;
+  renderPresentationPage();
+}
+function openPresentation(){
+  if(!ready||presenting)return;
+  presenting=true;
+  presentationLastFocus=document.activeElement;
+  presentation.hidden=false;
+  presentationPage=currentPage;
+  showPresentationPage(presentationPage);
+  presentationClose.focus({preventScroll:true});
+  if(presentation.requestFullscreen){
+    presentation.requestFullscreen().catch(()=>{/* Le mode présentation reste accessible sans plein écran natif. */});
+  }
+}
+function closePresentation(){
+  if(!presenting)return;
+  presenting=false;
+  ++presentationGeneration;
+  if(presentationRenderTask){
+    try{presentationRenderTask.cancel()}catch(e){}
+    presentationRenderTask=null;
+  }
+  presentationStage.replaceChildren();
+  presentation.hidden=true;
+  if(document.fullscreenElement===presentation){
+    document.exitFullscreen().catch(()=>{});
+  }
+  goToPage(presentationPage,'auto');
+  (presentationLastFocus||fitButton).focus({preventScroll:true});
+}
+
 async function main(){
   if(!documentInfo){
     errorState('Le lien du document est incorrect. Revenez à la page Projets.');
@@ -298,16 +412,47 @@ pageInput.addEventListener('change',()=>goToPage(Number(pageInput.value)||curren
 pageInput.addEventListener('keydown',event=>{if(event.key==='Enter'){pageInput.blur();goToPage(Number(pageInput.value)||currentPage)}});
 zoomIn.addEventListener('click',()=>applyScale(scale*1.18));
 zoomOut.addEventListener('click',()=>applyScale(scale/1.18));
-fitButton.addEventListener('click',()=>applyScale(fitScale()));
+fitButton.addEventListener('click',openPresentation);
+presentationPrevious.addEventListener('click',()=>showPresentationPage(presentationPage-1));
+presentationNext.addEventListener('click',()=>showPresentationPage(presentationPage+1));
+presentationClose.addEventListener('click',closePresentation);
+document.addEventListener('fullscreenchange',()=>{
+  if(presenting){
+    if(document.fullscreenElement!==presentation)closePresentation();
+    else renderPresentationPage();
+  }
+});
+let presentationTouchX=null;
+presentationStage.addEventListener('touchstart',event=>{
+  if(event.touches.length===1)presentationTouchX=event.touches[0].clientX;
+},{passive:true});
+presentationStage.addEventListener('touchend',event=>{
+  if(!presenting||presentationTouchX===null)return;
+  const delta=event.changedTouches[0].clientX-presentationTouchX;
+  presentationTouchX=null;
+  if(Math.abs(delta)>65)showPresentationPage(presentationPage+(delta<0?1:-1));
+},{passive:true});
 viewport.addEventListener('scroll',scheduleVisibleUpdate,{passive:true});
 window.addEventListener('resize',()=>{
   if(!ready)return;
+  if(presenting)renderPresentationPage();
   if(viewport.clientWidth===lastViewerWidth)return;
   lastViewerWidth=viewport.clientWidth;
   applyScale(fitScale());
 });
 window.addEventListener('keydown',event=>{
-  if(!ready||event.target instanceof HTMLInputElement)return;
+  if(!ready)return;
+  if(presenting){
+    if(event.key==='Escape'){event.preventDefault();closePresentation();return}
+    if(event.key==='ArrowRight'||event.key==='ArrowDown'||event.key==='PageDown'){
+      event.preventDefault();showPresentationPage(presentationPage+1);return;
+    }
+    if(event.key==='ArrowLeft'||event.key==='ArrowUp'||event.key==='PageUp'){
+      event.preventDefault();showPresentationPage(presentationPage-1);return;
+    }
+    return;
+  }
+  if(event.target instanceof HTMLInputElement)return;
   if(event.key==='ArrowRight'||event.key==='PageDown'){event.preventDefault();goToPage(currentPage+1)}
   else if(event.key==='ArrowLeft'||event.key==='PageUp'){event.preventDefault();goToPage(currentPage-1)}
 });
