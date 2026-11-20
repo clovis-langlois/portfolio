@@ -211,6 +211,13 @@ main{padding:85px 0 70px}
   .education-scroll-marker{display:none}
   .education-node::before{transition:none}
 }
+
+/* Liens de navigation sous l'introduction : même style que le lien Deletec. */
+.path-quick-links{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px;margin-top:34px}
+.path-quick-links .path-more{margin-top:0}
+#experiences-title,#formations-title{scroll-margin-top:34px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -235,7 +242,10 @@ main{padding:85px 0 70px}
     <p>Du baccalauréat professionnel Systèmes numériques au Bachelor Administrateur Systèmes &amp; Réseaux, j'ai eu l'opportunité de développer mes connaissances et mes compétences à travers plusieurs expériences au sein de grandes structures. Ces expériences, particulièrement enrichissantes, m'ont permis d'acquérir une vision concrète du fonctionnement des systèmes d'information en entreprise et ont conforté mon choix d'orientation.</p>
     <p>Aujourd'hui, je poursuis mon évolution professionnelle chez Deletec, une entreprise que j'ai découverte lors de mes stages et qui m'a ensuite offert l'opportunité de poursuivre mes études en alternance. Au fil des années, j'y ai progressivement gagné en autonomie, développé mes compétences techniques et pris de nouvelles responsabilités, tout en conservant cette même curiosité et cette volonté constante d'apprendre et de progresser.</p>
     <p>Ces expériences m'ont également permis de développer un véritable sens des responsabilités et une exigence particulière quant à la qualité de mon travail. Une exigence que je m'attache aujourd'hui à mettre au service de nos clients, à travers une approche rigoureuse, une écoute attentive de leurs besoins et la recherche de solutions fiables et durables.</p>
-   
+    <nav class="path-quick-links" aria-label="Accès rapide aux sections du parcours">
+      <a class="path-more" href="#experiences-title">Mon expérience professionnelle <span aria-hidden="true">↗</span></a>
+      <a class="path-more" href="#formations-title">Mes formations &amp; diplômes <span aria-hidden="true">↗</span></a>
+    </nav>
       </div>
 </div>
 </section>
