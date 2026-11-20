@@ -97,6 +97,11 @@ main{padding:85px 0 70px}
 .experience-row--vinci .experience-visual{background:#fff}
 
 
+/* Séparation légère entre l'introduction Mon parcours et les expériences. */
+#experiences > .container{position:relative}
+#experiences > .container::before{content:"";position:absolute;top:-49px;left:0;right:0;height:1px;background:rgba(157,179,207,.14);pointer-events:none}
+@media(max-width:700px){#experiences > .container::before{top:-36px}}
+
 /* Séparateurs sobres entre entreprises ; Deletec (stage et alternance) reste un seul bloc. */
 .experience-showcase > .experience-row + .experience-row{position:relative}
 .experience-showcase > .experience-row + .experience-row::before{
