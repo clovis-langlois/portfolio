@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Découvrez le parcours de Clovis Langlois dans les systèmes et réseaux.">
+<title>Mon parcours | Clovis Langlois</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#161a23;--fg:#f5f7fb;--muted:#bdc9d9;--nav:#202630;--nav-text:#f4f6fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid #89baff;outline-offset:5px}
+.site-header{background:var(--nav);color:var(--nav-text);height:84px;position:relative;z-index:20;border-bottom:1px solid rgba(178,198,222,.17)}
+.header-inner{max-width:1200px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:center}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;position:relative}
+.nav a:hover{color:#a9cef9}
+.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#a9cef9}
+.menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
+main{min-height:75vh;background:var(--bg);padding:50px 0 100px}
+.container{width:min(1160px,calc(100% - 48px));margin:auto}
+.path-hero h1{max-width:900px;margin:0 0 28px;font-size:clamp(48px,6vw,76px);font-weight:600;letter-spacing:-.05em;line-height:1.1}
+.path-introduction{max-width:880px}
+.path-introduction p{color:var(--muted);font-size:15px;line-height:1.95;margin:0 0 22px}
+.path-introduction p:last-child{margin-bottom:0}
+.footer{position:relative;background:var(--bg);color:#f5f7fb;border-top:1px solid rgba(174,191,213,.11)}
+.footer-inner{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:48px 0 24px}
+.footer-main{display:flex;align-items:center;justify-content:space-between;gap:35px;padding-bottom:40px}
+.footer-contact h2{font-size:clamp(22px,2.4vw,29px);font-weight:600;letter-spacing:-.035em;line-height:1.25;margin:0 0 10px}
+.footer-email{font-size:14px;color:#aeb9c9;text-decoration:none;overflow-wrap:anywhere}
+.footer-email:hover{color:#fff}
+.footer-actions{display:flex;align-items:center;gap:12px}
+.footer-icon-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:#b8c6d7;text-decoration:none;border:1px solid rgba(160,178,204,.18);border-radius:50%;transition:color .2s,border-color .2s,background .2s,transform .2s}
+.footer-icon-link:hover{color:#fff;border-color:rgba(177,199,226,.5);background:rgba(149,177,212,.09);transform:translateY(-2px)}
+.footer-icon-link svg{height:19px;width:19px;display:block}
+.footer-bottom{border-top:1px solid rgba(174,191,213,.13);padding-top:22px;font-size:12px;color:#929eaf}
+@media(max-width:760px){
+.site-header{height:72px}.header-inner{justify-content:flex-end}
+.menu-toggle{display:block}
+.nav{display:none;position:absolute;top:72px;left:0;right:0;background:#202630;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}
+.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid rgba(178,198,222,.17)}.nav a[aria-current=page]:after{display:none}
+main{padding:12px 0 70px}
+.footer-inner{padding:42px 0 25px}.footer-main{align-items:flex-start;flex-direction:column;gap:26px;padding-bottom:30px}.footer-actions{gap:10px}.footer-bottom{line-height:1.6}
+}
+@media(max-width:520px){.path-hero h1{font-size:43px}.path-introduction p{font-size:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.footer-icon-link{transition:none}}
+
+/* Expérience Deletec — styles autonomes, sans fond propre aux sections. */
+.path-hero{padding-bottom:98px;background:transparent}
+.path-section{background:transparent;padding:0 0 45px}
+.path-section h2{font-size:clamp(48px,6vw,76px);font-weight:600;line-height:1.1;letter-spacing:-.05em;margin:0 0 68px}
+.experience-showcase{display:block}
+.experience-row--deletec{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);column-gap:clamp(40px,6vw,90px);row-gap:48px;align-items:start}
+.experience-row--deletec .experience-copy{grid-column:1;grid-row:1}
+.experience-copy h3,.deletec-stage h3{font-size:clamp(36px,4.3vw,55px);font-weight:600;letter-spacing:-.045em;line-height:1.12;margin:0 0 7px}
+.deletec-period{margin-top:26px}
+.deletec-period h4{font-size:18px;letter-spacing:-.02em;margin:0 0 12px;color:#f1f5fc;font-weight:600}
+.experience-date{font-size:13px;font-weight:600;color:#d5e4f8;margin:0 0 10px}
+.experience-role{font-size:13px;color:#92b4df;font-weight:600;margin:0 0 29px}
+.deletec-period>p:not(.experience-date):not(.experience-role){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
+.path-more{display:inline-flex;align-items:center;gap:8px;color:#a9cef9;text-decoration:none;font-size:13px;font-weight:600;border-bottom:1px solid rgba(169,206,249,.3);padding-bottom:4px;margin-top:5px}
+.path-more:hover{color:#fff;border-color:#fff}
+.experience-row--deletec .experience-visual{grid-column:2;grid-row:1;align-self:center;width:100%;aspect-ratio:1.22;min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:18px;border:1px solid rgba(164,188,216,.13);background:#0745a9}
+
+.deletec-stage{grid-column:1;grid-row:2;position:relative;margin-top:0;padding-top:56px}
+.deletec-stage::before{content:"";position:absolute;top:9px;left:18px;width:1px;height:32px;background:linear-gradient(to bottom,rgba(150,186,232,.65),rgba(150,186,232,.16))}
+.deletec-stage::after{content:"";position:absolute;top:9px;left:13px;width:11px;height:11px;border-top:1px solid rgba(150,186,232,.65);border-left:1px solid rgba(150,186,232,.65);transform:rotate(45deg)}
+@media(max-width:700px){
+.path-hero{padding-bottom:72px}
+.path-section h2{margin-bottom:45px}
+.experience-row--deletec{grid-template-columns:1fr;row-gap:28px}
+.experience-row--deletec .experience-copy{grid-column:1;grid-row:1}
+.experience-row--deletec .experience-visual{grid-column:1;grid-row:2;min-height:240px;aspect-ratio:1.5}
+.deletec-stage{grid-column:1;grid-row:3}
+.deletec-period>p:not(.experience-date):not(.experience-role){font-size:14px}
+}
+
+/* Synatek — même grille éditoriale, fond principal inchangé. */
+.experience-row--synatek{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:clamp(40px,6vw,90px);align-items:center;margin-top:110px}
+.experience-row--synatek .experience-copy h3{margin:0 0 7px}
+.experience-row--synatek .experience-date{margin:0 0 22px}
+.experience-row--synatek .experience-copy>p:not(.experience-date){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
+.experience-row--synatek .experience-visual{width:100%;aspect-ratio:1.22;min-height:300px;background:#1d1d1d;border:1px solid rgba(164,188,216,.13);border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+
+@media(max-width:700px){.experience-row--synatek{grid-template-columns:1fr;gap:28px;margin-top:85px}.experience-row--synatek .experience-copy>p:not(.experience-date){font-size:14px}.experience-row--synatek .experience-visual{min-height:240px;aspect-ratio:1.5}}
+
+/* SPIE : même disposition que Synatek, visuel clair pour le logo bleu et rouge. */
+.experience-row--spie .experience-visual{background:#f4f5f7}
+
+
+/* VINCI Facilities : même présentation que les expériences précédentes. */
+.experience-row--vinci .experience-visual{background:#fff}
+
+
+@media(max-width:520px){#experiences h2{font-size:43px}}
+
+/* Séparation légère entre l'introduction Mon parcours et les expériences. */
+#experiences > .container{position:relative}
+
+
+
+/* Séparateurs sobres entre entreprises ; Deletec (stage et alternance) reste un seul bloc. */
+.experience-showcase > .experience-row + .experience-row{position:relative}
+.experience-showcase > .experience-row + .experience-row::before{
+  content:"";
+  position:absolute;
+  top:-55px;
+  left:0;
+  right:0;
+  height:1px;
+  background:rgba(157,179,207,.14);
+  pointer-events:none;
+}
+@media(max-width:700px){
+  .experience-showcase > .experience-row + .experience-row::before{top:-43px}
+}
+
+/* HUGO BOSS — dernière expérience, présentation identique aux précédentes. */
+.experience-row--boss .experience-visual{background:#fff}
+
+
+/* Logos des expériences : 5 cadres parfaitement identiques, sans étirement.
+   Les nouvelles images carrées sont cadrées au centre du même rectangle. */
+.experience-showcase .experience-visual{
+  position:relative;
+  width:100%;
+  aspect-ratio:1.22;
+  min-height:0;
+  display:block;
+  overflow:visible;
+  isolation:isolate;
+  border-radius:18px;
+  border:1px solid rgba(164,188,216,.13);
+}
+/* Éclairage bleu-gris diffus autour des logos, repris des illustrations
+   de Situations professionnelles. Le fond reste continu, sans encadré. */
+.experience-showcase .experience-visual::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-43% -48%;
+  pointer-events:none;
+  border-radius:50%;
+  background:radial-gradient(ellipse at center,
+    rgba(67,101,148,.34) 0%,
+    rgba(49,72,104,.27) 30%,
+    rgba(41,62,89,.13) 53%,
+    transparent 76%);
+  filter:blur(18px);
+}
+@media(max-width:700px){
+  .experience-showcase .experience-visual::before{
+    inset:-35% -30%;
+    filter:blur(14px);
+  }
+}
+.experience-showcase .experience-visual img{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:none;
+  object-fit:cover;
+  object-position:center;
+  border-radius:17px;
+}
+@media(max-width:700px){
+  .experience-showcase .experience-visual{aspect-ratio:1.5;min-height:0}
+}
+
+/* Diplômes — frise verticale sobre, sans fond de section. */
+.education-section{background:transparent;padding:100px 0 110px}
+.education-section>.container{border-top:1px solid rgba(157,179,207,.14);padding-top:96px}
+.education-section h2{margin:0 0 72px}
+.education-timeline{position:relative;max-width:1080px}
+.education-timeline::before{content:"";position:absolute;left:171px;top:17px;bottom:90px;width:1px;background:rgba(157,179,207,.22)}
+.education-entry{display:grid;grid-template-columns:150px 44px minmax(0,1fr);position:relative;padding:0 0 75px}
+.education-entry:last-child{padding-bottom:0}
+.education-period{padding-top:7px;font-size:13px;font-weight:600;color:#a8bfdd;line-height:1.7}
+.education-node{padding-top:10px;display:flex;justify-content:center}
+.education-node::before{content:"";display:block;position:relative;z-index:1;width:11px;height:11px;background:#9cc4f1;border:3px solid #26354a;border-radius:50%;box-shadow:0 0 0 4px rgba(134,173,222,.08)}
+.education-details{padding:0 0 0 30px}
+.education-status{font-size:12px!important;font-weight:600;color:#9fbce1!important;margin:0 0 11px!important}
+.education-details h3{font-size:clamp(24px,2.55vw,32px);font-weight:600;line-height:1.35;letter-spacing:-.035em;margin:0 0 17px}
+.education-details>p:not(.education-status){font-size:15px;line-height:1.9;color:#c0cad8;max-width:740px;margin:0 0 20px}
+.education-details>p:last-child{margin-bottom:0}
+.education-details>.education-result{font-size:13px!important;color:#b9d1f0!important;font-weight:600;margin:0 0 22px!important}
+@media(max-width:700px){
+  .education-section{padding:55px 0 85px}
+  .education-section>.container{padding-top:70px}
+  .education-section h2{margin-bottom:54px}
+  .education-timeline::before{left:6px;top:17px;bottom:96px}
+  .education-entry{grid-template-columns:20px minmax(0,1fr);padding-bottom:62px}
+  .education-node{grid-column:1;grid-row:1;padding-top:10px;justify-content:flex-start}
+  .education-period{grid-column:2;grid-row:1;padding:0 0 9px 12px}
+  .education-details{grid-column:2;grid-row:2;padding:0 0 0 12px}
+  .education-details h3{font-size:24px}
+  .education-details>p:not(.education-status){font-size:14px}
+}
+@media(max-width:520px){#formations h2{font-size:43px}}
+
+/* Frise : un seul repère lumineux, sans remplissage de la ligne. */
+.education-scroll-marker{
+  position:absolute;
+  left:171.5px;
+  top:0;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:rgba(183,215,255,.82);
+  box-shadow:0 0 5px rgba(141,191,245,.25);
+  transform:translate(-50%,-50%);
+  opacity:0;
+  pointer-events:none;
+  z-index:3;
+  transition:top .12s ease-out,opacity .2s ease-out;
+}
+.education-node::before{
+  transition:background-color .35s ease,box-shadow .35s ease;
+}
+.education-entry.is-near-marker .education-node::before{
+  background:#a9cffa;
+  box-shadow:0 0 0 4px rgba(134,173,222,.10),0 0 8px rgba(147,194,249,.18);
+}
+@media(max-width:700px){
+  .education-scroll-marker{left:6.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .education-scroll-marker{display:none}
+  .education-node::before{transition:none}
+}
+
+/* Liens de navigation sous l'introduction : même style que le lien Deletec. */
+.path-quick-links{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px;margin-top:34px}
+.path-quick-links .path-more{margin-top:0}
+#experiences-title,#formations-title{scroll-margin-top:34px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Éclaircies d'ambiance réparties sur toute la page, dans l'esprit
+   de Situations professionnelles : halos discrets, fond continu. */
+main{
+  position:relative;
+  isolation:isolate;
+  background:linear-gradient(180deg,#171b23 0%,#1a2230 47%,#171b23 100%);
+}
+main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 46% 12% at 79% 6%,rgba(57,82,117,.22),transparent 78%),
+    radial-gradient(ellipse 47% 13% at 17% 23%,rgba(55,79,110,.18),transparent 78%),
+    radial-gradient(ellipse 44% 12% at 83% 41%,rgba(58,85,120,.19),transparent 78%),
+    radial-gradient(ellipse 48% 12% at 22% 61%,rgba(52,76,109,.19),transparent 78%),
+    radial-gradient(ellipse 48% 15% at 78% 82%,rgba(59,84,119,.20),transparent 80%),
+    radial-gradient(ellipse 50% 12% at 22% 97%,rgba(51,75,108,.17),transparent 80%);
+}
+main>section{position:relative;z-index:1}
+@media(max-width:700px){
+  main::before{
+    background:
+      radial-gradient(ellipse 75% 11% at 75% 7%,rgba(57,82,117,.18),transparent 80%),
+      radial-gradient(ellipse 80% 13% at 25% 27%,rgba(55,79,110,.16),transparent 80%),
+      radial-gradient(ellipse 75% 12% at 75% 48%,rgba(58,85,120,.17),transparent 80%),
+      radial-gradient(ellipse 80% 13% at 24% 70%,rgba(52,76,109,.17),transparent 80%),
+      radial-gradient(ellipse 80% 13% at 75% 91%,rgba(59,84,119,.17),transparent 80%);
+  }
+}
+
+/* Lien discret vers le projet Langéo Education, assorti aux liens du parcours. */
+.path-inline-project-link{
+  display:inline-flex;
+  align-items:baseline;
+  gap:5px;
+  color:#a9cef9;
+  font:inherit;
+  font-weight:600;
+  text-decoration:none;
+  border-bottom:1px solid rgba(169,206,249,.4);
+  transition:color .2s ease,border-color .2s ease;
+}
+.path-inline-project-link:hover{color:#fff;border-color:#fff}
+.path-inline-project-link span{font-size:.85em}
+@media(prefers-reduced-motion:reduce){.path-inline-project-link{transition:none}}
+
+/* Harmoniser l'espacement des deux séparations de sections. */
+#experiences>.container{border-top:1px solid rgba(157,179,207,.14);padding-top:96px}
+.path-hero{padding-bottom:140px}
+@media(max-width:700px){#experiences>.container{padding-top:68px}.path-hero{padding-bottom:68px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+<nav class="nav" id="main-nav" aria-label="Navigation principale">
+<a href="/">Accueil</a>
+<a href="/situations-professionnelles/">Situations professionnelles</a>
+<a href="/parcours/" aria-current="page">Parcours</a>
+<a href="/projets/">Projet</a>
+<a href="/contact/">Contact</a>
+</nav>
+</div>
+</header>
+<main id="contenu">
+<section class="path-hero" aria-labelledby="path-title">
+<div class="container">
+<h1 id="path-title">Mon parcours</h1>
+<div class="path-introduction">
+    <p>Passionné par l'informatique et les nouvelles technologies depuis mon plus jeune âge, j'ai toujours été curieux de comprendre le fonctionnement des technologies qui nous entourent. C'est donc naturellement que j'ai choisi de construire mon avenir professionnel dans le domaine des systèmes et réseaux.</p>
+    <p>Du baccalauréat professionnel Systèmes numériques au Bachelor Administrateur Systèmes &amp; Réseaux, j'ai eu l'opportunité de développer mes connaissances et mes compétences à travers plusieurs expériences au sein de grandes structures. Ces expériences, particulièrement enrichissantes, m'ont permis d'acquérir une vision concrète du fonctionnement des systèmes d'information en entreprise et ont conforté mon choix d'orientation.</p>
+    <p>Aujourd'hui, je poursuis mon évolution professionnelle chez Deletec, une entreprise que j'ai découverte lors de mes stages et qui m'a ensuite offert l'opportunité de poursuivre mes études en alternance. Au fil des années, j'y ai progressivement gagné en autonomie, développé mes compétences techniques et pris de nouvelles responsabilités, tout en conservant cette même curiosité et cette volonté constante d'apprendre et de progresser.</p>
+    <p>Ces expériences m'ont également permis de développer un véritable sens des responsabilités et une exigence particulière quant à la qualité de mon travail. Une exigence que je m'attache aujourd'hui à mettre au service de nos clients, à travers une approche rigoureuse, une écoute attentive de leurs besoins et la recherche de solutions fiables et durables.</p>
+    <nav class="path-quick-links" aria-label="Accès rapide aux sections du parcours">
+      <a class="path-more" href="#experiences-title">Mon expérience professionnelle <span aria-hidden="true">↗</span></a>
+      <a class="path-more" href="#formations-title">Mes formations &amp; diplômes <span aria-hidden="true">↗</span></a>
+    </nav>
+      </div>
+</div>
+</section>
+<section class="path-section" id="experiences" aria-labelledby="experiences-title">
+  <div class="container">
+   <div class="path-section-head" data-reveal>
+    <h2 id="experiences-title">Mon expérience professionnelle</h2>
+   </div>
+<div class="experience-showcase">
+<article class="experience-row experience-row--deletec" data-reveal>
+ <div class="experience-copy">
+  <h3>Deletec</h3>
+  <div class="deletec-period">
+   <h4>Alternance actuelle</h4>
+   <p class="experience-date">Septembre 2024 - aujourd’hui</p>
+   <p class="experience-role">Technicien systèmes &amp; réseaux</p>
+   <p>Depuis septembre 2024, je poursuis mon parcours chez Deletec en alternance. Après avoir découvert l’entreprise lors d’un premier stage en 2023, j’ai eu l’opportunité de la rejoindre à nouveau pour préparer mon BTS SIO, option SISR.</p>
+   <p>Au fil des mois, j’ai progressivement gagné en autonomie et en responsabilités, en passant de la découverte du fonctionnement d’une entreprise de services informatiques à la prise en charge de situations concrètes auprès de ses clients.</p>
+   <p>Après l’obtention de mon BTS en 2026, j’ai choisi de poursuivre cette progression avec un Bachelor Administrateur Systèmes &amp; Réseaux, toujours en alternance chez Deletec. Cette continuité me permet de consolider mes acquis et d’évoluer vers mon objectif : l’administration des infrastructures informatiques.</p>
+   <a class="path-more" href="/situations-professionnelles/">Découvrir mes missions chez Deletec <span aria-hidden="true">↗</span></a>
+  </div>
+
+ </div>
+ <div class="experience-visual experience-visual--deletec"><img src="/assets/deletec-logo-2026.webp" alt="Logo Deletec" loading="lazy"></div>
+  <div class="deletec-period deletec-stage">
+   <h3>Deletec</h3>
+   <p class="experience-date">2023 - 2024</p>
+   <p>Lors de mon premier stage chez Deletec, intégré au service logistique et préparation informatique, j’ai participé à la mise en place et à la configuration d’équipements destinés aux clients.</p>
+   <p>Mes missions comprenaient l’installation physique d’équipements réseau Fortinet, l’intégration de cartes PCI dans les postes clients, l’installation personnalisée de systèmes Windows ainsi que la configuration de téléphones IP.</p>
+   <p>Cette immersion de deux mois m’a permis de découvrir les exigences techniques et organisationnelles d’une entreprise de services informatiques. À l’issue de cette expérience, mes responsables m’ont proposé de poursuivre mon parcours en BTS SIO en alternance au sein de l’entreprise.</p>
+  </div>
+</article>
+<article class="experience-row experience-row--synatek">
+  <div class="experience-copy">
+    <h3>Synatek</h3>
+    <p class="experience-date">2023</p>
+    <p>Lors de ce stage d’un mois chez Synatek, boutique spécialisée dans la vente et la réparation de matériel informatique, j’ai pu intégrer le service de réparation.</p>
+    <p>J’y ai réalisé l’installation de systèmes d’exploitation Windows, le diagnostic d’ordinateurs fixes et portables ainsi que le test et la vérification de disques durs.</p>
+    <p>Cette expérience m’a permis d’être au plus proche du matériel physique et des composants électroniques, en développant une compréhension concrète du fonctionnement interne des équipements. Elle a été particulièrement enrichissante, car elle m’a apporté des bases techniques solides et une approche méthodique du diagnostic matériel.</p>
+  </div>
+  <div class="experience-visual experience-visual--synatek">
+    <img src="/assets/synatek-logo-2026.webp" alt="Logo Synatek" loading="lazy">
+  </div>
+</article>
+<article class="experience-row experience-row--synatek experience-row--spie">
+  <div class="experience-copy">
+    <h3>SPIE</h3>
+    <p class="experience-date">2023</p>
+    <p>SPIE ICS, filiale du groupe SPIE, est un acteur majeur des services numériques et de l’intégration d’infrastructures IT en Europe. L’entreprise accompagne les organisations dans la gestion de leurs environnements Cloud, réseaux et systèmes d’information.</p>
+    <p>Durant ce stage d’un mois au sein du service Cloud, j’ai participé à des opérations techniques liées aux infrastructures critiques. J’ai notamment contribué à l’installation physique d’un nouveau datacenter, en prenant part à la mise en place et à l’organisation des équipements réseau.</p>
+    <p>J’ai également réalisé des vérifications, remises à zéro et inventaires de routeurs Cisco, dans une logique de gestion de parc, de préparation matérielle et de conformité technique.</p>
+    <p>Cette expérience m’a permis de découvrir les standards d’un grand groupe international, de mieux comprendre les environnements Cloud professionnels et de renforcer mes compétences en architecture réseau et manipulation d’équipements Cisco.</p>
+  </div>
+  <div class="experience-visual experience-visual--spie">
+    <img src="/assets/spie-logo-2026.webp" alt="Logo SPIE" loading="lazy">
+  </div>
+</article>
+<article class="experience-row experience-row--synatek experience-row--vinci">
+  <div class="experience-copy">
+    <h3>Vinci</h3>
+    <p class="experience-date">2022</p>
+    <p>Le groupe VINCI est un acteur mondial majeur des concessions, de l’énergie et de la construction. À travers ses différentes filiales, le groupe accompagne les entreprises et les collectivités dans la conception, la réalisation et la gestion d’infrastructures complexes.</p>
+    <p>VINCI Facilities, filiale du groupe VINCI Energies, est spécialisée dans le facility management et la gestion technique des bâtiments. L’entreprise intervient sur la maintenance, l’optimisation et le pilotage des environnements techniques des organisations.</p>
+    <p>Durant ce stage d’un mois au sein du service Data, j’ai découvert le langage VBA (Visual Basic for Applications) et participé au développement de macros Excel destinées à automatiser et simplifier certaines tâches des collaborateurs.</p>
+    <p>Cette expérience m’a permis de faire mes premiers pas en programmation, de comprendre la logique algorithmique et de contribuer à l’optimisation de processus internes grâce à l’automatisation. Elle a marqué une première immersion concrète dans le développement et l’amélioration d’outils métiers.</p>
+  </div>
+  <div class="experience-visual experience-visual--vinci">
+    <img src="/assets/vinci-logo-2026.webp" alt="Logo VINCI Facilities" loading="lazy">
+  </div>
+</article>
+<article class="experience-row experience-row--synatek experience-row--boss">
+  <div class="experience-copy">
+    <h3>Hugo Boss</h3>
+    <p class="experience-date">2022</p>
+    <p>HUGO BOSS est une entreprise internationale de prêt-à-porter haut de gamme, présente dans plus de 100 pays. Le groupe est reconnu pour ses marques BOSS et HUGO, ainsi que pour la gestion de réseaux de boutiques et de sièges internationaux nécessitant des infrastructures IT fiables et sécurisées.</p>
+    <p>Durant ce stage d’un mois au sein du service informatique, j’ai participé à des missions liées aux infrastructures réseau et au support des utilisateurs.</p>
+    <p>J’ai notamment contribué à un projet de configuration d’équipements réseau (routeurs et firewalls), en accompagnement de l’équipe IT. J’ai également participé à la configuration d’appareils Apple destinés aux collaborateurs du siège et aux utilisateurs en boutique, dans une logique de préparation et de déploiement de postes de travail.</p>
+    <p>Cette expérience m’a permis de découvrir les enjeux IT d’un groupe international, notamment la gestion d’équipements réseau sécurisés et le déploiement de matériel à grande échelle dans un environnement multi-sites.</p>
+  </div>
+  <div class="experience-visual experience-visual--boss">
+    <img src="/assets/hugo-boss-logo-2026.webp" alt="Logo HUGO BOSS" loading="lazy">
+  </div>
+</article>
+</div>
+</div>
+</section>
+<section class="path-section education-section" id="formations" aria-labelledby="formations-title">
+  <div class="container">
+    <h2 id="formations-title">Mes formations &amp; diplômes</h2>
+    <div class="education-timeline">
+      <span class="education-scroll-marker" aria-hidden="true"></span>
+      <article class="education-entry">
+        <div class="education-period">Sept. 2026 - sept. 2027</div>
+        <div class="education-node" aria-hidden="true"></div>
+        <div class="education-details">
+          <p class="education-status">Sup de Vinci</p>
+          <h3>Bachelor Système &amp; Réseau, Cloud et Cybersécurité</h3>
+          <p>Après l'obtention de mon BTS SIO, j'ai choisi de poursuivre mes études afin d'approfondir mes compétences en administration des systèmes, des réseaux et des infrastructures informatiques, ainsi qu'en cloud et en cybersécurité, tout en continuant mon évolution professionnelle chez Deletec.</p>
+        </div>
+      </article>
+      <article class="education-entry">
+        <div class="education-period">Sept. 2024 - juil. 2026</div>
+        <div class="education-node" aria-hidden="true"></div>
+        <div class="education-details">
+          <p class="education-status">ESUP</p>
+          <h3>BTS Services Informatiques aux Organisations<br>Option Solutions d'Infrastructure, Systèmes et Réseaux (SISR)</h3>
+          
+          <p>En tant que diplômé du BTS Services Informatiques aux Organisations (SISR), j'ai fait le choix, au cours de ces deux années de formation, de me spécialiser dans la virtualisation et l'administration des infrastructures systèmes et réseaux.</p>
+          <p>J'ai conçu et déployé plusieurs infrastructures virtualisées, tout en mettant en œuvre des architectures réseau intégrant la segmentation par VLAN, le routage et la sécurisation des communications.</p>
+          <p>J'ai également déployé et administré différents services d'infrastructure tels qu'Active Directory, LDAP, SSO (Keycloak), DNS, DHCP, ainsi que des solutions de supervision, de gestion de parc informatique et de conteneurisation.</p>
+          <p>Cette spécialisation m'a permis de concevoir le projet <a class="path-inline-project-link" href="/projets/#infrastructure-securisee" aria-label="Découvrir le projet Langéo Education">Langéo Education <span aria-hidden="true">↗</span></a>, présenté lors de l'épreuve technique du BTS, pour lequel j'ai obtenu une note supérieure à 17/20, renforçant ainsi ma maîtrise des environnements virtualisés et des réseaux d'entreprise.</p>
+        </div>
+      </article>
+      <article class="education-entry">
+        <div class="education-period">Sept. 2021 - juil. 2024</div>
+        <div class="education-node" aria-hidden="true"></div>
+        <div class="education-details">
+          <p class="education-status">Lycée des Métiers La Tournelle</p>
+          <h3>Baccalauréat Professionnel Systèmes Numériques<br>Option Réseaux Informatiques et Systèmes Communicants (RISC)</h3>
+          <p class="education-result">Admis mention Bien</p>
+          <p>En tant que titulaire du Bac Pro Systèmes Numériques, option Réseaux Informatiques et Systèmes Communicants (RISC), j'ai acquis les fondamentaux de l'administration des systèmes et des réseaux.</p>
+          <p>Grâce à plusieurs expériences en milieu professionnel, réalisées au sein de grandes structures, j'ai eu l'opportunité d'intervenir sur des environnements professionnels très variés, d'assurer le support aux utilisateurs, de participer au déploiement et à la maintenance d'équipements informatiques, ainsi que d'appliquer les bonnes pratiques en matière de sécurité.</p>
+          <p>Ces différentes expériences ont renforcé mes compétences techniques, développé mon autonomie et confirmé mon intérêt pour les infrastructures informatiques.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer" aria-label="Pied de page">
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-contact">
+        <h2>Restons en contact.</h2>
+        <a class="footer-email" href="mailto:clovislanglois1@gmail.com">clovislanglois1@gmail.com</a>
+      </div>
+      <div class="footer-actions" aria-label="Mes liens">
+        <a class="footer-icon-link" href="https://www.linkedin.com/in/clovis-langlois" target="_blank" rel="noopener noreferrer" aria-label="Consulter mon profil LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2ZM8 19H5V9h3Zm-1.5-11.4a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.1c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.7 1.4 3.7 4.4V19Z"/></svg>
+        </a>
+        <a class="footer-icon-link" href="mailto:clovislanglois1@gmail.com" aria-label="M'envoyer un e-mail" title="E-mail">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 21 19H3a1.5 1.5 0 0 1-1.5-1.5v-11A1.5 1.5 0 0 1 3 5Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m2 7 10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="footer-icon-link footer-contact-link" href="/contact/" aria-label="Accéder à la page Contact" title="Contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clovis Langlois · Tous droits réservés</span>
+    </div>
+  </div>
+</footer>
+<script>
+const menu=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.nav');
+menu.addEventListener('click',()=>{const opened=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!opened));nav.classList.toggle('open',!opened)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');nav.classList.remove('open')}));
+
+// Repère lumineux discret qui accompagne la lecture des trois diplômes.
+const educationTimeline=document.querySelector('.education-timeline');
+if(educationTimeline){
+  const marker=educationTimeline.querySelector('.education-scroll-marker');
+  const nodes=[...educationTimeline.querySelectorAll('.education-entry')].map(entry=>({
+    entry,
+    element:entry.querySelector('.education-node')
+  })).filter(item=>item.element);
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let ticking=false;
+  function updateEducationMarker(){
+    ticking=false;
+    if(reducedMotion.matches || !nodes.length){
+      marker.style.opacity='0';
+      nodes.forEach(item=>item.entry.classList.remove('is-near-marker'));
+      return;
+    }
+    const timelineRect=educationTimeline.getBoundingClientRect();
+    // La position des points est calculée à partir de leur véritable place dans la frise.
+    const centers=nodes.map(item=>{
+      const nodeRect=item.element.getBoundingClientRect();
+      return nodeRect.top-timelineRect.top+10+5.5;
+    });
+    const first=centers[0],last=centers[centers.length-1];
+    const trigger=Math.min(window.innerHeight*.58,window.innerHeight-70);
+    const position=Math.max(first,Math.min(last,trigger-timelineRect.top));
+    marker.style.top=position+'px';
+    // Hors de la frise, le repère disparaît ; aucun effet lumineux permanent.
+    marker.style.opacity=(trigger>=timelineRect.top+first-28 &&
+      trigger<=timelineRect.top+last+40)?'.76':'0';
+    nodes.forEach((item,index)=>{
+      item.entry.classList.toggle('is-near-marker',
+        marker.style.opacity!=='0' && Math.abs(centers[index]-position)<13);
+    });
+  }
+  function scheduleEducationMarker(){
+    if(!ticking){ticking=true;requestAnimationFrame(updateEducationMarker)}
+  }
+  window.addEventListener('scroll',scheduleEducationMarker,{passive:true});
+  window.addEventListener('resize',scheduleEducationMarker);
+  window.addEventListener('load',scheduleEducationMarker);
+  if('ResizeObserver' in window)new ResizeObserver(scheduleEducationMarker).observe(educationTimeline);
+  if(reducedMotion.addEventListener)reducedMotion.addEventListener('change',scheduleEducationMarker);
+  updateEducationMarker();
+}
+</script>
+</body>
+</html>
