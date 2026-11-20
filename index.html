@@ -9,15 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#161a23;--fg:#f5f7fb;--muted:#b6c0ce;--line:#364253;--accent:#a5bdd9;--nav:#fff;--nav-text:#151c28}
+:root{--bg:#161a23;--fg:#f5f7fb;--muted:#b6c0ce;--line:#364253;--accent:#a5bdd9;--nav:#293749;--nav-text:#f4f6fb}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #89baff;outline-offset:5px}
-.site-header{background:var(--nav);color:var(--nav-text);height:84px;position:relative;z-index:20;border-bottom:1px solid #edf0f4}
+.site-header{background:var(--nav);color:var(--nav-text);height:84px;position:relative;z-index:20;border-bottom:1px solid rgba(180,202,229,.2);box-shadow:0 5px 22px rgba(0,0,0,.12)}
 .header-inner{max-width:1200px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:center}
 .nav{display:flex;align-items:center;gap:34px}.nav a{font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;position:relative}
-.nav a:hover{color:#52627d}.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#293146}
+.nav a:hover{color:#a9cef9}.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#a9cef9}
 .menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
 main{position:relative;overflow:hidden;background:linear-gradient(180deg,#171b23,#181e27 55%,#171b23)}
 .container{width:min(1160px,calc(100% - 48px));margin:auto}
@@ -56,7 +56,7 @@ h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font
 .footer-bottom{border-top:1px solid rgba(174,191,213,.13);padding-top:22px;font-size:12px;color:#929eaf}
 @media(max-width:760px){.footer-inner{padding:42px 0 25px}.footer-main{align-items:flex-start;flex-direction:column;gap:26px;padding-bottom:30px}.footer-actions{gap:10px}.footer-bottom{line-height:1.6}}
 @media(prefers-reduced-motion:reduce){.footer-icon-link{transition:none}}
-@media(max-width:760px){.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid #edf0f4}.nav a[aria-current=page]:after{display:none}.hero{min-height:610px;padding:90px 0 100px}.hero-study{font-size:13px}.section{padding:75px 0 100px}.section-grid,.expertise .section-grid{grid-template-columns:1fr;gap:45px}.photo-placeholder{max-width:440px;width:100%;margin:auto;aspect-ratio:4/3.8}.expertise .tower-visual{max-width:420px}.expertise .copy{order:0}.expertise .illustration{order:1}}
+@media(max-width:760px){.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:#293749;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid rgba(180,202,229,.2);box-shadow:0 5px 22px rgba(0,0,0,.12)}.nav a[aria-current=page]:after{display:none}.hero{min-height:610px;padding:90px 0 100px}.hero-study{font-size:13px}.section{padding:75px 0 100px}.section-grid,.expertise .section-grid{grid-template-columns:1fr;gap:45px}.photo-placeholder{max-width:440px;width:100%;margin:auto;aspect-ratio:4/3.8}.expertise .tower-visual{max-width:420px}.expertise .copy{order:0}.expertise .illustration{order:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
 
 /* Direction graphique issue du prototype : réseau asymétrique à droite et dégradé fondu */
