@@ -243,6 +243,39 @@ main{padding:12px 0 70px}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+/* Éclaircies d'ambiance réparties sur toute la page, dans l'esprit
+   de Situations professionnelles : halos discrets, fond continu. */
+main{
+  position:relative;
+  isolation:isolate;
+  background:linear-gradient(180deg,#171b23 0%,#1a2230 47%,#171b23 100%);
+}
+main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 46% 12% at 79% 6%,rgba(57,82,117,.22),transparent 78%),
+    radial-gradient(ellipse 47% 13% at 17% 23%,rgba(55,79,110,.18),transparent 78%),
+    radial-gradient(ellipse 44% 12% at 83% 41%,rgba(58,85,120,.19),transparent 78%),
+    radial-gradient(ellipse 48% 12% at 22% 61%,rgba(52,76,109,.19),transparent 78%),
+    radial-gradient(ellipse 48% 15% at 78% 82%,rgba(59,84,119,.20),transparent 80%),
+    radial-gradient(ellipse 50% 12% at 22% 97%,rgba(51,75,108,.17),transparent 80%);
+}
+main>section{position:relative;z-index:1}
+@media(max-width:700px){
+  main::before{
+    background:
+      radial-gradient(ellipse 75% 11% at 75% 7%,rgba(57,82,117,.18),transparent 80%),
+      radial-gradient(ellipse 80% 13% at 25% 27%,rgba(55,79,110,.16),transparent 80%),
+      radial-gradient(ellipse 75% 12% at 75% 48%,rgba(58,85,120,.17),transparent 80%),
+      radial-gradient(ellipse 80% 13% at 24% 70%,rgba(52,76,109,.17),transparent 80%),
+      radial-gradient(ellipse 80% 13% at 75% 91%,rgba(59,84,119,.17),transparent 80%);
+  }
+}
+
 /* Harmoniser l'espacement des deux séparations de sections. */
 #experiences>.container{border-top:1px solid rgba(157,179,207,.14);padding-top:96px}
 .path-hero{padding-bottom:140px}
