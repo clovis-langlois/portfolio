@@ -132,9 +132,24 @@ main{padding:12px 0 70px}
   aspect-ratio:1.22;
   min-height:0;
   display:block;
-  overflow:hidden;
+  overflow:visible;
+  isolation:isolate;
   border-radius:18px;
   border:1px solid rgba(164,188,216,.13);
+}
+/* Même halo bleu-gris diffus que sous les schémas de la page Situations
+   professionnelles. Limité aux visuels, sans dégradé de fond de page. */
+.experience-showcase .experience-visual::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-22% -23%;
+  pointer-events:none;
+  background:radial-gradient(ellipse at center,
+    rgba(63,91,132,.26) 0%,
+    rgba(41,62,89,.11) 38%,
+    transparent 69%);
+  filter:blur(8px);
 }
 .experience-showcase .experience-visual img{
   position:absolute;
@@ -145,6 +160,7 @@ main{padding:12px 0 70px}
   max-height:none;
   object-fit:cover;
   object-position:center;
+  border-radius:17px;
 }
 @media(max-width:700px){
   .experience-showcase .experience-visual{aspect-ratio:1.5;min-height:0}
