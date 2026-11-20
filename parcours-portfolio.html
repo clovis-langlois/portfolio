@@ -1,346 +1,39 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Découvrez le parcours de Clovis Langlois : expériences professionnelles, formations et diplômes en systèmes et réseaux.">
-<title>Mon parcours | Clovis Langlois</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* MON PARCOURS — styles autonomes, sans effets des autres pages */
-
-
-:root{--bg:#161a23;--fg:#f5f7fb;--muted:#b6c0ce;--line:#364253;--accent:#a5bdd9;--nav:#fff;--nav-text:#151c28}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #89baff;outline-offset:5px}
-.site-header{background:var(--nav);color:var(--nav-text);height:84px;position:relative;z-index:20;border-bottom:1px solid #edf0f4}
-.header-inner{max-width:1200px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:center}
-.nav{display:flex;align-items:center;gap:34px}.nav a{font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;position:relative}
-.nav a:hover{color:#52627d}.nav a[aria-current=page]:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:2px;background:#293146}
-.menu-toggle{display:none;border:0;background:transparent;padding:12px;cursor:pointer;color:inherit;font-size:14px;font-weight:600}
-main{position:relative;overflow:hidden;background:var(--bg)}
-.container{width:min(1160px,calc(100% - 48px));margin:auto}
-
-h1{font-size:clamp(46px,6.1vw,76px);line-height:1.15;letter-spacing:-.045em;font-weight:600;margin:0 0 24px}
-h2{font-size:clamp(30px,3.5vw,45px);letter-spacing:-.035em;line-height:1.22;font-weight:600;margin:0 0 28px}
-/* Pied de page minimaliste — même anthracite que l'accueil, sans motif réseau */
-.footer{position:relative;background:var(--bg);color:#f5f7fb;border-top:1px solid rgba(174,191,213,.11)}
-.footer-inner{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:48px 0 24px}
-.footer-main{display:flex;align-items:center;justify-content:space-between;gap:35px;padding-bottom:40px}
-.footer-contact h2{font-size:clamp(22px,2.4vw,29px);font-weight:600;letter-spacing:-.035em;line-height:1.25;margin:0 0 10px}
-.footer-email{font-size:14px;color:#aeb9c9;text-decoration:none;overflow-wrap:anywhere}
-.footer-email:hover{color:#fff}
-.footer-actions{display:flex;align-items:center;gap:12px}
-.footer-icon-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:#b8c6d7;text-decoration:none;border:1px solid rgba(160,178,204,.18);border-radius:50%;transition:color .2s,border-color .2s,background .2s,transform .2s}
-.footer-icon-link:hover{color:#fff;border-color:rgba(177,199,226,.5);background:rgba(149,177,212,.09);transform:translateY(-2px)}
-.footer-icon-link svg{height:19px;width:19px;display:block}
-.footer-bottom{border-top:1px solid rgba(174,191,213,.13);padding-top:22px;font-size:12px;color:#929eaf}
-@media(max-width:760px){.footer-inner{padding:42px 0 25px}.footer-main{align-items:flex-start;flex-direction:column;gap:26px;padding-bottom:30px}.footer-actions{gap:10px}.footer-bottom{line-height:1.6}}
-@media(prefers-reduced-motion:reduce){.footer-icon-link{transition:none}}
-@media(max-width:760px){.site-header{height:72px}.header-inner{justify-content:flex-end}.menu-toggle{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 24px 24px;box-shadow:0 16px 24px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:15px 8px;border-bottom:1px solid #edf0f4}.nav a[aria-current=page]:after{display:none}.hero{min-height:610px;padding:90px 0 100px}.hero-study{font-size:13px}.section{padding:75px 0 100px}.section-grid,.expertise .section-grid{grid-template-columns:1fr;gap:45px}.photo-placeholder{max-width:440px;width:100%;margin:auto;aspect-ratio:4/3.8}.expertise .tower-visual{max-width:420px}.expertise .copy{order:0}.expertise .illustration{order:1}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
-
-
-/* Expériences : blocs éditoriaux en deux colonnes inspirés de l'ancien portfolio. */
-.experience-showcase{display:flex;flex-direction:column;gap:116px}
-.experience-row{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:clamp(48px,7vw,112px);align-items:center}
-.experience-copy h3{font-size:clamp(36px,4.3vw,55px);font-weight:600;letter-spacing:-.045em;line-height:1.12;margin:0 0 7px}
-.experience-date{font-size:13px!important;font-weight:600;color:#d5e4f8!important;margin:0 0 10px!important}
-.experience-role{font-size:13px!important;color:#92b4df!important;font-weight:600;margin:0 0 29px!important}
-.experience-copy>p:not(.experience-date):not(.experience-role){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
-.experience-copy .path-more{margin-top:5px}
-.experience-visual{width:100%;aspect-ratio:1.22;min-height:300px;display:flex;align-items:center;justify-content:center;border-radius:18px;overflow:hidden;border:1px solid rgba(164,188,216,.13);position:relative;isolation:isolate}
-.experience-visual:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.045),transparent 60%)}
-.experience-visual--deletec{background:#0745a9}
-.experience-visual--deletec img{width:88%;height:75%;object-fit:contain}
-.experience-visual--synatek{background:#1d1d1d}
-.experience-visual--synatek:before{content:"";position:absolute;left:0;right:0;top:40%;height:20%;background:#ff6416}
-.experience-visual--spie{background:#f2f4f8}
-.experience-visual--vinci{background:#f5f6f9}
-.experience-visual--boss{background:#f4f5f7}
-.experience-wordmark{position:relative;z-index:1;font-size:clamp(38px,5vw,74px);font-weight:700;letter-spacing:-.055em;line-height:1.05;text-align:center}
-.experience-visual--synatek .experience-wordmark{color:#181818;letter-spacing:-.065em}
-.experience-visual--spie .experience-wordmark{color:#1d316c;letter-spacing:.1em;font-weight:500}
-.experience-visual--vinci .experience-wordmark{color:#1d386f;letter-spacing:.07em}
-.experience-visual--vinci small{display:block;font-size:.25em;letter-spacing:.12em;margin-top:9px}
-.experience-visual--boss .experience-wordmark{color:#0b0b0b;letter-spacing:.04em}
-@media(max-width:850px){.experience-row{gap:35px}.experience-showcase{gap:95px}.experience-visual{min-height:240px}}
-@media(max-width:700px){.experience-row{grid-template-columns:1fr;gap:28px}.experience-showcase{gap:85px}.experience-visual{min-height:240px;aspect-ratio:1.5}.experience-copy h3{font-size:39px}.experience-copy>p:not(.experience-date):not(.experience-role){font-size:14px}}
-.experience-row--deletec{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:clamp(40px,6vw,90px);align-items:start}
-.experience-row--deletec .experience-copy{grid-column:1;grid-row:1}
-.experience-row--deletec .experience-visual{grid-column:2;grid-row:1;align-self:center;position:static;width:100%;aspect-ratio:1.22;min-height:300px;margin:0}
-.deletec-period{margin-top:26px}
-.deletec-period h4{font-size:18px;letter-spacing:-.02em;margin:0 0 12px;color:#f1f5fc;font-weight:600}
-.deletec-period>p:not(.experience-date):not(.experience-role){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
-.deletec-period .path-more{margin-top:5px}
-.deletec-stage{grid-column:1;grid-row:2;position:relative;border-top:0;margin-top:0;padding-top:56px}
-.deletec-stage::before{content:"";position:absolute;top:9px;left:18px;width:1px;height:32px;background:linear-gradient(to bottom,rgba(150,186,232,.65),rgba(150,186,232,.16))}
-.deletec-stage::after{content:"";position:absolute;top:9px;left:13px;width:11px;height:11px;border-top:1px solid rgba(150,186,232,.65);border-left:1px solid rgba(150,186,232,.65);transform:rotate(45deg)}
-.deletec-stage h3{font-size:clamp(36px,4.3vw,55px);font-weight:600;letter-spacing:-.045em;line-height:1.12;margin:0 0 7px}
-.deletec-stage>p:not(.experience-date):not(.experience-role){max-width:560px}
-@media(max-width:700px){.experience-row--deletec{grid-template-columns:1fr;gap:28px}.experience-row--deletec .experience-copy{grid-column:1;grid-row:1}.experience-row--deletec .experience-visual{grid-column:1;grid-row:2;top:0;min-height:240px;aspect-ratio:1.5}.deletec-stage{grid-column:1;grid-row:3}.deletec-period>p:not(.experience-date):not(.experience-role){font-size:14px}}
-/* Mon parcours — identité visuelle cohérente avec le portfolio. */
-/* Fond uniforme sur toutes les sections : aucune transition de teinte ni halo. */
-/* Les sections de cette page conservent toutes la même couleur de fond, sans dégradé ni surcouche. */
-main#contenu{background:var(--bg);background-image:none}
-main#contenu::before,main#contenu::after,.path-hero::before,.path-hero::after,#experiences::before,#experiences::after{content:none;display:none}
-.path-hero,.path-section,.path-bottom{background:transparent}
-
-.path-hero{position:relative;padding:120px 0 100px;overflow:hidden}
-.path-hero:before{content:none}
-.path-hero .container{position:relative}
-.path-overline{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#a6c1e4;margin:0 0 23px}
-.path-hero h1{max-width:900px;margin:0 0 28px;font-size:clamp(48px,6vw,76px);letter-spacing:-.05em;line-height:1.1}
-.path-hero p.path-lead{max-width:760px;color:#bdc9d9;font-size:16px;line-height:1.95;margin:0 0 36px}
-.path-introduction{max-width:880px;margin:0 0 38px}.path-introduction p{color:#bdc9d9;font-size:15px;line-height:1.95;margin:0 0 22px}.path-introduction p:last-child{margin-bottom:0}
-.path-jump{display:flex;gap:14px;flex-wrap:wrap}
-.path-jump a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(161,187,217,.26);border-radius:999px;padding:12px 20px;color:#e1eaf6;font-size:13px;font-weight:600;transition:background .2s,border-color .2s}
-.path-jump a:hover{background:rgba(141,180,223,.09);border-color:#9fbde1}
-.path-section{padding:58px 0 108px;position:relative}
-.path-section+.path-section .container{border-top:1px solid rgba(157,179,207,.10);padding-top:110px}
-.path-section-head{margin-bottom:57px;max-width:800px}
-.path-section-label{font-size:12px;color:#9fbce1;letter-spacing:.16em;font-weight:600;text-transform:uppercase;margin:0 0 18px}
-.path-section h2{font-size:clamp(32px,4vw,47px);margin:0 0 19px;letter-spacing:-.04em}
-.path-section-head>p:last-child{font-size:15px;color:#bac7d7;line-height:1.9;margin:0}
-.path-timeline{position:relative;max-width:1040px;margin:0}
-.path-timeline:before{content:"";position:absolute;left:181px;top:15px;bottom:35px;width:1px;background:linear-gradient(180deg,rgba(157,192,233,.52),rgba(157,192,233,.11))}
-.path-entry{display:grid;grid-template-columns:160px 42px minmax(0,1fr);gap:0;position:relative;padding:0 0 70px}
-.path-entry:last-child{padding-bottom:0}
-.path-period{padding-top:12px;font-size:13px;font-weight:600;line-height:1.7;color:#a8bfdd}
-.path-node{display:flex;justify-content:center;padding-top:15px;position:relative}
-.path-node:before{content:"";display:block;width:12px;height:12px;border-radius:50%;background:#9cc4f1;border:3px solid #27384d;box-shadow:0 0 0 5px rgba(134,173,222,.09),0 0 22px rgba(135,185,239,.19);z-index:1}
-.path-content{padding:5px 0 0 30px}
-.path-meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a6bddb;font-weight:600;margin:0 0 12px}
-.path-content h3{font-size:clamp(23px,2.6vw,31px);line-height:1.35;letter-spacing:-.035em;font-weight:600;margin:0 0 14px}
-.path-content p{font-size:15px;line-height:1.9;color:#bbc8d8;margin:0 0 18px;max-width:730px}
-.path-duties{list-style:none;margin:0 0 20px;padding:0;max-width:740px}
-.path-duties li{position:relative;padding-left:18px;margin:0 0 9px;color:#bbc8d8;font-size:15px;line-height:1.8}
-.path-duties li:before{content:"";position:absolute;left:0;top:12px;width:5px;height:5px;border-radius:50%;background:#8fb6e5}
-.path-tags{display:flex;flex-wrap:wrap;gap:8px}
-.path-tags span{border:1px solid rgba(147,179,218,.19);border-radius:5px;color:#b9cee7;padding:7px 11px;font-size:11px;font-weight:600}
-.path-more{display:inline-flex;align-items:center;gap:8px;color:#a9cef9;text-decoration:none;font-size:13px;font-weight:600;border-bottom:1px solid rgba(169,206,249,.3);padding-bottom:4px}
-.path-more:hover{color:#fff;border-color:#fff}
-.path-pending{border-left:2px solid rgba(158,189,225,.34);padding:12px 0 12px 22px;color:#b9c6d6;font-size:14px;line-height:1.9;max-width:650px}
-.path-bottom{padding:30px 0 125px}
-.path-bottom-inner{border-top:1px solid rgba(157,179,207,.1);padding-top:52px;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.path-bottom h2{font-size:clamp(24px,3vw,34px);margin:0 0 12px}
-.path-bottom p{color:#b8c5d5;line-height:1.8;margin:0;max-width:630px;font-size:14px}
-.path-bottom a{white-space:nowrap;display:inline-flex;text-decoration:none;border:1px solid #566a84;border-radius:999px;padding:14px 23px;font-size:13px;font-weight:600;color:#e5efff}
-.path-bottom a:hover{background:#2b3a50}
-html.reveal-ready [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
-html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
-@media(max-width:760px){
- .path-hero{padding:85px 0 70px}.path-section{padding:40px 0 75px}
- .path-section+.path-section .container{padding-top:75px}
- .path-timeline:before{left:7px}
- .path-entry{grid-template-columns:20px minmax(0,1fr);gap:0;padding-bottom:58px}
- .path-node{grid-column:1;grid-row:1;padding-top:13px;justify-content:flex-start}
- .path-period{grid-column:2;grid-row:1;padding:0 0 8px 20px;font-size:12px}
- .path-content{grid-column:2;grid-row:2;padding:0 0 0 20px}
- .path-node:before{width:12px;height:12px}
- .path-content h3{font-size:23px}
- .path-bottom-inner{align-items:flex-start;flex-direction:column}
-}
-@media(max-width:520px){.path-hero h1{font-size:43px}.path-hero p.path-lead{font-size:14px}.path-section-head{margin-bottom:42px}.path-content p{font-size:14px}.path-tags span{font-size:10px}}
-@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1;transform:none;transition:none}}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Découvrez mon parcours dans les systèmes et réseaux.">
+  <title>Mon parcours | Clovis Langlois</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: dark; --bg: #161a23; --text: #f5f7fb; --muted: #bdc9d9; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); }
+    body { color: var(--text); font-family: Montserrat, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    main { min-height: 100vh; padding: clamp(70px, 9vw, 120px) 24px 100px; }
+    .container { max-width: 1160px; margin: 0 auto; }
+    h1 { margin: 0 0 28px; font-size: clamp(48px, 6vw, 76px); font-weight: 600; letter-spacing: -.05em; line-height: 1.1; }
+    .path-introduction { max-width: 880px; }
+    .path-introduction p { margin: 0 0 22px; color: var(--muted); font-size: 15px; line-height: 1.95; }
+    .path-introduction p:last-child { margin-bottom: 0; }
+    @media (max-width: 520px) { h1 { font-size: 43px; } }
+  </style>
 </head>
 <body>
-<header class="site-header">
-<div class="header-inner">
-<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
-<nav class="nav" id="main-nav" aria-label="Navigation principale">
-<a href="index.html">Accueil</a>
-<a href="situations-professionnelles-portfolio.html">Situations professionnelles</a>
-<a href="parcours-portfolio.html" aria-current="page">Parcours</a>
-<a href="projet-portfolio.html">Projet</a>
-<a href="contact-portfolio.html">Contact</a>
-</nav>
-</div>
-</header>
-<main id="contenu">
- <section class="path-hero" aria-labelledby="path-title">
-  <div class="container" data-reveal>
-   
-   <h1 id="path-title">Mon parcours</h1>
-   <div class="path-introduction">
+  <main>
+    <div class="container">
+      <h1>Mon parcours</h1>
+      <div class="path-introduction">
     <p>Passionné par l'informatique et les nouvelles technologies depuis mon plus jeune âge, j'ai toujours été curieux de comprendre le fonctionnement des technologies qui nous entourent. C'est donc naturellement que j'ai choisi de construire mon avenir professionnel dans le domaine des systèmes et réseaux.</p>
     <p>Du baccalauréat professionnel Systèmes numériques au Bachelor Administrateur Systèmes &amp; Réseaux, j'ai eu l'opportunité de développer mes connaissances et mes compétences à travers plusieurs expériences au sein de grandes structures. Ces expériences, particulièrement enrichissantes, m'ont permis d'acquérir une vision concrète du fonctionnement des systèmes d'information en entreprise et ont conforté mon choix d'orientation.</p>
     <p>Aujourd'hui, je poursuis mon évolution professionnelle chez Deletec, une entreprise que j'ai découverte lors de mes stages et qui m'a ensuite offert l'opportunité de poursuivre mes études en alternance. Au fil des années, j'y ai progressivement gagné en autonomie, développé mes compétences techniques et pris de nouvelles responsabilités, tout en conservant cette même curiosité et cette volonté constante d'apprendre et de progresser.</p>
     <p>Ces expériences m'ont également permis de développer un véritable sens des responsabilités et une exigence particulière quant à la qualité de mon travail. Une exigence que je m'attache aujourd'hui à mettre au service de nos clients, à travers une approche rigoureuse, une écoute attentive de leurs besoins et la recherche de solutions fiables et durables.</p>
-   </div>
-   <nav class="path-jump" aria-label="Explorer mon parcours">
-    <a href="#experiences">Expériences professionnelles <span aria-hidden="true">↗</span></a>
-    <a href="#formations">Formations &amp; diplômes <span aria-hidden="true">↗</span></a>
-   </nav>
-  </div>
- </section>
- <section class="path-section" id="experiences" aria-labelledby="experiences-title">
-  <div class="container">
-   <div class="path-section-head" data-reveal>
-    <h2 id="experiences-title">Mon expérience professionnelle</h2>
-   </div>
-<div class="experience-showcase">
-<article class="experience-row experience-row--deletec" data-reveal>
- <div class="experience-copy">
-  <h3>Deletec</h3>
-  <div class="deletec-period">
-   <h4>Alternance actuelle</h4>
-   <p class="experience-date">Septembre 2024 — aujourd’hui</p>
-   <p class="experience-role">Technicien systèmes &amp; réseaux · Alternance</p>
-   <p>Depuis septembre 2024, je poursuis mon parcours chez Deletec en alternance. Après avoir découvert l’entreprise lors d’un premier stage en 2023, j’ai eu l’opportunité de la rejoindre à nouveau pour préparer mon BTS SIO, option SISR.</p>
-   <p>Au fil des mois, j’ai progressivement gagné en autonomie et en responsabilités, en passant de la découverte du fonctionnement d’une entreprise de services informatiques à la prise en charge de situations concrètes auprès de ses clients.</p>
-   <p>Après l’obtention de mon BTS en 2026, j’ai choisi de poursuivre cette progression avec un Bachelor Administrateur Systèmes &amp; Réseaux, toujours en alternance chez Deletec. Cette continuité me permet de consolider mes acquis et d’évoluer vers mon objectif : l’administration des infrastructures informatiques.</p>
-   <a class="path-more" href="situations-professionnelles-portfolio.html">Découvrir mes missions chez Deletec <span aria-hidden="true">↗</span></a>
-  </div>
-
- </div>
- <div class="experience-visual experience-visual--deletec"><img src="assets/deletec-logo-fidele.svg" alt="Logo Deletec" loading="lazy"></div>
-  <div class="deletec-period deletec-stage">
-   <h3>Deletec</h3>
-   <p class="experience-date">2023 - 2024</p>
-   <p>Lors de mon premier stage chez Deletec, intégré au service logistique et préparation informatique, j’ai participé à la mise en place et à la configuration d’équipements destinés aux clients.</p>
-   <p>Mes missions comprenaient l’installation physique d’équipements réseau Fortinet, l’intégration de cartes PCI dans les postes clients, l’installation personnalisée de systèmes Windows ainsi que la configuration de téléphones IP.</p>
-   <p>Cette immersion de deux mois m’a permis de découvrir les exigences techniques et organisationnelles d’une entreprise de services informatiques. À l’issue de cette expérience, mes responsables m’ont proposé de poursuivre mon parcours en BTS SIO en alternance au sein de l’entreprise.</p>
-  </div>
-</article>
-<article class="experience-row" data-reveal>
- <div class="experience-copy">
-  <h3>Synatek</h3>
-  <p class="experience-date">Mai 2023</p>
-  <p class="experience-role">Stage · Réparation informatique</p>
-  <p>En mai 2023, mon stage chez Synatek m’a permis de découvrir une autre facette de l’informatique : la réparation et le diagnostic du matériel.</p>
-  <p>Après plusieurs expériences davantage tournées vers les infrastructures, j’ai pu me rapprocher des ordinateurs eux-mêmes, comprendre l’importance d’une démarche de diagnostic rigoureuse et développer ma curiosité technique.</p>
-  <p>Cette étape a renforcé les bases pratiques que je construisais pendant mon bac professionnel et m’a aidé à préciser progressivement mes centres d’intérêt.</p>
-  
- </div>
- <div class="experience-visual experience-visual--synatek" role="img" aria-label="Synatek"><span class="experience-wordmark">SYNATEK</span></div>
-</article>
-<article class="experience-row" data-reveal>
- <div class="experience-copy">
-  <h3>SPIE ICS</h3>
-  <p class="experience-date">Janvier 2023</p>
-  <p class="experience-role">Stage · Service Cloud</p>
-  <p>En janvier 2023, j’ai intégré le service Cloud de SPIE ICS pour un stage qui m’a donné un premier aperçu des infrastructures informatiques à grande échelle.</p>
-  <p>La découverte d’un environnement de datacenter et du travail autour des équipements réseau m’a permis de mieux comprendre ce qui se trouve derrière les services informatiques utilisés au quotidien.</p>
-  <p>Cette immersion a nourri mon intérêt pour les réseaux et les infrastructures, un domaine vers lequel j’ai ensuite choisi d’orienter mes études.</p>
-  
- </div>
- <div class="experience-visual experience-visual--spie" role="img" aria-label="SPIE ICS"><span class="experience-wordmark">SPIE</span></div>
-</article>
-<article class="experience-row" data-reveal>
- <div class="experience-copy">
-  <h3>VINCI Facilities</h3>
-  <p class="experience-date">Mai 2022</p>
-  <p class="experience-role">Stage · Service Data</p>
-  <p>En mai 2022, au début de mon parcours de formation, j’ai découvert le service Data de VINCI Facilities et une première approche de la programmation à travers le langage VBA.</p>
-  <p>Ce stage m’a montré que l’informatique ne se limite pas au matériel : elle permet aussi de simplifier des tâches et de répondre aux besoins concrets d’une organisation.</p>
-  <p>Cette découverte a élargi ma vision du secteur et m’a encouragé à poursuivre mon exploration de ses différents métiers.</p>
-  
- </div>
- <div class="experience-visual experience-visual--vinci" role="img" aria-label="VINCI Facilities"><span class="experience-wordmark">VINCI <small>FACILITIES</small></span></div>
-</article>
-<article class="experience-row" data-reveal>
- <div class="experience-copy">
-  <h3>HUGO BOSS</h3>
-  <p class="experience-date">Janvier 2022</p>
-  <p class="experience-role">Stage · Service informatique</p>
-  <p>En janvier 2022, j’ai effectué l’un de mes premiers stages au sein du service informatique de HUGO BOSS.</p>
-  <p>J’y ai découvert le quotidien d’une équipe informatique en entreprise, entre accompagnement des collaborateurs et préparation d’équipements pour différents sites.</p>
-  <p>Cette première immersion professionnelle m’a donné envie d’approfondir mes connaissances et de poursuivre dans la voie des systèmes et réseaux.</p>
-  
- </div>
- <div class="experience-visual experience-visual--boss" role="img" aria-label="HUGO BOSS"><span class="experience-wordmark">HUGO BOSS</span></div>
-</article>
-</div>
-  </div>
- </section>
- <section class="path-section" id="formations" aria-labelledby="formations-title">
-  <div class="container">
-   <div class="path-section-head" data-reveal>
-    <p class="path-section-label">02 / Formation</p>
-    <h2 id="formations-title">Mes formations &amp; diplômes</h2>
-    <p>Un parcours orienté vers l'infrastructure informatique, l'administration des systèmes et réseaux et le développement de compétences techniques en entreprise.</p>
-   </div>
-   <div class="path-timeline">
-    <article class="path-entry" data-reveal>
-     <div class="path-period">2026 — 2027</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">Formation en cours · Alternance</p>
-      <h3>Bachelor Administrateur Systèmes &amp; Réseaux</h3>
-      <p>Troisième année de formation en administration des systèmes et réseaux, en parallèle de mon activité professionnelle chez Deletec.</p>
-      <div class="path-tags"><span>Systèmes</span><span>Réseaux</span><span>Administration</span></div>
-     </div>
-    </article>
-    <article class="path-entry" data-reveal>
-     <div class="path-period">2024 — 2026</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">Diplôme obtenu · Alternance</p>
-      <h3>BTS SIO — Option SISR</h3>
-      <p>Services Informatiques aux Organisations, option Solutions d'Infrastructure, Systèmes et Réseaux. Une formation associant enseignements techniques et mise en pratique en entreprise.</p>
-      <div class="path-tags"><span>Infrastructure</span><span>Support</span><span>Sécurité</span></div>
-     </div>
-    </article>
-    <article class="path-entry" data-reveal>
-     <div class="path-period">Avant 2024</div>
-     <div class="path-node" aria-hidden="true"></div>
-     <div class="path-content">
-      <p class="path-meta">Formation initiale</p>
-      <h3>Bac professionnel Systèmes numériques</h3>
-      <p>Ma première formation dans le domaine de l’informatique, au cours de laquelle j’ai découvert les équipements, les réseaux et les environnements techniques à travers les cours et mes premiers stages en entreprise.</p>
-     </div>
-    </article>
-   </div>
-  </div>
- </section>
- <section class="path-bottom" aria-label="Explorer mes réalisations">
-  <div class="container path-bottom-inner" data-reveal>
-   <div><h2>Et sur le terrain ?</h2><p>Découvrez plus en détail les missions techniques que je réalise chez Deletec, à travers des exemples concrets et des illustrations.</p></div>
-   <a href="situations-professionnelles-portfolio.html">Mes missions chez Deletec ↗</a>
-  </div>
- </section>
-</main>
-<footer class="footer" aria-label="Pied de page">
-  <div class="footer-inner">
-    <div class="footer-main">
-      <div class="footer-contact">
-        <h2>Restons en contact.</h2>
-        <a class="footer-email" href="mailto:clovislanglois1@gmail.com">clovislanglois1@gmail.com</a>
-      </div>
-      <div class="footer-actions" aria-label="Mes liens">
-        <a class="footer-icon-link" href="https://www.linkedin.com/in/clovis-langlois" target="_blank" rel="noopener noreferrer" aria-label="Consulter mon profil LinkedIn" title="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2ZM8 19H5V9h3Zm-1.5-11.4a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.1c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.7 1.4 3.7 4.4V19Z"/></svg>
-        </a>
-        <a class="footer-icon-link" href="mailto:clovislanglois1@gmail.com" aria-label="M'envoyer un e-mail" title="E-mail">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 21 19H3a1.5 1.5 0 0 1-1.5-1.5v-11A1.5 1.5 0 0 1 3 5Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m2 7 10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        </a>
-        <a class="footer-icon-link footer-contact-link" href="contact-portfolio.html" aria-label="Accéder à la page Contact" title="Contact">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+   
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Clovis Langlois · Tous droits réservés</span>
-    </div>
-  </div>
-</footer>
-<script>
-const menu=document.querySelector('.menu-toggle');
-const nav=document.querySelector('.nav');
-menu.addEventListener('click',()=>{const opened=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!opened));nav.classList.toggle('open',!opened)});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');nav.classList.remove('open')}));
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
- document.documentElement.classList.add('reveal-ready');
- const observer=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}}},{threshold:.08});
- document.querySelectorAll('[data-reveal]').forEach(el=>observer.observe(el));
-}
-</script>
+  </main>
 </body>
 </html>
