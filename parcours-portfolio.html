@@ -79,6 +79,15 @@ main{padding:85px 0 70px}
 .deletec-stage{grid-column:1;grid-row:3}
 .deletec-period>p:not(.experience-date):not(.experience-role){font-size:14px}
 }
+
+/* Synatek — même grille éditoriale, fond principal inchangé. */
+.experience-row--synatek{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:clamp(40px,6vw,90px);align-items:center;margin-top:110px}
+.experience-row--synatek .experience-copy h3{margin:0 0 7px}
+.experience-row--synatek .experience-date{margin:0 0 22px}
+.experience-row--synatek .experience-copy>p:not(.experience-date){font-size:15px;line-height:1.9;color:#c0cad8;margin:0 0 26px;max-width:560px}
+.experience-row--synatek .experience-visual{width:100%;aspect-ratio:1.22;min-height:300px;background:#1d1d1d;border:1px solid rgba(164,188,216,.13);border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.experience-row--synatek .experience-visual img{display:block;width:95%;height:auto;object-fit:contain}
+@media(max-width:700px){.experience-row--synatek{grid-template-columns:1fr;gap:28px;margin-top:85px}.experience-row--synatek .experience-copy>p:not(.experience-date){font-size:14px}.experience-row--synatek .experience-visual{min-height:240px;aspect-ratio:1.5}}
 </style>
 </head>
 <body>
@@ -134,6 +143,18 @@ main{padding:85px 0 70px}
    <p>Lors de mon premier stage chez Deletec, intégré au service logistique et préparation informatique, j’ai participé à la mise en place et à la configuration d’équipements destinés aux clients.</p>
    <p>Mes missions comprenaient l’installation physique d’équipements réseau Fortinet, l’intégration de cartes PCI dans les postes clients, l’installation personnalisée de systèmes Windows ainsi que la configuration de téléphones IP.</p>
    <p>Cette immersion de deux mois m’a permis de découvrir les exigences techniques et organisationnelles d’une entreprise de services informatiques. À l’issue de cette expérience, mes responsables m’ont proposé de poursuivre mon parcours en BTS SIO en alternance au sein de l’entreprise.</p>
+  </div>
+</article>
+<article class="experience-row experience-row--synatek">
+  <div class="experience-copy">
+    <h3>Synatek</h3>
+    <p class="experience-date">2023</p>
+    <p>Lors de ce stage d’un mois chez Synatek, boutique spécialisée dans la vente et la réparation de matériel informatique, j’ai pu intégrer le service de réparation.</p>
+    <p>J’y ai réalisé l’installation de systèmes d’exploitation Windows, le diagnostic d’ordinateurs fixes et portables ainsi que le test et la vérification de disques durs.</p>
+    <p>Cette expérience m’a permis d’être au plus proche du matériel physique et des composants électroniques, en développant une compréhension concrète du fonctionnement interne des équipements. Elle a été particulièrement enrichissante, car elle m’a apporté des bases techniques solides et une approche méthodique du diagnostic matériel.</p>
+  </div>
+  <div class="experience-visual experience-visual--synatek">
+    <img src="assets/synatek-logo.webp" alt="Logo Synatek" loading="lazy">
   </div>
 </article>
 </div>
