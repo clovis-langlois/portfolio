@@ -78,6 +78,11 @@ main{padding:45px 0 85px}.project-intro{padding-bottom:72px}.project{padding-top
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-action a,.footer-icon-link{transition:none}}
 .email-modal[hidden]{display:none}.email-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px}.email-modal-backdrop{position:absolute;inset:0;background:rgba(7,12,22,.68);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.email-modal-panel{position:relative;width:min(100%,440px);padding:36px 32px;border-radius:20px;border:1px solid rgba(174,198,228,.24);background:linear-gradient(145deg,#263348,#171f2c);box-shadow:0 24px 90px rgba(0,0,0,.48);color:#f5f7fb;text-align:center}.email-modal-panel h2{font-size:26px;margin:12px 0 10px}.email-modal-panel p{font-size:14px;color:#bfcbdc;line-height:1.7;margin:0 0 25px}.email-modal-close{position:absolute;right:14px;top:12px;border:0;background:transparent;color:#c5d1e1;font-size:27px;cursor:pointer;padding:5px 10px}.email-modal-close:hover{color:#fff}.email-modal-address{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;background:rgba(8,15,25,.5);border:1px solid rgba(169,206,249,.2);border-radius:12px;padding:13px 14px;font-size:14px;overflow-wrap:anywhere}.email-modal-copy{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9px;border:1px solid rgba(169,206,249,.3);background:rgba(169,206,249,.1);color:#a9cef9;cursor:pointer}.email-modal-copy:hover{background:rgba(169,206,249,.22)}.email-modal-copy svg{width:20px;height:20px}.email-modal-status{display:block;min-height:20px;margin-top:12px;font-size:12px;color:#a9cef9}body.email-modal-open{overflow:hidden}
 .footer-icon-link.email-modal-trigger{font-family:inherit;cursor:pointer;background:transparent;appearance:none;-webkit-appearance:none;padding:0;line-height:normal}
+
+/* Apparition progressive des contenus, harmonisée avec Accueil et Situations professionnelles. */
+html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms)}
+html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0)}
+@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -95,11 +100,11 @@ main{padding:45px 0 85px}.project-intro{padding-bottom:72px}.project{padding-top
 </header>
 <main id="contenu">
 <div class="container">
-<section class="project-intro" aria-labelledby="projects-title">
+<section data-reveal class="project-intro" aria-labelledby="projects-title">
 <h1 id="projects-title">Mes projets techniques</h1>
 <p>Au fil de mon parcours, j’ai l’occasion de concevoir et de mettre en œuvre différents projets techniques, qu’ils soient réalisés dans le cadre de mes formations ou à titre personnel. Cette page rassemble mes réalisations et présente les technologies utilisées, les solutions mises en place ainsi que les problématiques rencontrées. Elle reflète mon intérêt pour les systèmes, les réseaux, la virtualisation et la sécurité informatique, mais aussi ma volonté constante d’expérimenter, d’apprendre et de développer mes compétences.</p>
 </section>
-<section class="project" id="infrastructure-securisee" aria-labelledby="infrastructure-title">
+<section data-reveal class="project" id="infrastructure-securisee" aria-labelledby="infrastructure-title">
 <h2 id="infrastructure-title">Conception d’une infrastructure virtualisée sécurisée - Projet Langéo Education</h2>
 <div class="project-media">
 <figure class="project-visual project-visual--diagram">
@@ -120,7 +125,7 @@ main{padding:45px 0 85px}.project-intro{padding-bottom:72px}.project{padding-top
 <div class="project-action"><a href="dossier-technique.html?projet=infrastructure" target="_blank" rel="noopener noreferrer">Consulter le dossier technique <span aria-hidden="true">↗</span></a></div>
 </div>
 </section>
-<section class="project" id="haute-disponibilite" aria-labelledby="cluster-title">
+<section data-reveal class="project" id="haute-disponibilite" aria-labelledby="cluster-title">
 <h2 id="cluster-title">Conception d’un cluster Proxmox avec mécanisme de haute disponibilité et sauvegardes automatisées - Projet Langéo Education</h2>
 <div class="project-media">
 <figure class="project-visual">
@@ -175,6 +180,19 @@ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAtt
 </div>
 <script>
 (()=>{const triggers=document.querySelectorAll('.email-modal-trigger'),modal=document.querySelector('#email-modal'),close=modal.querySelector('.email-modal-close'),copy=modal.querySelector('.email-modal-copy'),status=modal.querySelector('.email-modal-status');let previous=null;function hide(){modal.hidden=true;document.body.classList.remove('email-modal-open');(previous||triggers[0]).focus()}triggers.forEach(trigger=>trigger.addEventListener('click',()=>{previous=document.activeElement;modal.hidden=false;document.body.classList.add('email-modal-open');status.textContent='';close.focus()}));modal.querySelectorAll('[data-email-close]').forEach(el=>el.addEventListener('click',hide));document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape'){e.preventDefault();hide()}if(e.key==='Tab'){const focusables=[close,copy];const i=focusables.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();copy.focus()}else if(!e.shiftKey&&i===focusables.length-1){e.preventDefault();close.focus()}}});copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('clovislanglois1@gmail.com');status.textContent='Adresse copiée !'}catch{const range=document.createRange();range.selectNodeContents(document.querySelector('#email-modal-value'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);status.textContent='Sélectionne l’adresse pour la copier.'}})})();
+</script>
+
+<script>
+/* Animation au défilement : ne masque rien si JavaScript ou IntersectionObserver est indisponible. */
+(()=>{
+ const items=Array.from(document.querySelectorAll('[data-reveal]'));
+ if(!items.length||window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}});
+ },{threshold:.08,rootMargin:'0px 0px -35px 0px'});
+ items.forEach(el=>observer.observe(el));
+ document.documentElement.classList.add('reveal-ready');
+})();
 </script>
 </body>
 </html>
