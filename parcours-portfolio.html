@@ -299,6 +299,11 @@ main>section{position:relative;z-index:1}
 @media(max-width:700px){#experiences>.container{padding-top:68px}.path-hero{padding-bottom:68px}}
 .email-modal[hidden]{display:none}.email-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px}.email-modal-backdrop{position:absolute;inset:0;background:rgba(7,12,22,.68);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.email-modal-panel{position:relative;width:min(100%,440px);padding:36px 32px;border-radius:20px;border:1px solid rgba(174,198,228,.24);background:linear-gradient(145deg,#263348,#171f2c);box-shadow:0 24px 90px rgba(0,0,0,.48);color:#f5f7fb;text-align:center}.email-modal-panel h2{font-size:26px;margin:12px 0 10px}.email-modal-panel p{font-size:14px;color:#bfcbdc;line-height:1.7;margin:0 0 25px}.email-modal-close{position:absolute;right:14px;top:12px;border:0;background:transparent;color:#c5d1e1;font-size:27px;cursor:pointer;padding:5px 10px}.email-modal-close:hover{color:#fff}.email-modal-address{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;background:rgba(8,15,25,.5);border:1px solid rgba(169,206,249,.2);border-radius:12px;padding:13px 14px;font-size:14px;overflow-wrap:anywhere}.email-modal-copy{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9px;border:1px solid rgba(169,206,249,.3);background:rgba(169,206,249,.1);color:#a9cef9;cursor:pointer}.email-modal-copy:hover{background:rgba(169,206,249,.22)}.email-modal-copy svg{width:20px;height:20px}.email-modal-status{display:block;min-height:20px;margin-top:12px;font-size:12px;color:#a9cef9}body.email-modal-open{overflow:hidden}
 .footer-icon-link.email-modal-trigger{font-family:inherit;cursor:pointer;background:transparent;appearance:none;-webkit-appearance:none;padding:0;line-height:normal}
+
+/* Apparition progressive des contenus, harmonisée avec Accueil et Situations professionnelles. */
+html.reveal-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms)}
+html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0)}
+@media(prefers-reduced-motion:reduce){html.reveal-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -317,8 +322,8 @@ main>section{position:relative;z-index:1}
 <main id="contenu">
 <section class="path-hero" aria-labelledby="path-title">
 <div class="container">
-<h1 id="path-title">Mon parcours</h1>
-<div class="path-introduction">
+<h1 data-reveal id="path-title">Mon parcours</h1>
+<div class="path-introduction" data-reveal>
     <p>Passionné par l'informatique et les nouvelles technologies depuis mon plus jeune âge, j'ai toujours été curieux de comprendre le fonctionnement des technologies qui nous entourent. C'est donc naturellement que j'ai choisi de construire mon avenir professionnel dans le domaine des systèmes et réseaux.</p>
     <p>Du baccalauréat professionnel Systèmes numériques au Bachelor Administrateur Systèmes &amp; Réseaux, j'ai eu l'opportunité de développer mes connaissances et mes compétences à travers plusieurs expériences au sein de grandes structures. Ces expériences, particulièrement enrichissantes, m'ont permis d'acquérir une vision concrète du fonctionnement des systèmes d'information en entreprise et ont conforté mon choix d'orientation.</p>
     <p>Aujourd'hui, je poursuis mon évolution professionnelle chez Deletec, une entreprise que j'ai découverte lors de mes stages et qui m'a ensuite offert l'opportunité de poursuivre mes études en alternance. Au fil des années, j'y ai progressivement gagné en autonomie, développé mes compétences techniques et pris de nouvelles responsabilités, tout en conservant cette même curiosité et cette volonté constante d'apprendre et de progresser.</p>
@@ -359,7 +364,7 @@ main>section{position:relative;z-index:1}
    <p>Cette immersion de deux mois m’a permis de découvrir les exigences techniques et organisationnelles d’une entreprise de services informatiques. À l’issue de cette expérience, mes responsables m’ont proposé de poursuivre mon parcours en BTS SIO en alternance au sein de l’entreprise.</p>
   </div>
 </article>
-<article class="experience-row experience-row--synatek">
+<article class="experience-row experience-row--synatek" data-reveal>
   <div class="experience-copy">
     <h3>Synatek</h3>
     <p class="experience-date">2023</p>
@@ -371,7 +376,7 @@ main>section{position:relative;z-index:1}
     <img src="assets/synatek-logo-2026.webp" alt="Logo Synatek" loading="lazy">
   </div>
 </article>
-<article class="experience-row experience-row--synatek experience-row--spie">
+<article class="experience-row experience-row--synatek experience-row--spie" data-reveal>
   <div class="experience-copy">
     <h3>SPIE</h3>
     <p class="experience-date">2023</p>
@@ -384,7 +389,7 @@ main>section{position:relative;z-index:1}
     <img src="assets/spie-logo-2026.webp" alt="Logo SPIE" loading="lazy">
   </div>
 </article>
-<article class="experience-row experience-row--synatek experience-row--vinci">
+<article class="experience-row experience-row--synatek experience-row--vinci" data-reveal>
   <div class="experience-copy">
     <h3>Vinci</h3>
     <p class="experience-date">2022</p>
@@ -397,7 +402,7 @@ main>section{position:relative;z-index:1}
     <img src="assets/vinci-logo-2026.webp" alt="Logo VINCI Facilities" loading="lazy">
   </div>
 </article>
-<article class="experience-row experience-row--synatek experience-row--boss">
+<article class="experience-row experience-row--synatek experience-row--boss" data-reveal>
   <div class="experience-copy">
     <h3>Hugo Boss</h3>
     <p class="experience-date">2022</p>
@@ -415,10 +420,10 @@ main>section{position:relative;z-index:1}
 </section>
 <section class="path-section education-section" id="formations" aria-labelledby="formations-title">
   <div class="container">
-    <h2 id="formations-title">Mes formations &amp; diplômes</h2>
+    <h2 data-reveal id="formations-title">Mes formations &amp; diplômes</h2>
     <div class="education-timeline">
       <span class="education-scroll-marker" aria-hidden="true"></span>
-      <article class="education-entry">
+      <article class="education-entry" data-reveal>
         <div class="education-period">Sept. 2026 - sept. 2027</div>
         <div class="education-node" aria-hidden="true"></div>
         <div class="education-details">
@@ -427,7 +432,7 @@ main>section{position:relative;z-index:1}
           <p>Après l'obtention de mon BTS SIO, j'ai choisi de poursuivre mes études afin d'approfondir mes compétences en administration des systèmes, des réseaux et des infrastructures informatiques, ainsi qu'en cloud et en cybersécurité, tout en continuant mon évolution professionnelle chez Deletec.</p>
         </div>
       </article>
-      <article class="education-entry">
+      <article class="education-entry" data-reveal>
         <div class="education-period">Sept. 2024 - juil. 2026</div>
         <div class="education-node" aria-hidden="true"></div>
         <div class="education-details">
@@ -440,7 +445,7 @@ main>section{position:relative;z-index:1}
           <p>Cette spécialisation m'a permis de concevoir le projet <a class="path-inline-project-link" href="projet-portfolio.html#infrastructure-securisee" aria-label="Découvrir le projet Langéo Education">Langéo Education <span aria-hidden="true">↗</span></a>, présenté lors de l'épreuve technique du BTS, pour lequel j'ai obtenu une note supérieure à 17/20, renforçant ainsi ma maîtrise des environnements virtualisés et des réseaux d'entreprise.</p>
         </div>
       </article>
-      <article class="education-entry">
+      <article class="education-entry" data-reveal>
         <div class="education-period">Sept. 2021 - juil. 2024</div>
         <div class="education-node" aria-hidden="true"></div>
         <div class="education-details">
@@ -545,6 +550,19 @@ if(educationTimeline){
 </div>
 <script>
 (()=>{const triggers=document.querySelectorAll('.email-modal-trigger'),modal=document.querySelector('#email-modal'),close=modal.querySelector('.email-modal-close'),copy=modal.querySelector('.email-modal-copy'),status=modal.querySelector('.email-modal-status');let previous=null;function hide(){modal.hidden=true;document.body.classList.remove('email-modal-open');(previous||triggers[0]).focus()}triggers.forEach(trigger=>trigger.addEventListener('click',()=>{previous=document.activeElement;modal.hidden=false;document.body.classList.add('email-modal-open');status.textContent='';close.focus()}));modal.querySelectorAll('[data-email-close]').forEach(el=>el.addEventListener('click',hide));document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape'){e.preventDefault();hide()}if(e.key==='Tab'){const focusables=[close,copy];const i=focusables.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();copy.focus()}else if(!e.shiftKey&&i===focusables.length-1){e.preventDefault();close.focus()}}});copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('clovislanglois1@gmail.com');status.textContent='Adresse copiée !'}catch{const range=document.createRange();range.selectNodeContents(document.querySelector('#email-modal-value'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);status.textContent='Sélectionne l’adresse pour la copier.'}})})();
+</script>
+
+<script>
+/* Animation au défilement : ne masque rien si JavaScript ou IntersectionObserver est indisponible. */
+(()=>{
+ const items=Array.from(document.querySelectorAll('[data-reveal]'));
+ if(!items.length||window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}});
+ },{threshold:.08,rootMargin:'0px 0px -35px 0px'});
+ items.forEach(el=>observer.observe(el));
+ document.documentElement.classList.add('reveal-ready');
+})();
 </script>
 </body>
 </html>
