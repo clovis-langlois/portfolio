@@ -100,13 +100,13 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0
 </header>
 <main id="contenu">
 <div class="container">
-<section data-reveal class="project-intro" aria-labelledby="projects-title">
-<h1 id="projects-title">Mes projets techniques</h1>
-<p>Au fil de mon parcours, j’ai l’occasion de concevoir et de mettre en œuvre différents projets techniques, qu’ils soient réalisés dans le cadre de mes formations ou à titre personnel. Cette page rassemble mes réalisations et présente les technologies utilisées, les solutions mises en place ainsi que les problématiques rencontrées. Elle reflète mon intérêt pour les systèmes, les réseaux, la virtualisation et la sécurité informatique, mais aussi ma volonté constante d’expérimenter, d’apprendre et de développer mes compétences.</p>
+<section class="project-intro" aria-labelledby="projects-title">
+<h1 data-reveal id="projects-title">Mes projets techniques</h1>
+<p data-reveal>Au fil de mon parcours, j’ai l’occasion de concevoir et de mettre en œuvre différents projets techniques, qu’ils soient réalisés dans le cadre de mes formations ou à titre personnel. Cette page rassemble mes réalisations et présente les technologies utilisées, les solutions mises en place ainsi que les problématiques rencontrées. Elle reflète mon intérêt pour les systèmes, les réseaux, la virtualisation et la sécurité informatique, mais aussi ma volonté constante d’expérimenter, d’apprendre et de développer mes compétences.</p>
 </section>
-<section data-reveal class="project" id="infrastructure-securisee" aria-labelledby="infrastructure-title">
-<h2 id="infrastructure-title">Conception d’une infrastructure virtualisée sécurisée - Projet Langéo Education</h2>
-<div class="project-media">
+<section class="project" id="infrastructure-securisee" aria-labelledby="infrastructure-title">
+<h2 data-reveal id="infrastructure-title">Conception d’une infrastructure virtualisée sécurisée - Projet Langéo Education</h2>
+<div class="project-media" data-reveal>
 <figure class="project-visual project-visual--diagram">
 <img src="https://assets.zyrosite.com/kDsAjPW6LAjAZlYh/geoffrey-moffett-euj94rvusew-unsplash-mF1aTZJjHTnFub4y.jpg" alt="Vue aérienne d’un bâtiment d’entreprise et de ses environs" loading="lazy" onerror="this.parentElement.classList.add('is-fallback')">
 <span class="fallback">Bâtiment d’entreprise</span>
@@ -116,7 +116,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0
 <span class="fallback">Langéo Éducation</span>
 </figure>
 </div>
-<div class="project-body">
+<div class="project-body" data-reveal>
 <div class="project-description">
 <p>Conception et déploiement d’une infrastructure informatique complète simulant le système d’information d’une PME.</p>
 <p>Le projet repose sur un hyperviseur Proxmox intégrant une architecture segmentée par VLAN, un pare-feu pfSense, un Active Directory, une autorité de certification, une solution SSO (Keycloak), des services applicatifs (GLPI, Kanboard), une supervision centralisée (Zabbix) ainsi qu’un serveur Web exposé en DMZ via Docker.</p>
@@ -125,9 +125,9 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0
 <div class="project-action"><a href="dossier-technique.html?projet=infrastructure" target="_blank" rel="noopener noreferrer">Consulter le dossier technique <span aria-hidden="true">↗</span></a></div>
 </div>
 </section>
-<section data-reveal class="project" id="haute-disponibilite" aria-labelledby="cluster-title">
-<h2 id="cluster-title">Conception d’un cluster Proxmox avec mécanisme de haute disponibilité et sauvegardes automatisées - Projet Langéo Education</h2>
-<div class="project-media">
+<section class="project" id="haute-disponibilite" aria-labelledby="cluster-title">
+<h2 data-reveal id="cluster-title">Conception d’un cluster Proxmox avec mécanisme de haute disponibilité et sauvegardes automatisées - Projet Langéo Education</h2>
+<div class="project-media" data-reveal>
 <figure class="project-visual">
 <img src="https://assets.zyrosite.com/kDsAjPW6LAjAZlYh/domaintechnik-ledl-net-vhmbx7fnxw0-unsplash-OuKqgbM7KQtivntw.jpg" alt="Baie de serveurs illustrant l'infrastructure virtualisée" loading="lazy" onerror="this.parentElement.classList.add('is-fallback')">
 <span class="fallback">Infrastructure serveurs</span>
@@ -137,7 +137,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0
 <span class="fallback">Datacenter et haute disponibilité</span>
 </figure>
 </div>
-<div class="project-body">
+<div class="project-body" data-reveal>
 <div class="project-description">
 <p>Mise en place d’un cluster Proxmox permettant d’assurer la haute disponibilité des services critiques d’une infrastructure virtualisée.</p>
 <p>Le projet repose sur deux hyperviseurs intégrés dans un cluster Proxmox capable de redémarrer automatiquement une machine virtuelle sur un autre nœud en cas de défaillance.</p>
@@ -190,8 +190,9 @@ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.setAtt
  const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}});
  },{threshold:.08,rootMargin:'0px 0px -35px 0px'});
- items.forEach(el=>observer.observe(el));
  document.documentElement.classList.add('reveal-ready');
+ // Laisser le navigateur afficher l'état initial avant de déclencher le fondu.
+ requestAnimationFrame(()=>requestAnimationFrame(()=>items.forEach(el=>observer.observe(el))));
 })();
 </script>
 </body>
