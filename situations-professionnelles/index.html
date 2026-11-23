@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<base href="/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -180,6 +181,14 @@ main{min-height:75vh;background:linear-gradient(180deg,#171b23 0%,#1a2230 53%,#1
 .deletec-intro{position:relative;isolation:isolate;padding:clamp(80px,9vw,135px) 0 115px;min-height:750px;display:flex;align-items:center}
 .deletec-intro::before{content:"";position:absolute;inset:-15% -20%;background:radial-gradient(ellipse 49% 43% at 50% 44%,rgba(49,72,104,.31),transparent 78%);z-index:-1;pointer-events:none}
 .deletec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:clamp(55px,7vw,115px);align-items:center;position:relative;z-index:2}
+@media(min-width:801px){.deletec-grid{transform:translateY(-96px)}}
+/* Rapprocher les pôles d'expertise du bloc de présentation remonté et marquer une séparation discrète. */
+@media(min-width:801px){
+ .deletec-intro{min-height:0;padding-bottom:20px}
+ .deletec-next{padding-top:42px}
+ .deletec-intro::after{content:"";position:absolute;bottom:0;left:50%;width:min(1120px,82%);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(167,190,218,.22) 18%,rgba(167,190,218,.22) 82%,transparent);pointer-events:none}
+}
+
 .deletec-copy{max-width:530px}
 .deletec-kicker{color:#9cb7d7;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0 0 26px}
 .deletec-copy h1{font-size:clamp(38px,4.5vw,58px);letter-spacing:-.047em;line-height:1.13;font-weight:600;margin:0 0 24px}
@@ -188,14 +197,15 @@ main{min-height:75vh;background:linear-gradient(180deg,#171b23 0%,#1a2230 53%,#1
 .deletec-metric strong{font-size:48px;color:#4d9afa;line-height:1;font-weight:600;letter-spacing:-.05em}
 .deletec-metric span{font-size:13px;line-height:1.6;color:#b5c4d7;max-width:155px}
 .deletec-visual{position:relative;aspect-ratio:1.15;display:flex;align-items:center;justify-content:center}
-.deletec-logo-card{position:relative;width:100%;aspect-ratio:1.18;background:#0844aa;border-radius:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 28px 75px rgba(0,0,0,.18);overflow:hidden}
+.deletec-logo-card{position:relative;width:112%;max-width:none;flex-shrink:0;transform:translateX(38px);aspect-ratio:1.18;background:#0844aa;border-radius:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 28px 75px rgba(0,0,0,.18);overflow:hidden}
 .deletec-wordmark{font-family:Montserrat,Arial,sans-serif;font-weight:700;letter-spacing:-.075em;font-size:clamp(54px,7vw,96px);color:white;line-height:1}
 .deletec-wordmark::before{content:"";display:inline-block;width:.13em;height:.13em;background:white;border-radius:50%;vertical-align:middle;margin-right:.04em}
 .deletec-official-logo{width:100%;height:100%;object-fit:cover;display:block;border-radius:19px}.deletec-logo-note{position:absolute;bottom:20px;right:23px;color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.08em}
 .deletec-square{position:absolute;display:block;width:72px;height:72px;pointer-events:none;z-index:3;transform:rotate(var(--square-rotation, -15deg));will-change:transform}
+@media(min-width:801px){.deletec-square{transform:translateX(38px) rotate(var(--square-rotation, -15deg))}}
 .deletec-square.blue{background:#1c64b4;top:-17%;left:-18%}
 .deletec-square.yellow{background:#ffca22;bottom:-18%;right:-18%;width:83px;height:83px}
-.deletec-square.cyan{background:#5bb9e7;top:-13%;right:-10%;width:55px;height:55px}
+.deletec-square.cyan{background:#5bb9e7;top:-15%;right:-16%;width:55px;height:55px}
 .deletec-next{position:relative;min-height:270px;padding:65px 0 85px;border-top:0}
 .deletec-next h2{font-size:clamp(28px,3vw,39px);margin:0 0 16px}
 .deletec-next p{font-size:15px;color:#b7c4d3;line-height:1.85;max-width:720px;margin:0}
@@ -319,11 +329,11 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 <div class="header-inner">
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
 <nav class="nav" id="main-nav" aria-label="Navigation principale">
-<a href="/">Accueil</a>
-<a href="/situations-professionnelles/" aria-current="page">Situations professionnelles</a>
-<a href="/parcours/">Parcours</a>
-<a href="/projets/">Projet</a>
-<a href="/contact/">Contact</a>
+<a href="index.html">Accueil</a>
+<a href="situations-professionnelles-portfolio.html" aria-current="page">Situations professionnelles</a>
+<a href="parcours-portfolio.html">Parcours</a>
+<a href="projet-portfolio.html">Projet</a>
+<a href="contact-portfolio.html">Contact</a>
 </nav>
 </div>
 </header>
@@ -332,10 +342,14 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 <div class="container deletec-grid">
 <div class="deletec-copy" data-reveal>
 
-<h1 id="deletec-title">Deletec, une entreprise à taille humaine.</h1>
-<p>Deletec est une entreprise spécialisée dans l’infogérance et l’accompagnement informatique des entreprises. Elle intervient sur la gestion, l’administration et la sécurisation des infrastructures informatiques de ses clients.</p>
+<h1 id="deletec-title">Deletec, une ESN de confiance</h1>
+<p>Depuis plus de 25 ans, <strong>Deletec accompagne les entreprises dans leur transformation numérique</strong>, en leur proposant des services et des solutions informatiques adaptés à leurs besoins.</p>
+<p>Deletec structure son activité autour de deux pôles majeurs : <strong>l’infogérance et l’assistance technique</strong>. À travers ces deux offres de services, l’entreprise met son expertise et ses équipes au service de ses clients afin de les accompagner dans l’exploitation, l’administration et l’évolution de leurs systèmes d’information.</p>
+<p><strong>Certifiée ISO 27001 et HDS (Hébergeur de Données de Santé)</strong>, Deletec place la sécurité des informations de ses clients, la protection de leurs données et le respect des exigences réglementaires au cœur de ses prestations.</p>
+<p>Grâce à une approche fondée sur la proximité, la réactivité et l’expertise technique, Deletec s’engage à accompagner durablement ses clients, en contribuant à la fiabilité, à la sécurité et à la performance de leurs systèmes d’information.</p>
+
 <div class="deletec-stats" aria-label="Chiffres clés de Deletec">
-  <div class="deletec-metric"><strong>25+</strong><span>Années d’expertise en informatique</span></div>
+  <div class="deletec-metric"><strong>26+</strong><span>Années d’expertise en informatique</span></div>
   <div class="deletec-ranking">
     <div class="deletec-ranking-value"><span class="deletec-ranking-prefix">Top</span> <span data-ranking-count aria-label="100">100</span></div>
     <span class="deletec-ranking-label">des ESN françaises</span>
@@ -343,7 +357,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
 </div>
 </div>
 <div class="deletec-visual" data-reveal>
-<div class="deletec-logo-card" aria-label="Deletec"><img class="deletec-official-logo" src="/assets/deletec-logo-fidele.svg" alt="Logo officiel Deletec"></div>
+<div class="deletec-logo-card" aria-label="Deletec"><img class="deletec-official-logo" src="assets/deletec-logo-fidele.svg" alt="Logo officiel Deletec"></div>
 <span class="deletec-square blue" data-square data-speed="0.18" aria-hidden="true"></span>
 <span class="deletec-square yellow" data-square data-speed="0.26" aria-hidden="true"></span>
 <span class="deletec-square cyan" data-square data-speed="0.14" aria-hidden="true"></span>
@@ -430,22 +444,22 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
  <text x="240" y="186" class="diagram-title" text-anchor="middle">M365</text>
  <g class="diagram-panel">
   <rect x="53" y="59" width="122" height="65" rx="11"/>
-  <image href="/assets/microsoft-exchange.svg" x="67" y="75" width="33" height="33" preserveAspectRatio="xMidYMid meet"/>
+  <image href="assets/microsoft-exchange.svg" x="67" y="75" width="33" height="33" preserveAspectRatio="xMidYMid meet"/>
   <text x="135" y="96" text-anchor="middle" class="m365-service-label">EXCHANGE</text>
  </g>
  <g class="diagram-panel">
   <rect x="300" y="59" width="145" height="65" rx="11"/>
-  <image href="/assets/microsoft-sharepoint.svg" x="314" y="76" width="34" height="34" preserveAspectRatio="xMidYMid meet"/>
+  <image href="assets/microsoft-sharepoint.svg" x="314" y="76" width="34" height="34" preserveAspectRatio="xMidYMid meet"/>
   <text x="391" y="96" text-anchor="middle" class="m365-service-label">SHAREPOINT</text>
  </g>
  <g class="diagram-panel">
   <rect x="48" y="245" width="125" height="62" rx="11"/>
-  <image href="/assets/microsoft-entra-id.svg" x="62" y="261" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
+  <image href="assets/microsoft-entra-id.svg" x="62" y="261" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
   <text x="133" y="282" text-anchor="middle" class="m365-service-label">ENTRA ID</text>
  </g>
  <g class="diagram-panel">
   <rect x="304" y="245" width="131" height="62" rx="11"/>
-  <image href="/assets/microsoft-intune.svg" x="320" y="260" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
+  <image href="assets/microsoft-intune.svg" x="320" y="260" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
   <text x="395" y="282" text-anchor="middle" class="m365-service-label">INTUNE</text>
  </g>
  <!-- Quatre points lumineux : un par service, aller-retour en continu sur leur propre câble. -->
@@ -631,7 +645,7 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}
         <button type="button" class="footer-icon-link email-modal-trigger" aria-label="Afficher mon adresse e-mail" title="E-mail">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 21 19H3a1.5 1.5 0 0 1-1.5-1.5v-11A1.5 1.5 0 0 1 3 5Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m2 7 10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
         </button>
-        <a class="footer-icon-link footer-contact-link" href="/contact/" aria-label="Accéder à la page Contact" title="Contact">
+        <a class="footer-icon-link footer-contact-link" href="contact-portfolio.html" aria-label="Accéder à la page Contact" title="Contact">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
