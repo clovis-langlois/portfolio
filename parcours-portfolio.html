@@ -323,12 +323,12 @@ html.reveal-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0
 <section class="path-hero" aria-labelledby="path-title">
 <div class="container">
 <h1 data-reveal id="path-title">Mon parcours</h1>
-<div class="path-introduction" data-reveal>
-    <p>Passionné par l'informatique et les nouvelles technologies depuis mon plus jeune âge, j'ai toujours été curieux de comprendre le fonctionnement des technologies qui nous entourent. C'est donc naturellement que j'ai choisi de construire mon avenir professionnel dans le domaine des systèmes et réseaux.</p>
-    <p>Du baccalauréat professionnel Systèmes numériques au Bachelor Administrateur Systèmes &amp; Réseaux, j'ai eu l'opportunité de développer mes connaissances et mes compétences à travers plusieurs expériences au sein de grandes structures. Ces expériences, particulièrement enrichissantes, m'ont permis d'acquérir une vision concrète du fonctionnement des systèmes d'information en entreprise et ont conforté mon choix d'orientation.</p>
-    <p>Aujourd'hui, je poursuis mon évolution professionnelle chez Deletec, une entreprise que j'ai découverte lors de mes stages et qui m'a ensuite offert l'opportunité de poursuivre mes études en alternance. Au fil des années, j'y ai progressivement gagné en autonomie, développé mes compétences techniques et pris de nouvelles responsabilités, tout en conservant cette même curiosité et cette volonté constante d'apprendre et de progresser.</p>
-    <p>Ces expériences m'ont également permis de développer un véritable sens des responsabilités et une exigence particulière quant à la qualité de mon travail. Une exigence que je m'attache aujourd'hui à mettre au service de nos clients, à travers une approche rigoureuse, une écoute attentive de leurs besoins et la recherche de solutions fiables et durables.</p>
-    <nav class="path-quick-links" aria-label="Accès rapide aux sections du parcours">
+<div class="path-introduction">
+    <p data-reveal>Passionné par l'informatique et les nouvelles technologies depuis mon plus jeune âge, j'ai toujours été curieux de comprendre le fonctionnement des technologies qui nous entourent. C'est donc naturellement que j'ai choisi de construire mon avenir professionnel dans le domaine des systèmes et réseaux.</p>
+    <p data-reveal>Du baccalauréat professionnel Systèmes numériques au Bachelor Administrateur Systèmes &amp; Réseaux, j'ai eu l'opportunité de développer mes connaissances et mes compétences à travers plusieurs expériences au sein de grandes structures. Ces expériences, particulièrement enrichissantes, m'ont permis d'acquérir une vision concrète du fonctionnement des systèmes d'information en entreprise et ont conforté mon choix d'orientation.</p>
+    <p data-reveal>Aujourd'hui, je poursuis mon évolution professionnelle chez Deletec, une entreprise que j'ai découverte lors de mes stages et qui m'a ensuite offert l'opportunité de poursuivre mes études en alternance. Au fil des années, j'y ai progressivement gagné en autonomie, développé mes compétences techniques et pris de nouvelles responsabilités, tout en conservant cette même curiosité et cette volonté constante d'apprendre et de progresser.</p>
+    <p data-reveal>Ces expériences m'ont également permis de développer un véritable sens des responsabilités et une exigence particulière quant à la qualité de mon travail. Une exigence que je m'attache aujourd'hui à mettre au service de nos clients, à travers une approche rigoureuse, une écoute attentive de leurs besoins et la recherche de solutions fiables et durables.</p>
+    <nav data-reveal class="path-quick-links" aria-label="Accès rapide aux sections du parcours">
       <a class="path-more" href="#experiences-title">Mon expérience professionnelle <span aria-hidden="true">↗</span></a>
       <a class="path-more" href="#formations-title">Mes formations &amp; diplômes <span aria-hidden="true">↗</span></a>
     </nav>
@@ -560,8 +560,9 @@ if(educationTimeline){
  const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}});
  },{threshold:.08,rootMargin:'0px 0px -35px 0px'});
- items.forEach(el=>observer.observe(el));
  document.documentElement.classList.add('reveal-ready');
+ // Laisser le navigateur afficher l'état initial avant de déclencher le fondu.
+ requestAnimationFrame(()=>requestAnimationFrame(()=>items.forEach(el=>observer.observe(el))));
 })();
 </script>
 </body>
